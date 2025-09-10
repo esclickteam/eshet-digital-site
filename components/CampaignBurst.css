@@ -91,7 +91,6 @@
   }
 }
 
-/* ===== Mobile Fix ===== */
 @media (max-width: 768px) {
   .lb-stage {
     width: 100%;
@@ -109,20 +108,20 @@
   }
 
   .lb-icons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 אייקונים בשורה */
     gap: 15px;
-    position: static; /* מבטל absolute */
+    justify-items: center;
     margin-top: 20px;
+    position: static;
   }
 
   .lb-icon {
-    position: relative; /* במקום absolute */
+    position: relative;
     width: 60px;
     height: 60px;
     opacity: 1;
     transform: none;
-    animation: none; /* אפשר לבטל במובייל אם זה מציק */
+    animation: none;
   }
 }
