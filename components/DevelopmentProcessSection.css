@@ -1,16 +1,44 @@
 .dev-process-section {
   padding: 100px 20px;
-  background: linear-gradient(135deg, #1a237e, #283593);
+  background: linear-gradient(135deg, #1a237e, #283593); /* כחול-סגול אלגנטי */
   text-align: center;
   color: #fff;
   overflow: hidden;
+  position: relative;
+}
+
+/* שכבת רקע עדינה (גלו/היילייט) */
+.dev-process-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.07), transparent 70%);
+  animation: glow 12s infinite linear;
+  z-index: 0;
+}
+
+@keyframes glow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dev-process-section .container {
+  position: relative;
+  z-index: 1; /* כדי לא לכסות את הטקסט */
 }
 
 .dev-process-section .section-title {
   font-size: 2.8rem;
   font-weight: 800;
   margin-bottom: 20px;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
 }
 
 .dev-process-section .section-subtitle {
@@ -29,11 +57,12 @@
   width: 100%;
   height: auto;
   opacity: 0;
-  transform: scale(0.8) rotate(-5deg);
-  transition: all 0.8s ease-out;
+  transform: translateY(40px) scale(0.9);
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4));
+  transition: all 1s ease;
 }
 
 .process-image.visible {
   opacity: 1;
-  transform: scale(1) rotate(0deg);
+  transform: translateY(0) scale(1);
 }
