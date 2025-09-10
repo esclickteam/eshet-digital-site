@@ -1,0 +1,161 @@
+/* ====== Header Container ====== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px; /* 👈 גובה קבוע לשורה */
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+/* Header inner navigation */
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ====== Logo (Left side) ====== */
+.logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  max-height: 50px;
+  width: auto;
+  display: block;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* ====== Navigation (Center) ====== */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  margin: 0 auto;
+  align-items: center; /* 👈 מוודא שהחץ והטקסט באותו קו */
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a,
+.dropbtn {
+  text-decoration: none;
+  color: var(--foreground);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: color 0.3s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 0;
+  display: flex;
+  align-items: center; /* 👈 טקסט + חץ מיושרים */
+}
+
+.nav-links li a:hover,
+.dropbtn:hover {
+  color: var(--primary);
+}
+
+/* ====== Dropdown ====== */
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  display: flex;
+  gap: 40px;
+  padding: 20px 30px;
+  min-width: 480px;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.dropdown-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dropdown-content a {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+  color: var(--primary);
+}
+
+/* ====== WhatsApp Button (Right side) ====== */
+.header-cta {
+  margin-left: auto;
+}
+
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: transform 0.3s, background 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #20c057, #0f7b63);
+}
+
+.whatsapp-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ====== Arrow Icon ====== */
+.arrow-icon {
+  width: 12px;
+  height: 12px;
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown:hover .arrow-icon {
+  transform: rotate(180deg);
+}

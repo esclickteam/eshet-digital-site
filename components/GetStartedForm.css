@@ -1,0 +1,110 @@
+.get-started {
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #eef2ff 0%, #e0f2fe 100%); /* בהיר ומותגי */
+}
+
+.form-container {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.form-container h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: #1e293b; /* טקסט כהה קריא */
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 40px 12px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+}
+
+.form-group .icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* ===== Button ===== */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6); /* סגול־כחול מותגי */
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(99,102,241,0.25);
+}
+
+.arrow {
+  margin-left: 8px;
+}
+
+/* ===== Messages ===== */
+.success-msg {
+  margin-top: 18px;
+  color: #22c55e; /* Green מותגי */
+  font-weight: 600;
+  font-size: 0.95rem;
+  animation: fadeIn 0.4s ease;
+}
+
+.error-msg {
+  margin-top: 18px;
+  color: #ef4444; /* Red מותגי */
+  font-weight: 600;
+  font-size: 0.95rem;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

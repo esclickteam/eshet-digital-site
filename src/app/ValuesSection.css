@@ -1,0 +1,32 @@
+.values-section {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* סגול → כחול */
+  text-align: center;
+  color: #fff; /* טקסט לבן שיבלוט */
+}
+
+.values-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.values-section h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: #fff; /* לשמור לבן */
+}
+
+.values-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  color: #f0f0f0; /* אפור בהיר לקריאות */
+}
+
+.values-section .highlight {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  color: #fff;
+}

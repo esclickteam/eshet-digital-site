@@ -1,0 +1,79 @@
+.get-started-page {
+  background: #f9fafb; /* רקע כללי אחיד */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero */
+.hero {
+  background: none; /* בלי גרדיאנט נוסף */
+  color: #1e293b;
+  text-align: center;
+  padding: 80px 20px 40px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0 auto;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Form Wrapper */
+.form-wrapper {
+  margin: 0 auto 80px;
+  max-width: 700px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* Card */
+.form-container {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+}
+
+/* Inputs */
+.form-group input,
+.form-group textarea {
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1rem;
+  color: #1e293b;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+  outline: none;
+}
+
+/* Button */
+.submit-btn {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6); /* צבע מותג יחיד */
+  color: #fff;
+  border: none;
+  padding: 14px 34px;
+  border-radius: 35px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(99,102,241,0.3);
+}

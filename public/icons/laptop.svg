@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- מסגרת המחשב -->
+  <rect x="50" y="50" width="700" height="450" rx="20" ry="20" fill="#111" stroke="#333" stroke-width="6"></rect>
+
+  <!-- המסך (שקוף) -->
+  <rect x="80" y="80" width="640" height="390" rx="10" ry="10" fill="transparent" stroke="#555" stroke-width="2"></rect>
+
+  <!-- בסיס המחשב -->
+  <rect x="0" y="500" width="800" height="40" rx="10" ry="10" fill="#222"></rect>
+
+  <!-- הצללה קטנה -->
+  <ellipse cx="400" cy="545" rx="320" ry="20" fill="rgba(0,0,0,0.3)"></ellipse>
+</svg>

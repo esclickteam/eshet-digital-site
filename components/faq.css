@@ -1,0 +1,88 @@
+/* ===== FAQ Section ===== */
+.faq-section {
+  margin-top: 100px; /* 👈 רווח מהבלוק הקודם */
+  background: linear-gradient(135deg, #1e2233, #2a2f44);
+  padding: 60px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #a855f7; /* סגול בהיר / gradient accent */
+  margin-bottom: 12px;
+}
+
+.faq-header p {
+  color: #bbb;
+  font-size: 1rem;
+}
+
+/* ===== FAQ Items ===== */
+.faq-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 18px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding-left: 12px;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #f5f5f5;
+}
+
+.faq-icon {
+  font-size: 1.4rem;
+  color: #a855f7; /* סגול */
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  margin-top: 12px;
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

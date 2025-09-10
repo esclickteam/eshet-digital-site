@@ -1,0 +1,32 @@
+.about-section {
+  background: #f3f0fa;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.about-container {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.about-section h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.about-section .subtitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 30px;
+}
+
+.about-section .intro-text {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #333;
+  font-weight: 400;
+}

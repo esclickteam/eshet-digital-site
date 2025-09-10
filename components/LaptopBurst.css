@@ -1,0 +1,105 @@
+/* ====== Section Container ====== */
+.lb-section {
+  position: relative;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ====== Stage ====== */
+.lb-stage {
+  position: relative;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* ====== Laptop in Center ====== */
+.lb-laptop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  max-width: 40%;
+  z-index: 2;
+}
+
+/* ====== Icons Container (rotating) ====== */
+.lb-icons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* אנימציית סיבוב */
+  animation: rotateCircle 20s linear infinite;
+  transform-origin: center center;
+}
+
+/* ====== Single Icon ====== */
+.lb-icon {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  background: #1e1e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  transition: transform 0.4s ease, box-shadow 0.3s ease, opacity 0.6s ease;
+}
+
+/* Icon Images */
+.lb-icon img {
+  max-width: 70%;
+  max-height: 70%;
+}
+
+/* Hover effect */
+.lb-icon:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* ====== Animation when showing ====== */
+.lb-stage.show .lb-icon {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  .lb-laptop {
+    width: 120px;
+  }
+
+  .lb-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+  }
+
+  .lb-icon img {
+    max-width: 65%;
+    max-height: 65%;
+  }
+}
+
+/* ====== Keyframes for Rotation ====== */
+@keyframes rotateCircle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
