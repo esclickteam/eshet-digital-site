@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import "./development.css"; // משתמשים באותו CSS של Development
+import "../development/development.css";
 import FAQ from "../../../../components/faq";
 
 export default function DigitalCampaignsPage() {
