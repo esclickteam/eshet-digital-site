@@ -22,7 +22,7 @@ export default function DesignBurst() {
             <img src="/icons/idVC.png" alt="Figma" />
           </li>
           <li className="db-icon orbit-4">
-            <img src="/icons/canva.png" alt="Canva" />
+            <img src="/icons/canva.jpeg" alt="Canva" />
           </li>
           <li className="db-icon orbit-5">
             <img src="/icons/pantone.png" alt="Pantone" />

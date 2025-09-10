@@ -20,7 +20,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 140px;
+  width: 200px; /* ⬅ הגדלתי מ-140px */
   z-index: 2;
 }
 
@@ -81,7 +81,7 @@
   }
 
   .db-laptop {
-    width: 90px;
+    width: 120px; /* ⬅ גדול יותר מהאייקונים */
   }
 
   .db-icon {
