@@ -47,9 +47,7 @@ export default function LaptopBurst() {
 
   const centerX = stageSize / 2;
   const centerY = stageSize / 2;
-
-  // רדיוס יחסי תמידי
-  const radius = stageSize * 0.38;
+  const radius = stageSize * 0.38; // רדיוס יחסי
 
   return (
     <div className="lb-section" ref={ref}>
@@ -62,7 +60,6 @@ export default function LaptopBurst() {
 
         <ul className="lb-icons">
           {items.map((it, i) => {
-            // זווית שווה לכל אייקון, מתחיל מלמעלה
             const angle = (i / items.length) * (2 * Math.PI) - Math.PI / 2;
             const x = centerX + radius * Math.cos(angle);
             const y = centerY + radius * Math.sin(angle);
@@ -77,7 +74,9 @@ export default function LaptopBurst() {
                   transform: "translate(-50%, -50%)",
                 }}
               >
-                <img src={it.src} alt={it.label} />
+                <div className="lb-icon-inner">
+                  <img src={it.src} alt={it.label} />
+                </div>
               </li>
             );
           })}
