@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect } from "react";
-import "../development/development.css"; // שימוש ב-CSS הכללי
+import "../development/development.css"; 
+import CampaignBurst from "../../../../components/SocialBurst";
 import FAQ from "../../../../components/faq";
 
 export default function SocialMediaPage() {
@@ -55,14 +56,14 @@ export default function SocialMediaPage() {
             </div>
             <div className="block-image">
               <div className="image-wrapper">
-                <img src="/images/social-content.png" alt="Custom Content" />
+                <img src="/images/social-content.jpg" alt="Custom Content" />
               </div>
             </div>
           </div>
         </div>
 
         <div className="dev-block">
-          <div className="block-content reverse">
+          <div className="block-content">
             <div className="block-text">
               <h2>Standout Design</h2>
               <p>
@@ -73,7 +74,7 @@ export default function SocialMediaPage() {
             </div>
             <div className="block-image">
               <div className="image-wrapper">
-                <img src="/images/social-design.png" alt="Standout Design" />
+                <img src="/images/social-design.jpg" alt="Standout Design" />
               </div>
             </div>
           </div>
@@ -91,7 +92,7 @@ export default function SocialMediaPage() {
             </div>
             <div className="block-image">
               <div className="image-wrapper">
-                <img src="/images/social-strategy.png" alt="Data Strategy" />
+                <img src="/images/social-strategy.jpg" alt="Data Strategy" />
               </div>
             </div>
           </div>
