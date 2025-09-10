@@ -1,6 +1,5 @@
 /* ===== Team Page ===== */
 .team-page {
-  background: #fff;
   font-family: "Inter", sans-serif;
   color: #0f172a;
 }
@@ -14,7 +13,7 @@
 }
 
 .team-title {
-  font-size: clamp(36px, 5vw, 64px);
+  font-size: clamp(40px, 6vw, 72px);
   font-weight: 800;
   margin-bottom: 20px;
 }
@@ -28,48 +27,39 @@
 }
 
 .team-subtitle {
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.8;
   max-width: 850px;
   margin: 0 auto;
   color: #f1f5f9;
 }
 
-.team-subtitle span {
-  font-weight: 600;
-}
-
 /* ===== Sections ===== */
 .team-section {
-  padding: 80px 20px;
+  padding: 100px 20px;
   text-align: center;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
-  border-bottom: 1px solid #e5e7eb;
 }
 
 .team-section h2 {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   color: #1e3a8a;
 }
 
-.team-section p,
-.team-section li {
-  font-size: 18px;
-  line-height: 1.8;
-  color: #475569;
+.team-section p {
+  font-size: 20px;
+  line-height: 1.9;
+  color: #334155;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.team-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.team-section ul li {
-  margin-bottom: 12px;
+.alt-bg {
+  background: #f9fafb;
+  border-radius: 12px;
 }
 
 /* ===== Responsive ===== */
@@ -78,10 +68,9 @@
     font-size: 32px;
   }
   .team-section h2 {
-    font-size: 22px;
+    font-size: 24px;
   }
-  .team-section p,
-  .team-section li {
-    font-size: 16px;
+  .team-section p {
+    font-size: 18px;
   }
 }
