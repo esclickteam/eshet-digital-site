@@ -6,6 +6,7 @@ export default function LaptopBurst() {
   const ref = useRef(null);
   const [show, setShow] = useState(false);
   const [stageSize, setStageSize] = useState(700);
+  const [radius, setRadius] = useState(0);
 
   useEffect(() => {
     const el = ref.current;
@@ -32,6 +33,20 @@ export default function LaptopBurst() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // חישוב radius רק בצד לקוח
+  useEffect(() => {
+    const calcRadius = () => {
+      if (window.innerWidth < 768) {
+        setRadius(stageSize * 0.33);
+      } else {
+        setRadius(stageSize * 0.38);
+      }
+    };
+    calcRadius();
+    window.addEventListener("resize", calcRadius);
+    return () => window.removeEventListener("resize", calcRadius);
+  }, [stageSize]);
+
   const items = [
     { label: "WordPress", src: "/icons/wordpress.jpeg" },
     { label: "Wix", src: "/icons/wix.png" },
@@ -44,9 +59,6 @@ export default function LaptopBurst() {
     { label: "Meta", src: "/icons/meta.png" },
     { label: "JavaScript", src: "/icons/javascript.jpeg" },
   ];
-
-  // רדיוס יחסי (קצת יותר קטן במובייל)
-  const radius = stageSize * (window.innerWidth < 768 ? 0.33 : 0.38);
 
   return (
     <div className="lb-section" ref={ref}>
