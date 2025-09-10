@@ -109,13 +109,15 @@
 
   .db-laptop {
     width: 200px;
-    top: 35%;
+    top: 30%; /* ⬅ טיפה למעלה כדי לפנות מקום */
   }
 
   .db-icons {
-    flex-wrap: wrap;        /* במובייל שבירה לשתי שורות */
-    gap: 20px;
-    top: 70%;
+    flex-wrap: wrap;        
+    justify-content: center;
+    gap: 18px;
+    top: 80%;   /* ⬅ דוחף אותם למטה יותר */
+    margin-top: 20px; /* עוד ריווח מתחת ללפטופ */
   }
 
   .db-icon {
