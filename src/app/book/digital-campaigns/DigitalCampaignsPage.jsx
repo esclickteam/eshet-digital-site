@@ -73,7 +73,7 @@ export default function DigitalCampaignsPage() {
 
         {/* ===== Block 2 ===== */}
         <div className="dev-block">
-          <div className="block-content reverse">
+          <div className="block-content">
             <div className="block-text">
               <h2>Creatives that Convert</h2>
               <p>
@@ -114,7 +114,7 @@ export default function DigitalCampaignsPage() {
 
         {/* ===== Block 4 ===== */}
         <div className="dev-block">
-          <div className="block-content reverse">
+          <div className="block-content">
             <div className="block-text">
               <h2>Results that Speak for Themselves</h2>
               <p>
