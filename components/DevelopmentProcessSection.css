@@ -1,0 +1,39 @@
+.dev-process-section {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #1a237e, #283593);
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.dev-process-section .section-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dev-process-section .section-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #e0e0e0;
+}
+
+.process-image-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.process-image {
+  max-width: 650px;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transform: scale(0.8) rotate(-5deg);
+  transition: all 0.8s ease-out;
+}
+
+.process-image.visible {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
