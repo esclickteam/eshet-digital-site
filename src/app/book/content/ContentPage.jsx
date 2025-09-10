@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import "../development/development.css"; // שימוש באותו CSS כללי
+import "../development/development.css"; // שימוש ב-CSS הכללי
 import FAQ from "../../../../components/faq";
 
 export default function ContentPage() {
@@ -45,7 +45,7 @@ export default function ContentPage() {
         <div className="dev-block">
           <div className="block-content">
             <div className="block-text">
-              <h2>📝 Marketing & SEO Content</h2>
+              <h2>Marketing & SEO Content</h2>
               <p>
                 We create professional articles, marketing content, and posts
                 optimized with keywords in your industry. The goal: engage
@@ -63,10 +63,10 @@ export default function ContentPage() {
         <div className="dev-block">
           <div className="block-content reverse">
             <div className="block-text">
-              <h2>🎬 Video Scripts</h2>
+              <h2>Video Scripts</h2>
               <p>
-                Every great video starts with a strong script. We write clear and
-                engaging scripts for ads, product videos, and social media
+                Every great video starts with a strong script. We write clear
+                and engaging scripts for ads, product videos, and social media
                 content.
               </p>
             </div>
@@ -81,7 +81,7 @@ export default function ContentPage() {
         <div className="dev-block">
           <div className="block-content">
             <div className="block-text">
-              <h2>✂️ Professional Video Editing</h2>
+              <h2>Professional Video Editing</h2>
               <p>
                 We edit your videos to look professional, smooth, and
                 brand-consistent — including titles, graphics, and eye-catching
@@ -103,6 +103,45 @@ export default function ContentPage() {
           </a>
         </div>
 
+        {/* Features Grid */}
+        <div className="features-section">
+          <h2 className="features-title">
+            What Makes Content Truly Engaging?
+          </h2>
+          <div className="features-grid">
+            <div className="feature-card">
+              <div className="icon">📝</div>
+              <h3>SEO-Friendly Articles</h3>
+              <p>Content that improves search ranking and drives traffic.</p>
+            </div>
+            <div className="feature-card">
+              <div className="icon">🎯</div>
+              <h3>Targeted Messaging</h3>
+              <p>Copy tailored to your audience for maximum impact.</p>
+            </div>
+            <div className="feature-card">
+              <div className="icon">🎬</div>
+              <h3>Powerful Video Scripts</h3>
+              <p>Compelling storytelling that keeps viewers engaged.</p>
+            </div>
+            <div className="feature-card">
+              <div className="icon">✂️</div>
+              <h3>Smooth Editing</h3>
+              <p>Professional cuts, graphics, and transitions.</p>
+            </div>
+            <div className="feature-card">
+              <div className="icon">📈</div>
+              <h3>Conversion-Oriented</h3>
+              <p>Content designed to drive sales and business growth.</p>
+            </div>
+            <div className="feature-card">
+              <div className="icon">🌍</div>
+              <h3>Cross-Platform Ready</h3>
+              <p>Optimized for blogs, social media, and video platforms.</p>
+            </div>
+          </div>
+        </div>
+
         {/* FAQ */}
         <FAQ
           faqs={[
@@ -122,7 +161,8 @@ export default function ContentPage() {
                 "Both options are possible — we can edit your existing videos or guide you in creating new ones.",
             },
             {
-              question: "Why is it important to combine writing and video editing?",
+              question:
+                "Why is it important to combine writing and video editing?",
               answer:
                 "Written content drives SEO and traffic, while videos boost engagement and conversions — together they maximize results.",
             },

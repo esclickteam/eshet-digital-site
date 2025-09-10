@@ -44,7 +44,7 @@ export default function StrategyPage() {
         <div className="dev-block">
           <div className="block-content">
             <div className="block-text">
-              <h2>📈 Custom Strategy</h2>
+              <h2>Custom Strategy</h2>
               <p>
                 Every business is unique — so should be its digital strategy. We
                 create custom plans that support your business goals.
@@ -66,7 +66,7 @@ export default function StrategyPage() {
         <div className="dev-block">
           <div className="block-content reverse">
             <div className="block-text">
-              <h2>🛠 Website Maintenance</h2>
+              <h2>Website Maintenance</h2>
               <p>
                 Your website must always perform — fast, secure, and error-free.
                 Our maintenance services cover:
@@ -79,7 +79,10 @@ export default function StrategyPage() {
             </div>
             <div className="block-image">
               <div className="image-wrapper">
-                <img src="/images/strategy-maintenance.png" alt="Website Maintenance" />
+                <img
+                  src="/images/strategy-maintenance.png"
+                  alt="Website Maintenance"
+                />
               </div>
             </div>
           </div>
@@ -88,7 +91,7 @@ export default function StrategyPage() {
         <div className="dev-block">
           <div className="block-content">
             <div className="block-text">
-              <h2>🤝 Consulting & Support</h2>
+              <h2>Consulting & Support</h2>
               <p>
                 We’re here for you with expert consulting, support, and upgrades.
                 Our team makes sure you always stay ahead in the digital game.
@@ -96,7 +99,10 @@ export default function StrategyPage() {
             </div>
             <div className="block-image">
               <div className="image-wrapper">
-                <img src="/images/strategy-support.png" alt="Consulting & Support" />
+                <img
+                  src="/images/strategy-support.png"
+                  alt="Consulting & Support"
+                />
               </div>
             </div>
           </div>
@@ -107,6 +113,45 @@ export default function StrategyPage() {
           <a href="/get-started" className="cta-button">
             Secure Your Digital Future
           </a>
+        </div>
+
+        {/* Features Grid */}
+        <div className="features-section">
+          <h2 className="features-title">
+            What Makes a Digital Strategy Effective?
+          </h2>
+          <div className="features-grid">
+            <div className="feature-card">
+              <div className="icon">📊</div>
+              <h3>Data-Driven Strategy</h3>
+              <p>Build plans based on insights, not guesses.</p>
+            </div>
+            <div className="feature-card">
+              <div className="icon">🛡</div>
+              <h3>Strong Security</h3>
+              <p>Advanced protection against online threats.</p>
+            </div>
+            <div className="feature-card">
+              <div className="icon">⚡</div>
+              <h3>Performance Optimization</h3>
+              <p>Keep your site fast, responsive, and reliable.</p>
+            </div>
+            <div className="feature-card">
+              <div className="icon">🔄</div>
+              <h3>Continuous Updates</h3>
+              <p>Regular plugin, software, and content updates.</p>
+            </div>
+            <div className="feature-card">
+              <div className="icon">💡</div>
+              <h3>Expert Consulting</h3>
+              <p>Guidance to adapt and grow digitally.</p>
+            </div>
+            <div className="feature-card">
+              <div className="icon">📈</div>
+              <h3>Scalable Growth</h3>
+              <p>Future-proof systems designed for long-term success.</p>
+            </div>
+          </div>
         </div>
 
         {/* FAQ */}
