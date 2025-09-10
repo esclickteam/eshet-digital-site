@@ -30,7 +30,7 @@ export default function DigitalCampaignsPage() {
   return (
     <section className="dev-section">
       <div className="container">
-        {/* Hero */}
+        {/* ===== Hero ===== */}
         <h1 className="dev-title gradient-text">
           Digital Campaign Management that Delivers Results
         </h1>
@@ -40,6 +40,99 @@ export default function DigitalCampaignsPage() {
           optimization. Our goal: generate more leads, more sales, and real
           business growth.
         </p>
+
+        {/* ===== Block 1 ===== */}
+        <div className="dev-block">
+          <div className="block-content">
+            <div className="block-text">
+              <h2>Data-Driven Strategy</h2>
+              <p>
+                We don’t guess — we analyze. Every campaign is built on audience
+                research, competitor insights, and strategic planning.
+              </p>
+              <ul>
+                <li>✔ Target audience identification</li>
+                <li>✔ Precise segmentation</li>
+                <li>✔ Continuous tracking & insights</li>
+              </ul>
+            </div>
+            <div className="block-image">
+              <div className="image-wrapper">
+                <img
+                  src="/images/campaign-strategy.png"
+                  alt="Campaign Strategy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ===== Block 2 ===== */}
+        <div className="dev-block">
+          <div className="block-content reverse">
+            <div className="block-text">
+              <h2>Creatives that Convert</h2>
+              <p>
+                Great ads aren’t just pretty — they convert. We craft unique
+                creatives that combine compelling copy, visuals, and strong
+                calls-to-action.
+              </p>
+            </div>
+            <div className="block-image">
+              <div className="image-wrapper">
+                <img src="/images/campaign-creatives.png" alt="Creatives" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ===== Block 3 ===== */}
+        <div className="dev-block">
+          <div className="block-content">
+            <div className="block-text">
+              <h2>Continuous Optimization</h2>
+              <p>
+                A well-managed campaign never stands still. We perform daily
+                optimizations to ensure you get the maximum ROI from your
+                budget.
+              </p>
+            </div>
+            <div className="block-image">
+              <div className="image-wrapper">
+                <img
+                  src="/images/campaign-optimization.png"
+                  alt="Optimization"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ===== Block 4 ===== */}
+        <div className="dev-block">
+          <div className="block-content reverse">
+            <div className="block-text">
+              <h2>Results that Speak for Themselves</h2>
+              <p>
+                At the end of the day — results matter. We track performance,
+                provide clear transparent reports, and ensure every dollar works
+                for you.
+              </p>
+            </div>
+            <div className="block-image">
+              <div className="image-wrapper">
+                <img src="/images/campaign-results.png" alt="Results" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ===== CTA ===== */}
+        <div className="cta-wrapper">
+          <a href="/get-started" className="cta-button">
+            Launch Your Campaign
+          </a>
+        </div>
 
         {/* ===== Features Grid ===== */}
         <div className="features-section">
@@ -98,14 +191,7 @@ export default function DigitalCampaignsPage() {
           </div>
         </div>
 
-        {/* ===== CTA ===== */}
-        <div className="cta-wrapper">
-          <a href="/get-started" className="cta-button">
-            Launch Your Campaign
-          </a>
-        </div>
-
-        {/* ===== FAQ Section ===== */}
+        {/* ===== FAQ ===== */}
         <FAQ
           faqs={[
             {
