@@ -38,7 +38,7 @@
   left: 0;
 
   /* אנימציית סיבוב */
-  animation: rotateCircle 20s linear infinite;
+  animation: rotateCircle 20s  linear infinite;
   transform-origin: center center;
 }
 
