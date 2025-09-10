@@ -21,7 +21,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 220px;
+  width: 380px;
   z-index: 4;
 }
 
@@ -55,32 +55,36 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  position: relative;
+  top: 80%;
 }
 
 .sb-icon {
-  position: absolute;
-  width: 70px;
-  height: 70px;
+  position: relative;
+  width: 80px;
+  height: 80px;
   border-radius: 20px;
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  animation: floatWave 3s ease-in-out infinite, glow 3s infinite ease-in-out;
   overflow: hidden;
+  cursor: pointer;
+  opacity: 0; /* מתחילים מוסתרים */
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards, floatWave 3s ease-in-out infinite;
 }
 
 .sb-icon img {
   max-width: 60%;
   max-height: 60%;
   object-fit: contain;
+  z-index: 2;
   transition: transform 0.3s ease;
-}
-
-/* Hover effect */
-.sb-icon:hover img {
-  transform: scale(1.15);
 }
 
 /* Floating animation */
@@ -89,43 +93,52 @@
   50% { transform: translateY(-12px); }
 }
 
-/* Glow effect */
-@keyframes glow {
-  0%, 100% { box-shadow: 0 0 12px rgba(0, 200, 255, 0.3); }
-  50%      { box-shadow: 0 0 25px rgba(0, 200, 255, 0.8); }
+/* כניסה הדרגתית */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Orbit Animations */
-@keyframes orbit {
-  from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
-  to   { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
-}
+/* דיליי לכל אייקון */
+.sb-icon:nth-child(1) { animation-delay: 0.2s, 0s; }
+.sb-icon:nth-child(2) { animation-delay: 0.4s, 0s; }
+.sb-icon:nth-child(3) { animation-delay: 0.6s, 0s; }
+.sb-icon:nth-child(4) { animation-delay: 0.8s, 0s; }
+.sb-icon:nth-child(5) { animation-delay: 1s, 0s; }
+.sb-icon:nth-child(6) { animation-delay: 1.2s, 0s; }
 
-.orbit-1 { animation: orbit 25s linear infinite; }
-.orbit-2 { animation: orbit 30s linear infinite; }
-.orbit-3 { animation: orbit 35s linear infinite; }
-.orbit-4 { animation: orbit 28s linear infinite; }
-.orbit-5 { animation: orbit 32s linear infinite; }
-.orbit-6 { animation: orbit 40s linear infinite; }
+/* אפקט Glow מותאם מותג */
+.sb-icon.facebook    { box-shadow: 0 0 25px rgba(24, 119, 242, 0.6); }
+.sb-icon.instagram   { box-shadow: 0 0 25px rgba(225, 48, 108, 0.6); }
+.sb-icon.tiktok      { box-shadow: 0 0 25px rgba(0, 242, 234, 0.6); }
+.sb-icon.linkedin    { box-shadow: 0 0 25px rgba(10, 102, 194, 0.6); }
+.sb-icon.youtube     { box-shadow: 0 0 25px rgba(255, 0, 0, 0.6); }
+.sb-icon.twitter     { box-shadow: 0 0 25px rgba(29, 161, 242, 0.6); }
+
+.sb-icon:hover img {
+  transform: scale(1.15);
+}
 
 /* Mobile scaling */
 @media (max-width: 768px) {
   .sb-stage {
     width: 300px;
-    height: 300px;
+    height: auto;
   }
 
   .sb-phone {
-    width: 150px;
+    width: 200px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .sb-icons {
+    top: auto;
+    gap: 15px;
   }
 
   .sb-icon {
-    width: 55px;
-    height: 55px;
-  }
-
-  @keyframes orbit {
-    from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+    width: 60px;
+    height: 60px;
   }
 }

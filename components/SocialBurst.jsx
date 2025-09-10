@@ -16,7 +16,7 @@ export default function SocialBurst() {
       <div className="sb-stage">
         {/* ===== Phone Center ===== */}
         <div className="sb-phone">
-          <img src="/images/SocialMediaPage.jpg" alt="Social Phone" />
+          <img src="/images/SocialMediaPage.png" alt="Social Phone" />
         </div>
 
         {/* ===== Social Icons Around ===== */}
