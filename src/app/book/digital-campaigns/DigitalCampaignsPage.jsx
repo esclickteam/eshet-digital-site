@@ -41,103 +41,14 @@ export default function DigitalCampaignsPage() {
           business growth.
         </p>
 
-        {/* Blocks */}
-        <div className="dev-block">
-          <div className="block-content">
-            <div className="block-text">
-              <h2>Data-Driven Strategy</h2>
-              <p>
-                We don’t guess — we analyze. Every campaign is built on audience
-                research, competitor insights, and strategic planning.
-              </p>
-              <ul>
-                <li>✔ Target audience identification</li>
-                <li>✔ Precise segmentation</li>
-                <li>✔ Continuous tracking & insights</li>
-              </ul>
-            </div>
-            <div className="block-image">
-              <div className="image-wrapper">
-                <img
-                  src="/images/campaign-strategy.png"
-                  alt="Campaign Strategy"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="dev-block">
-          <div className="block-content reverse">
-            <div className="block-text">
-              <h2>Creatives that Convert</h2>
-              <p>
-                Great ads aren’t just pretty — they convert. We craft unique
-                creatives that combine compelling copy, visuals, and strong
-                calls-to-action.
-              </p>
-            </div>
-            <div className="block-image">
-              <div className="image-wrapper">
-                <img src="/images/campaign-creatives.png" alt="Creatives" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="dev-block">
-          <div className="block-content">
-            <div className="block-text">
-              <h2>Continuous Optimization</h2>
-              <p>
-                A well-managed campaign never stands still. We perform daily
-                optimizations to ensure you get the maximum ROI from your
-                budget.
-              </p>
-            </div>
-            <div className="block-image">
-              <div className="image-wrapper">
-                <img
-                  src="/images/campaign-optimization.png"
-                  alt="Optimization"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="dev-block">
-          <div className="block-content reverse">
-            <div className="block-text">
-              <h2>Results that Speak for Themselves</h2>
-              <p>
-                At the end of the day — results matter. We track performance,
-                provide clear transparent reports, and ensure every dollar works
-                for you.
-              </p>
-            </div>
-            <div className="block-image">
-              <div className="image-wrapper">
-                <img src="/images/campaign-results.png" alt="Results" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* CTA */}
-        <div className="cta-wrapper">
-          <a href="/get-started" className="cta-button">
-            Launch Your Campaign
-          </a>
-        </div>
-
-        {/* Features Grid */}
+        {/* ===== Features Grid ===== */}
         <div className="features-section">
           <h2 className="features-title">
             What Makes a Campaign Truly Successful?
           </h2>
           <div className="features-grid">
             <div className="feature-card">
+              <div className="icon">📊</div>
               <h3>Data-Driven Strategy</h3>
               <p>
                 Every campaign starts with solid research — audience insights,
@@ -145,6 +56,7 @@ export default function DigitalCampaignsPage() {
               </p>
             </div>
             <div className="feature-card">
+              <div className="icon">🎨</div>
               <h3>Creative That Converts</h3>
               <p>
                 Ads designed to capture attention and drive action — with
@@ -152,6 +64,7 @@ export default function DigitalCampaignsPage() {
               </p>
             </div>
             <div className="feature-card">
+              <div className="icon">💰</div>
               <h3>Smart Budget Allocation</h3>
               <p>
                 Maximize ROI by investing in the right platforms: Facebook,
@@ -159,6 +72,7 @@ export default function DigitalCampaignsPage() {
               </p>
             </div>
             <div className="feature-card">
+              <div className="icon">⚡</div>
               <h3>Continuous Optimization</h3>
               <p>
                 Campaigns are tracked daily — with A/B testing, targeting tweaks,
@@ -166,6 +80,7 @@ export default function DigitalCampaignsPage() {
               </p>
             </div>
             <div className="feature-card">
+              <div className="icon">📑</div>
               <h3>Transparent Reporting</h3>
               <p>
                 Clear, easy-to-understand reports: clicks, leads, conversions,
@@ -173,6 +88,7 @@ export default function DigitalCampaignsPage() {
               </p>
             </div>
             <div className="feature-card">
+              <div className="icon">🚀</div>
               <h3>Real Business Growth</h3>
               <p>
                 More than just ads — campaigns that deliver new customers,
@@ -182,7 +98,14 @@ export default function DigitalCampaignsPage() {
           </div>
         </div>
 
-        {/* FAQ */}
+        {/* ===== CTA ===== */}
+        <div className="cta-wrapper">
+          <a href="/get-started" className="cta-button">
+            Launch Your Campaign
+          </a>
+        </div>
+
+        {/* ===== FAQ Section ===== */}
         <FAQ
           faqs={[
             {
@@ -218,7 +141,7 @@ export default function DigitalCampaignsPage() {
           ]}
         />
 
-        {/* CTA (Footer) */}
+        {/* ===== CTA (Footer) ===== */}
         <div className="cta-wrapper">
           <a href="/get-started" className="cta-button">
             Launch Your Campaign
