@@ -1,86 +1,141 @@
 "use client";
-import React from "react";
-import "./content.css";
+
+import React, { useEffect } from "react";
+import "../development/development.css"; // שימוש באותו CSS כללי
+import FAQ from "../../../../components/faq";
 
 export default function ContentPage() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add("visible");
+            }, i * 200);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    document
+      .querySelectorAll(".dev-block, .feature-card, .faq-section, .cta-wrapper")
+      .forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="service-page">
-      {/* Hero / Intro */}
-      <section className="hero">
-        <h1>Content Writing & Video Editing</h1>
-        <p>
-          Content Writing & Video Editing – Content that Engages and Converts. We
-          craft SEO articles, marketing posts, video scripts, and full editing
-          tailored to your brand — ensuring your message is sharp, professional,
-          and impactful.
+    <section className="dev-section">
+      <div className="container">
+        {/* Hero */}
+        <h1 className="dev-title gradient-text">
+          Content Writing & Video Editing
+        </h1>
+        <p className="dev-intro">
+          Content Writing & Video Editing – Content that Engages and Converts.
+          We craft SEO articles, marketing posts, video scripts, and full
+          editing tailored to your brand — ensuring your message is sharp,
+          professional, and impactful.
         </p>
-      </section>
 
-      {/* Blocks */}
-      <section className="blocks">
-        <div className="block">
-          <h2>📝 Marketing & SEO Content</h2>
-          <p>
-            We create professional articles, marketing content, and posts
-            optimized with keywords in your industry. The goal: engage readers
-            while boosting your Google ranking.
-          </p>
+        {/* Blocks */}
+        <div className="dev-block">
+          <div className="block-content">
+            <div className="block-text">
+              <h2>📝 Marketing & SEO Content</h2>
+              <p>
+                We create professional articles, marketing content, and posts
+                optimized with keywords in your industry. The goal: engage
+                readers while boosting your Google ranking.
+              </p>
+            </div>
+            <div className="block-image">
+              <div className="image-wrapper">
+                <img src="/images/content-seo.png" alt="SEO Content" />
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="block">
-          <h2>🎬 Video Scripts</h2>
-          <p>
-            Every great video starts with a strong script. We write clear and
-            engaging scripts for ads, product videos, and social media content.
-          </p>
+        <div className="dev-block">
+          <div className="block-content reverse">
+            <div className="block-text">
+              <h2>🎬 Video Scripts</h2>
+              <p>
+                Every great video starts with a strong script. We write clear and
+                engaging scripts for ads, product videos, and social media
+                content.
+              </p>
+            </div>
+            <div className="block-image">
+              <div className="image-wrapper">
+                <img src="/images/content-scripts.png" alt="Video Scripts" />
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="block">
-          <h2>✂️ Professional Video Editing</h2>
-          <p>
-            We edit your videos to look professional, smooth, and brand-consistent
-            — including titles, graphics, and eye-catching effects.
-          </p>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="faq">
-        <h2>❓ Frequently Asked Questions</h2>
-
-        <div className="faq-item">
-          <h3>How long does it take to create an article or video?</h3>
-          <p>
-            Usually a few days, depending on length and complexity. Larger
-            projects may take longer.
-          </p>
+        <div className="dev-block">
+          <div className="block-content">
+            <div className="block-text">
+              <h2>✂️ Professional Video Editing</h2>
+              <p>
+                We edit your videos to look professional, smooth, and
+                brand-consistent — including titles, graphics, and eye-catching
+                effects.
+              </p>
+            </div>
+            <div className="block-image">
+              <div className="image-wrapper">
+                <img src="/images/content-editing.png" alt="Video Editing" />
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="faq-item">
-          <h3>How do you ensure the content fits my brand?</h3>
-          <p>
-            We conduct in-depth research on your business, tone of voice, and
-            target audience to make sure the content feels authentic to your
-            brand.
-          </p>
+        {/* CTA */}
+        <div className="cta-wrapper">
+          <a href="/get-started" className="cta-button">
+            Create Engaging Content
+          </a>
         </div>
 
-        <div className="faq-item">
-          <h3>Do I need to provide footage for editing?</h3>
-          <p>
-            Both options are possible — we can edit your existing videos or guide
-            you in creating new ones.
-          </p>
-        </div>
+        {/* FAQ */}
+        <FAQ
+          faqs={[
+            {
+              question: "How long does it take to create an article or video?",
+              answer:
+                "Usually a few days, depending on length and complexity. Larger projects may take longer.",
+            },
+            {
+              question: "How do you ensure the content fits my brand?",
+              answer:
+                "We conduct in-depth research on your business, tone of voice, and target audience to make sure the content feels authentic to your brand.",
+            },
+            {
+              question: "Do I need to provide footage for editing?",
+              answer:
+                "Both options are possible — we can edit your existing videos or guide you in creating new ones.",
+            },
+            {
+              question: "Why is it important to combine writing and video editing?",
+              answer:
+                "Written content drives SEO and traffic, while videos boost engagement and conversions — together they maximize results.",
+            },
+          ]}
+        />
 
-        <div className="faq-item">
-          <h3>Why is it important to combine writing and video editing?</h3>
-          <p>
-            Written content drives SEO and traffic, while videos boost engagement
-            and conversions — together they maximize results.
-          </p>
+        {/* CTA (Footer) */}
+        <div className="cta-wrapper">
+          <a href="/get-started" className="cta-button">
+            Create Engaging Content
+          </a>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
