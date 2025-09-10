@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import "../development/development.css"; // שימוש באותו CSS כללי
+import "../development/development.css"; // שימוש ב-CSS הכללי של development
 import FAQ from "../../../../components/faq";
 
 export default function BrandingPage() {
@@ -43,7 +43,7 @@ export default function BrandingPage() {
         <div className="dev-block">
           <div className="block-content">
             <div className="block-text">
-              <h2>🎨 Custom Logos</h2>
+              <h2>Custom Logos</h2>
               <p>
                 We design unique logos that communicate professionalism and build
                 unforgettable brand identity.
@@ -65,7 +65,7 @@ export default function BrandingPage() {
         <div className="dev-block">
           <div className="block-content reverse">
             <div className="block-text">
-              <h2>🌟 Brand Identity</h2>
+              <h2>Brand Identity</h2>
               <p>
                 Branding goes far beyond a logo. We craft a full visual identity –
                 colors, typography, icons, and consistent design – to ensure your
@@ -83,7 +83,7 @@ export default function BrandingPage() {
         <div className="dev-block">
           <div className="block-content">
             <div className="block-text">
-              <h2>📢 Marketing Visuals</h2>
+              <h2>Marketing Visuals</h2>
               <p>
                 We deliver marketing visuals that drive action: social media posts,
                 presentations, brochures, ads, and more – all aligned with your brand
@@ -103,6 +103,45 @@ export default function BrandingPage() {
           <a href="/get-started" className="cta-button">
             Build Your Brand
           </a>
+        </div>
+
+        {/* Features Grid */}
+        <div className="features-section">
+          <h2 className="features-title">
+            What Makes Branding Truly Powerful?
+          </h2>
+          <div className="features-grid">
+            <div className="feature-card">
+              <div className="icon">🎨</div>
+              <h3>Creative Logo Design</h3>
+              <p>Unique logos that reflect your brand identity and values.</p>
+            </div>
+            <div className="feature-card">
+              <div className="icon">🌈</div>
+              <h3>Full Brand Identity</h3>
+              <p>Consistent colors, typography, and visuals across all platforms.</p>
+            </div>
+            <div className="feature-card">
+              <div className="icon">📢</div>
+              <h3>Marketing Materials</h3>
+              <p>Brochures, ads, and social media graphics that drive results.</p>
+            </div>
+            <div className="feature-card">
+              <div className="icon">💻</div>
+              <h3>Digital & Print Ready</h3>
+              <p>Designs optimized for websites, social media, and print.</p>
+            </div>
+            <div className="feature-card">
+              <div className="icon">✨</div>
+              <h3>Premium Look & Feel</h3>
+              <p>Professional, polished designs that inspire trust.</p>
+            </div>
+            <div className="feature-card">
+              <div className="icon">🖼</div>
+              <h3>Visual Storytelling</h3>
+              <p>Designs that tell your story and engage your audience.</p>
+            </div>
+          </div>
         </div>
 
         {/* FAQ */}
