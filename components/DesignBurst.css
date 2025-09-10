@@ -12,16 +12,17 @@
   width: 500px;
   height: 500px;
   max-width: 100%;
+  z-index: 3;
 }
 
 /* Laptop Center */
 .db-laptop {
   position: absolute;
-  top: 50%;
+  top: 40%; /* טיפה למעלה כדי שיהיה מקום לאייקונים */
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 480px; /* בולט במרכז */
-  z-index: 2;
+  width: 380px; /* גודל מרכזי ובולט */
+  z-index: 4;
 }
 
 .db-laptop img {
@@ -39,7 +40,8 @@
   justify-content: center;
   gap: 25px;
   position: relative;
-  top: 110%;
+  top: 65%;   /* שים את האייקונים מתחת ללפטופ */
+  z-index: 5; /* שומר מעל הבלוקים */
 }
 
 .db-icon {
@@ -53,6 +55,8 @@
   justify-content: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   animation: floatWave 3s ease-in-out infinite;
+  z-index: 5;
+  overflow: hidden; /* חשוב בשביל הברק */
 }
 
 .db-icon:nth-child(2) { animation-delay: 0.3s; }
@@ -105,12 +109,13 @@
   }
 
   .db-laptop {
-    width: 220px;
+    width: 200px;
+    top: 35%;
   }
 
   .db-icons {
+    top: 70%;
     gap: 15px;
-    top: 100%;
   }
 
   .db-icon {
