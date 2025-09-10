@@ -1,0 +1,127 @@
+.cb-section {
+  position: relative;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cb-stage {
+  position: relative;
+  margin: 0 auto;
+  width: 500px;
+  height: 500px;
+  max-width: 100%;
+  z-index: 3;
+}
+
+/* Screen Center */
+.cb-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px; /* הגדלתי שיהיה בולט יותר */
+  z-index: 4;
+}
+
+.cb-screen img {
+  width: 100%;
+  height: auto;
+}
+
+/* Icons */
+.cb-icons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  justify-items: center;
+  align-items: center;
+  position: relative;
+  top: 85%; /* ממקם את האייקונים מתחת למסך */
+}
+
+.cb-icon {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Morphing Spotlight Effect */
+.cb-icon::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    #ff4b1f,
+    #ff9068,
+    #ffd200,
+    #0cebeb,
+    #20e3b2,
+    #29ffc6,
+    #ff4b1f
+  );
+  animation: rotateLight 6s linear infinite, morph 8s ease-in-out infinite;
+  z-index: 1;
+  filter: blur(20px);
+}
+
+.cb-icon img {
+  max-width: 60%;
+  max-height: 60%;
+  object-fit: contain;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.cb-icon:hover img {
+  transform: scale(1.15);
+}
+
+/* Keyframes */
+@keyframes rotateLight {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes morph {
+  0%, 100% { border-radius: 20px; filter: blur(12px); }
+  50%      { border-radius: 50%; filter: blur(25px); }
+}
+
+/* Mobile scaling */
+@media (max-width: 768px) {
+  .cb-stage {
+    width: 300px;
+    height: auto;
+  }
+
+  .cb-screen {
+    width: 150px;
+  }
+
+  .cb-icons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    top: 75%;
+  }
+
+  .cb-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
