@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useEffect } from "react";
-import "../development/development.css"; // שימוש ב-CSS הכללי של development
+import "../development/development.css"; 
 import FAQ from "../../../../components/faq";
+import DesignBurst from "../../../../components/DesignBurst"; // 👈 ייבוא חדש
 
 export default function BrandingPage() {
   useEffect(() => {
@@ -39,6 +40,9 @@ export default function BrandingPage() {
           leaving a lasting impression.
         </p>
 
+        {/* Design Burst Section */}
+        <DesignBurst />
+
         {/* Blocks */}
         <div className="dev-block">
           <div className="block-content">
@@ -63,7 +67,7 @@ export default function BrandingPage() {
         </div>
 
         <div className="dev-block">
-          <div className="block-content reverse">
+          <div className="block-content">
             <div className="block-text">
               <h2>Brand Identity</h2>
               <p>
