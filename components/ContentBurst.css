@@ -9,8 +9,8 @@
 .cb-stage {
   position: relative;
   margin: 0 auto;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 400px;
   max-width: 100%;
   z-index: 3;
 }
@@ -18,10 +18,10 @@
 /* Screen Center */
 .cb-screen {
   position: absolute;
-  top: 50%;
+  top: 30%; /* הרמתי את המחשב עוד למעלה */
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 220px; /* הגדלתי שיהיה בולט יותר */
+  width: 380px;
   z-index: 4;
 }
 
@@ -30,18 +30,17 @@
   height: auto;
 }
 
-/* Icons */
+/* Icons Row */
 .cb-icons {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  justify-items: center;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  gap: 25px;
   position: relative;
-  top: 85%; /* ממקם את האייקונים מתחת למסך */
+  top: 70%; /* ממקם את השורה מתחת למסך */
 }
 
 .cb-icon {
@@ -106,18 +105,19 @@
 /* Mobile scaling */
 @media (max-width: 768px) {
   .cb-stage {
-    width: 300px;
+    width: 100%;
     height: auto;
   }
 
   .cb-screen {
     width: 150px;
+    top: 25%; /* עוד יותר גבוה במובייל */
   }
 
   .cb-icons {
-    grid-template-columns: repeat(2, 1fr);
+    flex-wrap: wrap;
     gap: 15px;
-    top: 75%;
+    top: 65%;
   }
 
   .cb-icon {
