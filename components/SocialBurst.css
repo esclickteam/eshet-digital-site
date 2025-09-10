@@ -1,6 +1,6 @@
 .sb-section {
   position: relative;
-  padding: 60px 20px;
+  padding: 40px 20px; /* הקטנתי טיפה ריווח */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,19 +9,17 @@
 .sb-stage {
   position: relative;
   margin: 0 auto;
-  width: 500px;
-  height: 500px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 900px;
   z-index: 3;
+  text-align: center;
 }
 
-/* Phone Center + Halo Pulse */
+/* Phone Center */
 .sb-phone {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 380px;
+  margin: -80px auto 40px auto; /* ⬅ מרים את הטלפון למעלה */
+  width: 300px;
+  position: relative;
   z-index: 4;
 }
 
@@ -50,21 +48,21 @@
   100% { transform: translate(-50%, -50%) scale(1.6); opacity: 0; }
 }
 
-/* Icons */
+/* Icons Row */
 .sb-icons {
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 בשורה */
   gap: 25px;
+  justify-items: center;
+  max-width: 900px;
   position: relative;
-  top: 80%;
+  z-index: 5;
 }
 
 .sb-icon {
-  position: relative;
   width: 80px;
   height: 80px;
   border-radius: 20px;
@@ -72,9 +70,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   cursor: pointer;
-  opacity: 0; /* מתחילים מוסתרים */
+  opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.8s forwards, floatWave 3s ease-in-out infinite;
 }
@@ -83,8 +80,11 @@
   max-width: 60%;
   max-height: 60%;
   object-fit: contain;
-  z-index: 2;
   transition: transform 0.3s ease;
+}
+
+.sb-icon:hover img {
+  transform: scale(1.15);
 }
 
 /* Floating animation */
@@ -93,13 +93,13 @@
   50% { transform: translateY(-12px); }
 }
 
-/* כניסה הדרגתית */
+/* Fade in */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* דיליי לכל אייקון */
+/* Staggered delays */
 .sb-icon:nth-child(1) { animation-delay: 0.2s, 0s; }
 .sb-icon:nth-child(2) { animation-delay: 0.4s, 0s; }
 .sb-icon:nth-child(3) { animation-delay: 0.6s, 0s; }
@@ -107,33 +107,28 @@
 .sb-icon:nth-child(5) { animation-delay: 1s, 0s; }
 .sb-icon:nth-child(6) { animation-delay: 1.2s, 0s; }
 
-/* אפקט Glow מותאם מותג */
-.sb-icon.facebook    { box-shadow: 0 0 25px rgba(24, 119, 242, 0.6); }
-.sb-icon.instagram   { box-shadow: 0 0 25px rgba(225, 48, 108, 0.6); }
-.sb-icon.tiktok      { box-shadow: 0 0 25px rgba(0, 242, 234, 0.6); }
-.sb-icon.linkedin    { box-shadow: 0 0 25px rgba(10, 102, 194, 0.6); }
-.sb-icon.youtube     { box-shadow: 0 0 25px rgba(255, 0, 0, 0.6); }
-.sb-icon.twitter     { box-shadow: 0 0 25px rgba(29, 161, 242, 0.6); }
+/* Glow colors */
+.sb-icon.facebook  { box-shadow: 0 0 25px rgba(24, 119, 242, 0.6); }
+.sb-icon.instagram { box-shadow: 0 0 25px rgba(225, 48, 108, 0.6); }
+.sb-icon.tiktok    { box-shadow: 0 0 25px rgba(0, 242, 234, 0.6); }
+.sb-icon.linkedin  { box-shadow: 0 0 25px rgba(10, 102, 194, 0.6); }
+.sb-icon.youtube   { box-shadow: 0 0 25px rgba(255, 0, 0, 0.6); }
+.sb-icon.twitter   { box-shadow: 0 0 25px rgba(29, 161, 242, 0.6); }
 
-.sb-icon:hover img {
-  transform: scale(1.15);
-}
-
-/* Mobile scaling */
+/* Mobile */
 @media (max-width: 768px) {
   .sb-stage {
-    width: 300px;
+    width: 100%;
     height: auto;
   }
 
   .sb-phone {
     width: 200px;
-    position: relative;
-    margin-bottom: 20px;
+    margin: -40px auto 20px auto;
   }
 
   .sb-icons {
-    top: auto;
+    grid-template-columns: repeat(3, 1fr); /* 2 שורות של 3 */
     gap: 15px;
   }
 
