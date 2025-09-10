@@ -1,5 +1,6 @@
 "use client";
 import { useEffect } from "react";
+import { FaBriefcase, FaFolderOpen, FaHandshake } from "react-icons/fa"; // אייקונים מתאימים
 import "./StatsSection.css";
 
 export default function StatsSection() {
@@ -32,7 +33,7 @@ export default function StatsSection() {
               const numberEl = entry.target.querySelector(".stat-number");
               if (numberEl) animateCounter(numberEl);
               observer.unobserve(entry.target);
-            }, index * 300); // 👈 השהייה לכל בלוק
+            }, index * 300);
           }
         });
       },
@@ -45,14 +46,17 @@ export default function StatsSection() {
   return (
     <section className="stats-section">
       <div className="stat">
+        <FaBriefcase className="stat-icon" />
         <span className="stat-number color1" data-target="7">0</span>+
         <p>Years of Experience</p>
       </div>
       <div className="stat">
+        <FaFolderOpen className="stat-icon" />
         <span className="stat-number color2" data-target="150">0</span>+
         <p>Successful Projects</p>
       </div>
       <div className="stat">
+        <FaHandshake className="stat-icon" />
         <span className="stat-number color3" data-target="95">0</span>%
         <p>Client Retention</p>
       </div>

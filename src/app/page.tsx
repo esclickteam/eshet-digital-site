@@ -6,7 +6,7 @@ import AboutSection from "./AboutSection";
 import Services from "./Services";
 import ValuesSection from "./ValuesSection";
 import Projects from "../../components/Projects";
-import StatsSection from "../../components/StatsSection"; // 👈 הוספה
+import StatsSection from "../../components/StatsSection"; 
 import GetStartedForm from "../../components/GetStartedForm";
 
 export default function Home() {
@@ -18,8 +18,8 @@ export default function Home() {
         <AboutSection />
         <Services />
         <ValuesSection />
+        <StatsSection />   {/* 👈 מיקום אחרי הערכים */}
         <Projects />
-        <StatsSection /> {/* 👈 כאן נכנס הבלוק החדש */}
         <GetStartedForm />
         {/* Footer יורד מכאן כי הוא כבר קיים ב-layout */}
       </main>
