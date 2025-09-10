@@ -33,18 +33,9 @@ export default function LaptopBurst() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // חישוב radius רק בצד לקוח
+  // חישוב radius פרופורציונלי תמיד (אחוז קבוע מה-stage)
   useEffect(() => {
-    const calcRadius = () => {
-      if (window.innerWidth < 768) {
-        setRadius(stageSize * 0.33);
-      } else {
-        setRadius(stageSize * 0.38);
-      }
-    };
-    calcRadius();
-    window.addEventListener("resize", calcRadius);
-    return () => window.removeEventListener("resize", calcRadius);
+    setRadius(stageSize * 0.40); // תמיד 40% מה-stage, נראה טוב גם במובייל וגם בדסקטופ
   }, [stageSize]);
 
   const items = [
