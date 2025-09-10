@@ -90,3 +90,39 @@
     transform: scale(1);
   }
 }
+
+/* ===== Mobile Fix ===== */
+@media (max-width: 768px) {
+  .lb-stage {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .lb-laptop {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 0 auto 20px auto;
+    display: block;
+  }
+
+  .lb-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    position: static; /* מבטל absolute */
+    margin-top: 20px;
+  }
+
+  .lb-icon {
+    position: relative; /* במקום absolute */
+    width: 60px;
+    height: 60px;
+    opacity: 1;
+    transform: none;
+    animation: none; /* אפשר לבטל במובייל אם זה מציק */
+  }
+}
