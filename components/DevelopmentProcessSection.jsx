@@ -1,5 +1,6 @@
 "use client";
 import { useEffect } from "react";
+import "./DevelopmentProcessSection.css";
 
 export default function DevelopmentProcessSection() {
   useEffect(() => {
@@ -32,7 +33,7 @@ export default function DevelopmentProcessSection() {
         </p>
         <div className="process-image-wrapper">
           <img
-            src="/images/development-process.png" // 👈 התמונה שלך מתוך public
+            src="/images/development-process.png"
             alt="Development Process"
             className="process-image"
           />
