@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import LaptopBurst from "../../../../components/CampaignBurst";
+import CampaignBurst from "../../../../components/CampaignBurst";
 import "../development/development.css";
 import FAQ from "../../../../components/faq";
 
@@ -41,6 +41,9 @@ export default function DigitalCampaignsPage() {
           optimization. Our goal: generate more leads, more sales, and real
           business growth.
         </p>
+
+        {/* ===== Campaign Burst ===== */}
+        <CampaignBurst />
 
         {/* ===== Block 1 ===== */}
         <div className="dev-block">
@@ -206,12 +209,14 @@ export default function DigitalCampaignsPage() {
                 "We recommend starting with a budget of $1,000–$1,500 per month to allow proper testing and optimization.",
             },
             {
-              question: "Where should I advertise — Facebook, Instagram, or Google?",
+              question:
+                "Where should I advertise — Facebook, Instagram, or Google?",
               answer:
                 "It depends on your product and audience. We analyze where your customers are and allocate budget accordingly.",
             },
             {
-              question: "How long should a campaign run before knowing if it’s successful?",
+              question:
+                "How long should a campaign run before knowing if it’s successful?",
               answer:
                 "Digital campaigns can’t be measured in just a few days. Typically, at least 4–6 weeks of activity, testing, and optimization are needed to draw reliable conclusions.",
             },
