@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 /* ====== Stage ====== */
@@ -36,8 +37,6 @@
   position: absolute;
   top: 0;
   left: 0;
-
-  /* אנימציית סיבוב */
   animation: rotateCircle 20s linear infinite;
   transform-origin: center center;
 }
@@ -58,13 +57,11 @@
   transition: transform 0.4s ease, box-shadow 0.3s ease, opacity 0.6s ease;
 }
 
-/* Icon Images */
 .lb-icon img {
   max-width: 70%;
   max-height: 70%;
 }
 
-/* Hover effect */
 .lb-icon:hover {
   transform: translate(-50%, -50%) scale(1.1);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
@@ -76,30 +73,16 @@
   transform: translate(-50%, -50%) scale(1);
 }
 
-/* ====== Responsive ====== */
+/* ====== Responsive (scale only) ====== */
 @media (max-width: 768px) {
-  .lb-laptop {
-    width: 120px;
-  }
-
-  .lb-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 12px;
-  }
-
-  .lb-icon img {
-    max-width: 65%;
-    max-height: 65%;
+  .lb-stage {
+    transform: scale(0.65); /* מקטין את כל המעגל פרופורציונלית */
+    transform-origin: center center;
   }
 }
-
+  
 /* ====== Keyframes for Rotation ====== */
 @keyframes rotateCircle {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
