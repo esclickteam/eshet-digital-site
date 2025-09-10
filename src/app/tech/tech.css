@@ -23,10 +23,17 @@
 .animated-title {
   font-size: clamp(32px, 4vw, 52px);
   font-weight: 800;
-  color: #0f172a;
   margin-bottom: 20px;
-  text-shadow: 0 3px 8px rgba(0,0,0,0.25);
+
+  /* גרדיאנט צבעוני */
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  background-clip: text;             /* הגרסה התקנית */
+  -webkit-background-clip: text;     /* תמיכה ב-Chrome/Safari */
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
+
 
 .hero p {
   font-size: 18px;
