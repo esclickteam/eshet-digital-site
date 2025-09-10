@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import "../development/development.css"; // שימוש באותו CSS כללי
+import "../development/development.css"; // שימוש ב-CSS הכללי
 import FAQ from "../../../../components/faq";
 
 export default function SocialMediaPage() {
@@ -33,19 +33,19 @@ export default function SocialMediaPage() {
         {/* Hero */}
         <h1 className="dev-title gradient-text">Social Media Design & Content</h1>
         <p className="dev-intro">
-          Social Media Design & Content – Stand Out and Connect. We create custom
-          posts, stories, and banners tailored to your brand, designed to boost
-          engagement and strengthen your online presence.
+          Social Media Design & Content – Stand Out and Connect. We create
+          custom posts, stories, and banners tailored to your brand, designed to
+          boost engagement and strengthen your online presence.
         </p>
 
         {/* Blocks */}
         <div className="dev-block">
           <div className="block-content">
             <div className="block-text">
-              <h2>✍️ Custom Content</h2>
+              <h2>Custom Content</h2>
               <p>
-                We don’t use generic templates – we craft unique content that reflects
-                your brand’s voice.
+                We don’t use generic templates – we craft unique content that
+                reflects your brand’s voice.
               </p>
               <ul>
                 <li>✔ Marketing posts</li>
@@ -64,11 +64,11 @@ export default function SocialMediaPage() {
         <div className="dev-block">
           <div className="block-content reverse">
             <div className="block-text">
-              <h2>🎨 Standout Design</h2>
+              <h2>Standout Design</h2>
               <p>
-                In a fast-scrolling world, design is the difference between being
-                ignored and being noticed. We combine colors, typography, and graphics
-                that create a powerful visual presence.
+                In a fast-scrolling world, design is the difference between
+                being ignored and being noticed. We combine colors, typography,
+                and graphics that create a powerful visual presence.
               </p>
             </div>
             <div className="block-image">
@@ -82,11 +82,11 @@ export default function SocialMediaPage() {
         <div className="dev-block">
           <div className="block-content">
             <div className="block-text">
-              <h2>📊 Data-Driven Strategy</h2>
+              <h2>Data-Driven Strategy</h2>
               <p>
-                Beyond design, we analyze performance and create content based on
-                insights and data. This ensures higher engagement and conversions
-                month after month.
+                Beyond design, we analyze performance and create content based
+                on insights and data. This ensures higher engagement and
+                conversions month after month.
               </p>
             </div>
             <div className="block-image">
@@ -104,6 +104,45 @@ export default function SocialMediaPage() {
           </a>
         </div>
 
+        {/* Features Grid */}
+        <div className="features-section">
+          <h2 className="features-title">
+            What Makes Social Media Truly Effective?
+          </h2>
+          <div className="features-grid">
+            <div className="feature-card">
+              <div className="icon">✍️</div>
+              <h3>Unique Content</h3>
+              <p>Custom posts and stories tailored to your brand’s voice.</p>
+            </div>
+            <div className="feature-card">
+              <div className="icon">🎨</div>
+              <h3>Creative Design</h3>
+              <p>Eye-catching visuals that stand out in busy feeds.</p>
+            </div>
+            <div className="feature-card">
+              <div className="icon">📊</div>
+              <h3>Data Insights</h3>
+              <p>Performance tracking and optimization for better results.</p>
+            </div>
+            <div className="feature-card">
+              <div className="icon">⚡</div>
+              <h3>Engagement Growth</h3>
+              <p>Strategies that boost interactions and follower retention.</p>
+            </div>
+            <div className="feature-card">
+              <div className="icon">📢</div>
+              <h3>Ad Campaign Support</h3>
+              <p>Professional creatives designed for paid campaigns.</p>
+            </div>
+            <div className="feature-card">
+              <div className="icon">🌍</div>
+              <h3>Cross-Platform Consistency</h3>
+              <p>Unified design across Facebook, Instagram, and more.</p>
+            </div>
+          </div>
+        </div>
+
         {/* FAQ */}
         <FAQ
           faqs={[
@@ -114,7 +153,8 @@ export default function SocialMediaPage() {
             },
             {
               question: "Can I get stories in addition to posts?",
-              answer: "Absolutely. Our packages include custom-designed stories as well.",
+              answer:
+                "Absolutely. Our packages include custom-designed stories as well.",
             },
             {
               question: "Why is social media design important?",
