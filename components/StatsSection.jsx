@@ -47,12 +47,12 @@ export default function StatsSection() {
     <section className="stats-section">
       <div className="stat">
         <FaBriefcase className="stat-icon" />
-        <span className="stat-number color1" data-target="7">0</span>+
+        <span className="stat-number color1" data-target="5">0</span>+
         <p>Years of Experience</p>
       </div>
       <div className="stat">
         <FaFolderOpen className="stat-icon" />
-        <span className="stat-number color2" data-target="150">0</span>+
+        <span className="stat-number color2" data-target="250">0</span>+
         <p>Successful Projects</p>
       </div>
       <div className="stat">
