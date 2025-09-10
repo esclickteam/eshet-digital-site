@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import "./LaptopBurst.css"; // אפשר להשאיר אותו לשימוש חוזר
+import "./CampaignBurst.css"; 
 
 export default function CampaignBurst() {
   const ref = useRef(null);
@@ -39,16 +39,12 @@ export default function CampaignBurst() {
   }, [stageSize]);
 
   const items = [
-    { label: "WordPress", src: "/icons/wordpress.jpeg" },
-    { label: "Wix", src: "/icons/wix.png" },
-    { label: "Shopify", src: "/icons/shopify.jpeg" },
-    { label: "PayPal", src: "/icons/paypal.jpeg" },
-    { label: "React", src: "/icons/react.png" },
-    { label: "Next.js", src: "/icons/nextdotjs.jpeg" },
-    { label: "Node.js", src: "/icons/node.png" },
-    { label: "Vercel", src: "/icons/vercel.jpeg" },
+    { label: "WordPress", src: "/icons/Google Ads.jpeg" },
+    { label: "Wix", src: "/icons/Instagram.png" },
+    { label: "Shopify", src: "/icons/LinkedInn.png" },
+    { label: "PayPal", src: "/icons/TikTok.png" },
+    { label: "React", src: "/icons/youtube.png" },
     { label: "Meta", src: "/icons/meta.png" },
-    { label: "JavaScript", src: "/icons/javascript.jpeg" },
   ];
 
   return (

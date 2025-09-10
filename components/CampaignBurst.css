@@ -1,0 +1,92 @@
+/* ===== Campaign Burst Section ===== */
+.lb-section {
+  position: relative;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lb-stage {
+  position: relative;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* ===== Icon Center (Graph / Campaign) ===== */
+.lb-laptop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  max-width: 40%;
+  z-index: 2;
+  animation: pulseCenter 4s infinite ease-in-out;
+}
+
+/* אנימציה עדינה לאייקון המרכזי */
+@keyframes pulseCenter {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+/* ===== Outer Icons Around Circle ===== */
+.lb-icons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lb-icon {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: scale(0.5);
+  animation: fadeIn 0.8s forwards;
+}
+
+.lb-icon img {
+  max-width: 60%;
+  max-height: 60%;
+  object-fit: contain;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* אפקט hover */
+.lb-icon:hover img {
+  transform: scale(1.15);
+  box-shadow: 0 0 15px rgba(37, 117, 252, 0.4);
+}
+
+/* אנימציה של כניסה staggered */
+.lb-icon:nth-child(1) { animation-delay: 0.2s; }
+.lb-icon:nth-child(2) { animation-delay: 0.4s; }
+.lb-icon:nth-child(3) { animation-delay: 0.6s; }
+.lb-icon:nth-child(4) { animation-delay: 0.8s; }
+.lb-icon:nth-child(5) { animation-delay: 1s; }
+.lb-icon:nth-child(6) { animation-delay: 1.2s; }
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
