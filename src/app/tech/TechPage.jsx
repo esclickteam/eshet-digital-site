@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import "./tech.css";
 
@@ -45,26 +47,21 @@ export default function TechPage() {
           </p>
           <ul className="icon-list">
             <li>
-              <img src="/icons/wordpress.jpeg" alt="WordPress" /> WordPress –
-              flexible & SEO-friendly
+              <img src="/icons/wordpress.jpeg" alt="WordPress" /> WordPress – flexible & SEO-friendly
             </li>
             <li>
-              <img src="/icons/wix.png" alt="Wix" /> Wix – fast, simple,
-              effective
+              <img src="/icons/wix.png" alt="Wix" /> Wix – fast, simple, effective
             </li>
             <li>
-              <img src="/icons/shopify.jpeg" alt="Shopify" /> Shopify – built
-              for e-commerce growth
+              <img src="/icons/shopify.jpeg" alt="Shopify" /> Shopify – built for e-commerce growth
             </li>
             <li>
-              <img src="/icons/javascript.jpeg" alt="JavaScript" /> JavaScript –
-              the core programming language of the web
+              <img src="/icons/javascript.jpeg" alt="JavaScript" /> JavaScript – the core programming language of the web
             </li>
             <li>
               <img src="/icons/react.png" alt="React" /> React,{" "}
               <img src="/icons/nextdotjs.jpeg" alt="Next.js" /> Next.js,{" "}
-              <img src="/icons/node.png" alt="Node.js" /> Node.js – high-performance
-              custom solutions
+              <img src="/icons/node.png" alt="Node.js" /> Node.js – high-performance custom solutions
             </li>
           </ul>
         </div>
@@ -122,7 +119,7 @@ export default function TechPage() {
             <li>✔ Unique web applications</li>
             <li>✔ Custom integrations (payments, CRM, APIs)</li>
             <li>✔ Business dashboards</li>
-            <li>✔ Scalable systems built  for growth</li>
+            <li>✔ Scalable systems built for growth</li>
           </ul>
         </div>
       </section>
