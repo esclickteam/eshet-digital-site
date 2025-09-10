@@ -45,7 +45,7 @@ export default function DigitalCampaignsPage() {
         <div className="dev-block">
           <div className="block-content">
             <div className="block-text">
-              <h2>📊 Data-Driven Strategy</h2>
+              <h2>Data-Driven Strategy</h2>
               <p>
                 We don’t guess — we analyze. Every campaign is built on audience
                 research, competitor insights, and strategic planning.
@@ -58,7 +58,10 @@ export default function DigitalCampaignsPage() {
             </div>
             <div className="block-image">
               <div className="image-wrapper">
-                <img src="/images/campaign-strategy.png" alt="Campaign Strategy" />
+                <img
+                  src="/images/campaign-strategy.png"
+                  alt="Campaign Strategy"
+                />
               </div>
             </div>
           </div>
@@ -67,7 +70,7 @@ export default function DigitalCampaignsPage() {
         <div className="dev-block">
           <div className="block-content reverse">
             <div className="block-text">
-              <h2>🎨 Creatives that Convert</h2>
+              <h2>Creatives that Convert</h2>
               <p>
                 Great ads aren’t just pretty — they convert. We craft unique
                 creatives that combine compelling copy, visuals, and strong
@@ -85,15 +88,19 @@ export default function DigitalCampaignsPage() {
         <div className="dev-block">
           <div className="block-content">
             <div className="block-text">
-              <h2>⚡ Continuous Optimization</h2>
+              <h2>Continuous Optimization</h2>
               <p>
                 A well-managed campaign never stands still. We perform daily
-                optimizations to ensure you get the maximum ROI from your budget.
+                optimizations to ensure you get the maximum ROI from your
+                budget.
               </p>
             </div>
             <div className="block-image">
               <div className="image-wrapper">
-                <img src="/images/campaign-optimization.png" alt="Optimization" />
+                <img
+                  src="/images/campaign-optimization.png"
+                  alt="Optimization"
+                />
               </div>
             </div>
           </div>
@@ -102,7 +109,7 @@ export default function DigitalCampaignsPage() {
         <div className="dev-block">
           <div className="block-content reverse">
             <div className="block-text">
-              <h2>📈 Results that Speak for Themselves</h2>
+              <h2>Results that Speak for Themselves</h2>
               <p>
                 At the end of the day — results matter. We track performance,
                 provide clear transparent reports, and ensure every dollar works
@@ -124,6 +131,57 @@ export default function DigitalCampaignsPage() {
           </a>
         </div>
 
+        {/* Features Grid */}
+        <div className="features-section">
+          <h2 className="features-title">
+            What Makes a Campaign Truly Successful?
+          </h2>
+          <div className="features-grid">
+            <div className="feature-card">
+              <h3>Data-Driven Strategy</h3>
+              <p>
+                Every campaign starts with solid research — audience insights,
+                competitor analysis, and measurable goals.
+              </p>
+            </div>
+            <div className="feature-card">
+              <h3>Creative That Converts</h3>
+              <p>
+                Ads designed to capture attention and drive action — with
+                compelling visuals and strong copy.
+              </p>
+            </div>
+            <div className="feature-card">
+              <h3>Smart Budget Allocation</h3>
+              <p>
+                Maximize ROI by investing in the right platforms: Facebook,
+                Instagram, Google, LinkedIn.
+              </p>
+            </div>
+            <div className="feature-card">
+              <h3>Continuous Optimization</h3>
+              <p>
+                Campaigns are tracked daily — with A/B testing, targeting tweaks,
+                and performance improvements.
+              </p>
+            </div>
+            <div className="feature-card">
+              <h3>Transparent Reporting</h3>
+              <p>
+                Clear, easy-to-understand reports: clicks, leads, conversions,
+                and ROI.
+              </p>
+            </div>
+            <div className="feature-card">
+              <h3>Real Business Growth</h3>
+              <p>
+                More than just ads — campaigns that deliver new customers,
+                higher sales, and long-term impact.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* FAQ */}
         <FAQ
           faqs={[
@@ -138,14 +196,12 @@ export default function DigitalCampaignsPage() {
                 "We recommend starting with a budget of $1,000–$1,500 per month to allow proper testing and optimization.",
             },
             {
-              question:
-                "Where should I advertise — Facebook, Instagram, or Google?",
+              question: "Where should I advertise — Facebook, Instagram, or Google?",
               answer:
                 "It depends on your product and audience. We analyze where your customers are and allocate budget accordingly.",
             },
             {
-              question:
-                "How long should a campaign run before knowing if it’s successful?",
+              question: "How long should a campaign run before knowing if it’s successful?",
               answer:
                 "Digital campaigns can’t be measured in just a few days. Typically, at least 4–6 weeks of activity, testing, and optimization are needed to draw reliable conclusions.",
             },
