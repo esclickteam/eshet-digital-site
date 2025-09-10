@@ -5,7 +5,8 @@ import Hero from "./Hero";
 import AboutSection from "./AboutSection";
 import Services from "./Services";
 import ValuesSection from "./ValuesSection";
-import Projects from "../../components/Projects"; // ✅ תיקנתי את הגרש
+import Projects from "../../components/Projects";
+import StatsSection from "../../components/StatsSection"; // 👈 הוספה
 import GetStartedForm from "../../components/GetStartedForm";
 
 export default function Home() {
@@ -17,7 +18,8 @@ export default function Home() {
         <AboutSection />
         <Services />
         <ValuesSection />
-        <Projects /> {/* ✅ הקומפוננטה החדשה */}
+        <Projects />
+        <StatsSection /> {/* 👈 כאן נכנס הבלוק החדש */}
         <GetStartedForm />
         {/* Footer יורד מכאן כי הוא כבר קיים ב-layout */}
       </main>
