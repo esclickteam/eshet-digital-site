@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
-import "../book/development/development.css";
-import FAQ from "../../components/faq";
+import "../app/book/development/development.css";
+import FAQ from "./faq";
 
 export default function Projects() {
   useEffect(() => {
