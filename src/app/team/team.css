@@ -1,56 +1,104 @@
-.service-page {
-  padding: 80px 20px;
+/* ===== Team Page ===== */
+.team-page {
+  background: linear-gradient(180deg, #ffffff 0%, #f9faff 25%, #eef2ff 100%);
+  font-family: "Inter", sans-serif;
+  color: #0f172a;
+  padding-bottom: 100px;
+}
+
+.container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
-.hero {
+/* ===== Hero ===== */
+.team-hero {
+  padding: 120px 20px 80px;
   text-align: center;
-  margin-bottom: 60px;
 }
 
-.hero h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
+.team-title {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
   margin-bottom: 20px;
-  color: var(--primary-color, #1a237e);
+  line-height: 1.2;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  line-height: 1.6;
+/* ===== Gradient Text ===== */
+.gradient-text {
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  background-clip: text;             /* ✅ תקני */
+  -webkit-background-clip: text;     /* ✅ Chrome/Safari */
+  -webkit-text-fill-color: transparent;
+  color: transparent;                /* fallback */
+}
+
+.team-intro {
+  font-size: 20px;
+  line-height: 1.8;
   max-width: 800px;
   margin: 0 auto;
+  color: #334155;
 }
 
-.blocks {
+/* ===== Blocks ===== */
+.team-blocks {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-bottom: 80px;
+  gap: 40px;
+  margin-top: 80px;
 }
 
-.block {
-  background: #fff;
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s ease;
+.team-block {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
 }
 
-.block:hover {
-  transform: translateY(-4px);
+.team-block.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.block h2 {
-  margin-bottom: 15px;
+.team-block h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
 }
 
-.block ul {
+.team-block p,
+.team-block li {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #475569;
+}
+
+.team-block ul {
   list-style: none;
-  padding-left: 0;
+  padding: 0;
+  margin: 0;
 }
 
-.block li {
-  margin-bottom: 10px;
+.team-block ul li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .team-blocks {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 993px) {
+  .team-blocks {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
