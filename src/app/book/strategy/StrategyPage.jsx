@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect } from "react";
-import "../development/development.css"; // שימוש באותו CSS כללי
+import "../development/development.css"; 
+import StrategyBurst from "../../../../components/StrategyBurst"; // 👈 קומפוננטה חדשה
 import FAQ from "../../../../components/faq";
 
 export default function StrategyPage() {
@@ -40,6 +41,9 @@ export default function StrategyPage() {
           ongoing technical maintenance, we’re with you every step of the way.
         </p>
 
+        {/* Burst Section */}
+        <StrategyBurst />
+
         {/* Blocks */}
         <div className="dev-block">
           <div className="block-content">
@@ -57,14 +61,14 @@ export default function StrategyPage() {
             </div>
             <div className="block-image">
               <div className="image-wrapper">
-                <img src="/images/strategy-custom.png" alt="Custom Strategy" />
+                <img src="/images/strategy-custom.jpg" alt="Custom Strategy" />
               </div>
             </div>
           </div>
         </div>
 
         <div className="dev-block">
-          <div className="block-content reverse">
+          <div className="block-content">
             <div className="block-text">
               <h2>Website Maintenance</h2>
               <p>
@@ -80,7 +84,7 @@ export default function StrategyPage() {
             <div className="block-image">
               <div className="image-wrapper">
                 <img
-                  src="/images/strategy-maintenance.png"
+                  src="/images/strategy-maintenance.jpg"
                   alt="Website Maintenance"
                 />
               </div>
@@ -100,7 +104,7 @@ export default function StrategyPage() {
             <div className="block-image">
               <div className="image-wrapper">
                 <img
-                  src="/images/strategy-support.png"
+                  src="/images/strategy-support.jpg"
                   alt="Consulting & Support"
                 />
               </div>

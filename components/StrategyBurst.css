@@ -1,0 +1,122 @@
+.sb-section {
+  position: relative;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sb-stage {
+  position: relative;
+  margin: 0 auto;
+  width: 600px;
+  height: 400px;
+  max-width: 100%;
+  z-index: 3;
+}
+
+/* Core Image */
+.sb-core {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  z-index: 4;
+}
+
+.sb-core img {
+  width: 100%;
+  height: auto;
+}
+
+/* Icons Row */
+.sb-icons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  position: relative;
+  top: 70%;
+}
+
+.sb-icon {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Icon Images */
+.sb-icon img {
+  max-width: 60%;
+  max-height: 60%;
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* Hover effect */
+.sb-icon:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.4);
+}
+
+/* Connection Lines */
+.sb-icon::after {
+  content: "";
+  position: absolute;
+  top: -40px; /* נקודת חיבור לליבה */
+  left: 50%;
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(to top, rgba(0,123,255,0.7), transparent);
+  transform: translateX(-50%);
+  z-index: 1;
+  animation: pulseLine 2s infinite ease-in-out;
+}
+
+/* Line pulse effect */
+@keyframes pulseLine {
+  0%, 100% { opacity: 0.6; height: 40px; }
+  50% { opacity: 1; height: 50px; }
+}
+
+/* Mobile scaling */
+@media (max-width: 768px) {
+  .sb-stage {
+    width: 100%;
+    height: auto;
+  }
+
+  .sb-core {
+    width: 150px;
+    top: 25%;
+  }
+
+  .sb-icons {
+    flex-wrap: wrap;
+    gap: 15px;
+    top: 65%;
+  }
+
+  .sb-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .sb-icon::after {
+    top: -30px;
+    height: 30px;
+  }
+}
