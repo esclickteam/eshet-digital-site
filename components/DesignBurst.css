@@ -20,7 +20,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 480px; /* ⬅ גדול ובולט במרכז */
+  width: 480px; /* בולט במרכז */
   z-index: 2;
 }
 
@@ -34,10 +34,16 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  position: relative;
+  top: 110%;
 }
 
 .db-icon {
-  position: absolute;
+  position: relative;
   width: 70px;
   height: 70px;
   border-radius: 20px;
@@ -46,7 +52,14 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  animation: floatWave 3s ease-in-out infinite;
 }
+
+.db-icon:nth-child(2) { animation-delay: 0.3s; }
+.db-icon:nth-child(3) { animation-delay: 0.6s; }
+.db-icon:nth-child(4) { animation-delay: 0.9s; }
+.db-icon:nth-child(5) { animation-delay: 1.2s; }
+.db-icon:nth-child(6) { animation-delay: 1.5s; }
 
 .db-icon img {
   max-width: 60%;
@@ -60,38 +73,48 @@
   transform: scale(1.15);
 }
 
-/* Orbit Animations */
-@keyframes orbit {
-  from { transform: rotate(0deg) translateX(190px) rotate(0deg); }
-  to   { transform: rotate(360deg) translateX(190px) rotate(-360deg); }
+/* Floating animation */
+@keyframes floatWave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
-/* כל אייקון מתחיל בזווית אחרת */
-.orbit-1 { animation: orbit 25s linear infinite; transform: rotate(0deg) translateX(190px) rotate(0deg); }
-.orbit-2 { animation: orbit 30s linear infinite; transform: rotate(60deg) translateX(190px) rotate(-60deg); }
-.orbit-3 { animation: orbit 35s linear infinite; transform: rotate(120deg) translateX(190px) rotate(-120deg); }
-.orbit-4 { animation: orbit 28s linear infinite; transform: rotate(180deg) translateX(190px) rotate(-180deg); }
-.orbit-5 { animation: orbit 32s linear infinite; transform: rotate(240deg) translateX(190px) rotate(-240deg); }
-.orbit-6 { animation: orbit 40s linear infinite; transform: rotate(300deg) translateX(190px) rotate(-300deg); }
+/* Shine effect */
+.db-icon::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+  transform: rotate(25deg);
+  animation: shine 5s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  100% { transform: translateX(100%) rotate(25deg); }
+}
 
 /* Mobile scaling */
 @media (max-width: 768px) {
   .db-stage {
     width: 280px;
-    height: 280px;
+    height: auto;
   }
 
   .db-laptop {
-    width: 180px; /* ⬅ גדול, אבל פרופורציונלי */
+    width: 220px;
+  }
+
+  .db-icons {
+    gap: 15px;
+    top: 100%;
   }
 
   .db-icon {
     width: 50px;
     height: 50px;
-  }
-
-  @keyframes orbit {
-    from { transform: rotate(0deg) translateX(110px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(110px) rotate(-360deg); }
   }
 }
