@@ -1,5 +1,5 @@
 .dev-process-section {
-  padding: 100px 20px;
+  padding: 80px 20px;
   background: linear-gradient(135deg, #1a237e, #283593, #6a11cb, #ff6a00);
   text-align: center;
   color: #fff;
@@ -10,25 +10,31 @@
 .dev-process-section .container {
   position: relative;
   z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .dev-process-section .section-title {
-  font-size: 2.8rem;
+  font-size: clamp(2rem, 5vw, 2.8rem); /* מתכוונן לפי גודל המסך */
   font-weight: 800;
   margin-bottom: 20px;
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
 .dev-process-section .section-subtitle {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   margin-bottom: 40px;
   color: #e0e0e0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .process-image-wrapper {
   display: flex;
   justify-content: center;
   position: relative;
+  padding: 0 10px;
 }
 
 /* Glow צבעוני סביב התמונה */
@@ -60,8 +66,8 @@
 }
 
 .process-image {
-  max-width: 650px;
   width: 100%;
+  max-width: 650px;
   height: auto;
   opacity: 0;
   transform: scale(0.8) translateY(30px);
@@ -77,9 +83,49 @@
   transform: scale(1) translateY(0);
 }
 
-/* אפקט hover */
-.process-image:hover {
-  transform: scale(1.05) rotateX(6deg) rotateY(-6deg);
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.45));
-  transition: transform 0.6s ease, filter 0.6s ease;
+/* אפקט hover רק לדסקטופ */
+@media (hover: hover) and (pointer: fine) {
+  .process-image:hover {
+    transform: scale(1.05) rotateX(6deg) rotateY(-6deg);
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.45));
+    transition: transform 0.6s ease, filter 0.6s ease;
+  }
+}
+
+/* רספונסיביות למסכים קטנים */
+@media (max-width: 768px) {
+  .dev-process-section {
+    padding: 60px 15px;
+  }
+
+  .dev-process-section .section-title {
+    font-size: 1.8rem;
+  }
+
+  .dev-process-section .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+
+  .process-image {
+    max-width: 90%; /* שהתמונה לא תגלוש במסכים קטנים */
+  }
+}
+
+@media (max-width: 480px) {
+  .dev-process-section {
+    padding: 40px 10px;
+  }
+
+  .dev-process-section .section-title {
+    font-size: 1.5rem;
+  }
+
+  .dev-process-section .section-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .process-image {
+    max-width: 100%; /* במסכים הכי קטנים */
+  }
 }
