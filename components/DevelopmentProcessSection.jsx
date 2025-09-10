@@ -32,7 +32,7 @@ export default function DevelopmentProcessSection() {
         </p>
         <div className="process-image-wrapper">
           <img
-            src="/images/dev-tech.png" // 👈 מתוך public/images
+            src="/images/development-process.png" // 👈 התמונה שלך מתוך public
             alt="Development Process"
             className="process-image"
           />
