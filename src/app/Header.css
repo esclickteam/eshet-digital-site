@@ -48,7 +48,7 @@
   display: flex;
   gap: 35px;
   margin: 0 auto;
-  align-items: center; /* 👈 מוודא שהחץ והטקסט באותו קו */
+  align-items: center;
 }
 
 .nav-links li {
@@ -62,12 +62,33 @@
   font-size: 1rem;
   font-weight: 600;
   transition: color 0.3s;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px 0;
+  background: none !important;   /* ❌ מבטל רקע */
+  border: none !important;       /* ❌ מבטל גבול */
+  border-radius: 0 !important;   /* ❌ מבטל פינות עגולות */
+  box-shadow: none !important;   /* ❌ מבטל צל */
+  padding: 8px 0;                /* שמרתי רק על ריווח טקסט */
   display: flex;
-  align-items: center; /* 👈 טקסט + חץ מיושרים */
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+/* אפקט קו תחתון במעבר */
+.nav-links li a::after,
+.dropbtn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after,
+.dropbtn:hover::after {
+  width: 100%;
 }
 
 .nav-links li a:hover,
