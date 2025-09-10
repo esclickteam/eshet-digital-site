@@ -10,8 +10,9 @@
 .lb-stage {
   position: relative;
   margin: 0 auto;
+  width: 700px;   /* דסקטופ */
+  height: 700px;
   max-width: 100%;
-  max-height: 100%;
 }
 
 /* ===== Icon Center (Graph / Campaign) ===== */
@@ -21,12 +22,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 160px;
-  max-width: 40%;
   z-index: 2;
   animation: pulseCenter 4s infinite ease-in-out;
 }
 
-/* אנימציה עדינה לאייקון המרכזי */
 @keyframes pulseCenter {
   0%, 100% {
     transform: translate(-50%, -50%) scale(1);
@@ -65,13 +64,12 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* אפקט hover */
 .lb-icon:hover img {
   transform: scale(1.15);
   box-shadow: 0 0 15px rgba(37, 117, 252, 0.4);
 }
 
-/* אנימציה של כניסה staggered */
+/* staggered fade-in */
 .lb-icon:nth-child(1) { animation-delay: 0.2s; }
 .lb-icon:nth-child(2) { animation-delay: 0.4s; }
 .lb-icon:nth-child(3) { animation-delay: 0.6s; }
@@ -79,7 +77,6 @@
 .lb-icon:nth-child(5) { animation-delay: 1s; }
 .lb-icon:nth-child(6) { animation-delay: 1.2s; }
 
-/* ===== Animations ===== */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -91,37 +88,19 @@
   }
 }
 
+/* ===== Mobile: smaller circle ===== */
 @media (max-width: 768px) {
   .lb-stage {
-    width: 100%;
-    max-width: 350px;
-    margin: 0 auto;
+    width: 300px;   /* מקטין את כל המעגל */
+    height: 300px;
   }
 
   .lb-laptop {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    margin: 0 auto 20px auto;
-    display: block;
-  }
-
-  .lb-icons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 אייקונים בשורה */
-    gap: 15px;
-    justify-items: center;
-    margin-top: 20px;
-    position: static;
+    width: 100px;   /* מקטין את הלפטופ */
   }
 
   .lb-icon {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    opacity: 1;
-    transform: none;
-    animation: none;
+    width: 50px;    /* מקטין את האייקונים */
+    height: 50px;
   }
 }
