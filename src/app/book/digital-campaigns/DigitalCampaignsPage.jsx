@@ -63,7 +63,7 @@ export default function DigitalCampaignsPage() {
             <div className="block-image">
               <div className="image-wrapper">
                 <img
-                  src="/images/campaign-strategy.jpeg"
+                  src="/images/campaign-strategy.jpg"
                   alt="Campaign Strategy"
                 />
               </div>
@@ -84,7 +84,7 @@ export default function DigitalCampaignsPage() {
             </div>
             <div className="block-image">
               <div className="image-wrapper">
-                <img src="/images/campaign-creatives.jpeg" alt="Creatives" />
+                <img src="/images/campaign-creatives.jpg" alt="Creatives" />
               </div>
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function DigitalCampaignsPage() {
             <div className="block-image">
               <div className="image-wrapper">
                 <img
-                  src="/images/campaign-optimization.jpeg"
+                  src="/images/campaign-optimization.jpg"
                   alt="Optimization"
                 />
               </div>
@@ -125,7 +125,7 @@ export default function DigitalCampaignsPage() {
             </div>
             <div className="block-image">
               <div className="image-wrapper">
-                <img src="/images/campaign-results.jpeg" alt="Results" />
+                <img src="/images/campaign-results.jpg" alt="Results" />
               </div>
             </div>
           </div>
