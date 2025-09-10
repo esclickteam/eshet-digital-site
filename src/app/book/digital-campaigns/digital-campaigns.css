@@ -48,6 +48,7 @@
   display: flex;
   align-items: center;
   gap: 40px;
+  flex-direction: row; /* טקסט שמאל, תמונה ימין */
 }
 
 /* טקסט בצד שמאל (ברירת מחדל) */
@@ -70,7 +71,7 @@
 
 /* מחלקת reverse: להפוך צדדים (תמונה שמאל – טקסט ימין) */
 .block-content.reverse {
-  flex-direction: row-reverse;
+  flex-direction: row; /* לא הופך יותר */
 }
 
 /* ===== FAQ ===== */
