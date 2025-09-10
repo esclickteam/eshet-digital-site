@@ -45,9 +45,8 @@ export default function LaptopBurst() {
     { label: "JavaScript", src: "/icons/javascript.jpeg" },
   ];
 
-  const centerX = stageSize / 2;
-  const centerY = stageSize / 2;
-  const radius = stageSize * 0.38; // רדיוס יחסי
+  // רדיוס יחסי (קצת יותר קטן במובייל)
+  const radius = stageSize * (window.innerWidth < 768 ? 0.33 : 0.38);
 
   return (
     <div className="lb-section" ref={ref}>
@@ -61,22 +60,19 @@ export default function LaptopBurst() {
         <ul className="lb-icons">
           {items.map((it, i) => {
             const angle = (i / items.length) * (2 * Math.PI) - Math.PI / 2;
-            const x = centerX + radius * Math.cos(angle);
-            const y = centerY + radius * Math.sin(angle);
+            const x = 50 + (radius / stageSize) * 100 * Math.cos(angle);
+            const y = 50 + (radius / stageSize) * 100 * Math.sin(angle);
 
             return (
               <li
                 key={it.label}
                 className="lb-icon"
                 style={{
-                  left: `${x}px`,
-                  top: `${y}px`,
-                  transform: "translate(-50%, -50%)",
+                  left: `${x}%`,
+                  top: `${y}%`,
                 }}
               >
-                <div className="lb-icon-inner">
-                  <img src={it.src} alt={it.label} />
-                </div>
+                <img src={it.src} alt={it.label} />
               </li>
             );
           })}

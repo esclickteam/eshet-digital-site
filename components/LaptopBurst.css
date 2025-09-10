@@ -5,7 +5,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 /* ====== Stage ====== */
@@ -51,41 +50,40 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translate(-50%, -50%);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transform: translate(-50%, -50%); /* נשאר קבוע כאן */
   opacity: 0;
-  transition: opacity 0.6s ease;
+  transition: transform 0.4s ease, box-shadow 0.3s ease, opacity 0.6s ease;
 }
 
-/* ====== Inner wrapper שמאזן את הסיבוב ====== */
-.lb-icon-inner {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: counterRotate 20s linear infinite;
-}
-
+/* Icon Images – שומרים יציבות */
 .lb-icon img {
   max-width: 70%;
   max-height: 70%;
+  animation: counterRotate 20s linear infinite; /* נגד הסיבוב של המעגל */
 }
 
-/* ====== הופעה ====== */
+/* Hover effect */
+.lb-icon:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* ====== Animation when showing ====== */
 .lb-stage.show .lb-icon {
   opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 /* ====== Responsive ====== */
 @media (max-width: 768px) {
   .lb-laptop {
-    width: 140px;
+    width: 120px;
   }
 
   .lb-icon {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     border-radius: 12px;
   }
 
@@ -95,7 +93,7 @@
   }
 }
 
-/* ====== Keyframes ====== */
+/* ====== Keyframes for Rotation ====== */
 @keyframes rotateCircle {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
@@ -103,5 +101,5 @@
 
 @keyframes counterRotate {
   from { transform: rotate(0deg); }
-  to   { transform: rotate(-360deg); }
+  to   { transform: rotate(-360deg); } /* סיבוב הפוך כדי ליישר */
 }
