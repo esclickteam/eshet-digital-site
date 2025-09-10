@@ -1,0 +1,96 @@
+.service-page {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--primary-color, #1a237e);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Blocks grid */
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+/* Block Card */
+.block {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.block:hover {
+  transform: translateY(-4px);
+}
+
+.block h2 {
+  margin-bottom: 15px;
+}
+
+/* Icon List */
+.icon-list {
+  list-style: none;
+  padding: 0;
+}
+
+.icon-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.icon-list li:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.icon-list img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.icon-list li:hover img {
+  transform: scale(1.2) rotate(8deg);
+  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.2));
+}
+
+/* Fade-in + slide-up effect */
+.tech-block {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* כשהבלוק נכראה במסך – נוסיף מחלקת active */
+.tech-block.active {
+  opacity: 1;
+  transform: translateY(0);
+}

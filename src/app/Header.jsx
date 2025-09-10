@@ -70,7 +70,7 @@ export default function Header() {
               <div className="dropdown-col">
                 <a href="/book/social">Social Media</a>
                 <a href="/book/content">Content & Video</a>
-                <a href="/book/strategy">Strategy & Consulting</a>
+                <a href="/book/strategy">Digital Strategy & Maintenance</a>
               </div>
             </div>
           </li>
