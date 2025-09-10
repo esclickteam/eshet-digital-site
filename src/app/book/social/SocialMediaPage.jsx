@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import "../development/development.css"; 
-import CampaignBurst from "../../../../components/SocialBurst";
+import SocialBurst from "../../../../components/SocialBurst"; // 👈 עדכון הייבוא
 import FAQ from "../../../../components/faq";
 
 export default function SocialMediaPage() {
@@ -38,6 +38,9 @@ export default function SocialMediaPage() {
           custom posts, stories, and banners tailored to your brand, designed to
           boost engagement and strengthen your online presence.
         </p>
+
+        {/* Social Burst */}
+        <SocialBurst />  {/* 👈 נוסף כאן */}
 
         {/* Blocks */}
         <div className="dev-block">
