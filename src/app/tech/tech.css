@@ -1,96 +1,143 @@
+/* ===== Tech Section ===== */
 .service-page {
-  padding: 80px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 100px 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #eef2ff 25%, #1e3a8a 100%);
+  color: #fff;
+  font-family: "Inter", sans-serif;
 }
 
-/* Hero Section */
 .hero {
+  max-width: 900px;
+  margin: 0 auto 80px;
   text-align: center;
-  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
 }
 
-.hero h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
+.hero.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animated-title {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  color: #0f172a;
   margin-bottom: 20px;
-  color: var(--primary-color, #1a237e);
+  text-shadow: 0 3px 8px rgba(0,0,0,0.25);
 }
 
 .hero p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  max-width: 800px;
-  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #334155;
 }
 
-/* Blocks grid */
+/* ===== Blocks ===== */
 .blocks {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
 }
 
-/* Block Card */
 .block {
-  background: #fff;
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s ease;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 20px;
+  padding: 50px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
 }
 
-.block:hover {
-  transform: translateY(-4px);
+.block.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .block h2 {
-  margin-bottom: 15px;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 18px;
 }
 
-/* Icon List */
-.icon-list {
+.block p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ddd;
+  margin-bottom: 16px;
+}
+
+.block ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.icon-list li {
+.block ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #fff;
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  padding: 6px;
-  border-radius: 6px;
+  gap: 8px;
 }
 
-.icon-list li:hover {
-  background: rgba(0, 0, 0, 0.04);
-}
-
+/* ===== Icons in List ===== */
 .icon-list img {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
 }
 
-.icon-list li:hover img {
-  transform: scale(1.2) rotate(8deg);
-  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.2));
-}
-
-/* Fade-in + slide-up effect */
-.tech-block {
+/* ===== Outro ===== */
+.outro {
+  margin-top: 100px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #e2e8f0;
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: all 0.6s ease;
 }
 
-/* כשהבלוק נכראה במסך – נוסיף מחלקת active */
-.tech-block.active {
+.outro.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .block {
+    padding: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .animated-title {
+    font-size: 28px;
+  }
+  .block {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blocks {
+    gap: 40px;
+  }
+  .block h2 {
+    font-size: 22px;
+  }
+  .hero p, .block p, .outro {
+    font-size: 15px;
+  }
 }
