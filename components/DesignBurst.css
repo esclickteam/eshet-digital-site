@@ -20,7 +20,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 380px; /* ⬅ גדול ובולט במרכז */
+  width: 480px; /* ⬅ גדול ובולט במרכז */
   z-index: 2;
 }
 
