@@ -1,6 +1,5 @@
 "use client";
 import { useEffect } from "react";
-import devProcess from "../images/dev-tech.png"; // 👈 עדכנתי לנתיב שלך
 
 export default function DevelopmentProcessSection() {
   useEffect(() => {
@@ -33,7 +32,7 @@ export default function DevelopmentProcessSection() {
         </p>
         <div className="process-image-wrapper">
           <img
-            src={devProcess}
+            src="/images/dev-tech.png" // 👈 מתוך public/images
             alt="Development Process"
             className="process-image"
           />
