@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
-import "../development/development.css"; // שימוש ב-CSS הכללי
-import FAQ from "../../../../components/faq";
+import "../../book/development/development.css"; 
+import FAQ from "../../components/faq";
 
 export default function Projects() {
   useEffect(() => {
