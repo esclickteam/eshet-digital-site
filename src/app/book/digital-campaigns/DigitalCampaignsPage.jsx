@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
+import LaptopBurst from "../../../../components/CampaignBurst";
 import "../development/development.css";
 import FAQ from "../../../../components/faq";
 
