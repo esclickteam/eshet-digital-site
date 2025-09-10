@@ -122,7 +122,7 @@ export default function TechPage() {
             <li>✔ Unique web applications</li>
             <li>✔ Custom integrations (payments, CRM, APIs)</li>
             <li>✔ Business dashboards</li>
-            <li>✔ Scalable systems built for growth</li>
+            <li>✔ Scalable systems built  for growth</li>
           </ul>
         </div>
       </section>
