@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import "../../book/development/development.css"; 
+import "../book/development/development.css";
 import FAQ from "../../components/faq";
 
 export default function Projects() {
