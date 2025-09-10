@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect } from "react";
-import LaptopBurst from "../../../components/LaptopBurst";
+import LaptopBurst from "../../../../components/LaptopBurst";
 import "./development.css";
-import FAQ from "../../../components/faq";
+import FAQ from "../../../../components/faq";
 
 export default function DevelopmentPage() {
   useEffect(() => {
