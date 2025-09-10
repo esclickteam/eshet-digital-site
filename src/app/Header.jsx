@@ -76,7 +76,7 @@ export default function Header() {
           </li>
 
           {/* Regular links */}
-          <li><a href="/projects">Projects</a></li> {/* ✅ חדש */}
+          <li><a href="/projects">Projects</a></li> 
           <li><a href="/tech">Tech</a></li>
         </ul>
 
