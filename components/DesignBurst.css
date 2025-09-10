@@ -20,7 +20,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 200px; /* ⬅ הגדלתי מ-140px */
+  width: 380px; /* ⬅ גדול ובולט במרכז */
   z-index: 2;
 }
 
@@ -62,16 +62,17 @@
 
 /* Orbit Animations */
 @keyframes orbit {
-  from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
-  to   { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+  from { transform: rotate(0deg) translateX(190px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(190px) rotate(-360deg); }
 }
 
-.orbit-1 { animation: orbit 25s linear infinite; }
-.orbit-2 { animation: orbit 30s linear infinite; }
-.orbit-3 { animation: orbit 35s linear infinite; }
-.orbit-4 { animation: orbit 28s linear infinite; }
-.orbit-5 { animation: orbit 32s linear infinite; }
-.orbit-6 { animation: orbit 40s linear infinite; }
+/* כל אייקון מתחיל בזווית אחרת */
+.orbit-1 { animation: orbit 25s linear infinite; transform: rotate(0deg) translateX(190px) rotate(0deg); }
+.orbit-2 { animation: orbit 30s linear infinite; transform: rotate(60deg) translateX(190px) rotate(-60deg); }
+.orbit-3 { animation: orbit 35s linear infinite; transform: rotate(120deg) translateX(190px) rotate(-120deg); }
+.orbit-4 { animation: orbit 28s linear infinite; transform: rotate(180deg) translateX(190px) rotate(-180deg); }
+.orbit-5 { animation: orbit 32s linear infinite; transform: rotate(240deg) translateX(190px) rotate(-240deg); }
+.orbit-6 { animation: orbit 40s linear infinite; transform: rotate(300deg) translateX(190px) rotate(-300deg); }
 
 /* Mobile scaling */
 @media (max-width: 768px) {
@@ -81,7 +82,7 @@
   }
 
   .db-laptop {
-    width: 120px; /* ⬅ גדול יותר מהאייקונים */
+    width: 180px; /* ⬅ גדול, אבל פרופורציונלי */
   }
 
   .db-icon {
@@ -90,7 +91,7 @@
   }
 
   @keyframes orbit {
-    from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+    from { transform: rotate(0deg) translateX(110px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(110px) rotate(-360deg); }
   }
 }

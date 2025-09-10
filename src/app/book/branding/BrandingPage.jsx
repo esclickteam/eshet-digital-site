@@ -60,7 +60,7 @@ export default function BrandingPage() {
             </div>
             <div className="block-image">
               <div className="image-wrapper">
-                <img src="/images/branding-logo.png" alt="Custom Logos" />
+                <img src="/images/branding-logo.jpg" alt="Custom Logos" />
               </div>
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function BrandingPage() {
             </div>
             <div className="block-image">
               <div className="image-wrapper">
-                <img src="/images/branding-identity.png" alt="Brand Identity" />
+                <img src="/images/branding-identity.jpg" alt="Brand Identity" />
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function BrandingPage() {
             </div>
             <div className="block-image">
               <div className="image-wrapper">
-                <img src="/images/branding-visuals.png" alt="Marketing Visuals" />
+                <img src="/images/branding-visuals.jpg" alt="Marketing Visuals" />
               </div>
             </div>
           </div>
