@@ -286,6 +286,7 @@
 
  .dropdown-mobile .dropbtn {
   width: 100%;
+  text-align: left;
   font-size: 1.1rem;
   padding: 12px 0;
   background: none;
@@ -293,15 +294,17 @@
   font-weight: 600;
   cursor: pointer;
 
-  display: flex;          /* טקסט וחץ באותה שורה */
-  align-items: center;    /* מיושר אנכית */
+  display: flex;                /* 👈 טקסט וחץ באותה שורה */
+  align-items: center;          /* 👈 יישור אנכי */
+  justify-content: space-between; /* 👈 טקסט בצד שמאל, חץ בצד ימין */
 }
 
 .dropdown-mobile .dropbtn::after {
   content: "▾";
   font-size: 0.9rem;
-  margin-left: auto;      /* 👈 החץ תמיד נדחף לקצה ימין */
   transition: transform 0.3s ease;
+  display: inline-block;     /* 👈 מוודא שזה אינליין ליד הטקסט */
+  line-height: 1;            /* 👈 מבטל ירידה שורה */
 }
 
   .dropdown-mobile.open .dropbtn::after {
