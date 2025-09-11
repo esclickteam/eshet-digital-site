@@ -14,22 +14,22 @@ export default function Projects({ categoryFromUrl = null }) {
       {
         image: "/images/1.jpg",
         category: "Business",
-        title: "Business Website",
-        desc: "SEO-optimized website for a local business — boosting leads by 120%.",
+        title: "Personal Training Website",
+        desc: "A modern business website for a personal trainer, featuring services, class scheduling, and nutrition coaching. SEO-optimized — boosted client inquiries by 120%.",
         tags: ["Web"],
       },
       {
         image: "/images/2.jpg",
         category: "Corporate",
-        title: "Corporate Landing Page",
-        desc: "Clean design with conversion-focused CTA — increased signups by 80%.",
+        title: "Corporate Fitness SaaS Platform",
+        desc: "A full-featured SaaS platform for fitness studios — including AI workout generator, integrated billing, video sessions, and multi-trainer scheduling. Clean UX increased signups by 80%.",
         tags: ["Web"],
       },
 {
         image: "/images/3.jpg",
         category: "Business",
-        title: "Business Website",
-        desc: "SEO-optimized website for a local business — boosting leads by 120%.",
+        title: "Construction Business Website",
+        desc: "A professional corporate website for a construction company, showcasing services, past projects, and contact options. SEO-focused design drove strong local visibility.",
         tags: ["Web"],
       },
       {
