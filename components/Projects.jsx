@@ -1,10 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import "./Projects.css";
 import FAQ from "./faq";
 
 export default function Projects() {
-  // כרטיסים לכל קטגוריה עם תמונות אמיתיות
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  // כל הקטגוריות
   const projects = {
     "Website Design": [
       {
@@ -93,8 +97,23 @@ export default function Projects() {
     ],
   };
 
-  // ברירת מחדל: הטאב הראשון
-  const [activeTab, setActiveTab] = useState(Object.keys(projects)[0]);
+  // ברירת מחדל מתוך ה־URL או הטאב הראשון
+  const categoryFromUrl = searchParams.get("category");
+  const defaultTab = categoryFromUrl && projects[categoryFromUrl] ? categoryFromUrl : Object.keys(projects)[0];
+  const [activeTab, setActiveTab] = useState(defaultTab);
+
+  // סנכרון state אם הפרמטר ב־URL משתנה
+  useEffect(() => {
+    if (categoryFromUrl && projects[categoryFromUrl]) {
+      setActiveTab(categoryFromUrl);
+    }
+  }, [categoryFromUrl]);
+
+  // שינוי טאב גם יעדכן את ה־URL
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+    router.push(`/projects?category=${encodeURIComponent(tab)}`);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -133,7 +152,7 @@ export default function Projects() {
           {Object.keys(projects).map((tab) => (
             <button
               key={tab}
-              onClick={() => setActiveTab(tab)}
+              onClick={() => handleTabClick(tab)}
               className={`tab-btn ${activeTab === tab ? "active" : ""}`}
             >
               {tab}
