@@ -28,69 +28,91 @@ export default function Projects() {
     return () => observer.disconnect();
   }, []);
 
-  // כרטיסים לכל קטגוריה עם תמונות מהתיקייה שלך
+  // כרטיסים לכל קטגוריה עם תמונות אמיתיות
   const projects = {
     "Website Design": [
       {
         image: "/images/1.jpg",
+        category: "Business",
         title: "Business Website",
         desc: "SEO-optimized website for a local business — boosting leads by 120%.",
+        tags: ["Web"],
       },
       {
         image: "/images/video.png",
+        category: "Corporate",
         title: "Corporate Landing Page",
         desc: "Clean design with conversion-focused CTA — increased signups by 80%.",
+        tags: ["Web"],
       },
     ],
     "E-commerce": [
       {
         image: "/images/wix.png",
+        category: "E-commerce",
         title: "Online Store",
         desc: "Shopify build with custom design, sales up by 200% in 3 months.",
+        tags: ["Web", "Shopify"],
       },
       {
         image: "/images/wordpress.jpeg",
+        category: "E-commerce",
         title: "Product Catalog Website",
         desc: "Modern catalog design with easy checkout — improved UX and retention.",
+        tags: ["Web"],
       },
     ],
     "Branding & Logo Design": [
       {
         image: "/images/branding-identity.jpg",
+        category: "Branding",
         title: "Luxury Beauty Studio",
         desc: "Minimalist logo + visual identity — strong brand recognition online.",
+        tags: ["Design"],
       },
       {
         image: "/images/branding-logo.jpg",
+        category: "Branding",
         title: "Tech Startup Branding",
         desc: "Logo, typography, and social media kit for a new SaaS brand.",
+        tags: ["Logo", "Design"],
       },
       {
         image: "/images/branding-visuals.jpg",
+        category: "Branding",
         title: "Brand Visuals",
         desc: "Social media kit and marketing visuals to strengthen online presence.",
+        tags: ["Design"],
       },
     ],
     "Digital Marketing Campaigns": [
       {
         image: "/images/campaign-creatives.jpg",
+        category: "Marketing",
         title: "Instagram Campaign",
         desc: "Reaching 50K+ users organically with engaging reels & carousels.",
+        tags: ["Social", "Ads"],
       },
       {
         image: "/images/campaign-optimization.jpg",
+        category: "Marketing",
         title: "Video Ads",
         desc: "CTR improved ×3 with creative video editing for Facebook ads.",
+        tags: ["Ads"],
       },
       {
         image: "/images/campaign-results.jpg",
+        category: "Marketing",
         title: "Results Dashboard",
         desc: "Analytics-focused campaign management showing real results.",
+        tags: ["Analytics"],
       },
       {
         image: "/images/campaign-strategy.jpg",
+        category: "Marketing",
         title: "Campaign Strategy",
         desc: "Strategic planning to maximize audience engagement.",
+        tags: ["Strategy"],
       },
     ],
   };
@@ -121,16 +143,24 @@ export default function Projects() {
         {/* Projects Grid */}
         <div className="features-grid">
           {projects[activeTab].map((proj, i) => (
-            <div key={i} className="feature-card project-card">
-              {proj.image && (
-                <img
-                  src={proj.image}
-                  alt={proj.title}
-                  className="project-image"
-                />
-              )}
-              <h3>{proj.title}</h3>
-              <p>{proj.desc}</p>
+            <div key={i} className="project-card">
+              <img
+                src={proj.image}
+                alt={proj.title}
+                className="project-image"
+              />
+              <div className="project-info">
+                <span className="project-category">{proj.category}</span>
+                <h3>{proj.title}</h3>
+                <p>{proj.desc}</p>
+                <div className="tags">
+                  {proj.tags.map((tag, idx) => (
+                    <span key={idx} className="tag">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           ))}
         </div>
