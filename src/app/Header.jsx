@@ -109,7 +109,7 @@ export default function Header() {
           <li><a href="/projects">Projects</a></li>
           <li><a href="/tech">Tech</a></li>
 
-          {/* Contact CTA (עיצוב כרטיס עם אייקון) */}
+          {/* Contact CTA מתחת לקטגוריות */}
           <li className="mobile-cta">
             <a
               href="https://wa.me/972526850711?text=Hello,%20I%20would%20like%20more%20details%20about%20your%20services"
@@ -118,7 +118,7 @@ export default function Header() {
               className="contact-card"
             >
               <div className="icon-circle">
-                <img src="/icons/whatsapp.png" alt="WhatsApp" />
+                <img src="/icons/WhatsApp.svg" alt="WhatsApp" />
               </div>
               <span>Contact Us</span>
             </a>

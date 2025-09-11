@@ -246,7 +246,8 @@
 
   /* ====== CTA במובייל – כרטיס עם אייקון ====== */
   .mobile-cta {
-    margin-top: auto;
+    margin-top: 10px;
+    width: 100%;
   }
 
   .contact-card {
@@ -254,9 +255,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #e6f9f0;
-    padding: 18px;
-    border-radius: 14px;
+    background: #f1fff8; /* ירקרק עדין */
+    padding: 20px;
+    border-radius: 16px;
     text-decoration: none;
     color: #128c7e;
     font-weight: 600;
@@ -266,24 +267,25 @@
   }
   .contact-card:hover {
     transform: translateY(-3px);
-    background: #d6f3e5;
+    background: #e3f9ef;
   }
 
   .icon-circle {
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
-    background: #25d366;
+    background: linear-gradient(135deg, #25d366, #128c7e);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     box-shadow: 0 3px 8px rgba(0,0,0,0.15);
   }
 
   .icon-circle img {
     width: 28px;
     height: 28px;
+    object-fit: contain;
   }
 }
 
