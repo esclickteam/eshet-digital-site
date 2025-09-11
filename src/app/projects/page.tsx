@@ -1,11 +1,15 @@
-"use client";
+import Projects from "../../../components/Projects";
 
-import Projects from "../../../components/Projects.jsx";  
+interface ProjectsPageProps {
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
 
-export default function ProjectsPage() {
+export default function ProjectsPage({ searchParams }: ProjectsPageProps) {
+  const category = (searchParams?.category as string) || null;
+
   return (
     <main>
-      <Projects />
+      <Projects categoryFromUrl={category} />
     </main>
   );
 }
