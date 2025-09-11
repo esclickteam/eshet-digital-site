@@ -3,7 +3,7 @@ import Projects from "../../../components/Projects";
 export default function ProjectsPage({
   searchParams,
 }: {
-  searchParams?: Record<string, string | string[] | undefined>;
+  searchParams?: any;
 }) {
   const category = (searchParams?.category as string) || null;
 
