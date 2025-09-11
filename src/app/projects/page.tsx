@@ -1,10 +1,10 @@
 import Projects from "../../../components/Projects";
 
-interface ProjectsPageProps {
-  searchParams?: { [key: string]: string | string[] | undefined };
-}
-
-export default function ProjectsPage({ searchParams }: ProjectsPageProps) {
+export default function ProjectsPage({
+  searchParams,
+}: {
+  searchParams?: Record<string, string | string[] | undefined>;
+}) {
   const category = (searchParams?.category as string) || null;
 
   return (
