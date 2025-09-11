@@ -29,7 +29,7 @@ export default function Header() {
           <span></span><span></span><span></span>
         </button>
 
-        {/* ===== Desktop Menu (כמו שהוא) ===== */}
+        {/* ===== Desktop Menu ===== */}
         <ul className="nav-links desktop-only">
           <li><a href="/">Home</a></li>
           <li className="dropdown">
@@ -59,13 +59,16 @@ export default function Header() {
           <li><a href="/tech">Tech</a></li>
         </ul>
 
-        {/* ===== Mobile Menu (רק בהמבורגר) ===== */}
+        {/* ===== Mobile Menu ===== */}
         <ul className={`nav-links mobile-only ${menuOpen ? "open" : ""}`}>
           <li><a href="/">Home</a></li>
 
-          {/* About - פתיחה רק במובייל */}
+          {/* About - מובייל */}
           <li className={`dropdown-mobile ${openDropdown === "about" ? "open" : ""}`}>
-            <button onClick={() => toggleDropdown("about")} className="dropbtn">
+            <button
+              onClick={() => toggleDropdown("about")}
+              className={`dropbtn ${openDropdown === "about" ? "open" : ""}`}
+            >
               About
             </button>
             {openDropdown === "about" && (
@@ -77,9 +80,12 @@ export default function Header() {
             )}
           </li>
 
-          {/* Services - פתיחה רק במובייל */}
+          {/* Services - מובייל */}
           <li className={`dropdown-mobile ${openDropdown === "services" ? "open" : ""}`}>
-            <button onClick={() => toggleDropdown("services")} className="dropbtn">
+            <button
+              onClick={() => toggleDropdown("services")}
+              className={`dropbtn ${openDropdown === "services" ? "open" : ""}`}
+            >
               Services
             </button>
             {openDropdown === "services" && (
@@ -97,7 +103,7 @@ export default function Header() {
           <li><a href="/projects">Projects</a></li>
           <li><a href="/tech">Tech</a></li>
 
-          {/* CTA */}
+          {/* CTA Mobile */}
           <li className="mobile-cta">
             <a
               href="https://wa.me/972526850711?text=Hello,%20I%20would%20like%20more%20details%20about%20your%20services"
@@ -110,7 +116,7 @@ export default function Header() {
           </li>
         </ul>
 
-        {/* Desktop CTA */}
+        {/* CTA Desktop */}
         <div className="header-cta">
           <a
             href="https://wa.me/972526850711?text=Hello,%20I%20would%20like%20more%20details%20about%20your%20services"
