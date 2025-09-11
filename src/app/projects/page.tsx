@@ -1,12 +1,13 @@
 import Projects from "../../../components/Projects";
 
-type SearchParams = { [key: string]: string | string[] | undefined };
+// נגדיר טיפוס מותאם לפרמטרים
+export type SearchParams = Record<string, string | string[] | undefined>;
 
-interface ProjectsPageProps {
+export default function ProjectsPage({
+  searchParams,
+}: {
   searchParams?: SearchParams;
-}
-
-export default function ProjectsPage({ searchParams }: ProjectsPageProps) {
+}) {
   const category = (searchParams?.category as string) || null;
 
   return (
