@@ -30,6 +30,26 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* ===== Category Title ===== */
+.category-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: left;
+  margin: 20px 0 30px;
+  color: #1e3a8a; /* צבע מודגש */
+  position: relative;
+}
+
+.category-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
 /* ===== Projects Grid ===== */
 .features-grid {
   display: grid;
