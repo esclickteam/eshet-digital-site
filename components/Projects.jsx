@@ -76,22 +76,34 @@ export default function Projects({ categoryFromUrl = null }) {
       },
       
     ],
+
     "E-commerce": [
       {
-        image: "/images/wix.png",
-        category: "E-commerce",
-        title: "Online Store",
-        desc: "Shopify build with custom design, sales up by 200% in 3 months.",
-        tags: ["Web", "Shopify"],
+         image: "/images/E-commerce/1.jpg",
+    category: "E-commerce",
+    title: "Online Store",
+    desc: "Shopify build with custom design, sales up by 200% in 3 months.",
+    tags: ["Web", "Shopify"],
       },
-      {
-        image: "/images/wordpress.jpeg",
-        category: "E-commerce",
-        title: "Product Catalog Website",
-        desc: "Modern catalog design with easy checkout — improved UX and retention.",
-        tags: ["Web"],
+       {
+         image: "/images/E-commerce/2.jpg",
+    category: "E-commerce",
+    title: "Online Store",
+    desc: "Shopify build with custom design, sales up by 200% in 3 months.",
+    tags: ["Web", "Shopify"],
       },
+
+
+
+
+
+
+
+
+
     ],
+
+    
     "Branding & Logo Design": [
       {
         image: "/images/branding-identity.jpg",
