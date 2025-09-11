@@ -1,11 +1,11 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import "./Projects.css";
 import FAQ from "./faq";
 
-export default function Projects() {
+export default function Projects({ categoryFromUrl = null }) {
   const router = useRouter();
 
   // כל הקטגוריות
@@ -97,7 +97,23 @@ export default function Projects() {
     ],
   };
 
-  // אנימציית כניסה
+  // ברירת מחדל
+  const defaultTab =
+    categoryFromUrl && projects[categoryFromUrl]
+      ? categoryFromUrl
+      : Object.keys(projects)[0];
+
+  const [activeTab, setActiveTab] = useState(defaultTab);
+
+  // שינוי טאב יעדכן גם URL
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+    router.push(`/projects?category=${encodeURIComponent(tab)}`, {
+      scroll: false,
+    });
+  };
+
+  // אנימציות כניסה
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -130,38 +146,57 @@ export default function Projects() {
           technology to deliver impactful digital solutions.
         </p>
 
-        {/* Projects Grid - כל הקטגוריות ברצף */}
-        {Object.entries(projects).map(([categoryName, items]) => (
-          <div key={categoryName} className="category-block">
-            <h2 className="category-title">{categoryName}</h2>
-            <div className="features-grid">
-              {items.map((proj, i) => (
-                <div key={i} className="project-card">
-                  <div className="image-wrapper">
-                    <Image
-                      src={proj.image}
-                      alt={proj.title}
-                      fill
-                      className="project-image"
-                    />
-                  </div>
-                  <div className="project-info">
-                    <span className="project-category">{proj.category}</span>
-                    <h3>{proj.title}</h3>
-                    <p>{proj.desc}</p>
-                    <div className="tags">
-                      {proj.tags.map((tag, idx) => (
-                        <span key={idx} className="tag">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+        {/* Tabs */}
+        <div className="tabs">
+          {Object.keys(projects).map((tab) => (
+            <button
+              key={tab}
+              onClick={() => handleTabClick(tab)}
+              className={`tab-btn ${activeTab === tab ? "active" : ""}`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+
+        {/* Projects Grid */}
+        <div className="category-block">
+          <h2 className="category-title">{activeTab}</h2>
+          <div className="features-grid">
+            {projects[activeTab].map((proj, i) => (
+              <div key={i} className="project-card full-card">
+                {/* תמונה + Overlay */}
+                <div className="project-cover">
+                  <Image
+                    src={proj.image}
+                    alt={proj.title}
+                    fill
+                    className="cover-image"
+                  />
+                  <div className="cover-overlay">
+                    <h2 className="cover-title">{proj.title}</h2>
+                    <p className="cover-desc">{proj.desc}</p>
+                    <a href="/get-started" className="cover-button">
+                      Get Started
+                    </a>
                   </div>
                 </div>
-              ))}
-            </div>
+
+                {/* מידע מתחת לתמונה */}
+                <div className="project-info">
+                  <span className="project-category">{proj.category}</span>
+                  <div className="tags">
+                    {proj.tags.map((tag, idx) => (
+                      <span key={idx} className="tag">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
 
         {/* CTA */}
         <div className="cta-wrapper">
