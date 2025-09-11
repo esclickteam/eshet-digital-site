@@ -74,14 +74,7 @@ export default function Projects({ categoryFromUrl = null }) {
         desc: "SEO-optimized website for a local business — boosting leads by 120%.",
         tags: ["Web"],
       },
-      {
-        image: "/images/10.jpg",
-        category: "Corporate",
-        title: "Corporate Landing Page",
-        desc: "Clean design with conversion-focused CTA — increased signups by 80%.",
-        tags: ["Web"],
-      },
-
+      
     ],
     "E-commerce": [
       {
