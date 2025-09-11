@@ -109,7 +109,7 @@ export default function Header() {
           <li><a href="/projects">Projects</a></li>
           <li><a href="/tech">Tech</a></li>
 
-          {/* Contact CTA מתחת לקטגוריות */}
+          {/* Contact CTA */}
           <li className="mobile-cta">
             <a
               href="https://wa.me/972526850711?text=Hello,%20I%20would%20like%20more%20details%20about%20your%20services"
@@ -121,6 +121,21 @@ export default function Header() {
                 <img src="/icons/WhatsApp.svg" alt="WhatsApp" />
               </div>
               <span>Contact Us</span>
+            </a>
+          </li>
+
+          {/* Book a Discovery Call CTA */}
+          <li className="mobile-cta">
+            <a
+              href="https://www.eshetdigital.com/book"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="call-card"
+            >
+              <div className="icon-circle call-icon">
+                <img src="/icons/CalendarColor.svg" alt="Calendar" />
+              </div>
+              <span>Book a Discovery Call</span>
             </a>
           </li>
         </ul>
