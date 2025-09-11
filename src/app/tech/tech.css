@@ -136,23 +136,35 @@
   margin: 0 auto;
 }
 
+/* כרטיסים עם רקע Gradient ייחודי */
 .case-card {
-  background: #fff;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 25px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.case-card:nth-child(1) {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+.case-card:nth-child(2) {
+  background: linear-gradient(135deg, #ff5722, #ff9800);
+}
+.case-card:nth-child(3) {
+  background: linear-gradient(135deg, #00b09b, #96c93d);
 }
 
 .case-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.18);
 }
 
 .case-card h3 {
-  color: #1a237e;
-  margin-bottom: 10px;
-  font-size: 1.2rem;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 /* ===== Outro Section ===== */

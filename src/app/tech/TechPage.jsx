@@ -1,146 +1,185 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
+import { motion } from "framer-motion";
 import "./tech.css";
 
 export default function TechPage() {
-  useEffect(() => {
-    const blocks = document.querySelectorAll(".tech-block");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-            observer.unobserve(entry.target);
-          }
-        });
+  // אנימציות כלליות
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // דיליי בין כל ילד
       },
-      { threshold: 0.2 }
-    );
+    },
+  };
 
-    blocks.forEach((block) => observer.observe(block));
-    return () => observer.disconnect();
-  }, []);
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  // בלוקים
+  const blocks = [
+    {
+      title: "⚙️ Our Tech Stack",
+      desc: "Every business is unique — and so are its technical needs.",
+      list: [
+        "WordPress – flexible & SEO-friendly",
+        "Wix – fast, simple, effective",
+        "Shopify – built for e-commerce growth",
+        "JavaScript – the web’s core language",
+        "React, Next.js, Node.js – high-performance solutions",
+      ],
+    },
+    {
+      title: "🤖 Automation & AI",
+      desc: "We implement automation and AI to streamline processes.",
+      list: [
+        "Smart chatbots for instant replies",
+        "Automated booking & CRM systems",
+        "AI-driven marketing content",
+        "Email & funnel automation",
+      ],
+    },
+    {
+      title: "🔒 Hosting & Security",
+      desc: "We ensure your website stays online, secure, and fast.",
+      list: [
+        "High-speed hosting (Vercel, AWS, Cloudflare)",
+        "SSL certificates for maximum trust",
+        "Daily backups & monitoring",
+        "Advanced cyber protection",
+      ],
+    },
+    {
+      title: "📊 Analytics & Data",
+      desc: "We don’t guess — we measure and improve constantly.",
+      list: [
+        "Google Analytics & Search Console",
+        "Heatmaps & behavior tracking",
+        "Conversion optimization tools",
+        "Real-time reporting dashboards",
+      ],
+    },
+    {
+      title: "🛠 Custom Development",
+      desc: "When standard tools aren’t enough — we build custom solutions.",
+      list: [
+        "Unique web applications",
+        "Custom integrations (payments, CRM, APIs)",
+        "Business dashboards",
+        "Scalable systems for growth",
+      ],
+    },
+  ];
 
   return (
     <div className="service-page">
       {/* Hero Section */}
-      <section className="hero tech-block">
+      <motion.section
+        className="hero"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={fadeInUp}
+      >
         <h1 className="animated-title">
           Technology That Powers <span className="highlight">Success</span>
         </h1>
         <p>
           Behind every successful brand lies advanced technology. 
-          We use the latest tools and platforms to ensure your business is always one step ahead.
+          We use the latest tools and platforms to ensure your business 
+          is always one step ahead.
         </p>
         <div className="cta-buttons">
-          <a href="/contact" className="btn-primary">Request a Tech Audit</a>
-          <a href="/projects" className="btn-secondary">Explore Our Work</a>
+          <a href="/contact" className="btn-primary">
+            Request a Tech Audit
+          </a>
+          <a href="/projects" className="btn-secondary">
+            Explore Our Work
+          </a>
         </div>
-      </section>
+      </motion.section>
 
-      {/* Blocks */}
-      <section className="blocks">
-        {/* Block 1 – Tech Stack */}
-        <div className="block tech-block card">
-          <h2>⚙️ Our Tech Stack</h2>
-          <p>
-            Every business is unique — and so are its technical needs. 
-            We combine the world’s leading platforms with modern frameworks to 
-            build websites that are beautiful, powerful, and future-proof.
-          </p>
-          <ul className="icon-list">
-            <li><img src="/icons/wordpress.jpeg" alt="WordPress" /> WordPress – flexible & SEO-friendly</li>
-            <li><img src="/icons/wix.png" alt="Wix" /> Wix – fast, simple, effective</li>
-            <li><img src="/icons/shopify.jpeg" alt="Shopify" /> Shopify – built for e-commerce growth</li>
-            <li><img src="/icons/javascript.jpeg" alt="JavaScript" /> JavaScript – the web’s core language</li>
-            <li>
-              <img src="/icons/react.png" alt="React" /> React,{" "}
-              <img src="/icons/nextdotjs.jpeg" alt="Next.js" /> Next.js,{" "}
-              <img src="/icons/node.png" alt="Node.js" /> Node.js – custom, high-performance solutions
-            </li>
-          </ul>
-        </div>
-
-        {/* Block 2 – Automation & AI */}
-        <div className="block tech-block card">
-          <h2>🤖 Automation & AI</h2>
-          <p>We implement automation and AI to streamline processes, save time, and improve customer experiences.</p>
-          <ul>
-            <li>✔ Smart chatbots for instant replies</li>
-            <li>✔ Automated booking & CRM systems</li>
-            <li>✔ AI-driven marketing content</li>
-            <li>✔ Email & funnel automation</li>
-          </ul>
-        </div>
-
-        {/* Block 3 – Hosting & Security */}
-        <div className="block tech-block card">
-          <h2>🔒 Hosting & Security</h2>
-          <p>We ensure your website stays online, secure, and lightning-fast.</p>
-          <ul>
-            <li>✔ High-speed hosting (Vercel, AWS, Cloudflare)</li>
-            <li>✔ SSL certificates for maximum trust</li>
-            <li>✔ Daily backups & monitoring</li>
-            <li>✔ Advanced protection against cyber threats</li>
-          </ul>
-        </div>
-
-        {/* Block 4 – Analytics & Data */}
-        <div className="block tech-block card">
-          <h2>📊 Analytics & Data</h2>
-          <p>We don’t guess — we measure. Every site and campaign comes with clear analytics for continuous improvement.</p>
-          <ul>
-            <li>✔ Google Analytics & Search Console</li>
-            <li>✔ Heatmaps & behavior tracking</li>
-            <li>✔ Conversion optimization tools</li>
-            <li>✔ Real-time reporting dashboards</li>
-          </ul>
-        </div>
-
-        {/* Block 5 – Custom Development */}
-        <div className="block tech-block card">
-          <h2>🛠 Custom Development</h2>
-          <p>Some businesses need more than standard tools — and that’s where our custom development comes in.</p>
-          <ul>
-            <li>✔ Unique web applications</li>
-            <li>✔ Custom integrations (payments, CRM, APIs)</li>
-            <li>✔ Business dashboards</li>
-            <li>✔ Scalable systems built for growth</li>
-          </ul>
-        </div>
-      </section>
+      {/* Tech Blocks with stagger */}
+      <motion.section
+        className="blocks"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
+        {blocks.map((block, i) => (
+          <motion.div className="block card" key={i} variants={fadeInUp}>
+            <h2>{block.title}</h2>
+            <p>{block.desc}</p>
+            <ul>
+              {block.list.map((item, j) => (
+                <li key={j}>✔ {item}</li>
+              ))}
+            </ul>
+          </motion.div>
+        ))}
+      </motion.section>
 
       {/* Case Studies */}
-      <section className="case-studies tech-block">
+      <motion.section
+        className="case-studies"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={container}
+      >
         <h2>🚀 Real Results with Technology</h2>
         <div className="case-grid">
-          <div className="case-card">
-            <h3>🏠 Real Estate Project</h3>
-            <p>Reduced load time by 40% using Next.js & Vercel.</p>
-          </div>
-          <div className="case-card">
-            <h3>🛒 E-commerce Growth</h3>
-            <p>Boosted sales by 200% with custom Shopify apps.</p>
-          </div>
-          <div className="case-card">
-            <h3>💼 Corporate Landing Page</h3>
-            <p>Increased conversions by 80% with a tailored design system.</p>
-          </div>
+          {[
+            {
+              title: "🏠 Real Estate Project",
+              result: "Reduced load time by 40% using Next.js & Vercel.",
+            },
+            {
+              title: "🛒 E-commerce Growth",
+              result: "Boosted sales by 200% with custom Shopify apps.",
+            },
+            {
+              title: "💼 Corporate Landing Page",
+              result: "Increased conversions by 80% with a tailored design.",
+            },
+          ].map((caseItem, i) => (
+            <motion.div
+              key={i}
+              className="case-card"
+              variants={fadeInUp}
+              whileHover={{ scale: 1.05 }}
+            >
+              <h3>{caseItem.title}</h3>
+              <p>{caseItem.result}</p>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Outro */}
-      <section className="outro tech-block">
+      <motion.section
+        className="outro"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={fadeInUp}
+      >
         <h2>Let’s Build the Future Together</h2>
         <p>
           For us, technology is not the goal — it’s the foundation. 
-          Success is not measured only by design or marketing, but by the integration of 
-          reliable, innovative, and secure technology with the right strategy.
+          Success is measured by combining reliable, innovative, and secure 
+          technology with the right strategy.
         </p>
-        <a href="/contact" className="btn-primary large">Book a Free Consultation</a>
-      </section>
+        <a href="/contact" className="btn-primary large">
+          Book a Free Consultation
+        </a>
+      </motion.section>
     </div>
   );
 }
