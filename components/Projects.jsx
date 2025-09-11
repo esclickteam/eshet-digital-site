@@ -92,14 +92,55 @@ export default function Projects({ categoryFromUrl = null }) {
     desc: "Shopify build with custom design, sales up by 200% in 3 months.",
     tags: ["Web", "Shopify"],
       },
-
-
-
-
-
-
-
-
+ {
+         image: "/images/E-commerce/3.jpg",
+    category: "E-commerce",
+    title: "Online Store",
+    desc: "Shopify build with custom design, sales up by 200% in 3 months.",
+    tags: ["Web", "Shopify"],
+      },
+       {
+         image: "/images/E-commerce/4.jpg",
+    category: "E-commerce",
+    title: "Online Store",
+    desc: "Shopify build with custom design, sales up by 200% in 3 months.",
+    tags: ["Web", "Shopify"],
+      },
+       {
+         image: "/images/E-commerce/5.jpg",
+    category: "E-commerce",
+    title: "Online Store",
+    desc: "Shopify build with custom design, sales up by 200% in 3 months.",
+    tags: ["Web", "Shopify"],
+      },
+       {
+         image: "/images/E-commerce/6.jpg",
+    category: "E-commerce",
+    title: "Online Store",
+    desc: "Shopify build with custom design, sales up by 200% in 3 months.",
+    tags: ["Web", "Shopify"],
+      },
+       {
+         image: "/images/E-commerce/7.jpg",
+    category: "E-commerce",
+    title: "Online Store",
+    desc: "Shopify build with custom design, sales up by 200% in 3 months.",
+    tags: ["Web", "Shopify"],
+      },
+       {
+         image: "/images/E-commerce/8.jpg",
+    category: "E-commerce",
+    title: "Online Store",
+    desc: "Shopify build with custom design, sales up by 200% in 3 months.",
+    tags: ["Web", "Shopify"],
+      },
+      {
+         image: "/images/E-commerce/9.jpg",
+    category: "E-commerce",
+    title: "Online Store",
+    desc: "Shopify build with custom design, sales up by 200% in 3 months.",
+    tags: ["Web", "Shopify"],
+      },
 
     ],
 
