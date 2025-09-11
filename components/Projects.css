@@ -22,23 +22,21 @@
 /* כשעומדים עם העכבר (לא טאב פעיל) */
 .tab-btn:hover:not(.active) {
   background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: #fff;
-  border-color: transparent; /* שיהיה חלק ונקי */
+  color: #fff !important;
+  border-color: transparent !important; /* שיהיה חלק ונקי */
 }
 
 /* טאב פעיל */
-/* טאב פעיל */
-.tab-btn.active {
-  background: linear-gradient(135deg, #6a11cb, #2575fc); /* רקע צבעוני */
+.tabs .tab-btn.active {
+  background: linear-gradient(135deg, #6a11cb, #2575fc) !important; /* רקע צבעוני */
   color: #fff !important; /* טקסט לבן ברור */
-  border-color: transparent; /* בלי מסגרת מפריעה */
-  font-weight: 700; /* טקסט יותר מודגש */
-  box-shadow: 0 4px 14px rgba(106, 17, 203, 0.35); /* צל צבעוני */
+  border-color: transparent !important; /* בלי מסגרת מפריעה */
+  font-weight: 700 !important; /* טקסט יותר מודגש */
+  box-shadow: 0 4px 14px rgba(106, 17, 203, 0.35) !important; /* צל צבעוני */
   transform: translateY(-2px); /* בולט למעלה */
   position: relative;
   z-index: 1;
 }
-
 
 /* ===== Category Title ===== */
 .category-title {
