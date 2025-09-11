@@ -326,7 +326,8 @@
     width: 28px;   /* אותו גודל אייקון כמו הוואטסאפ */
     height: 28px;
     object-fit: contain;
-    filter: brightness(0) invert(1); /* שיהיה לבן */
+    filter: none; /* ❌ לא להפוך ללבן */
+
   }
 }
 
