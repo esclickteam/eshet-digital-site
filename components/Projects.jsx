@@ -1,13 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import "./Projects.css";
 import FAQ from "./faq";
 
 export default function Projects({ categoryFromUrl = null }) {
   const router = useRouter();
-  const searchParams = useSearchParams();
 
   // כל הקטגוריות
   const projects = {
@@ -98,17 +97,13 @@ export default function Projects({ categoryFromUrl = null }) {
     ],
   };
 
-  // קביעת ברירת מחדל לטאב הראשון
-  const defaultTab = Object.keys(projects)[0];
+  // ברירת מחדל: ניקח מה-URL אם קיים, אחרת את הטאב הראשון
+  const defaultTab =
+    categoryFromUrl && projects[categoryFromUrl]
+      ? categoryFromUrl
+      : Object.keys(projects)[0];
 
-  // ננסה קודם לקחת מה-URL, אם אין – ניקח את הטאב הראשון
-  const categoryFromQuery = searchParams?.get("category");
-  const initialTab =
-    (categoryFromQuery && projects[categoryFromQuery] && categoryFromQuery) ||
-    (categoryFromUrl && projects[categoryFromUrl] && categoryFromUrl) ||
-    defaultTab;
-
-  const [activeTab, setActiveTab] = useState(initialTab);
+  const [activeTab, setActiveTab] = useState(defaultTab);
 
   // שינוי טאב יעדכן גם URL
   const handleTabClick = (tab) => {
