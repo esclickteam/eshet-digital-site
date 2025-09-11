@@ -271,13 +271,31 @@
     background: #e3f9ef;
   }
 
+  .contact-card .icon-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  }
+
+  .contact-card .icon-circle img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
+
   /* Book a Call Card */
   .call-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #fdf3ff; /* ורדרד בהיר */
+    background: #fdf3ff;
     padding: 20px;
     border-radius: 16px;
     text-decoration: none;
@@ -292,35 +310,23 @@
     background: #f8e1fb;
   }
 
-  /* Icon Circle בסיסי */
-  .icon-circle {
+  .call-card .icon-circle {
     width: 52px;
     height: 52px;
     border-radius: 50%;
+    background: none; /* שקוף כדי שהאייקון יוצג בצבע המקורי */
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-  }
-
-  .icon-circle img {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
-  }
-
-  /* צבעים שונים לכל אייקון */
-  .contact-card .icon-circle {
-    background: linear-gradient(135deg, #25d366, #128c7e);
-  }
-
-  .call-card .icon-circle {
-    background: linear-gradient(135deg, #ff4f81, #a64fff);
+    box-shadow: none;
   }
 
   .call-card .icon-circle img {
-    filter: brightness(0) invert(1); /* שיהיה לבן */
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: none; /* לא להפוך ללבן */
   }
 }
 
