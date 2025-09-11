@@ -1,9 +1,11 @@
 "use client";
-import React, { useEffect } from "react";
-import '../src/app/book/development/development.css';
+import React, { useEffect, useState } from "react";
+import "./Projects.css";
 import FAQ from "./faq";
 
 export default function Projects() {
+  const [activeTab, setActiveTab] = useState("Website Design");
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -26,67 +28,90 @@ export default function Projects() {
     return () => observer.disconnect();
   }, []);
 
+  // כרטיסים לכל קטגוריה
+  const projects = {
+    "Website Design": [
+      {
+        icon: "💻",
+        title: "Business Website",
+        desc: "SEO-optimized website for a local business — boosting leads by 120%.",
+      },
+      {
+        icon: "🌐",
+        title: "Corporate Landing Page",
+        desc: "Clean design with conversion-focused CTA — increased signups by 80%.",
+      },
+    ],
+    "E-commerce": [
+      {
+        icon: "🛍",
+        title: "Online Store",
+        desc: "Shopify build with custom design, sales up by 200% in 3 months.",
+      },
+      {
+        icon: "📦",
+        title: "Product Catalog Website",
+        desc: "Modern catalog design with easy checkout — improved UX and retention.",
+      },
+    ],
+    "Branding & Logo Design": [
+      {
+        icon: "🎨",
+        title: "Luxury Beauty Studio",
+        desc: "Minimalist logo + visual identity — strong brand recognition online.",
+      },
+      {
+        icon: "✒️",
+        title: "Tech Startup Branding",
+        desc: "Logo, typography, and social media kit for a new SaaS brand.",
+      },
+    ],
+    "Digital Marketing Campaigns": [
+      {
+        icon: "📱",
+        title: "Instagram Campaign",
+        desc: "Reaching 50K+ users organically with engaging reels & carousels.",
+      },
+      {
+        icon: "🎥",
+        title: "Video Ads",
+        desc: "CTR improved ×3 with creative video editing for Facebook ads.",
+      },
+    ],
+  };
+
   return (
     <section className="dev-section">
       <div className="container">
         {/* Hero */}
         <h1 className="dev-title gradient-text">Our Projects</h1>
         <p className="dev-intro">
-          Explore some of the projects we’ve crafted — combining strategy,
-          design, and technology to deliver impactful digital solutions for our
-          clients.
+          Explore projects we’ve crafted — combining strategy, design, and
+          technology to deliver impactful digital solutions.
         </p>
+
+        {/* Tabs */}
+        <div className="tabs">
+          {Object.keys(projects).map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`tab-btn ${activeTab === tab ? "active" : ""}`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
 
         {/* Projects Grid */}
         <div className="features-grid">
-          <div className="feature-card project-card">
-            <div className="icon">💻</div>
-            <h3>Business Website</h3>
-            <p>
-              A modern, SEO-optimized website built for a local business —
-              increasing their leads by 120%.
-            </p>
-          </div>
-          <div className="feature-card project-card">
-            <div className="icon">📱</div>
-            <h3>Mobile Campaign</h3>
-            <p>
-              Social media campaign tailored for Instagram & TikTok — reaching
-              50K+ users organically.
-            </p>
-          </div>
-          <div className="feature-card project-card">
-            <div className="icon">🛍</div>
-            <h3>E-Commerce Store</h3>
-            <p>
-              Full Shopify build with custom design, boosting online sales by
-              200% within 3 months.
-            </p>
-          </div>
-          <div className="feature-card project-card">
-            <div className="icon">🎥</div>
-            <h3>Video Ads</h3>
-            <p>
-              Engaging ad creatives with professional editing, improving CTR by
-              3× compared to previous campaigns.
-            </p>
-          </div>
-          <div className="feature-card project-card">
-            <div className="icon">🌍</div>
-            <h3>Global Branding</h3>
-            <p>
-              Rebranding for an international company — building consistency
-              across website, socials, and ads.
-            </p>
-          </div>
-          <div className="feature-card project-card">
-            <div className="icon">⚡</div>
-            <h3>Optimization Project</h3>
-            <p>
-              Technical optimization improving site performance and achieving
-              Google PageSpeed score 95+.
-            </p>
-          </div>
+          {projects[activeTab].map((proj, i) => (
+            <div key={i} className="feature-card project-card">
+              <div className="icon">{proj.icon}</div>
+              <h3>{proj.title}</h3>
+              <p>{proj.desc}</p>
+            </div>
+          ))}
         </div>
 
         {/* CTA */}
@@ -102,7 +127,7 @@ export default function Projects() {
             {
               question: "What kind of projects do you take on?",
               answer:
-                "We handle websites, e-commerce, branding, digital marketing campaigns, and more.",
+                "We handle websites, e-commerce, branding, and digital marketing campaigns.",
             },
             {
               question: "Can you customize projects to my needs?",
