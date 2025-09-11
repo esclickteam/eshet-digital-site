@@ -146,28 +146,93 @@ export default function Projects({ categoryFromUrl = null }) {
 
     
     "Branding & Logo Design": [
+  
       {
-        image: "/images/branding-identity.jpg",
-        category: "Branding",
-        title: "Luxury Beauty Studio",
-        desc: "Minimalist logo + visual identity — strong brand recognition online.",
-        tags: ["Design"],
-      },
-      {
-        image: "/images/branding-logo.jpg",
-        category: "Branding",
-        title: "Tech Startup Branding",
-        desc: "Logo, typography, and social media kit for a new SaaS brand.",
-        tags: ["Logo", "Design"],
-      },
-      {
-        image: "/images/branding-visuals.jpg",
-        category: "Branding",
-        title: "Brand Visuals",
-        desc: "Social media kit and marketing visuals to strengthen online presence.",
-        tags: ["Design"],
-      },
+  image: "/images/branding-logo-design/1.jpg",
+  category: "Branding & Logo Design",
+  title: "Brand Identity Project",
+  desc: "Complete brand identity package including logo, color palette, typography, and visual guidelines.",
+  tags: ["Branding", "Design", "Logo"],
+},
+
+{
+  image: "/images/branding-logo-design/2.jpg",
+  category: "Branding & Logo Design",
+  title: "Brand Identity Project",
+  desc: "Complete brand identity package including logo, color palette, typography, and visual guidelines.",
+  tags: ["Branding", "Design", "Logo"],
+},
+
+{
+  image: "/images/branding-logo-design/3.jpg",
+  category: "Branding & Logo Design",
+  title: "Brand Identity Project",
+  desc: "Complete brand identity package including logo, color palette, typography, and visual guidelines.",
+  tags: ["Branding", "Design", "Logo"],
+},
+
+{
+  image: "/images/branding-logo-design/4.jpg",
+  category: "Branding & Logo Design",
+  title: "Brand Identity Project",
+  desc: "Complete brand identity package including logo, color palette, typography, and visual guidelines.",
+  tags: ["Branding", "Design", "Logo"],
+},
+
+{
+  image: "/images/branding-logo-design/5.jpg",
+  category: "Branding & Logo Design",
+  title: "Brand Identity Project",
+  desc: "Complete brand identity package including logo, color palette, typography, and visual guidelines.",
+  tags: ["Branding", "Design", "Logo"],
+},
+
+{
+  image: "/images/branding-logo-design/6.jpg",
+  category: "Branding & Logo Design",
+  title: "Brand Identity Project",
+  desc: "Complete brand identity package including logo, color palette, typography, and visual guidelines.",
+  tags: ["Branding", "Design", "Logo"],
+},
+
+{
+  image: "/images/branding-logo-design/7.jpg",
+  category: "Branding & Logo Design",
+  title: "Brand Identity Project",
+  desc: "Complete brand identity package including logo, color palette, typography, and visual guidelines.",
+  tags: ["Branding", "Design", "Logo"],
+},
+
+{
+  image: "/images/branding-logo-design/8.jpg",
+  category: "Branding & Logo Design",
+  title: "Brand Identity Project",
+  desc: "Complete brand identity package including logo, color palette, typography, and visual guidelines.",
+  tags: ["Branding", "Design", "Logo"],
+},
+
+{
+  image: "/images/branding-logo-design/9.jpg",
+  category: "Branding & Logo Design",
+  title: "Brand Identity Project",
+  desc: "Complete brand identity package including logo, color palette, typography, and visual guidelines.",
+  tags: ["Branding", "Design", "Logo"],
+},
+
+  
+
+
+      
+
+
+
+
+
+
+
+
     ],
+
     "Digital Marketing Campaigns": [
       {
         image: "/images/campaign-creatives.jpg",
