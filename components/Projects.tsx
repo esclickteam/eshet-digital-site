@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image"; // ✅ שימוש ב־next/image
 import "./Projects.css";
 import FAQ from "./faq";
 
@@ -114,7 +115,7 @@ export default function Projects({ categoryFromUrl }: ProjectsProps) {
   // שינוי טאב יעדכן גם את ה־URL
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);
-    router.push(`/projects?category=${encodeURIComponent(tab)}`);
+    router.push(`/projects?category=${encodeURIComponent(tab)}`, { scroll: false }); // ✅ מעבר חלק
   };
 
   // אנימציית כניסה ל־cards ו־CTA
@@ -167,9 +168,11 @@ export default function Projects({ categoryFromUrl }: ProjectsProps) {
         <div className="features-grid">
           {projects[activeTab].map((proj, i) => (
             <div key={i} className="project-card">
-              <img
+              <Image
                 src={proj.image}
                 alt={proj.title}
+                width={600}  // ✅ קבע רוחב/גובה לצורך אופטימיזציה
+                height={400}
                 className="project-image"
               />
               <div className="project-info">
