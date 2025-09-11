@@ -1,10 +1,12 @@
 import Projects from "../../../components/Projects";
 
-export default function ProjectsPage({
-  searchParams,
-}: {
-  searchParams?: any;
-}) {
+type SearchParams = { [key: string]: string | string[] | undefined };
+
+interface ProjectsPageProps {
+  searchParams?: SearchParams;
+}
+
+export default function ProjectsPage({ searchParams }: ProjectsPageProps) {
   const category = (searchParams?.category as string) || null;
 
   return (
