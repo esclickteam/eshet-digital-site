@@ -54,66 +54,58 @@
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
-/* ===== Full Cover Image with Overlay ===== */
-.project-cover {
-  position: relative;
+/* ===== Project Image ===== */
+.project-image {
   width: 100%;
-  height: 380px; /* גובה גבוה יותר - כמו עמוד נחיתה */
   overflow: hidden;
 }
 
 .cover-image {
-  object-fit: cover;
-  z-index: 1;
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* 👈 התמונה לא נחתכת */
+  display: block;
 }
 
-.cover-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.45); /* שכבת כהות */
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+/* ===== Project Details (טקסט מתחת לתמונה) ===== */
+.project-details {
   padding: 20px;
-  z-index: 2;
+  text-align: center;
 }
 
 .cover-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 800;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  color: #111827;
 }
 
 .cover-desc {
-  font-size: 1.1rem;
+  font-size: 1rem;
   max-width: 600px;
-  margin-bottom: 20px;
+  margin: 0 auto 16px;
+  color: #374151;
 }
 
 .cover-button {
   background: #ff5722;
   color: #fff;
-  padding: 12px 28px;
+  padding: 10px 24px;
   border-radius: 30px;
   font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
   transition: background 0.3s ease;
+  display: inline-block;
 }
 
 .cover-button:hover {
   background: #e64a19;
 }
 
-/* ===== Project Info Underneath ===== */
+/* ===== Project Info (קטגוריה + טאגים) ===== */
 .project-info {
-  padding: 18px 20px;
+  padding: 16px 20px;
   border-top: 1px solid #f1f1f1;
 }
 

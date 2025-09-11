@@ -165,24 +165,27 @@ export default function Projects({ categoryFromUrl = null }) {
           <div className="features-grid">
             {projects[activeTab].map((proj, i) => (
               <div key={i} className="project-card full-card">
-                {/* תמונה + Overlay */}
-                <div className="project-cover">
+                {/* תמונה בראש */}
+                <div className="project-image">
                   <Image
                     src={proj.image}
                     alt={proj.title}
-                    fill
+                    width={600}
+                    height={400}
                     className="cover-image"
                   />
-                  <div className="cover-overlay">
-                    <h2 className="cover-title">{proj.title}</h2>
-                    <p className="cover-desc">{proj.desc}</p>
-                    <a href="/get-started" className="cover-button">
-                      Get Started
-                    </a>
-                  </div>
                 </div>
 
-                {/* מידע מתחת לתמונה */}
+                {/* טקסט מתחת לתמונה */}
+                <div className="project-details">
+                  <h2 className="cover-title">{proj.title}</h2>
+                  <p className="cover-desc">{proj.desc}</p>
+                  <a href="/get-started" className="cover-button">
+                    Get Started
+                  </a>
+                </div>
+
+                {/* מידע נוסף */}
                 <div className="project-info">
                   <span className="project-category">{proj.category}</span>
                   <div className="tags">
