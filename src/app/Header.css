@@ -60,6 +60,8 @@
   transition: color 0.3s;
   background: none !important;
   border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
   padding: 8px 0;
   display: flex;
   align-items: center;
@@ -129,6 +131,7 @@
 .whatsapp-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   background: linear-gradient(135deg, #25d366, #128c7e);
   color: #fff;
@@ -138,6 +141,7 @@
   font-weight: 600;
   transition: transform 0.3s, background 0.3s;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 .whatsapp-btn:hover {
   transform: translateY(-2px);
@@ -174,6 +178,15 @@
   padding: 0;
   margin-left: 10px;
   z-index: 1100;
+
+  outline: none; /* מסיר outline כחול */
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent; /* מסיר הבזק כחול במובייל */
+}
+.hamburger:focus {
+  outline: none;
+  box-shadow: none;
+  background: none;
 }
 .hamburger span {
   width: 100%;
@@ -234,4 +247,13 @@
     text-decoration: none;
   }
   .dropdown-content-mobile a:hover { color: var(--primary); }
+
+  /* CTA במובייל */
+  .mobile-cta {
+    margin-top: auto;
+  }
+  .mobile-cta .whatsapp-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }

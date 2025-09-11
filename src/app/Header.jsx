@@ -26,22 +26,26 @@ export default function Header() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          <span></span><span></span><span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
 
-        {/* ===== Desktop Menu (כמו שהוא) ===== */}
+        {/* ===== Desktop Menu ===== */}
         <ul className="nav-links desktop-only">
           <li><a href="/">Home</a></li>
+
           <li className="dropdown">
-            <button className="dropbtn">About ▾</button>
+            <button className="dropbtn">About</button>
             <div className="dropdown-content">
               <a href="/team">Our Team</a>
               <a href="/mission">Our Mission</a>
               <a href="/story">Our Story</a>
             </div>
           </li>
+
           <li className="dropdown">
-            <button className="dropbtn">Services ▾</button>
+            <button className="dropbtn">Services</button>
             <div className="dropdown-content">
               <div className="dropdown-col">
                 <a href="/book/development">Website Development</a>
@@ -55,17 +59,22 @@ export default function Header() {
               </div>
             </div>
           </li>
+
           <li><a href="/projects">Projects</a></li>
           <li><a href="/tech">Tech</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
 
-        {/* ===== Mobile Menu (רק בהמבורגר) ===== */}
+        {/* ===== Mobile Menu ===== */}
         <ul className={`nav-links mobile-only ${menuOpen ? "open" : ""}`}>
           <li><a href="/">Home</a></li>
 
-          {/* About - פתיחה רק במובייל */}
+          {/* About */}
           <li className={`dropdown-mobile ${openDropdown === "about" ? "open" : ""}`}>
-            <button onClick={() => toggleDropdown("about")} className="dropbtn">
+            <button
+              onClick={() => toggleDropdown("about")}
+              className={`dropbtn ${openDropdown === "about" ? "open" : ""}`}
+            >
               About
             </button>
             {openDropdown === "about" && (
@@ -77,9 +86,12 @@ export default function Header() {
             )}
           </li>
 
-          {/* Services - פתיחה רק במובייל */}
+          {/* Services */}
           <li className={`dropdown-mobile ${openDropdown === "services" ? "open" : ""}`}>
-            <button onClick={() => toggleDropdown("services")} className="dropbtn">
+            <button
+              onClick={() => toggleDropdown("services")}
+              className={`dropbtn ${openDropdown === "services" ? "open" : ""}`}
+            >
               Services
             </button>
             {openDropdown === "services" && (
@@ -96,8 +108,9 @@ export default function Header() {
 
           <li><a href="/projects">Projects</a></li>
           <li><a href="/tech">Tech</a></li>
+          <li><a href="/contact">Contact</a></li>
 
-          {/* CTA */}
+          {/* CTA במובייל */}
           <li className="mobile-cta">
             <a
               href="https://wa.me/972526850711?text=Hello,%20I%20would%20like%20more%20details%20about%20your%20services"
@@ -110,7 +123,7 @@ export default function Header() {
           </li>
         </ul>
 
-        {/* Desktop CTA */}
+        {/* ===== Desktop CTA ===== */}
         <div className="header-cta">
           <a
             href="https://wa.me/972526850711?text=Hello,%20I%20would%20like%20more%20details%20about%20your%20services"
