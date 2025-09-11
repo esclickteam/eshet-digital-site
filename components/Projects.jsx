@@ -275,9 +275,9 @@ export default function Projects({ categoryFromUrl = null }) {
 },
    {
   image: "/images/Digital Marketing Campaigns/9.jpg",
-  title: "Campaign Creatives",
-  desc: "Creative assets designed for digital marketing campaigns, including social media ads, banners, and promotional visuals to maximize engagement.",
-  tags: ["Marketing", "Campaigns", "Design"],
+  title: "Real Estate Lead Gen Campaign",
+  desc: "A targeted lead generation campaign for a real estate business. Designed with precise audience targeting and persuasive ad creatives, generating high-quality property leads with a strong ROI.",
+  tags: ["Marketing", "Real Estate", "Lead Generation"],
 },
       
 
