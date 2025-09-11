@@ -19,8 +19,8 @@
   transition: all 0.3s ease;
 }
 
-/* כשעומדים עם העכבר */
-.tab-btn:hover {
+/* כשעומדים עם העכבר (לא טאב פעיל) */
+.tab-btn:hover:not(.active) {
   background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: #fff;
   border-color: transparent; /* שיהיה חלק ונקי */
@@ -30,8 +30,9 @@
 .tab-btn.active {
   background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: #fff;
-  border-color: #6a11cb; /* לא נעלם */
+  border-color: transparent; /* להסיר את הקונפליקט עם המסגרת */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px); /* טיפה למעלה */
 }
 
 /* ===== Category Title ===== */
