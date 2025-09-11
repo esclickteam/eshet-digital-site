@@ -97,13 +97,19 @@ export default function Projects({ categoryFromUrl = null }) {
     ],
   };
 
-  // ברירת מחדל: ניקח מה-URL אם קיים, אחרת את הטאב הראשון
-  const defaultTab =
-    categoryFromUrl && projects[categoryFromUrl]
-      ? categoryFromUrl
-      : Object.keys(projects)[0];
+  // ברירת מחדל
+  const defaultTab = Object.keys(projects)[0];
 
-  const [activeTab, setActiveTab] = useState(defaultTab);
+  // state ריק בתחילה כדי להימנע מבעיות hydration
+  const [activeTab, setActiveTab] = useState("");
+
+  // נקבע טאב אחרי טעינה
+  useEffect(() => {
+    const initialTab =
+      (categoryFromUrl && projects[categoryFromUrl] && categoryFromUrl) ||
+      defaultTab;
+    setActiveTab(initialTab);
+  }, [categoryFromUrl]);
 
   // שינוי טאב יעדכן גם URL
   const handleTabClick = (tab) => {
@@ -135,6 +141,8 @@ export default function Projects({ categoryFromUrl = null }) {
 
     return () => observer.disconnect();
   }, []);
+
+  if (!activeTab) return null; // לא נרנדר עד שה־tab נקבע
 
   return (
     <section className="dev-section">
