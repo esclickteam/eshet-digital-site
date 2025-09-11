@@ -6,6 +6,7 @@ import AboutSection from "./AboutSection";
 import Services from "./Services";
 import ValuesSection from "./ValuesSection";
 import StatsSection from "../../components/StatsSection"; 
+import DevelopmentProcessSection from "../../components/DevelopmentProcessSection"; 
 import GetStartedForm from "../../components/GetStartedForm";
 
 export default function Home() {
@@ -16,8 +17,12 @@ export default function Home() {
         <Hero />
         <AboutSection />
         <Services />
+
+        {/* ✅ Development Process מיד אחרי Services */}
+        <DevelopmentProcessSection />
+
         <ValuesSection />
-        <StatsSection />   
+        <StatsSection />
         <GetStartedForm />
         {/* Footer יורד מכאן כי הוא כבר קיים ב-layout */}
       </main>
