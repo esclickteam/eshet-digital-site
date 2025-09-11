@@ -246,7 +246,11 @@
   }
 
   .header-cta {
-    display: none; /* כפתור וואטסאפ בצד ימין מוסתר במובייל */
+    display: none;
+  }
+
+  .hamburger {
+    display: flex; /* 👈 מוצג רק במובייל */
   }
 
   .nav-links li {
@@ -263,7 +267,7 @@
 /* ====== Dropdown במובייל ====== */
 @media (max-width: 768px) {
   .dropdown-content {
-    display: none !important; /* ביטול דרופדאון hover במובייל */
+    display: none !important;
   }
 
   .dropdown-mobile .dropdown-content-mobile {
@@ -281,25 +285,25 @@
   }
 
   .dropdown-mobile .dropbtn {
-  width: 100%;
-  text-align: left;
-  font-size: 1.1rem;
-  padding: 12px 0;
-  background: none;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-  display: inline-flex;  /* 👈 במקום flex מלא */
-  align-items: center;   /* שומר על החץ באותו קו */
-  gap: 6px;              /* רווח קטן בין הטקסט לחץ */
-}
+    width: 100%;
+    text-align: left;
+    font-size: 1.1rem;
+    padding: 12px 0;
+    background: none;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
 
   .dropdown-mobile .dropbtn::after {
-  content: "▾";
-  font-size: 0.9rem;
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
+    content: "▾";
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+  }
 
   .dropdown-mobile.open .dropbtn::after {
     transform: rotate(180deg);
