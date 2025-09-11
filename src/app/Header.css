@@ -265,6 +265,7 @@
 }
 
 /* ====== Dropdown במובייל ====== */
+/* ====== Dropdown במובייל ====== */
 @media (max-width: 768px) {
   .dropdown-content {
     display: none !important;
@@ -284,30 +285,32 @@
     max-height: 500px;
   }
 
- .dropdown-mobile .dropbtn {
-  width: 100%;
-  text-align: left;
-  font-size: 1.1rem;
-  padding: 12px 0;
-  background: none;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
+  .dropdown-mobile .dropbtn {
+    width: 100%;
+    text-align: left;
+    font-size: 1.1rem;
+    padding: 12px 0;
+    background: none;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
 
-  display: flex;                /* 👈 טקסט וחץ באותה שורה */
-  align-items: center;          /* 👈 יישור אנכי */
-  justify-content: space-between; /* 👈 טקסט בצד שמאל, חץ בצד ימין */
-}
+    display: flex;           /* טקסט + חץ באותה שורה */
+    align-items: center;     /* מיושרים אנכית */
+    line-height: 1.2;        /* שומר על גובה אחיד */
+  }
 
-.dropdown-mobile .dropbtn::after {
-  content: "▾";
-  font-size: 0.9rem;
-  transition: transform 0.3s ease;
-  display: inline-block;     /* 👈 מוודא שזה אינליין ליד הטקסט */
-  line-height: 1;            /* 👈 מבטל ירידה שורה */
-}
+  .dropdown-mobile .dropbtn::after {
+    content: "▾";
+    font-size: 0.9rem;
+    margin-left: auto;       /* 👈 החץ תמיד בצד ימין */
+    display: flex;           /* 👈 החץ מתיישר אנכית */
+    align-items: center;
+    height: 100%;            /* 👈 תופס את כל הגובה של הכפתור */
+    transition: transform 0.3s ease;
+  }
 
-  .dropdown-mobile.open .dropbtn::after {
+  .dropdown-mobile .dropbtn.open::after {
     transform: rotate(180deg);
   }
 
@@ -322,3 +325,4 @@
     color: var(--primary);
   }
 }
+
