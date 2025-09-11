@@ -214,9 +214,9 @@ export default function Projects({ categoryFromUrl = null }) {
 {
   image: "/images/branding-logo-design/9.jpg",
   category: "Branding & Logo Design",
-  title: "Brand Identity Project",
-  desc: "Complete brand identity package including logo, color palette, typography, and visual guidelines.",
-  tags: ["Branding", "Design", "Logo"],
+  title: "Aurora Travels Logo",
+  desc: "A vibrant travel logo combining an airplane, mountains, and waves within a circular emblem. Gradient tones convey adventure, exploration, and unforgettable journeys.",
+  tags: ["Branding", "Logo", "Travel"],
 },
 
         
@@ -224,34 +224,73 @@ export default function Projects({ categoryFromUrl = null }) {
     ],
 
     "Digital Marketing Campaigns": [
+      
       {
-        image: "/images/campaign-creatives.jpg",
-        category: "Marketing",
-        title: "Instagram Campaign",
-        desc: "Reaching 50K+ users organically with engaging reels & carousels.",
-        tags: ["Social", "Ads"],
-      },
-      {
-        image: "/images/campaign-optimization.jpg",
-        category: "Marketing",
-        title: "Video Ads",
-        desc: "CTR improved ×3 with creative video editing for Facebook ads.",
-        tags: ["Ads"],
-      },
-      {
-        image: "/images/campaign-results.jpg",
-        category: "Marketing",
-        title: "Results Dashboard",
-        desc: "Analytics-focused campaign management showing real results.",
-        tags: ["Analytics"],
-      },
-      {
-        image: "/images/campaign-strategy.jpg",
-        category: "Marketing",
-        title: "Campaign Strategy",
-        desc: "Strategic planning to maximize audience engagement.",
-        tags: ["Strategy"],
-      },
+  image: "/images/Digital Marketing Campaigns/1.jpg",
+  category: "Digital Marketing Campaigns",
+  title: "Campaign Creatives",
+  desc: "Creative assets designed for digital marketing campaigns, including social media ads, banners, and promotional visuals to maximize engagement.",
+  tags: ["Marketing", "Campaigns", "Design"],
+},
+   {
+  image: "/images/Digital Marketing Campaigns/2.jpg",
+  category: "Digital Marketing Campaigns",
+  title: "Campaign Creatives",
+  desc: "Creative assets designed for digital marketing campaigns, including social media ads, banners, and promotional visuals to maximize engagement.",
+  tags: ["Marketing", "Campaigns", "Design"],
+},
+   {
+  image: "/images/Digital Marketing Campaigns/3.jpg",
+  category: "Digital Marketing Campaigns",
+  title: "Campaign Creatives",
+  desc: "Creative assets designed for digital marketing campaigns, including social media ads, banners, and promotional visuals to maximize engagement.",
+  tags: ["Marketing", "Campaigns", "Design"],
+},
+   {
+  image: "/images/Digital Marketing Campaigns/4.jpg",
+  category: "Digital Marketing Campaigns",
+  title: "Campaign Creatives",
+  desc: "Creative assets designed for digital marketing campaigns, including social media ads, banners, and promotional visuals to maximize engagement.",
+  tags: ["Marketing", "Campaigns", "Design"],
+},
+   {
+  image: "/images/Digital Marketing Campaigns/5.jpg",
+  category: "Digital Marketing Campaigns",
+  title: "Campaign Creatives",
+  desc: "Creative assets designed for digital marketing campaigns, including social media ads, banners, and promotional visuals to maximize engagement.",
+  tags: ["Marketing", "Campaigns", "Design"],
+},
+   {
+  image: "/images/Digital Marketing Campaigns/6.jpg",
+  category: "Digital Marketing Campaigns",
+  title: "Campaign Creatives",
+  desc: "Creative assets designed for digital marketing campaigns, including social media ads, banners, and promotional visuals to maximize engagement.",
+  tags: ["Marketing", "Campaigns", "Design"],
+},
+   {
+  image: "/images/Digital Marketing Campaigns/7.jpg",
+  category: "Digital Marketing Campaigns",
+  title: "Campaign Creatives",
+  desc: "Creative assets designed for digital marketing campaigns, including social media ads, banners, and promotional visuals to maximize engagement.",
+  tags: ["Marketing", "Campaigns", "Design"],
+},
+   {
+  image: "/images/Digital Marketing Campaigns/8.jpg",
+  category: "Digital Marketing Campaigns",
+  title: "Campaign Creatives",
+  desc: "Creative assets designed for digital marketing campaigns, including social media ads, banners, and promotional visuals to maximize engagement.",
+  tags: ["Marketing", "Campaigns", "Design"],
+},
+   {
+  image: "/images/Digital Marketing Campaigns/9.jpg",
+  category: "Digital Marketing Campaigns",
+  title: "Campaign Creatives",
+  desc: "Creative assets designed for digital marketing campaigns, including social media ads, banners, and promotional visuals to maximize engagement.",
+  tags: ["Marketing", "Campaigns", "Design"],
+},
+      
+
+
     ],
   };
 
