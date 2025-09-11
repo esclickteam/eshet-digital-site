@@ -22,7 +22,7 @@
 /* כשעומדים עם העכבר (לא טאב פעיל) */
 .tab-btn:hover:not(.active) {
   background: linear-gradient(135deg, #6a11cb, #2575fc); /* רקע צבעוני */
-  color: #00e5ff; /* טקסט טורקיז ניאון לדיגיטל */
+  color: #ff4081;
   border-color: #6a11cb; /* מסגרת סגולה */
   box-shadow: 0 4px 12px rgba(106, 17, 203, 0.25); /* אפקט עומק */
 }
