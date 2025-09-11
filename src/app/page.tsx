@@ -8,8 +8,6 @@ import ValuesSection from "./ValuesSection";
 import Projects from "../../components/Projects";
 import StatsSection from "../../components/StatsSection"; 
 import GetStartedForm from "../../components/GetStartedForm";
-import DevelopmentProcessSection from "../../components/DevelopmentProcessSection"; // 👈 חדש
-
 export default function Home() {
   return (
     <>
@@ -18,9 +16,6 @@ export default function Home() {
         <Hero />
         <AboutSection />
         <Services />
-
-        {/* 👇 כאן נכנס תהליך הפיתוח באמצע, אחרי השירותים */}
-        <DevelopmentProcessSection />
 
         <ValuesSection />
         <StatsSection />   

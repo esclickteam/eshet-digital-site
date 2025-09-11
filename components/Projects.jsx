@@ -1,22 +1,15 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image"; // ✅ שימוש ב־next/image
+import Image from "next/image"; 
 import "./Projects.css";
 import FAQ from "./faq";
 
-interface ProjectsProps {
-  categoryFromUrl?: string | null;
-}
-
-export default function Projects({ categoryFromUrl }: ProjectsProps) {
+export default function Projects({ categoryFromUrl = null }) {
   const router = useRouter();
 
   // כל הקטגוריות
-  const projects: Record<
-    string,
-    { image: string; category: string; title: string; desc: string; tags: string[] }[]
-  > = {
+  const projects = {
     "Website Design": [
       {
         image: "/images/1.jpg",
@@ -113,9 +106,9 @@ export default function Projects({ categoryFromUrl }: ProjectsProps) {
   const [activeTab, setActiveTab] = useState(defaultTab);
 
   // שינוי טאב יעדכן גם את ה־URL
-  const handleTabClick = (tab: string) => {
+  const handleTabClick = (tab) => {
     setActiveTab(tab);
-    router.push(`/projects?category=${encodeURIComponent(tab)}`, { scroll: false }); // ✅ מעבר חלק
+    router.push(`/projects?category=${encodeURIComponent(tab)}`, { scroll: false });
   };
 
   // אנימציית כניסה ל־cards ו־CTA
@@ -171,7 +164,7 @@ export default function Projects({ categoryFromUrl }: ProjectsProps) {
               <Image
                 src={proj.image}
                 alt={proj.title}
-                width={600}  // ✅ קבע רוחב/גובה לצורך אופטימיזציה
+                width={600}
                 height={400}
                 className="project-image"
               />

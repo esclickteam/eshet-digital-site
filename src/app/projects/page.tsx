@@ -1,11 +1,11 @@
-import Projects from "../../../components/Projects";
+"use client";
 
-export default function ProjectsPage({ searchParams }: { searchParams?: Record<string, string | string[] | undefined> }) {
-  const category = (searchParams?.category as string) || null;
+import Projects from "../../../components/Projects.jsx";  
 
+export default function ProjectsPage() {
   return (
     <main>
-      <Projects categoryFromUrl={category} />
+      <Projects />
     </main>
   );
 }
