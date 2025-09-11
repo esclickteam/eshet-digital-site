@@ -284,27 +284,24 @@
     max-height: 500px;
   }
 
-  .dropdown-mobile .dropbtn {
+ .dropdown-mobile .dropbtn {
   width: 100%;
-  text-align: left;
   font-size: 1.1rem;
   padding: 12px 0;
   background: none;
   border: none;
   font-weight: 600;
   cursor: pointer;
-  display: flex;             /* 👈 חשוב שיהיה flex */
-  align-items: center;       /* שומר על יישור אנכי */
-  justify-content: flex-start; /* 👈 מוודא שהכל בצד שמאל */
-  gap: 6px;                  /* רווח קטן בין הטקסט לחץ */
+
+  display: flex;                 /* טקסט וחץ באותה שורה */
+  align-items: center;           /* יישור אנכי */
+  justify-content: space-between;/* טקסט שמאלה, חץ ימינה */
 }
 
 .dropdown-mobile .dropbtn::after {
   content: "▾";
   font-size: 0.9rem;
   transition: transform 0.3s ease;
-  display: inline-block;     /* 👈 מוודא שזה אינליין ליד הטקסט */
-  line-height: 1;            /* 👈 מבטל ירידה שורה */
 }
 
   .dropdown-mobile.open .dropbtn::after {
