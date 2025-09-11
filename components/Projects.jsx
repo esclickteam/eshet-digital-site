@@ -28,54 +28,69 @@ export default function Projects() {
     return () => observer.disconnect();
   }, []);
 
-  // כרטיסים לכל קטגוריה
+  // כרטיסים לכל קטגוריה עם תמונות מהתיקייה שלך
   const projects = {
     "Website Design": [
       {
-        icon: "💻",
+        image: "/images/1.jpg",
         title: "Business Website",
         desc: "SEO-optimized website for a local business — boosting leads by 120%.",
       },
       {
-        icon: "🌐",
+        image: "/images/video.png",
         title: "Corporate Landing Page",
         desc: "Clean design with conversion-focused CTA — increased signups by 80%.",
       },
     ],
     "E-commerce": [
       {
-        icon: "🛍",
+        image: "/images/wix.png",
         title: "Online Store",
         desc: "Shopify build with custom design, sales up by 200% in 3 months.",
       },
       {
-        icon: "📦",
+        image: "/images/wordpress.jpeg",
         title: "Product Catalog Website",
         desc: "Modern catalog design with easy checkout — improved UX and retention.",
       },
     ],
     "Branding & Logo Design": [
       {
-        icon: "🎨",
+        image: "/images/branding-identity.jpg",
         title: "Luxury Beauty Studio",
         desc: "Minimalist logo + visual identity — strong brand recognition online.",
       },
       {
-        icon: "✒️",
+        image: "/images/branding-logo.jpg",
         title: "Tech Startup Branding",
         desc: "Logo, typography, and social media kit for a new SaaS brand.",
+      },
+      {
+        image: "/images/branding-visuals.jpg",
+        title: "Brand Visuals",
+        desc: "Social media kit and marketing visuals to strengthen online presence.",
       },
     ],
     "Digital Marketing Campaigns": [
       {
-        icon: "📱",
+        image: "/images/campaign-creatives.jpg",
         title: "Instagram Campaign",
         desc: "Reaching 50K+ users organically with engaging reels & carousels.",
       },
       {
-        icon: "🎥",
+        image: "/images/campaign-optimization.jpg",
         title: "Video Ads",
         desc: "CTR improved ×3 with creative video editing for Facebook ads.",
+      },
+      {
+        image: "/images/campaign-results.jpg",
+        title: "Results Dashboard",
+        desc: "Analytics-focused campaign management showing real results.",
+      },
+      {
+        image: "/images/campaign-strategy.jpg",
+        title: "Campaign Strategy",
+        desc: "Strategic planning to maximize audience engagement.",
       },
     ],
   };
@@ -107,7 +122,13 @@ export default function Projects() {
         <div className="features-grid">
           {projects[activeTab].map((proj, i) => (
             <div key={i} className="feature-card project-card">
-              <div className="icon">{proj.icon}</div>
+              {proj.image && (
+                <img
+                  src={proj.image}
+                  alt={proj.title}
+                  className="project-image"
+                />
+              )}
               <h3>{proj.title}</h3>
               <p>{proj.desc}</p>
             </div>
