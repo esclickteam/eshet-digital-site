@@ -4,30 +4,6 @@ import "./Projects.css";
 import FAQ from "./faq";
 
 export default function Projects() {
-  const [activeTab, setActiveTab] = useState("Website Design");
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry, i) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add("visible");
-            }, i * 200);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.25 }
-    );
-
-    document
-      .querySelectorAll(".project-card, .faq-section, .cta-wrapper")
-      .forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
   // כרטיסים לכל קטגוריה עם תמונות אמיתיות
   const projects = {
     "Website Design": [
@@ -116,6 +92,31 @@ export default function Projects() {
       },
     ],
   };
+
+  // ברירת מחדל: הטאב הראשון
+  const [activeTab, setActiveTab] = useState(Object.keys(projects)[0]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add("visible");
+            }, i * 200);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    document
+      .querySelectorAll(".project-card, .faq-section, .cta-wrapper")
+      .forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className="dev-section">

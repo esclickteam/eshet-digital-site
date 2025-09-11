@@ -311,22 +311,22 @@
   }
 
   .call-card .icon-circle {
-    width: 52px;
+    width: 52px;   /* אותו גודל כמו הוואטסאפ */
     height: 52px;
     border-radius: 50%;
-    background: none; /* שקוף כדי שהאייקון יוצג בצבע המקורי */
+    background: linear-gradient(135deg, #ff4f81, #a64fff);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
-    box-shadow: none;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
   }
 
   .call-card .icon-circle img {
-    width: 40px;
-    height: 40px;
+    width: 28px;   /* אותו גודל אייקון כמו הוואטסאפ */
+    height: 28px;
     object-fit: contain;
-    filter: none; /* לא להפוך ללבן */
+    filter: brightness(0) invert(1); /* שיהיה לבן */
   }
 }
 
