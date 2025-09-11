@@ -23,13 +23,12 @@
   justify-content: space-between;
 }
 
-/* ====== Logo (Left side) ====== */
+/* ====== Logo ====== */
 .logo {
   height: 100%;
   display: flex;
   align-items: center;
 }
-
 .logo img {
   max-height: 50px;
   width: auto;
@@ -37,12 +36,11 @@
   transition: transform 0.3s;
   cursor: pointer;
 }
-
 .logo img:hover {
   transform: scale(1.05);
 }
 
-/* ====== Navigation (Center) ====== */
+/* ====== Navigation ====== */
 .nav-links {
   list-style: none;
   display: flex;
@@ -50,11 +48,9 @@
   margin: 0 auto;
   align-items: center;
 }
-
 .nav-links li {
   position: relative;
 }
-
 .nav-links li a,
 .dropbtn {
   text-decoration: none;
@@ -64,8 +60,6 @@
   transition: color 0.3s;
   background: none !important;
   border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
   padding: 8px 0;
   display: flex;
   align-items: center;
@@ -73,9 +67,8 @@
   position: relative;
 }
 
-/* אפקט קו תחתון במעבר */
-.nav-links li a::after,
-.dropbtn::after {
+/* אפקט קו תחתון רק ללינקים */
+.nav-links li a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -85,12 +78,9 @@
   background: var(--primary);
   transition: width 0.3s ease;
 }
-
-.nav-links li a:hover::after,
-.dropbtn:hover::after {
+.nav-links li a:hover::after {
   width: 100%;
 }
-
 .nav-links li a:hover,
 .dropbtn:hover {
   color: var(--primary);
@@ -113,19 +103,16 @@
   transform: translateY(10px);
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
-
 .dropdown:hover .dropdown-content {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
 }
-
 .dropdown-col {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-
 .dropdown-content a {
   color: #333;
   text-decoration: none;
@@ -133,16 +120,12 @@
   transition: color 0.3s ease;
   white-space: nowrap;
 }
-
 .dropdown-content a:hover {
   color: var(--primary);
 }
 
-/* ====== WhatsApp Button (Right side) ====== */
-.header-cta {
-  margin-left: auto;
-}
-
+/* ====== WhatsApp Button ====== */
+.header-cta { margin-left: auto; }
 .whatsapp-btn {
   display: flex;
   align-items: center;
@@ -156,27 +139,25 @@
   transition: transform 0.3s, background 0.3s;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
 .whatsapp-btn:hover {
   transform: translateY(-2px);
   background: linear-gradient(135deg, #20c057, #0f7b63);
 }
-
 .whatsapp-btn svg {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
 }
 
-/* ====== Arrow Icon ====== */
-.arrow-icon {
-  width: 12px;
-  height: 12px;
-  margin-left: 6px;
+/* ====== חץ ל-dropbtn ====== */
+.dropbtn::after {
+  content: "▾";
+  font-size: 0.9rem;
+  margin-left: auto;
   transition: transform 0.3s ease;
 }
-
-.dropdown:hover .arrow-icon {
+.dropbtn.open::after,
+.dropdown:hover .dropbtn::after {
   transform: rotate(180deg);
 }
 
@@ -194,7 +175,6 @@
   margin-left: 10px;
   z-index: 1100;
 }
-
 .hamburger span {
   width: 100%;
   height: 3px;
@@ -202,30 +182,15 @@
   border-radius: 2px;
   transition: 0.3s;
 }
-
-/* אנימציה של ה־X */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
-}
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translateY(8px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translateY(-8px); }
 
 /* ====== Desktop vs Mobile ====== */
-.desktop-only {
-  display: flex;
-}
-.mobile-only {
-  display: none;
-}
-
+.desktop-only { display: flex; }
+.mobile-only { display: none; }
 @media (max-width: 768px) {
-  .desktop-only {
-    display: none;
-  }
+  .desktop-only { display: none; }
   .mobile-only {
     display: flex;
     flex-direction: column;
@@ -241,36 +206,17 @@
     box-shadow: -4px 0 12px rgba(0,0,0,0.08);
     z-index: 999;
   }
-  .mobile-only.open {
-    right: 0;
-  }
-
-  .header-cta {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex; /* 👈 מוצג רק במובייל */
-  }
-
-  .nav-links li {
-    width: 100%;
-  }
-
+  .mobile-only.open { right: 0; }
+  .header-cta { display: none; }
+  .hamburger { display: flex; }
+  .nav-links li { width: 100%; }
   .nav-links li a,
-  .dropbtn {
-    font-size: 1.1rem;
-    padding: 12px 0;
-  }
+  .dropbtn { font-size: 1.1rem; padding: 12px 0; }
 }
 
 /* ====== Dropdown במובייל ====== */
-/* ====== Dropdown במובייל ====== */
 @media (max-width: 768px) {
-  .dropdown-content {
-    display: none !important;
-  }
-
+  .dropdown-content { display: none !important; }
   .dropdown-mobile .dropdown-content-mobile {
     max-height: 0;
     overflow: hidden;
@@ -280,49 +226,12 @@
     margin-left: 10px;
     transition: max-height 0.35s ease;
   }
-
-  .dropdown-mobile.open .dropdown-content-mobile {
-    max-height: 500px;
-  }
-
-  .dropdown-mobile .dropbtn {
-    width: 100%;
-    text-align: left;
-    font-size: 1.1rem;
-    padding: 12px 0;
-    background: none;
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
-
-    display: flex;           /* טקסט + חץ באותה שורה */
-    align-items: center;     /* מיושרים אנכית */
-    line-height: 1.2;        /* שומר על גובה אחיד */
-  }
-
-  .dropdown-mobile .dropbtn::after {
-    content: "▾";
-    font-size: 0.9rem;
-    margin-left: auto;       /* 👈 החץ תמיד בצד ימין */
-    display: flex;           /* 👈 החץ מתיישר אנכית */
-    align-items: center;
-    height: 100%;            /* 👈 תופס את כל הגובה של הכפתור */
-    transition: transform 0.3s ease;
-  }
-
-  .dropdown-mobile .dropbtn.open::after {
-    transform: rotate(180deg);
-  }
-
+  .dropdown-mobile.open .dropdown-content-mobile { max-height: 500px; }
   .dropdown-content-mobile a {
     font-size: 0.95rem;
     padding: 8px 0;
     color: #333;
     text-decoration: none;
   }
-
-  .dropdown-content-mobile a:hover {
-    color: var(--primary);
-  }
+  .dropdown-content-mobile a:hover { color: var(--primary); }
 }
-
