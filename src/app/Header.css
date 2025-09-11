@@ -293,14 +293,14 @@
   font-weight: 600;
   cursor: pointer;
 
-  display: flex;                 /* טקסט וחץ באותה שורה */
-  align-items: center;           /* יישור אנכי */
-  justify-content: space-between;/* טקסט שמאלה, חץ ימינה */
+  display: flex;          /* טקסט וחץ באותה שורה */
+  align-items: center;    /* מיושר אנכית */
 }
 
 .dropdown-mobile .dropbtn::after {
   content: "▾";
   font-size: 0.9rem;
+  margin-left: auto;      /* 👈 החץ תמיד נדחף לקצה ימין */
   transition: transform 0.3s ease;
 }
 
