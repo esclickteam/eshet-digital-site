@@ -23,15 +23,16 @@
 .tab-btn:hover {
   background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: #fff;
-  border-color: #6a11cb; /* נשאר מסגרת */
+  border-color: transparent; /* שיהיה חלק ונקי */
 }
 
 /* טאב פעיל */
 .tab-btn.active {
   background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: #fff;
-  border-color: #6a11cb; /* לא נעלם */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: transparent; /* מסגרת נעלמת */
+  box-shadow: 0 4px 14px rgba(106, 17, 203, 0.4); /* זוהר סגול עדין */
+  transform: scale(1.05); /* מדגיש את הפעיל */
 }
 
 /* ===== Category Title ===== */
