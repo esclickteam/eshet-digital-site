@@ -27,52 +27,46 @@ export default function TechPage() {
     <div className="service-page">
       {/* Hero Section */}
       <section className="hero tech-block">
-        <h1 className="animated-title">Technology That Powers Success</h1>
+        <h1 className="animated-title">
+          Technology That Powers <span className="highlight">Success</span>
+        </h1>
         <p>
-          Behind every successful brand lies advanced technology. We use the
-          latest tools and platforms to ensure your business is always one step
-          ahead.
+          Behind every successful brand lies advanced technology. 
+          We use the latest tools and platforms to ensure your business is always one step ahead.
         </p>
+        <div className="cta-buttons">
+          <a href="/contact" className="btn-primary">Request a Tech Audit</a>
+          <a href="/projects" className="btn-secondary">Explore Our Work</a>
+        </div>
       </section>
 
       {/* Blocks */}
       <section className="blocks">
         {/* Block 1 – Tech Stack */}
-        <div className="block tech-block">
+        <div className="block tech-block card">
           <h2>⚙️ Our Tech Stack</h2>
           <p>
-            Every business is unique — and so are its technical needs. We
-            combine the world’s leading platforms with modern frameworks to
+            Every business is unique — and so are its technical needs. 
+            We combine the world’s leading platforms with modern frameworks to 
             build websites that are beautiful, powerful, and future-proof.
           </p>
           <ul className="icon-list">
-            <li>
-              <img src="/icons/wordpress.jpeg" alt="WordPress" /> WordPress – flexible & SEO-friendly
-            </li>
-            <li>
-              <img src="/icons/wix.png" alt="Wix" /> Wix – fast, simple, effective
-            </li>
-            <li>
-              <img src="/icons/shopify.jpeg" alt="Shopify" /> Shopify – built for e-commerce growth
-            </li>
-            <li>
-              <img src="/icons/javascript.jpeg" alt="JavaScript" /> JavaScript – the core programming language of the web
-            </li>
+            <li><img src="/icons/wordpress.jpeg" alt="WordPress" /> WordPress – flexible & SEO-friendly</li>
+            <li><img src="/icons/wix.png" alt="Wix" /> Wix – fast, simple, effective</li>
+            <li><img src="/icons/shopify.jpeg" alt="Shopify" /> Shopify – built for e-commerce growth</li>
+            <li><img src="/icons/javascript.jpeg" alt="JavaScript" /> JavaScript – the web’s core language</li>
             <li>
               <img src="/icons/react.png" alt="React" /> React,{" "}
               <img src="/icons/nextdotjs.jpeg" alt="Next.js" /> Next.js,{" "}
-              <img src="/icons/node.png" alt="Node.js" /> Node.js – high-performance custom solutions
+              <img src="/icons/node.png" alt="Node.js" /> Node.js – custom, high-performance solutions
             </li>
           </ul>
         </div>
 
         {/* Block 2 – Automation & AI */}
-        <div className="block tech-block">
+        <div className="block tech-block card">
           <h2>🤖 Automation & AI</h2>
-          <p>
-            We implement automation and AI to streamline processes, save time,
-            and improve customer experiences.
-          </p>
+          <p>We implement automation and AI to streamline processes, save time, and improve customer experiences.</p>
           <ul>
             <li>✔ Smart chatbots for instant replies</li>
             <li>✔ Automated booking & CRM systems</li>
@@ -82,7 +76,7 @@ export default function TechPage() {
         </div>
 
         {/* Block 3 – Hosting & Security */}
-        <div className="block tech-block">
+        <div className="block tech-block card">
           <h2>🔒 Hosting & Security</h2>
           <p>We ensure your website stays online, secure, and lightning-fast.</p>
           <ul>
@@ -94,12 +88,9 @@ export default function TechPage() {
         </div>
 
         {/* Block 4 – Analytics & Data */}
-        <div className="block tech-block">
+        <div className="block tech-block card">
           <h2>📊 Analytics & Data</h2>
-          <p>
-            We don’t guess — we measure. Every site and campaign comes with
-            clear analytics for continuous improvement.
-          </p>
+          <p>We don’t guess — we measure. Every site and campaign comes with clear analytics for continuous improvement.</p>
           <ul>
             <li>✔ Google Analytics & Search Console</li>
             <li>✔ Heatmaps & behavior tracking</li>
@@ -109,12 +100,9 @@ export default function TechPage() {
         </div>
 
         {/* Block 5 – Custom Development */}
-        <div className="block tech-block">
+        <div className="block tech-block card">
           <h2>🛠 Custom Development</h2>
-          <p>
-            Some businesses need more than standard tools — and that’s where our
-            custom development comes in.
-          </p>
+          <p>Some businesses need more than standard tools — and that’s where our custom development comes in.</p>
           <ul>
             <li>✔ Unique web applications</li>
             <li>✔ Custom integrations (payments, CRM, APIs)</li>
@@ -124,13 +112,34 @@ export default function TechPage() {
         </div>
       </section>
 
+      {/* Case Studies */}
+      <section className="case-studies tech-block">
+        <h2>🚀 Real Results with Technology</h2>
+        <div className="case-grid">
+          <div className="case-card">
+            <h3>🏠 Real Estate Project</h3>
+            <p>Reduced load time by 40% using Next.js & Vercel.</p>
+          </div>
+          <div className="case-card">
+            <h3>🛒 E-commerce Growth</h3>
+            <p>Boosted sales by 200% with custom Shopify apps.</p>
+          </div>
+          <div className="case-card">
+            <h3>💼 Corporate Landing Page</h3>
+            <p>Increased conversions by 80% with a tailored design system.</p>
+          </div>
+        </div>
+      </section>
+
       {/* Outro */}
       <section className="outro tech-block">
+        <h2>Let’s Build the Future Together</h2>
         <p>
-          For us, technology is not the goal — it’s the foundation. Success is
-          not measured only by design or marketing, but by the integration of
+          For us, technology is not the goal — it’s the foundation. 
+          Success is not measured only by design or marketing, but by the integration of 
           reliable, innovative, and secure technology with the right strategy.
         </p>
+        <a href="/contact" className="btn-primary large">Book a Free Consultation</a>
       </section>
     </div>
   );
