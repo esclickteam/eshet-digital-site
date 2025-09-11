@@ -1,66 +1,47 @@
 "use client";
+import { useState } from "react";
 import "./Header.css";
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
+
+  const toggleDropdown = (name) => {
+    setOpenDropdown(openDropdown === name ? null : name);
+  };
+
   return (
     <header className="header">
       <nav className="nav">
-        {/* Left side – Logo */}
+        {/* Logo */}
         <div className="logo">
           <a href="/">
             <img src="/logo.png" alt="Eshet Digital" />
           </a>
         </div>
 
-        {/* Center – Navigation */}
-        <ul className="nav-links">
-          <li><a href="/">Home</a></li>
+        {/* Hamburger (mobile only) */}
+        <button
+          className={`hamburger ${menuOpen ? "active" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
 
-          {/* About with dropdown */}
+        {/* ===== Desktop Menu (כמו שהוא) ===== */}
+        <ul className="nav-links desktop-only">
+          <li><a href="/">Home</a></li>
           <li className="dropdown">
-            <button className="dropbtn">
-              About
-              <svg
-                className="arrow-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="10"
-                height="10"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </button>
+            <button className="dropbtn">About ▾</button>
             <div className="dropdown-content">
               <a href="/team">Our Team</a>
               <a href="/mission">Our Mission</a>
               <a href="/story">Our Story</a>
             </div>
           </li>
-
-          {/* Services with dropdown */}
           <li className="dropdown">
-            <button className="dropbtn">
-              Services
-              <svg
-                className="arrow-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="10"
-                height="10"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </button>
+            <button className="dropbtn">Services ▾</button>
             <div className="dropdown-content">
               <div className="dropdown-col">
                 <a href="/book/development">Website Development</a>
@@ -74,13 +55,62 @@ export default function Header() {
               </div>
             </div>
           </li>
-
-          {/* Regular links */}
-          <li><a href="/projects">Projects</a></li> 
+          <li><a href="/projects">Projects</a></li>
           <li><a href="/tech">Tech</a></li>
         </ul>
 
-        {/* Right side – WhatsApp CTA */}
+        {/* ===== Mobile Menu (רק בהמבורגר) ===== */}
+        <ul className={`nav-links mobile-only ${menuOpen ? "open" : ""}`}>
+          <li><a href="/">Home</a></li>
+
+          {/* About - פתיחה רק במובייל */}
+          <li className={`dropdown-mobile ${openDropdown === "about" ? "open" : ""}`}>
+            <button onClick={() => toggleDropdown("about")} className="dropbtn">
+              About
+            </button>
+            {openDropdown === "about" && (
+              <div className="dropdown-content-mobile">
+                <a href="/team">Our Team</a>
+                <a href="/mission">Our Mission</a>
+                <a href="/story">Our Story</a>
+              </div>
+            )}
+          </li>
+
+          {/* Services - פתיחה רק במובייל */}
+          <li className={`dropdown-mobile ${openDropdown === "services" ? "open" : ""}`}>
+            <button onClick={() => toggleDropdown("services")} className="dropbtn">
+              Services
+            </button>
+            {openDropdown === "services" && (
+              <div className="dropdown-content-mobile">
+                <a href="/book/development">Website Development</a>
+                <a href="/book/digital-campaigns">Digital Campaigns</a>
+                <a href="/book/branding">Branding & Design</a>
+                <a href="/book/social">Social Media</a>
+                <a href="/book/content">Content & Video</a>
+                <a href="/book/strategy">Digital Strategy & Maintenance</a>
+              </div>
+            )}
+          </li>
+
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/tech">Tech</a></li>
+
+          {/* CTA */}
+          <li className="mobile-cta">
+            <a
+              href="https://wa.me/972526850711?text=Hello,%20I%20would%20like%20more%20details%20about%20your%20services"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whatsapp-btn"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+
+        {/* Desktop CTA */}
         <div className="header-cta">
           <a
             href="https://wa.me/972526850711?text=Hello,%20I%20would%20like%20more%20details%20about%20your%20services"

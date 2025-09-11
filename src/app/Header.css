@@ -180,3 +180,133 @@
 .dropdown:hover .arrow-icon {
   transform: rotate(180deg);
 }
+
+/* ====== Hamburger (Mobile) ====== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 10px;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background: #222;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* אנימציה של ה־X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ====== Mobile Menu ====== */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 70px; /* גובה ההדר */
+    right: -100%;
+    flex-direction: column;
+    gap: 20px;
+    background: #fff;
+    width: 250px;
+    height: calc(100vh - 70px);
+    padding: 30px 20px;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.08);
+    transition: right 0.3s ease;
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .header-cta {
+    display: none; /* הסתרת הכפתור של וואטסאפ בדסקטופ */
+  }
+
+  .hamburger {
+    display: flex; /* רק במובייל */
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links li a,
+  .dropbtn {
+    font-size: 1.1rem;
+    padding: 12px 0;
+  }
+}
+
+/* ====== Dropdown במובייל ====== */
+@media (max-width: 768px) {
+  .dropdown-content {
+    display: none !important; /* מבטל לגמרי את הדרופדאון במובייל */
+  }
+
+  /* גרסה למובייל */
+  .dropdown-mobile .dropdown-content-mobile {
+    max-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 10px;
+    transition: max-height 0.35s ease;
+  }
+
+  .dropdown-mobile.open .dropdown-content-mobile {
+    max-height: 500px; /* מספיק מקום לפתיחה חלקה */
+  }
+
+  .dropdown-mobile .dropbtn {
+    width: 100%;
+    text-align: left;
+    font-size: 1.1rem;
+    padding: 12px 0;
+    background: none;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .dropdown-mobile .dropbtn::after {
+    content: "▾";
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+  }
+
+  .dropdown-mobile.open .dropbtn::after {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-content-mobile a {
+    font-size: 0.95rem;
+    padding: 8px 0;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .dropdown-content-mobile a:hover {
+    color: var(--primary);
+  }
+}
