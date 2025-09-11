@@ -21,9 +21,10 @@
 
 /* כשעומדים עם העכבר (לא טאב פעיל) */
 .tab-btn:hover:not(.active) {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: #fff !important;
-  border-color: transparent !important; /* שיהיה חלק ונקי */
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* רקע צבעוני */
+  color: #fff; /* טקסט לבן */
+  border-color: #6a11cb; /* מסגרת סגולה במקום להיעלם */
+  box-shadow: 0 4px 12px rgba(106, 17, 203, 0.25); /* אפקט עומק */
 }
 
 /* טאב פעיל */
