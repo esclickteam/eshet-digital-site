@@ -45,6 +45,8 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
@@ -52,19 +54,17 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* ✅ עטיפה ל־next/image */
-.project-image-wrapper {
+/* ===== Image Wrapper ===== */
+.image-wrapper {
   position: relative;
   width: 100%;
-  height: 220px;           /* אפשר לשנות לפי הצורך */
-  background: #f9fafb;     /* רקע עדין מאחורי התמונה */
-  border-radius: 12px 12px 0 0;
+  height: 240px;           /* גובה אחיד לכרטיסים */
+  background: #f9fafb;     /* רקע עדין אם אין תמונה */
   overflow: hidden;
 }
 
-/* ✅ התמונה עצמה */
 .project-image {
-  object-fit: contain;     /* מציג את כל התמונה */
+  object-fit: cover;       /* תמונה מכסה את כל השטח */
 }
 
 /* ===== Project Info ===== */
@@ -72,18 +72,26 @@
   padding: 18px 20px;
 }
 
+.project-category {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #64748b;
+  display: block;
+  margin-bottom: 6px;
+}
+
 .project-info h3 {
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 8px;
-  color: #1e293b; /* Navy-gray */
+  color: #1e293b;
 }
 
 .project-info p {
   font-size: 0.95rem;
   color: #475569;
   line-height: 1.5;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .tags {

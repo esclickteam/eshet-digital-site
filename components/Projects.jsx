@@ -1,11 +1,11 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image"; 
+import Image from "next/image";
 import "./Projects.css";
 import FAQ from "./faq";
 
-export default function Projects({ categoryFromUrl = null }) {
+export default function Projects() {
   const router = useRouter();
 
   // כל הקטגוריות
@@ -97,21 +97,7 @@ export default function Projects({ categoryFromUrl = null }) {
     ],
   };
 
-  // ברירת מחדל מתוך ה־URL או הטאב הראשון
-  const defaultTab =
-    categoryFromUrl && projects[categoryFromUrl]
-      ? categoryFromUrl
-      : Object.keys(projects)[0];
-
-  const [activeTab, setActiveTab] = useState(defaultTab);
-
-  // שינוי טאב יעדכן גם את ה־URL
-  const handleTabClick = (tab) => {
-    setActiveTab(tab);
-    router.push(`/projects?category=${encodeURIComponent(tab)}`, { scroll: false });
-  };
-
-  // אנימציית כניסה ל־cards ו־CTA
+  // אנימציית כניסה
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -144,45 +130,38 @@ export default function Projects({ categoryFromUrl = null }) {
           technology to deliver impactful digital solutions.
         </p>
 
-        {/* Tabs */}
-        <div className="tabs">
-          {Object.keys(projects).map((tab) => (
-            <button
-              key={tab}
-              onClick={() => handleTabClick(tab)}
-              className={`tab-btn ${activeTab === tab ? "active" : ""}`}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
-
-        {/* Projects Grid */}
-        <div className="features-grid">
-          {projects[activeTab].map((proj, i) => (
-            <div key={i} className="project-card">
-              <Image
-                src={proj.image}
-                alt={proj.title}
-                width={600}
-                height={400}
-                className="project-image"
-              />
-              <div className="project-info">
-                <span className="project-category">{proj.category}</span>
-                <h3>{proj.title}</h3>
-                <p>{proj.desc}</p>
-                <div className="tags">
-                  {proj.tags.map((tag, idx) => (
-                    <span key={idx} className="tag">
-                      {tag}
-                    </span>
-                  ))}
+        {/* Projects Grid - כל הקטגוריות ברצף */}
+        {Object.entries(projects).map(([categoryName, items]) => (
+          <div key={categoryName} className="category-block">
+            <h2 className="category-title">{categoryName}</h2>
+            <div className="features-grid">
+              {items.map((proj, i) => (
+                <div key={i} className="project-card">
+                  <div className="image-wrapper">
+                    <Image
+                      src={proj.image}
+                      alt={proj.title}
+                      fill
+                      className="project-image"
+                    />
+                  </div>
+                  <div className="project-info">
+                    <span className="project-category">{proj.category}</span>
+                    <h3>{proj.title}</h3>
+                    <p>{proj.desc}</p>
+                    <div className="tags">
+                      {proj.tags.map((tag, idx) => (
+                        <span key={idx} className="tag">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
 
         {/* CTA */}
         <div className="cta-wrapper">
