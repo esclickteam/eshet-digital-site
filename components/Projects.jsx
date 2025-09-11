@@ -206,9 +206,9 @@ export default function Projects({ categoryFromUrl = null }) {
 {
   image: "/images/branding-logo-design/8.jpg",
   category: "Branding & Logo Design",
-  title: "Brand Identity Project",
-  desc: "Complete brand identity package including logo, color palette, typography, and visual guidelines.",
-  tags: ["Branding", "Design", "Logo"],
+  title: "Crystalix Cleaning Logo",
+  desc: "A fresh and modern logo for a cleaning services brand, featuring a crystal water drop combined with clean flowing lines. The vibrant gradient colors and sparkles symbolize purity, freshness, and trust.",
+  tags: ["Branding", "Logo", "Cleaning"],
 },
 
 {
@@ -219,17 +219,7 @@ export default function Projects({ categoryFromUrl = null }) {
   tags: ["Branding", "Design", "Logo"],
 },
 
-  
-
-
-      
-
-
-
-
-
-
-
+        
 
     ],
 
