@@ -150,57 +150,57 @@ export default function Projects({ categoryFromUrl = null }) {
       {
   image: "/images/branding-logo-design/1.jpg",
   category: "Branding & Logo Design",
-  title: "Brand Identity Project",
-  desc: "Complete brand identity package including logo, color palette, typography, and visual guidelines.",
-  tags: ["Branding", "Design", "Logo"],
+  title: "Prime Realty Logo",
+  desc: "Minimalist real estate logo designed to communicate trust, stability, and modern living.",
+  tags: ["Branding", "Logo", "Real Estate"],
 },
 
 {
   image: "/images/branding-logo-design/2.jpg",
   category: "Branding & Logo Design",
-  title: "Brand Identity Project",
-  desc: "Complete brand identity package including logo, color palette, typography, and visual guidelines.",
-  tags: ["Branding", "Design", "Logo"],
+  title: "PlayForge Logo",
+  desc: "Vibrant gaming logo using gradient colors to represent creativity, fun, and digital innovation.",
+  tags: ["Branding", "Logo", "Gaming"],
 },
 
 {
   image: "/images/branding-logo-design/3.jpg",
   category: "Branding & Logo Design",
-  title: "Brand Identity Project",
-  desc: "Complete brand identity package including logo, color palette, typography, and visual guidelines.",
-  tags: ["Branding", "Design", "Logo"],
+  title: "Solid Build Logo",
+  desc: "Strong and bold construction logo symbolizing reliability, strength, and future growth.",
+  tags: ["Branding", "Logo", "Construction"],
 },
 
 {
   image: "/images/branding-logo-design/4.jpg",
   category: "Branding & Logo Design",
-  title: "Brand Identity Project",
-  desc: "Complete brand identity package including logo, color palette, typography, and visual guidelines.",
-  tags: ["Branding", "Design", "Logo"],
+  title: "Luxe Nails Logo",
+  desc: "A refined and elegant logo for a nail studio, featuring a minimalist hand illustration paired with serif typography. Designed to evoke beauty, luxury, and sophistication.",
+  tags: ["Branding", "Logo", "Beauty"],
 },
 
 {
   image: "/images/branding-logo-design/5.jpg",
   category: "Branding & Logo Design",
-  title: "Brand Identity Project",
-  desc: "Complete brand identity package including logo, color palette, typography, and visual guidelines.",
-  tags: ["Branding", "Design", "Logo"],
+  title: "Aureon Logo",
+  desc: "A futuristic tech logo with a sleek gradient icon symbolizing innovation and connectivity. The bold typography conveys strength and trust in the digital space.",
+  tags: ["Branding", "Logo", "Technology"],
 },
 
 {
   image: "/images/branding-logo-design/6.jpg",
   category: "Branding & Logo Design",
-  title: "Brand Identity Project",
-  desc: "Complete brand identity package including logo, color palette, typography, and visual guidelines.",
-  tags: ["Branding", "Design", "Logo"],
+  title: "Morris & Johnson Logo",
+  desc: "A prestigious logo for a law firm, combining a monogram shield with the scales of justice. Crafted to represent authority, trust, and professional integrity.",
+  tags: ["Branding", "Logo", "Law Firm"],
 },
 
 {
   image: "/images/branding-logo-design/7.jpg",
   category: "Branding & Logo Design",
-  title: "Brand Identity Project",
-  desc: "Complete brand identity package including logo, color palette, typography, and visual guidelines.",
-  tags: ["Branding", "Design", "Logo"],
+  title: "Goldman Logo",
+  desc: "A professional and modern logo for a structural engineering firm, featuring a geometric building icon in gold paired with bold typography. Designed to represent stability, precision, and reliability in construction.",
+  tags: ["Branding", "Logo", "Engineering"],
 },
 
 {
