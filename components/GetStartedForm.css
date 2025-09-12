@@ -61,15 +61,19 @@ textarea {
 /* ===== Button ===== */
 .submit-btn {
   width: 100%;
-  padding: 14px;
-  margin-top: 15px; /* מוסיף רווח ברור אחרי השדה האחרון */
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  color: #fff;
+  padding: 14px 20px;
+  margin-top: 15px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6) !important; /* חייב */
+  color: #fff !important; /* שיראה טקסט */
   font-size: 1.1rem;
   font-weight: 700;
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
