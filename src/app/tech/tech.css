@@ -1,228 +1,108 @@
-/* ===== General Layout ===== */
-.service-page {
-  font-family: "Poppins", sans-serif;
-  color: #333;
-  line-height: 1.6;
+.tech-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
 }
 
-/* ===== Hero Section ===== */
 .hero {
-  background: linear-gradient(135deg, #1a237e, #4a148c);
-  color: #fff;
   text-align: center;
-  padding: 120px 20px 100px;
-  position: relative;
+  margin-bottom: 80px;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  animation: fadeInDown 1s ease;
-}
-
-.hero .highlight {
-  color: #ffcc00;
+.animated-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background-clip: text;        /* ← הגרסה התקנית */
+  -webkit-background-clip: text; /* ← לגרסה ישנה של Chrome/Safari */
+  -webkit-text-fill-color: transparent;
+  color: transparent;           /* ← fallback לדפדפנים אחרים */
 }
 
 .hero p {
   font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto 30px;
-  animation: fadeInUp 1.2s ease;
+  color: #555;
+  max-width: 800px;
+  margin: 20px auto 0;
 }
 
-.cta-buttons {
+.tech-section {
+  margin-bottom: 100px;
+}
+
+.tech-text {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.tech-text h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.tech-text p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ===== לוגואים נעים ===== */
+.logos-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.logos-row {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 40px;
+  width: max-content;
 }
 
-.btn-primary,
-.btn-secondary {
-  padding: 12px 28px;
-  border-radius: 30px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.btn-primary {
-  background: #ff5722;
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background: #e64a19;
-  transform: translateY(-3px);
-}
-
-.btn-secondary {
-  border: 2px solid #fff;
-  color: #fff;
-}
-
-.btn-secondary:hover {
+.logo-card {
   background: #fff;
-  color: #4a148c;
-  transform: translateY(-3px);
-}
-
-/* ===== Blocks Section ===== */
-.blocks {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 80px auto;
-  padding: 0 20px;
-}
-
-.block.card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
-}
-
-.block.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-}
-
-.block h2 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #1a237e;
-}
-
-.block p {
-  margin-bottom: 15px;
-}
-
-.icon-list img {
-  width: 22px;
-  height: 22px;
-  margin-right: 8px;
-  vertical-align: middle;
-}
-
-.icon-list li {
-  margin: 8px 0;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
 }
 
-/* ===== Case Studies ===== */
-.case-studies {
-  background: #f9f9fb;
-  padding: 80px 20px;
-  text-align: center;
+.logo-card img {
+  max-width: 60px;
+  max-height: 60px;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
 }
 
-.case-studies h2 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: #4a148c;
+.logo-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
-.case-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  max-width: 1000px;
-  margin: 0 auto;
+.logo-card:hover img {
+  filter: grayscale(0%);
 }
 
-/* כרטיסים עם רקע Gradient ייחודי */
-.case-card {
-  border-radius: 14px;
-  padding: 25px;
-  color: #fff;
-  font-weight: 500;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* ===== אנימציה ===== */
+.logos-row.left {
+  animation: scroll-left 20s linear infinite;
 }
 
-.case-card:nth-child(1) {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-}
-.case-card:nth-child(2) {
-  background: linear-gradient(135deg, #ff5722, #ff9800);
-}
-.case-card:nth-child(3) {
-  background: linear-gradient(135deg, #00b09b, #96c93d);
+.logos-row.right {
+  animation: scroll-right 22s linear infinite;
 }
 
-.case-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 14px 28px rgba(0,0,0,0.18);
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-.case-card h3 {
-  margin-bottom: 12px;
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-
-/* ===== Outro Section ===== */
-.outro {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(135deg, #4a148c, #1a237e);
-  color: #fff;
-}
-
-.outro h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-}
-
-.outro p {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto 30px;
-}
-
-.outro .btn-primary.large {
-  font-size: 1.1rem;
-  padding: 15px 40px;
-  border-radius: 40px;
-}
-
-/* ===== Animations ===== */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===== Scroll Animation ===== */
-.tech-block {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.tech-block.active {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes scroll-right {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(50%); }
 }
