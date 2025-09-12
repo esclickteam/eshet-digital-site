@@ -38,28 +38,7 @@ const sections = [
       { src: "/icons/mongodb.svg", label: "MongoDB" },
       { src: "/icons/redis.svg", label: "Redis" },
       { src: "/icons/restapi.svg", label: "REST API" },
-      { src: "/icons/railway.jpeg", label: "Railway" },
-    ],
-  },
-  {
-    title: "🔒 Hosting & Security",
-    desc: "Reliable hosting and top-tier security to keep your business online 24/7.",
-    logos: [
-      { src: "/icons/vercel.svg", label: "Vercel" },
-      { src: "/icons/netlify.svg", label: "Netlify" },
-      { src: "/icons/cloudflare.svg", label: "Cloudflare" },
-      { src: "/icons/ssl.svg", label: "SSL" },
-    ],
-  },
-  {
-    title: "☁️ Cloud & DevOps",
-    desc: "From deployment to scaling — cloud and DevOps tools we trust.",
-    logos: [
-      { src: "/icons/aws.svg", label: "AWS" },
-      { src: "/icons/azure.svg", label: "Azure" },
-      { src: "/icons/googlecloud.svg", label: "Google Cloud" },
-      { src: "/icons/docker.svg", label: "Docker" },
-      { src: "/icons/kubernetes.svg", label: "Kubernetes" },
+      { src: "/icons/railway.svg", label: "Railway" },
     ],
   },
   {
