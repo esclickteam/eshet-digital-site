@@ -106,10 +106,14 @@
 
 /* ===== Submit Button ===== */
 .btn-primary {
-  display: inline-block;
+  display: inline-flex;  /* ליישור טקסט ואייקון */
+  align-items: center;
+  justify-content: center;
+  gap: 8px;              /* רווח בין טקסט לחץ */
+
   padding: 14px 28px;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: #fff;
+  background: linear-gradient(135deg, #6a11cb, #2575fc) !important; /* דריסה */
+  color: #fff !important; /* דריסה לטקסט */
   border: none;
   border-radius: 30px;
   font-size: 1.1rem;
@@ -117,6 +121,8 @@
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
+  position: relative;
+  z-index: 10; /* לוודא שלא מכוסה */
 }
 
 .btn-primary:hover {
@@ -125,6 +131,8 @@
 }
 
 .btn-primary .arrow {
+  font-size: 1.2rem;
+  line-height: 1;
   margin-left: 8px;
   font-weight: bold;
 }
