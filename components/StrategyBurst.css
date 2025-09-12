@@ -21,7 +21,7 @@
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width:380px; 
+  width: 380px;
   z-index: 4;
 }
 
@@ -92,22 +92,32 @@
   50% { opacity: 1; height: 50px; }
 }
 
-/* Mobile scaling */
+/* ====== Mobile scaling ====== */
 @media (max-width: 768px) {
   .sb-stage {
     width: 100%;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .sb-core {
-    width: 150px;
-    top: 25%;
+    position: relative;   /* לא absolute יותר */
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 180px;
+    margin-bottom: 30px;  /* רווח מתחת ללפטופ */
   }
 
   .sb-icons {
+    position: relative;
+    top: auto;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 15px;
-    top: 65%;
+    margin-top: 10px;
   }
 
   .sb-icon {
@@ -116,7 +126,6 @@
   }
 
   .sb-icon::after {
-    top: -30px;
-    height: 30px;
+    display: none; /* במובייל לא מציגים חוטים */
   }
 }
