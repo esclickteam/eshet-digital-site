@@ -25,8 +25,8 @@ const sections = [
     logos: [
       { src: "/icons/react.svg", label: "React" },
       { src: "/icons/nextjs.svg", label: "Next.js" },
-      { src: "/icons/javascript.png", label: "JavaScript" },
-      { src: "/icons/html5.png", label: "HTML5" },
+      { src: "/icons/JavaScript.png", label: "JavaScript" },
+      { src: "/icons/HTML5.png", label: "HTML5" },
       { src: "/icons/tailwindcss.svg", label: "TailwindCSS" },
     ],
   },
