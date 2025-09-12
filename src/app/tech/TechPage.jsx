@@ -25,20 +25,20 @@ const sections = [
     logos: [
       { src: "/icons/react.svg", label: "React" },
       { src: "/icons/nextjs.svg", label: "Next.js" },
-      { src: "/icons/JavaScript.png", label: "Next.js" },
-      { src: "/icons/HTML5.png", label: "Next.js" },
+      { src: "/icons/javascript.png", label: "JavaScript" },
+      { src: "/icons/html5.png", label: "HTML5" },
       { src: "/icons/tailwindcss.svg", label: "TailwindCSS" },
     ],
   },
   {
     title: "⚙️ Back-end",
-    desc: "Powerful server-side technologies for APIs, logic, and scalability.",
+    desc: "Powerful server-side technologies for APIs, databases, and scalability.",
     logos: [
       { src: "/icons/nodejs.svg", label: "Node.js" },
-      { src: "/icons/php.svg", label: "PHP" },
-      { src: "/icons/python.svg", label: "Python" },
-      { src: "/icons/laravel.svg", label: "Laravel" },
-      { src: "/icons/django.svg", label: "Django" },
+      { src: "/icons/mongodb.svg", label: "MongoDB" },
+      { src: "/icons/redis.svg", label: "Redis" },
+      { src: "/icons/restapi.svg", label: "REST API" },
+      { src: "/icons/railway.jpeg", label: "Railway" },
     ],
   },
   {
