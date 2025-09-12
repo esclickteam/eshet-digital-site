@@ -20,7 +20,7 @@ export default function GetStartedForm() {
     const data = new FormData(form);
 
     try {
-      const res = await fetch("https://formspree.io/f/xldwaveo", {
+      const res = await fetch("https://formspree.io/f/mzzawewp", {
         method: "POST",
         body: data,
         headers: { Accept: "application/json" },
