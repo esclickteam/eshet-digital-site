@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import {
   FaUser,
   FaEnvelope,
-  FaPhone,
   FaBuilding,
   FaCogs,
   FaQuestionCircle,
@@ -41,7 +40,7 @@ export default function ContactUs() {
   return (
     <div className="contact-page">
       <div className="contact-container">
-        {/* צד שמאל – טקסט + פרטי קשר */}
+        {/* צד שמאל – טקסט + אימייל בלבד */}
         <div className="contact-info">
           <h1>Contact Us</h1>
           <p>
@@ -50,12 +49,6 @@ export default function ContactUs() {
           </p>
 
           <div className="details">
-            <div className="detail-item">
-              <strong>📍 Address:</strong> 123 Business Street, Tel Aviv, Israel
-            </div>
-            <div className="detail-item">
-              <strong>📞 Phone:</strong> +972-52-1234567
-            </div>
             <div className="detail-item">
               <strong>✉️ Email:</strong> hello@eshetdigital.com
             </div>
@@ -73,11 +66,6 @@ export default function ContactUs() {
             <div className="form-group">
               <input type="email" name="email" placeholder="Email Address*" required />
               <FaEnvelope className="icon" />
-            </div>
-
-            <div className="form-group">
-              <input type="tel" name="phone" placeholder="Phone Number*" required />
-              <FaPhone className="icon" />
             </div>
 
             <div className="form-group">
