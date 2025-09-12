@@ -131,8 +131,10 @@
   color: var(--primary);
 }
 
-/* ====== WhatsApp Button (Desktop) ====== */
-.header-cta { margin-left: auto; }
+/* ====== WhatsApp Button (Desktop only) ====== */
+.header-cta {
+  margin-left: auto;
+}
 .whatsapp-btn {
   display: flex;
   align-items: center;
@@ -197,7 +199,9 @@
 /* ====== Desktop vs Mobile ====== */
 .desktop-only { display: flex; }
 .mobile-only { display: none; }
-@media (max-width: 768px) {
+
+/* ✅ מוסתר לגמרי במובייל */
+@media screen and (max-width: 768px) {
   .desktop-only { display: none; }
   .mobile-only {
     display: flex;
@@ -217,7 +221,11 @@
     z-index: 999;
   }
   .mobile-only.open { transform: translateY(0); }
-  .header-cta { display: none; }
+
+  .header-cta {
+    display: none !important; /* ✅ פתרון לבעיה באנדרואיד */
+  }
+
   .hamburger { display: flex; }
   .nav-links li { width: 100%; }
   .nav-links li a,
