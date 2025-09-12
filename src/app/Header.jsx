@@ -112,7 +112,7 @@ export default function Header() {
           {/* Contact CTA */}
           <li className="mobile-cta">
             <a
-              href="/contact"  /* ✅ הפניה לעמוד יצירת קשר */
+                href="https://wa.me/19179476813" 
               className="contact-card"
             >
               <div className="icon-circle">
