@@ -23,11 +23,13 @@
   margin: 0 auto;
 }
 
+/* ===== Blocks Section ===== */
 .blocks {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   margin-bottom: 80px;
+  justify-items: center; /* מרכז את התוכן גם במובייל */
 }
 
 .block {
@@ -36,12 +38,14 @@
   padding: 25px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   transition: transform 0.2s ease;
+  text-align: center; /* אם יש אייקון בפנים – שיהיה ממורכז */
 }
 
 .block:hover {
   transform: translateY(-4px);
 }
 
+/* ===== FAQ ===== */
 .faq {
   max-width: 900px;
   margin: 0 auto;
@@ -56,4 +60,20 @@
   margin-bottom: 20px;
   border-bottom: 1px solid #eee;
   padding-bottom: 15px;
+}
+
+/* ===== Responsiveness ===== */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .blocks {
+    grid-template-columns: 1fr; /* במובייל – תמיד טור אחד */
+    gap: 20px;
+  }
 }
