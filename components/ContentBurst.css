@@ -13,19 +13,14 @@
   height: 400px;
   max-width: 100%;
   z-index: 3;
-  display: flex;
-  flex-direction: column;   /* 👈 מסך ואייקונים תמיד אחד מתחת לשני */
-  align-items: center;
-  justify-content: flex-start;
-  gap: 30px;
 }
 
-/* Screen Center */
+/* Screen Center (Desktop) */
 .cb-screen {
-  position: relative;       /* 👈 במקום absolute */
-  top: 0;
-  left: 0;
-  transform: none;
+  position: absolute;
+  top: 30%;              /* מעלה את המחשב */
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 380px;
   z-index: 4;
 }
@@ -35,7 +30,7 @@
   height: auto;
 }
 
-/* Icons Row */
+/* Icons Row (Desktop) */
 .cb-icons {
   list-style: none;
   margin: 0;
@@ -44,9 +39,10 @@
   justify-content: center;
   align-items: center;
   gap: 25px;
-  flex-wrap: wrap;          /* 👈 אם אין מקום – ירד שורה */
-  position: relative;
-  top: 0;                   /* 👈 מבטל את ה־70% */
+  position: absolute;
+  top: 75%;               /* ממקם מתחת למסך */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .cb-icon {
@@ -102,26 +98,37 @@
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
-
 @keyframes morph {
   0%, 100% { border-radius: 20px; filter: blur(12px); }
   50%      { border-radius: 50%; filter: blur(25px); }
 }
 
-/* Mobile scaling */
+/* ===== Mobile scaling ===== */
 @media (max-width: 768px) {
   .cb-stage {
     width: 100%;
     height: auto;
+    display: flex;
+    flex-direction: column; /* במובייל – מסך ואייקונים אחד מתחת לשני */
+    align-items: center;
     gap: 20px;
   }
 
   .cb-screen {
+    position: relative; /* לא absolute */
+    top: auto;
+    left: auto;
+    transform: none;
     width: 200px;
   }
 
   .cb-icons {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
     gap: 15px;
+    flex-wrap: wrap;
   }
 
   .cb-icon {
