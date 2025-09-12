@@ -27,13 +27,16 @@
 .logo {
   display: flex;
   align-items: center;
-  height: 70px;
+  height: 100%; /* יישאר בגובה של ההדר */
   position: relative;
-  z-index: 1200; /* יותר גבוה מהתפריט (999) */
+  z-index: 1200;
 }
 .logo img {
-  max-height: 45px;
+  max-height: 55%;   /* יחסי לגובה ההדר */
+  max-width: 160px;  /* מגבלת רוחב */
+  height: auto;
   width: auto;
+  object-fit: contain;
   display: block;
   cursor: pointer;
   transition: transform 0.3s ease;
