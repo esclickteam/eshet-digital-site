@@ -76,18 +76,38 @@ export default function TechPage() {
 
       {/* Sections */}
       {sections.map((sec, i) => (
-        <section className="tech-section" key={i}>
+        <section
+          className={`tech-section ${i % 2 === 0 ? "normal" : "reverse"}`}
+          key={i}
+        >
           <div className="tech-text">
             <h2>{sec.title}</h2>
             <p>{sec.desc}</p>
           </div>
 
-          {/* Logos with fade edges */}
+          {/* Logos infinite scroll */}
           <div className="logos-section">
             <div className="logos-slide">
-              {sec.logos.concat(sec.logos).map((logo, j) => (
+              {sec.logos.map((logo, j) => (
                 <div className="logo-card" key={j}>
-                  <img src={logo.src} alt={`${logo.label} logo`} />
+                  <img
+                    src={logo.src}
+                    alt={logo.label}
+                    loading="lazy"
+                    aria-label={logo.label}
+                  />
+                  <span>{logo.label}</span>
+                </div>
+              ))}
+              {/* שכפול פעם אחת בלבד ליצירת אפקט גלילה חלק */}
+              {sec.logos.map((logo, j) => (
+                <div className="logo-card" key={`dup-${j}`}>
+                  <img
+                    src={logo.src}
+                    alt={logo.label}
+                    loading="lazy"
+                    aria-label={logo.label}
+                  />
                   <span>{logo.label}</span>
                 </div>
               ))}

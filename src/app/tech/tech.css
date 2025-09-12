@@ -4,6 +4,7 @@
   padding: 80px 20px;
 }
 
+/* ===== Hero ===== */
 .hero {
   text-align: center;
   margin-bottom: 80px;
@@ -26,13 +27,27 @@
   margin: 20px auto 0;
 }
 
+/* ===== Tech Sections ===== */
 .tech-section {
   margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
+/* פריסה מתחלפת */
+.tech-section.normal {
+  flex-direction: row;
+}
+
+.tech-section.reverse {
+  flex-direction: row-reverse;
+}
+
+/* טקסט */
 .tech-text {
-  text-align: center;
-  margin-bottom: 30px;
+  flex: 1 1 400px;
 }
 
 .tech-text h2 {
@@ -46,8 +61,9 @@
   line-height: 1.6;
 }
 
-/* ===== לוגואים נעים (שורה אחת) ===== */
+/* ===== לוגואים נעים ===== */
 .logos-section {
+  flex: 1 1 400px;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -109,7 +125,7 @@
   text-align: center;
 }
 
-/* אפקט עדין בהובר */
+/* אפקט בהובר */
 .logo-card:hover {
   transform: translateY(-6px) scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
@@ -128,6 +144,7 @@
 .cta-wrapper {
   text-align: center;
   margin-top: 20px;
+  flex-basis: 100%;
 }
 
 .btn-primary {
@@ -144,4 +161,20 @@
 .btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Responsiveness ===== */
+@media (max-width: 900px) {
+  .tech-section {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .tech-text {
+    margin-bottom: 30px;
+  }
+
+  .logos-section {
+    justify-content: center;
+  }
 }
