@@ -74,6 +74,7 @@ const sections = [
 export default function TechPage() {
   return (
     <div className="tech-page">
+      {/* Hero */}
       <motion.section
         className="hero"
         initial={{ opacity: 0, y: 40 }}
@@ -90,6 +91,7 @@ export default function TechPage() {
         </p>
       </motion.section>
 
+      {/* Sections */}
       {sections.map((sec, i) => (
         <section className="tech-section" key={i}>
           <div className="tech-text">
@@ -97,19 +99,11 @@ export default function TechPage() {
             <p>{sec.desc}</p>
           </div>
 
-          {/* שתי שורות של לוגואים נעים */}
-          <div className="logos-wrapper">
-            <div className="logos-row left">
+          {/* שורת לוגואים אחת זזה */}
+          <div className="logos-section">
+            <div className="logos-slide">
               {sec.logos.concat(sec.logos).map((logo, j) => (
-                <div className="logo-card" key={`left-${j}`}>
-                  <img src={logo} alt="tech logo" />
-                </div>
-              ))}
-            </div>
-
-            <div className="logos-row right">
-              {sec.logos.concat(sec.logos).map((logo, j) => (
-                <div className="logo-card" key={`right-${j}`}>
+                <div className="logo-card" key={j}>
                   <img src={logo} alt="tech logo" />
                 </div>
               ))}
