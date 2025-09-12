@@ -27,13 +27,13 @@
 .logo {
   display: flex;
   align-items: center;
-  height: 100%; /* יישאר בגובה של ההדר */
+  height: 100%;
   position: relative;
   z-index: 1200;
 }
 .logo img {
-  max-height: 55%;   /* יחסי לגובה ההדר */
-  max-width: 160px;  /* מגבלת רוחב */
+  max-height: 55%;
+  max-width: 160px;
   height: auto;
   width: auto;
   object-fit: contain;
@@ -131,10 +131,15 @@
   color: var(--primary);
 }
 
-/* ====== WhatsApp Button (Desktop only) ====== */
+/* ====== CTA Area (Desktop only) ====== */
 .header-cta {
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
+
+/* WhatsApp Button */
 .whatsapp-btn {
   display: flex;
   align-items: center;
@@ -148,15 +153,32 @@
   font-weight: 600;
   transition: transform 0.3s, background 0.3s;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-  /* שמירה על טקסט בשורה אחת */
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .whatsapp-btn:hover {
   transform: translateY(-2px);
   background: linear-gradient(135deg, #20c057, #0f7b63);
+}
+
+/* Book a Discovery Call Button */
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s, background 0.3s;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.cta-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #ff3355, #e63b25);
 }
 
 /* ====== חץ ל-dropbtn ====== */
@@ -182,7 +204,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  margin-left: auto; /* ✅ דוחף אותו לצד ימין */
+  margin-left: auto;
   z-index: 1100;
 }
 .hamburger span {
@@ -200,7 +222,6 @@
 .desktop-only { display: flex; }
 .mobile-only { display: none; }
 
-/* ✅ מוסתר לגמרי במובייל */
 @media screen and (max-width: 768px) {
   .desktop-only { display: none; }
   .mobile-only {
@@ -223,7 +244,7 @@
   .mobile-only.open { transform: translateY(0); }
 
   .header-cta {
-    display: none !important; /* ✅ פתרון לבעיה באנדרואיד */
+    display: none !important; /* ✅ מוסתר במובייל */
   }
 
   .hamburger { display: flex; }
@@ -274,11 +295,7 @@
     font-size: 1rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, background 0.3s ease;
-
-    /* שמירה על טקסט */
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   /* Contact Us */
@@ -341,8 +358,8 @@ button:active {
 
 /* ====== תיקון text-size באנדרואיד/iOS ====== */
 html, body {
-  -webkit-text-size-adjust: 100%; /* iOS */
-  -moz-text-size-adjust: 100%;    /* Firefox Android */
-  -ms-text-size-adjust: 100%;     /* IE/Edge */
-  text-size-adjust: 100%;         /* Android */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }

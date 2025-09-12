@@ -62,12 +62,22 @@ export default function Header() {
 
           <li><a href="/projects">Projects</a></li>
           <li><a href="/tech">Tech</a></li>
-          <li>
-            <a href="https://wa.me/19179476813" target="_blank" rel="noopener noreferrer">
-              Contact
-            </a>
-          </li>
         </ul>
+
+        {/* ===== Desktop CTA (Contact + Book Call) ===== */}
+        <div className="header-cta desktop-only">
+          <a
+            href="https://wa.me/19179476813"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="whatsapp-btn"
+          >
+            Contact
+          </a>
+          <a href="/book" className="cta-btn">
+            Book a Discovery Call
+          </a>
+        </div>
 
         {/* ===== Mobile Menu ===== */}
         <ul className={`nav-links mobile-only ${menuOpen ? "open" : ""}`}>
@@ -141,18 +151,6 @@ export default function Header() {
             </a>
           </li>
         </ul>
-
-        {/* ===== Desktop CTA (only Contact) ===== */}
-        <div className="header-cta">
-          <a
-            href="https://wa.me/19179476813"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="whatsapp-btn"
-          >
-            Contact
-          </a>
-        </div>
       </nav>
     </header>
   );
