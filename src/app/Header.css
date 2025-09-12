@@ -143,6 +143,11 @@
   font-weight: 600;
   transition: transform 0.3s, background 0.3s;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  /* שמירה על טקסט בשורה אחת */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .whatsapp-btn:hover {
   transform: translateY(-2px);
@@ -258,6 +263,11 @@
     font-size: 1rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, background 0.3s ease;
+
+    /* שמירה על טקסט */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   /* Contact Us */
@@ -316,4 +326,12 @@ button:active {
   outline: none !important;
   box-shadow: none !important;
   background: none !important;
+}
+
+/* ====== תיקון text-size באנדרואיד/iOS ====== */
+html, body {
+  -webkit-text-size-adjust: 100%; /* iOS */
+  -moz-text-size-adjust: 100%;    /* Firefox Android */
+  -ms-text-size-adjust: 100%;     /* IE/Edge */
+  text-size-adjust: 100%;         /* Android */
 }
