@@ -62,7 +62,11 @@ export default function Header() {
 
           <li><a href="/projects">Projects</a></li>
           <li><a href="/tech">Tech</a></li>
-          <li><a href="/contact">Contact</a></li> {/* ✅ תוקן */}
+          <li>
+            <a href="https://wa.me/19179476813" target="_blank" rel="noopener noreferrer">
+              Contact
+            </a>
+          </li>
         </ul>
 
         {/* ===== Mobile Menu ===== */}
@@ -112,7 +116,9 @@ export default function Header() {
           {/* Contact CTA */}
           <li className="mobile-cta">
             <a
-                href="https://wa.me/19179476813" 
+              href="https://wa.me/19179476813"
+              target="_blank"
+              rel="noopener noreferrer"
               className="contact-card"
             >
               <div className="icon-circle">
@@ -139,7 +145,9 @@ export default function Header() {
         {/* ===== Desktop CTA ===== */}
         <div className="header-cta">
           <a
-            href="/contact"   /* ✅ הפניה לעמוד יצירת קשר */
+            href="https://wa.me/19179476813"
+            target="_blank"
+            rel="noopener noreferrer"
             className="whatsapp-btn"
           >
             Contact
