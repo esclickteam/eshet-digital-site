@@ -62,7 +62,7 @@ export default function Header() {
 
           <li><a href="/projects">Projects</a></li>
           <li><a href="/tech">Tech</a></li>
-          <li><a href="/Contact us">Contact</a></li>
+          <li><a href="/contact">Contact</a></li> {/* ✅ תוקן */}
         </ul>
 
         {/* ===== Mobile Menu ===== */}
@@ -112,9 +112,7 @@ export default function Header() {
           {/* Contact CTA */}
           <li className="mobile-cta">
             <a
-              href="https://wa.me/972526850711?text=Hello,%20I%20would%20like%20more%20details%20about%20your%20services"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/contact"  /* ✅ הפניה לעמוד יצירת קשר */
               className="contact-card"
             >
               <div className="icon-circle">
@@ -127,9 +125,7 @@ export default function Header() {
           {/* Book a Discovery Call CTA */}
           <li className="mobile-cta">
             <a
-              href="https://www.eshetdigital.com/book"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/book"
               className="call-card"
             >
               <div className="icon-circle call-icon">
@@ -143,9 +139,7 @@ export default function Header() {
         {/* ===== Desktop CTA ===== */}
         <div className="header-cta">
           <a
-            href="https://wa.me/972526850711?text=Hello,%20I%20would%20like%20more%20details%20about%20your%20services"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"   /* ✅ הפניה לעמוד יצירת קשר */
             className="whatsapp-btn"
           >
             Contact

@@ -9,7 +9,7 @@ import {
   FaCogs,
   FaQuestionCircle,
 } from "react-icons/fa";
-import "./contact.css";
+import "./ContactUs.css";
 
 export default function ContactUs() {
   const [status, setStatus] = useState(""); // "" | "success" | "error"
