@@ -13,14 +13,19 @@
   height: 400px;
   max-width: 100%;
   z-index: 3;
+  display: flex;
+  flex-direction: column;   /* 👈 מסך ואייקונים תמיד אחד מתחת לשני */
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
 }
 
 /* Screen Center */
 .cb-screen {
-  position: absolute;
-  top: 30%; /* הרמתי את המחשב עוד למעלה */
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;       /* 👈 במקום absolute */
+  top: 0;
+  left: 0;
+  transform: none;
   width: 380px;
   z-index: 4;
 }
@@ -39,8 +44,9 @@
   justify-content: center;
   align-items: center;
   gap: 25px;
+  flex-wrap: wrap;          /* 👈 אם אין מקום – ירד שורה */
   position: relative;
-  top: 70%; /* ממקם את השורה מתחת למסך */
+  top: 0;                   /* 👈 מבטל את ה־70% */
 }
 
 .cb-icon {
@@ -107,17 +113,15 @@
   .cb-stage {
     width: 100%;
     height: auto;
+    gap: 20px;
   }
 
   .cb-screen {
-    width: 150px;
-    top: 25%; /* עוד יותר גבוה במובייל */
+    width: 200px;
   }
 
   .cb-icons {
-    flex-wrap: wrap;
     gap: 15px;
-    top: 65%;
   }
 
   .cb-icon {
