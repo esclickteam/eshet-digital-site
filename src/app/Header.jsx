@@ -128,7 +128,7 @@ export default function Header() {
             </a>
           </li>
 
-          {/* Book a Discovery Call CTA */}
+          {/* Book a Discovery Call CTA (mobile only) */}
           <li className="mobile-cta">
             <a
               href="/book"
@@ -142,7 +142,7 @@ export default function Header() {
           </li>
         </ul>
 
-        {/* ===== Desktop CTA ===== */}
+        {/* ===== Desktop CTA (only Contact) ===== */}
         <div className="header-cta">
           <a
             href="https://wa.me/19179476813"
