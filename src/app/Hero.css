@@ -6,7 +6,7 @@
   justify-content: center;
   text-align: center;
   color: #fff;
-  padding: 100px 20px; /* ריווח שווה למעלה ולמטה */
+  padding: 170px 20px 100px; /* ✅ רווח נוסף למעלה כדי לא להיכנס מתחת להדר */
   min-height: 90vh; /* כמעט מסך מלא */
   animation: fadeInHero 1.2s ease-in-out;
   position: relative;
@@ -72,7 +72,7 @@
 /* ✅ רספונסיביות */
 @media (max-width: 768px) {
   .hero {
-    padding: 70px 20px;
+    padding: 120px 20px 70px; /* ✅ רווח מספק גם במובייל */
     min-height: auto;
   }
 
