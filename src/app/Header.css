@@ -369,3 +369,11 @@ html, body {
     display: none !important;
   }
 }
+
+/* מעלה רק את כפתור Book a Discovery Call בתוך ההמבורגר */
+@media (max-width: 768px) {
+  .mobile-cta .call-card {
+    order: -1;        /* מעלה אותו למעלה ברשימה */
+    margin-top: 10px; /* קצת ריווח מהקטגוריות */
+  }
+}
