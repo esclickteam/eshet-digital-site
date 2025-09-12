@@ -46,10 +46,10 @@ const sections = [
     desc: "Content management made simple, flexible, and powerful.",
     logos: [
       { src: "/icons/wordpress.svg", label: "WordPress" },
+      { src: "/icons/Elementor.jpeg", label: "Elementor" },
       { src: "/icons/wix.svg", label: "Wix" },
-      { src: "/icons/webflow.svg", label: "Webflow" },
-      { src: "/icons/squarespace.svg", label: "Squarespace" },
-      { src: "/icons/drupal.svg", label: "Drupal" },
+      { src: "/icons/shopify.svg", label: "Shopify" },
+      { src: "/icons/Squarespace.png", label: "Squarespace" },
     ],
   },
 ];
