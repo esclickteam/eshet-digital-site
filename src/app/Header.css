@@ -26,15 +26,15 @@
 /* ====== Logo ====== */
 .logo {
   display: flex;
-  align-items: center;   /* מרכז אנכית בתוך ההדר */
-  height: 70px;          /* אותו גובה כמו ההדר */
+  align-items: center;
+  height: 70px; /* תמיד בגובה ההדר */
 }
 .logo img {
-  max-height: 45px;      /* גודל אחיד ונראה טוב */
+  max-height: 45px;
   width: auto;
   display: block;
-  transition: transform 0.3s ease;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 .logo img:hover {
   transform: scale(1.05);
@@ -141,7 +141,6 @@
   font-weight: 600;
   transition: transform 0.3s, background 0.3s;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
 }
 .whatsapp-btn:hover {
   transform: translateY(-2px);
@@ -171,7 +170,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  margin-left: 10px;
+  margin-left: auto; /* ✅ דוחף אותו לצד ימין */
   z-index: 1100;
 }
 .hamburger span {
@@ -239,7 +238,7 @@
   /* ====== CTA במובייל ====== */
   .mobile-cta { 
     width: 100%; 
-    margin: 15px 0;   /* ✅ כבר לא auto */
+    margin: 15px 0;
     display: flex;
     justify-content: center;
   }
