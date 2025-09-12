@@ -12,10 +12,13 @@ import "./GetStartedForm.css";
 
 export default function GetStartedForm() {
   const [status, setStatus] = useState(""); // "" | "success" | "error"
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("");
+    setLoading(true);
+
     const form = e.target;
     const data = new FormData(form);
 
@@ -34,6 +37,8 @@ export default function GetStartedForm() {
       }
     } catch (err) {
       setStatus("error");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -42,7 +47,7 @@ export default function GetStartedForm() {
       <div className="form-container">
         <h2>Get Started</h2>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="contact-form">
           <div className="form-group">
             <input type="text" name="fullName" placeholder="Full Name*" required />
             <FaUser className="icon" />
@@ -74,12 +79,16 @@ export default function GetStartedForm() {
           </div>
 
           <div className="form-group">
-            <textarea name="message" placeholder="How can we help you?"></textarea>
+            <textarea
+              name="message"
+              placeholder="How can we help you?"
+              rows="4"
+            ></textarea>
             <FaQuestionCircle className="icon" />
           </div>
 
-          <button type="submit" className="submit-btn">
-            Submit <span className="arrow">➜</span>
+          <button type="submit" className="submit-btn" disabled={loading}>
+            {loading ? "Sending..." : "Submit"} <span className="arrow">➜</span>
           </button>
         </form>
 
