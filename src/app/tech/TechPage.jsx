@@ -118,7 +118,12 @@ export default function TechPage() {
           {/* CTA only for E-Commerce */}
           {sec.cta && (
             <div className="cta-wrapper">
-              <a href="/contact" className="btn-primary">
+              <a
+                href="https://www.eshetdigital.com/get-started"
+                className="btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {sec.cta}
               </a>
             </div>
