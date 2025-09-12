@@ -38,7 +38,7 @@ const sections = [
       { src: "/icons/mongodb.svg", label: "MongoDB" },
       { src: "/icons/redis.svg", label: "Redis" },
       { src: "/icons/restapi.svg", label: "REST API" },
-      { src: "/icons/railway.svg", label: "Railway" },
+      { src: "/icons/railway.jpeg", label: "Railway" },
     ],
   },
   {
