@@ -27,7 +27,9 @@
 .logo {
   display: flex;
   align-items: center;
-  height: 70px; /* תמיד בגובה ההדר */
+  height: 70px;
+  position: relative;
+  z-index: 1200; /* יותר גבוה מהתפריט (999) */
 }
 .logo img {
   max-height: 45px;
