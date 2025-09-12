@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
 };
 
-/* ✅ מייצר meta viewport אוטומטית */
+/* ✅ meta viewport */
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -44,14 +44,15 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {/* ✅ Header קבוע בכל האתר */}
+        {/* Header קבוע */}
         <Header />
 
-        <main style={{ marginTop: "70px" }}>
+        {/* ✅ בלי marginTop, ה-Hero דואג לריווח */}
+        <main>
           {children}
         </main>
 
-        {/* ✅ Footer קבוע בכל האתר */}
+        {/* Footer קבוע */}
         <Footer />
       </body>
     </html>
