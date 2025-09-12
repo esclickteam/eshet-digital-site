@@ -363,3 +363,9 @@ html, body {
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
+
+@media screen and (max-width: 768px) {
+  .header-cta {
+    display: none !important;
+  }
+}
