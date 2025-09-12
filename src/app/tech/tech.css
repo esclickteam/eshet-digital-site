@@ -77,10 +77,10 @@
 .logo-card img {
   max-width: 60px;
   max-height: 60px;
-  filter: grayscale(100%);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
+/* אפקט עדין בהובר */
 .logo-card:hover {
   transform: translateY(-6px) scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
