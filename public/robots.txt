@@ -1,0 +1,13 @@
+# robots.txt for Eshet Digital
+# מאפשר לכל מנועי החיפוש לסרוק את האתר
+
+User-agent: *
+Allow: /
+
+# חסימת תיקיות פנימיות/פרטיות (אם יש לך כאלו בעתיד)
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /private/
+
+# מפת אתר ראשית
+Sitemap: https://www.eshetdigital.com/sitemap.xml
