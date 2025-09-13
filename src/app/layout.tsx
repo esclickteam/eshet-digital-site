@@ -18,15 +18,28 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Eshet Digital",
   description: "Strategic branding, creative design and digital solutions",
+  keywords: [
+    "Eshet Digital",
+    "Branding",
+    "Creative Design",
+    "Digital Solutions",
+    "Marketing",
+    "Web Development",
+  ],
+  authors: [{ name: "Eshet Digital", url: "https://www.eshetdigital.com" }],
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-32x32.png",
-    apple: [
+    icon: [
+      { url: "/favicon.ico" }, // ברירת מחדל – כלול כמה גדלים בפנים
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
       { url: "/favicon-192x192.png", sizes: "192x192", type: "image/png" },
       { url: "/favicon-512x512.png", sizes: "512x512", type: "image/png" },
     ],
+    apple: { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    shortcut: "/favicon-32x32.png",
   },
   manifest: "/manifest.json",
+  themeColor: "#ffffff",
 };
 
 /* ✅ meta viewport */
@@ -47,10 +60,7 @@ export default function RootLayout({
         {/* Header קבוע */}
         <Header />
 
-        {/* ✅ בלי marginTop, ה-Hero דואג לריווח */}
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
 
         {/* Footer קבוע */}
         <Footer />
