@@ -29,14 +29,14 @@ export default function WebsiteLanding() {
   ];
 
   const portfolio = [
-    { src: "/portfolio/1.jpg", title: "Glow with the Flow Skin Studio" },
-    { src: "/portfolio/2.jpg", title: "Bamboo Landscaping" },
-    { src: "/portfolio/3.jpg", title: "Manzo General Contractors" },
-    { src: "/portfolio/4.jpg", title: "Replete Aesthetics" },
-    { src: "/portfolio/5.jpg", title: "EG Pro Electric" },
-    { src: "/portfolio/6.jpg", title: "Always Clean" },
-    { src: "/portfolio/7.jpg", title: "Wild Waste Control" },
-    { src: "/portfolio/8.jpg", title: "HavenStone Realty" },
+    { src: "/portfolio/1.jpg", title: "Personal Training Website" },
+    { src: "/portfolio/2.jpg", title: "Fashion E-commerce Website" },
+    { src: "/portfolio/3.jpg", title: "Construction Business Website " },
+    { src: "/portfolio/4.jpg", title: "Real Estate Business Website" },
+    { src: "/portfolio/5.jpg", title: "Bakery E-commerce Website" },
+    { src: "/portfolio/6.jpg", title: "Bridal Studio Website " },
+    { src: "/portfolio/7.jpg", title: "Flower Shop E-commerce Website" },
+    { src: "/portfolio/8.jpg", title: "Hair Studio Website  " },
   ];
 
   const [counts, setCounts] = useState(stats.map(() => 0));
