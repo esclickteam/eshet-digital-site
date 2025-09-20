@@ -58,13 +58,6 @@
   font-weight: 700;
   line-height: 1.2;
 }
-.hero-text .tagline {
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin-bottom: 15px;
-  color: #e0e0e0;
-  opacity: 0.95;
-}
 .hero-text p {
   font-size: 1.2rem;
   margin-bottom: 30px;
@@ -160,48 +153,6 @@
 .orange .stat-icon, .orange h3 { color: #ff9966; }
 .blue .stat-icon, .blue h3 { color: #00c6ff; }
 
-/* ===== Website Design ===== */
-.web-design {
-  padding: 80px 20px;
-  background: linear-gradient(to bottom, #1f1f2e, #4a3aff);
-  color: #fff;
-  text-align: center;
-  border-radius: 12px;
-  max-width: 1000px;
-  margin: 80px auto;
-}
-.web-design h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-.web-design > p {
-  font-size: 1.1rem;
-  margin-bottom: 40px;
-  color: #ddd;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-}
-.design-points {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-bottom: 40px;
-  text-align: left;
-}
-.point h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-.point p {
-  font-size: 1rem;
-  color: #ccc;
-  line-height: 1.6;
-}
-
 /* ===== Portfolio ===== */
 .portfolio {
   padding: 80px 20px;
@@ -216,7 +167,7 @@
 }
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* Desktop 4 per row */
   gap: 30px;
   margin-top: 30px;
   justify-items: center;
@@ -237,8 +188,8 @@
 }
 .portfolio-card img {
   width: 100%;
-  aspect-ratio: 4/3;
-  object-fit: cover;
+  aspect-ratio: 4/3;    /* ✅ שמירה על יחס אחיד */
+  object-fit: cover;    /* ✅ מילוי המסגרת */
   border-radius: 12px;
   transition: transform 0.3s ease;
 }
@@ -385,7 +336,7 @@
     margin-top: 30px;
   }
   .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* ✅ טאבלט */
   }
 }
 @media (max-width: 600px) {
@@ -400,9 +351,6 @@
     text-align: center;
   }
   .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-  .design-points {
-    grid-template-columns: 1fr; /* נקי במובייל */
+    grid-template-columns: 1fr; /* ✅ מובייל */
   }
 }
