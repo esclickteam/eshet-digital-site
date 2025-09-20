@@ -1,61 +1,38 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiPlus, FiMinus } from "react-icons/fi"; // ← פלוס/מינוס לאקורדיון
+import { FiPlus, FiMinus } from "react-icons/fi";
+import { FaBriefcase, FaFolderOpen, FaHandshake, FaUsers } from "react-icons/fa"; 
 import "./WebsiteLanding.css";
 
 export default function WebsiteLanding() {
   const testimonials = [
-    {
-      img: "/clients/anna.jpg",
-      name: "Anna R.",
-      text: "The results were amazing – our leads and sales have grown consistently.",
-    },
-    {
-      img: "/clients/james.jpg",
-      name: "James S.",
-      text: "Outstanding service and a fantastic team. Couldn’t be happier!",
-    },
-    {
-      img: "/clients/david.jpg",
-      name: "David K.",
-      text: "They redesigned my site and conversions increased by 150%.",
-    },
-    {
-      img: "/clients/sarah.jpg",
-      name: "Sarah L.",
-      text: "The design quality exceeded my expectations – truly professional.",
-    },
-    {
-      img: "/clients/michael.jpg",
-      name: "Michael T.",
-      text: "Fast delivery and excellent support. Highly recommended!",
-    },
+    { img: "/clients/anna.jpg", name: "Anna R.", text: "The results were amazing – our leads and sales have grown consistently." },
+    { img: "/clients/james.jpg", name: "James S.", text: "Outstanding service and a fantastic team. Couldn’t be happier!" },
+    { img: "/clients/david.jpg", name: "David K.", text: "They redesigned my site and conversions increased by 150%." },
+    { img: "/clients/sarah.jpg", name: "Sarah L.", text: "The design quality exceeded my expectations – truly professional." },
+    { img: "/clients/michael.jpg", name: "Michael T.", text: "Fast delivery and excellent support. Highly recommended!" },
   ];
 
   const faqs = [
-    {
-      q: "How long does it take?",
-      a: "Most websites are built in 2–4 weeks, depending on the project’s complexity.",
-    },
-    {
-      q: "What if I already have a site?",
-      a: "We offer redesign services to improve your sales performance and experience.",
-    },
-    {
-      q: "How much does it cost?",
-      a: "Pricing depends on your needs – from simple landing pages to full eCommerce solutions.",
-    },
-    {
-      q: "Do you provide ongoing support?",
-      a: "Yes, we offer maintenance packages to keep your site updated and secure.",
-    },
+    { q: "How long does it take?", a: "Most websites are built in 2–4 weeks, depending on the project’s complexity." },
+    { q: "What if I already have a site?", a: "We offer redesign services to improve your sales performance and experience." },
+    { q: "How much does it cost?", a: "Pricing depends on your needs – from simple landing pages to full eCommerce solutions." },
+    { q: "Do you provide ongoing support?", a: "Yes, we offer maintenance packages to keep your site updated and secure." },
   ];
 
+  const stats = [
+    { icon: <FaBriefcase />, label: "Projects Delivered", target: 100, suffix: "+", color: "purple" },
+    { icon: <FaFolderOpen />, label: "Client Satisfaction", target: 95, suffix: "%", color: "pink" },
+    { icon: <FaHandshake />, label: "Weeks Delivery", target: 4, suffix: " (2–4)", color: "orange" },
+    { icon: <FaUsers />, label: "Dedicated Team", target: 1, suffix: "", color: "blue" },
+  ];
+
+  const [counts, setCounts] = useState(stats.map(() => 0));
   const [index, setIndex] = useState(0);
   const [activeFAQ, setActiveFAQ] = useState(null);
 
-  // מעבר אוטומטי בין עדויות
+  // Testimonials Auto Rotate
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % testimonials.length);
@@ -63,9 +40,41 @@ export default function WebsiteLanding() {
     return () => clearInterval(interval);
   }, [testimonials.length]);
 
-  const toggleFAQ = (i) => {
-    setActiveFAQ(activeFAQ === i ? null : i);
-  };
+  // Stats Counter Animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            stats.forEach((stat, idx) => {
+              let start = 0;
+              const end = stat.target;
+              const duration = 1500;
+              const stepTime = Math.max(Math.floor(duration / end), 20);
+
+              const timer = setInterval(() => {
+                start += 1;
+                setCounts((prev) => {
+                  const updated = [...prev];
+                  updated[idx] = start;
+                  return updated;
+                });
+                if (start >= end) clearInterval(timer);
+              }, stepTime);
+            });
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    const el = document.querySelector(".stats-grid");
+    if (el) observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const toggleFAQ = (i) => setActiveFAQ(activeFAQ === i ? null : i);
 
   return (
     <div className="landing-page">
@@ -79,21 +88,12 @@ export default function WebsiteLanding() {
         >
           <div className="hero-text">
             <h1>🚀 Build Websites That Convert</h1>
-            <p>
-              Professional websites built to drive leads and sales for your
-              business.
-            </p>
+            <p>Professional websites built to drive leads and sales for your business.</p>
             <div className="hero-buttons">
-              <a href="#contact" className="btn btn-primary">
-                Book a Free Call
-              </a>
-              <a href="#quote" className="btn btn-outline">
-                Get Instant Quote
-              </a>
+              <a href="#contact" className="btn btn-primary">Book a Free Call</a>
+              <a href="#quote" className="btn btn-outline">Get Instant Quote</a>
             </div>
-            <div className="hero-trust">
-              ⭐⭐⭐⭐⭐ <span>Trusted by 50+ Businesses</span>
-            </div>
+            <div className="hero-trust">⭐⭐⭐⭐⭐ <span>Trusted by 50+ Businesses</span></div>
           </div>
           <motion.div
             className="hero-image"
@@ -111,16 +111,11 @@ export default function WebsiteLanding() {
         </motion.div>
       </section>
 
-      {/* ===== Why Choose Us ===== */}
+      {/* ===== Why Choose Us (Stats with Counter) ===== */}
       <section className="why-choose">
         <h2>Why Choose Us</h2>
         <div className="stats-grid">
-          {[
-            { num: "100+", text: "Projects Delivered", color: "purple" },
-            { num: "95%", text: "Client Satisfaction", color: "pink" },
-            { num: "2–4", text: "Weeks Delivery", color: "orange" },
-            { num: "⭐", text: "Dedicated Team", color: "blue" },
-          ].map((stat, i) => (
+          {stats.map((stat, i) => (
             <motion.div
               key={i}
               className={`stat-box ${stat.color}`}
@@ -128,10 +123,10 @@ export default function WebsiteLanding() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.2, duration: 0.6 }}
-              whileHover={{ scale: 1.05 }}
             >
-              <h3>{stat.num}</h3>
-              <p>{stat.text}</p>
+              <div className="stat-icon">{stat.icon}</div>
+              <h3>{counts[i]}{stat.suffix}</h3>
+              <p>{stat.label}</p>
             </motion.div>
           ))}
         </div>
@@ -142,21 +137,9 @@ export default function WebsiteLanding() {
         <h2>Portfolio</h2>
         <div className="portfolio-grid">
           {[
-            {
-              src: "/portfolio/wordpress.jpg",
-              title: "WordPress",
-              text: "+200% Leads",
-            },
-            {
-              src: "/portfolio/ecommerce.jpg",
-              title: "eCommerce",
-              text: "Up to 50% less cost",
-            },
-            {
-              src: "/portfolio/custom.jpg",
-              title: "Custom",
-              text: "Brand Focused",
-            },
+            { src: "/portfolio/wordpress.jpg", title: "WordPress", text: "+200% Leads" },
+            { src: "/portfolio/ecommerce.jpg", title: "eCommerce", text: "Up to 50% less cost" },
+            { src: "/portfolio/custom.jpg", title: "Custom", text: "Brand Focused" },
           ].map((item, i) => (
             <motion.div
               key={i}
@@ -170,15 +153,13 @@ export default function WebsiteLanding() {
               <img src={item.src} alt={item.title} />
               <h3>{item.title}</h3>
               <p>{item.text}</p>
-              <a href="#" className="btn btn-case">
-                View Case Study
-              </a>
+              <a href="#" className="btn btn-case">View Case Study</a>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* ===== Testimonials (Carousel) ===== */}
+      {/* ===== Testimonials ===== */}
       <section className="testimonials">
         <h2>Testimonials</h2>
         <div className="carousel">
@@ -191,14 +172,9 @@ export default function WebsiteLanding() {
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.6 }}
             >
-              <img
-                src={testimonials[index].img}
-                alt={testimonials[index].name}
-              />
+              <img src={testimonials[index].img} alt={testimonials[index].name} />
               <p>“{testimonials[index].text}”</p>
-              <h4>
-                ⭐ ⭐ ⭐ ⭐ ⭐ <span>{testimonials[index].name}</span>
-              </h4>
+              <h4>⭐ ⭐ ⭐ ⭐ ⭐ <span>{testimonials[index].name}</span></h4>
             </motion.div>
           </AnimatePresence>
         </div>
@@ -213,7 +189,7 @@ export default function WebsiteLanding() {
         </div>
       </section>
 
-      {/* ===== FAQ (Accordion) ===== */}
+      {/* ===== FAQ ===== */}
       <section className="faq">
         <div className="faq-header">
           <h2>Frequently Asked Questions</h2>
