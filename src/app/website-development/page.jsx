@@ -37,12 +37,12 @@ export default function WebsiteLanding() {
             transition={{ duration: 0.8 }}
           >
             <h1>
-              Website <span className="highlight">Design</span>
+              Build Websites <span className="highlight">That Convert</span>
             </h1>
             <p>
-              Discover professional website design services tailored to your
-              business needs. Enhance user experience, improve search rankings,
-              and drive engagement with visually appealing and responsive websites.
+              Professional website design & development services tailored to
+              your business. Enhance user experience, improve rankings, and
+              drive results with responsive sites.
             </p>
             <div className="hero-cta">
               <motion.a
@@ -51,7 +51,7 @@ export default function WebsiteLanding() {
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Get Started
+                🚀 Book a Free Call
               </motion.a>
               <motion.a
                 href="#portfolio"
@@ -59,12 +59,13 @@ export default function WebsiteLanding() {
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
               >
-                View Portfolio
+                📊 View Portfolio
               </motion.a>
             </div>
+            <p className="trust">⭐ Trusted by 50+ Businesses</p>
           </motion.div>
 
-          {/* תמונה / איור בצד ימין עם פרלקס עדין */}
+          {/* תמונה / איור בצד ימין */}
           <motion.div
             className="hero-image"
             initial={{ opacity: 0, y: 50 }}
@@ -99,23 +100,23 @@ export default function WebsiteLanding() {
           {[
             {
               icon: "/icons/Design.svg",
-              title: "Custom Design",
-              text: "Modern, branded, and built to impress clients."
+              title: "100+ Projects",
+              text: "Delivered successfully for clients worldwide."
             },
             {
               icon: "/icons/Mobile.svg",
-              title: "Mobile & SEO Ready",
-              text: "Optimized for smartphones and search engines."
+              title: "95% Satisfaction",
+              text: "Most of our clients return for more projects."
             },
             {
               icon: "/icons/Speed.svg",
-              title: "Fast & Secure",
-              text: "Quick turnaround with top-notch security."
+              title: "2–4 Weeks Delivery",
+              text: "Average turnaround time per website."
             },
             {
               icon: "/icons/Support.svg",
-              title: "Dedicated Support",
-              text: "Personalized guidance from start to finish."
+              title: "⭐ Dedicated Team",
+              text: "Guidance from design to launch & support."
             }
           ].map((feat, i) => (
             <motion.div
@@ -146,17 +147,20 @@ export default function WebsiteLanding() {
             {
               src: "/portfolio/site1.jpg",
               alt: "Clinic website project",
-              caption: "Clinic Website – React + SEO"
+              caption: "Clinic Website – React + SEO",
+              result: "+200% Leads"
             },
             {
               src: "/portfolio/site2.jpg",
               alt: "Ecommerce website project",
-              caption: "Ecommerce Store – WooCommerce"
+              caption: "Ecommerce Store – WooCommerce",
+              result: "+150% Sales"
             },
             {
               src: "/portfolio/site3.jpg",
               alt: "Custom website design project",
-              caption: "Custom Website – Branding Focus"
+              caption: "Custom Website – Branding Focus",
+              result: "Increased Engagement"
             }
           ].map((item, i) => (
             <motion.figure
@@ -166,8 +170,49 @@ export default function WebsiteLanding() {
               whileHover={{ scale: 1.05 }}
             >
               <img src={item.src} alt={item.alt} />
-              <figcaption>{item.caption}</figcaption>
+              <figcaption>
+                <h4>{item.caption}</h4>
+                <p>{item.result}</p>
+                <a href="#">View Case Study →</a>
+              </figcaption>
             </motion.figure>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* Testimonials */}
+      <section id="testimonials" className="testimonials">
+        <h2>What Our Clients Say</h2>
+        <motion.div
+          className="testimonial-carousel"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          {[
+            {
+              name: "John D.",
+              text: "Eshet Digital doubled our leads in just 2 months!",
+              stars: 5
+            },
+            {
+              name: "Sarah M.",
+              text: "Our ecommerce sales skyrocketed – highly recommend.",
+              stars: 5
+            }
+          ].map((t, i) => (
+            <motion.blockquote
+              key={i}
+              className="testimonial"
+              variants={item}
+              whileHover={{ scale: 1.02 }}
+            >
+              <p>“{t.text}”</p>
+              <footer>
+                {"⭐".repeat(t.stars)} – {t.name}
+              </footer>
+            </motion.blockquote>
           ))}
         </motion.div>
       </section>
@@ -199,20 +244,51 @@ export default function WebsiteLanding() {
               a: "Most projects take 2–4 weeks, depending on complexity."
             },
             {
-              q: "Do you build ecommerce sites?",
-              a: "Yes – Shopify, WordPress, WooCommerce, and custom stores."
+              q: "What if I already have a website?",
+              a: "We can redesign or upgrade your existing site with zero downtime."
             },
             {
-              q: "How much does it cost?",
-              a: "Projects start from $3,000 depending on scope and features."
+              q: "What if I’m not satisfied?",
+              a: "We provide revisions until you’re happy + 30-day post-launch support."
             }
           ].map((item, i) => (
-            <motion.details key={i} variants={item}>
+            <motion.details key={i} className="faq-item" variants={item}>
               <summary>{item.q}</summary>
               <p>{item.a}</p>
             </motion.details>
           ))}
         </motion.div>
+      </section>
+
+      {/* Final CTA */}
+      <section id="final-cta" className="final-cta">
+        <motion.h2
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Ready to Build a Website That Works?
+        </motion.h2>
+        <div className="cta-buttons">
+          <motion.a
+            href="#contact"
+            className="btn-primary"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            🚀 Book a Free Call
+          </motion.a>
+          <motion.a
+            href="#contact"
+            className="btn-secondary"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            📊 Get Instant Quote
+          </motion.a>
+        </div>
+        <p className="urgency">⚡ Limited Spots This Month – Reserve Yours Today</p>
       </section>
     </div>
   );
