@@ -1,294 +1,129 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
 import "./WebsiteLanding.css";
-import GetStartedForm from "../../../components/GetStartedForm";
-
-// Variants ל־stagger
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.2, ease: "easeOut" }
-  }
-};
-
-const item = {
-  hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-};
 
 export default function WebsiteLanding() {
   return (
     <div className="landing-page">
-      {/* Hero Section */}
-      <section id="hero" className="hero">
-        {/* צורות מרחפות */}
-        <div className="floating-shape shape1"></div>
-        <div className="floating-shape shape2"></div>
-        <div className="floating-shape shape3"></div>
-
-        <div className="hero-container">
-          {/* טקסט בצד שמאל */}
-          <motion.div
-            className="hero-text"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1>
-              Build Websites <span className="highlight">That Convert</span>
-            </h1>
+      {/* ===== Hero Section ===== */}
+      <section className="hero">
+        <div className="hero-content">
+          <div className="hero-text">
+            <h1>🚀 Build Websites That Convert</h1>
             <p>
-              Professional website design & development services tailored to
-              your business. Enhance user experience, improve rankings, and
-              drive results with responsive sites.
+              Professional websites built to drive leads and sales for your
+              business.
             </p>
-            <div className="hero-cta">
-              <motion.a
-                href="#contact"
-                className="btn-primary"
-                whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                🚀 Book a Free Call
-              </motion.a>
-              <motion.a
-                href="#portfolio"
-                className="btn-secondary"
-                whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                📊 View Portfolio
-              </motion.a>
+            <div className="hero-buttons">
+              <a href="#contact" className="btn btn-primary">
+                Book a Free Call
+              </a>
+              <a href="#quote" className="btn btn-outline">
+                Get Instant Quote
+              </a>
             </div>
-            <p className="trust">⭐ Trusted by 50+ Businesses</p>
-          </motion.div>
-
-          {/* תמונה / איור בצד ימין */}
-          <motion.div
-            className="hero-image"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            whileHover={{ y: -15 }}
-          >
-            <motion.img
-              src="/images/hero-illustration.png"
-              alt="Illustration of website design"
-              animate={{ y: [0, -10, 0] }}
-              transition={{
-                repeat: Infinity,
-                duration: 6,
-                ease: "easeInOut"
-              }}
-            />
-          </motion.div>
+            <div className="hero-trust">
+              ⭐⭐⭐⭐⭐ <span>Trusted by 50+ Businesses</span>
+            </div>
+          </div>
+          <div className="hero-image">
+            <img src="/images/hero-mockup.png" alt="Website mockup" />
+          </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section id="why-choose" className="why-choose">
-        <h2>Why Choose Us?</h2>
-        <motion.div
-          className="features"
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          {[
-            {
-              icon: "/icons/Design.svg",
-              title: "100+ Projects",
-              text: "Delivered successfully for clients worldwide."
-            },
-            {
-              icon: "/icons/Mobile.svg",
-              title: "95% Satisfaction",
-              text: "Most of our clients return for more projects."
-            },
-            {
-              icon: "/icons/Speed.svg",
-              title: "2–4 Weeks Delivery",
-              text: "Average turnaround time per website."
-            },
-            {
-              icon: "/icons/Support.svg",
-              title: "⭐ Dedicated Team",
-              text: "Guidance from design to launch & support."
-            }
-          ].map((feat, i) => (
-            <motion.div
-              key={i}
-              className="feature"
-              variants={item}
-              whileHover={{ scale: 1.05, y: -5 }}
-            >
-              <img src={feat.icon} alt={feat.title} />
-              <h3>{feat.title}</h3>
-              <p>{feat.text}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
-
-      {/* Portfolio */}
-      <section id="portfolio" className="portfolio">
-        <h2>Our Work</h2>
-        <motion.div
-          className="portfolio-grid"
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {[
-            {
-              src: "/portfolio/site1.jpg",
-              alt: "Clinic website project",
-              caption: "Clinic Website – React + SEO",
-              result: "+200% Leads"
-            },
-            {
-              src: "/portfolio/site2.jpg",
-              alt: "Ecommerce website project",
-              caption: "Ecommerce Store – WooCommerce",
-              result: "+150% Sales"
-            },
-            {
-              src: "/portfolio/site3.jpg",
-              alt: "Custom website design project",
-              caption: "Custom Website – Branding Focus",
-              result: "Increased Engagement"
-            }
-          ].map((item, i) => (
-            <motion.figure
-              key={i}
-              className="portfolio-item"
-              variants={item}
-              whileHover={{ scale: 1.05 }}
-            >
-              <img src={item.src} alt={item.alt} />
-              <figcaption>
-                <h4>{item.caption}</h4>
-                <p>{item.result}</p>
-                <a href="#">View Case Study →</a>
-              </figcaption>
-            </motion.figure>
-          ))}
-        </motion.div>
-      </section>
-
-      {/* Testimonials */}
-      <section id="testimonials" className="testimonials">
-        <h2>What Our Clients Say</h2>
-        <motion.div
-          className="testimonial-carousel"
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
-          {[
-            {
-              name: "John D.",
-              text: "Eshet Digital doubled our leads in just 2 months!",
-              stars: 5
-            },
-            {
-              name: "Sarah M.",
-              text: "Our ecommerce sales skyrocketed – highly recommend.",
-              stars: 5
-            }
-          ].map((t, i) => (
-            <motion.blockquote
-              key={i}
-              className="testimonial"
-              variants={item}
-              whileHover={{ scale: 1.02 }}
-            >
-              <p>“{t.text}”</p>
-              <footer>
-                {"⭐".repeat(t.stars)} – {t.name}
-              </footer>
-            </motion.blockquote>
-          ))}
-        </motion.div>
-      </section>
-
-      {/* CTA Form */}
-      <section id="contact" className="cta-section">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <GetStartedForm />
-        </motion.div>
-      </section>
-
-      {/* FAQ */}
-      <section id="faq" className="faq">
-        <h2>Frequently Asked Questions</h2>
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
-          {[
-            {
-              q: "How long does it take?",
-              a: "Most projects take 2–4 weeks, depending on complexity."
-            },
-            {
-              q: "What if I already have a website?",
-              a: "We can redesign or upgrade your existing site with zero downtime."
-            },
-            {
-              q: "What if I’m not satisfied?",
-              a: "We provide revisions until you’re happy + 30-day post-launch support."
-            }
-          ].map((item, i) => (
-            <motion.details key={i} className="faq-item" variants={item}>
-              <summary>{item.q}</summary>
-              <p>{item.a}</p>
-            </motion.details>
-          ))}
-        </motion.div>
-      </section>
-
-      {/* Final CTA */}
-      <section id="final-cta" className="final-cta">
-        <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          Ready to Build a Website That Works?
-        </motion.h2>
-        <div className="cta-buttons">
-          <motion.a
-            href="#contact"
-            className="btn-primary"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            🚀 Book a Free Call
-          </motion.a>
-          <motion.a
-            href="#contact"
-            className="btn-secondary"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            📊 Get Instant Quote
-          </motion.a>
+      {/* ===== Why Choose Us ===== */}
+      <section className="why-choose">
+        <h2>Why Choose Us</h2>
+        <div className="stats-grid">
+          <div className="stat-box purple">
+            <h3>100+</h3>
+            <p>Projects Delivered</p>
+          </div>
+          <div className="stat-box pink">
+            <h3>95%</h3>
+            <p>Client Satisfaction</p>
+          </div>
+          <div className="stat-box orange">
+            <h3>2–4</h3>
+            <p>Weeks Delivery</p>
+          </div>
+          <div className="stat-box blue">
+            <h3>⭐</h3>
+            <p>Dedicated Team</p>
+          </div>
         </div>
-        <p className="urgency">⚡ Limited Spots This Month – Reserve Yours Today</p>
+      </section>
+
+      {/* ===== Portfolio ===== */}
+      <section className="portfolio">
+        <h2>Portfolio</h2>
+        <div className="portfolio-grid">
+          <div className="portfolio-card">
+            <img src="/portfolio/wordpress.jpg" alt="WordPress Project" />
+            <h3>WordPress</h3>
+            <p>+200% Leads</p>
+            <a href="#" className="btn btn-case">View Case Study</a>
+          </div>
+          <div className="portfolio-card">
+            <img src="/portfolio/ecommerce.jpg" alt="Ecommerce Project" />
+            <h3>eCommerce</h3>
+            <p>Up to 50% less cost</p>
+            <a href="#" className="btn btn-case">View Case Study</a>
+          </div>
+          <div className="portfolio-card">
+            <img src="/portfolio/custom.jpg" alt="Custom Project" />
+            <h3>Custom</h3>
+            <p>Brand Focused</p>
+            <a href="#" className="btn btn-case">View Case Study</a>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Testimonials ===== */}
+      <section className="testimonials">
+        <h2>Testimonials</h2>
+        <div className="testimonial">
+          <img src="/clients/anna.jpg" alt="Anna R." />
+          <p>
+            “The results were amazing – our leads and sales have grown
+            consistently.”
+          </p>
+          <h4>⭐ ⭐ ⭐ ⭐ ⭐ Anna R.</h4>
+        </div>
+        <div className="testimonial">
+          <img src="/clients/james.jpg" alt="James S." />
+          <p>
+            “Outstanding service and a fantastic team. Couldn’t be happier!”
+          </p>
+          <h4>⭐ ⭐ ⭐ ⭐ ⭐ James S.</h4>
+        </div>
+      </section>
+
+      {/* ===== FAQ ===== */}
+      <section className="faq">
+        <h2>FAQ</h2>
+        <div className="faq-item">
+          <h3>How long does it take?</h3>
+          <p>
+            Most websites are built in 2–4 weeks, depending on the project’s
+            complexity.
+          </p>
+        </div>
+        <div className="faq-item">
+          <h3>What if I already have a site?</h3>
+          <p>
+            We offer redesign services to improve your sales performance and
+            experience.
+          </p>
+        </div>
+        <div className="faq-item">
+          <h3>What if I’m not satisfied?</h3>
+          <p>
+            We work closely with you and provide unlimited revisions until
+            launch.
+          </p>
+        </div>
       </section>
     </div>
   );
