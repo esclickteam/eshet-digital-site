@@ -136,74 +136,98 @@ export default function WebsiteLanding() {
         </div>
       </section>
 
-      {/* ===== Testimonials + FAQ Side by Side ===== */}
-      <section className="testimonials-faq">
-        {/* Testimonials */}
-        <div className="testimonials">
-          <h2>Testimonials</h2>
+      {/* ===== Testimonials ===== */}
+      <section className="testimonials">
+        <h2>Testimonials</h2>
+        {[
+          {
+            img: "/clients/anna.jpg",
+            name: "Anna R.",
+            text: "The results were amazing – our leads and sales have grown consistently.",
+          },
+          {
+            img: "/clients/james.jpg",
+            name: "James S.",
+            text: "Outstanding service and a fantastic team. Couldn’t be happier!",
+          },
+          {
+            img: "/clients/david.jpg",
+            name: "David K.",
+            text: "They redesigned my site and conversions increased by 150%.",
+          },
+          {
+            img: "/clients/sarah.jpg",
+            name: "Sarah L.",
+            text: "The design quality exceeded my expectations – truly professional.",
+          },
+          {
+            img: "/clients/michael.jpg",
+            name: "Michael T.",
+            text: "Fast delivery and excellent support. Highly recommended!",
+          },
+        ].map((t, i) => (
           <motion.div
+            key={i}
             className="testimonial"
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: i * 0.2 }}
             viewport={{ once: true }}
           >
-            <img src="/clients/anna.jpg" alt="Anna R." />
+            <img src={t.img} alt={t.name} />
             <div>
-              <p>
-                “The results were amazing – our leads and sales have grown
-                consistently.”
-              </p>
-              <h4>⭐ ⭐ ⭐ ⭐ ⭐ <span>Anna R.</span></h4>
+              <p>“{t.text}”</p>
+              <h4>⭐ ⭐ ⭐ ⭐ ⭐ <span>{t.name}</span></h4>
             </div>
           </motion.div>
-          <motion.div
-            className="testimonial"
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <img src="/clients/james.jpg" alt="James S." />
-            <div>
-              <p>
-                “Outstanding service and a fantastic team. Couldn’t be happier!”
-              </p>
-              <h4>⭐ ⭐ ⭐ ⭐ ⭐ <span>James S.</span></h4>
-            </div>
-          </motion.div>
-        </div>
+        ))}
+      </section>
 
-        {/* FAQ */}
-        <div className="faq">
-          <h2>FAQ</h2>
-          {[
-            {
-              q: "How long does it take?",
-              a: "Most websites are built in 2–4 weeks, depending on the project’s complexity.",
-            },
-            {
-              q: "What if I already have a site?",
-              a: "We offer redesign services to improve your sales performance and experience.",
-            },
-            {
-              q: "What if I’m not satisfied?",
-              a: "We work closely with you and provide unlimited revisions until launch.",
-            },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              className="faq-item"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.2, duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <h3>{item.q}</h3>
-              <p>{item.a}</p>
-            </motion.div>
-          ))}
-        </div>
+      {/* ===== FAQ ===== */}
+      <section className="faq">
+        <h2>FAQ</h2>
+        {[
+          {
+            q: "How long does it take?",
+            a: "Most websites are built in 2–4 weeks, depending on the project’s complexity.",
+          },
+          {
+            q: "What if I already have a site?",
+            a: "We offer redesign services to improve your sales performance and experience.",
+          },
+          {
+            q: "How much does it cost?",
+            a: "Pricing depends on your needs – from simple landing pages to full eCommerce solutions.",
+          },
+          {
+            q: "Can you add an online store?",
+            a: "Yes! We build eCommerce websites with secure payment integrations.",
+          },
+          {
+            q: "What if I’m not satisfied?",
+            a: "We provide unlimited revisions until you’re 100% happy with the result.",
+          },
+          {
+            q: "Will my site be mobile-friendly?",
+            a: "Absolutely – all websites are fully responsive and optimized for mobile.",
+          },
+          {
+            q: "Do you provide ongoing support?",
+            a: "Yes, we offer maintenance packages to keep your site updated and secure.",
+          },
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            className="faq-item"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.2, duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </motion.div>
+        ))}
       </section>
     </div>
   );
