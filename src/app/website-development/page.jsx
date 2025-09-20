@@ -53,7 +53,7 @@ export default function WebsiteLanding() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <img
-              src="/images/hero-illustration.svg"
+              src="/images/hero-illustration.png"
               alt="Illustration of website design"
             />
           </motion.div>
