@@ -403,3 +403,18 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== Hero Image Fix ===== */
+.hero-image {
+  max-width: 500px;   /* ✅ מגביל את הקופסה של התמונה */
+  margin: 0 auto;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 420px;  /* ✅ מונע מהתמונה להיות גבוהה מדי */
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px; /* אופציונלי – למראה אלגנטי */
+}
