@@ -109,8 +109,12 @@ export default function WebsiteLanding() {
             <h1>Websites That Grow Your Business</h1>
             <p>Custom, conversion-focused websites designed to attract clients, increase bookings, and boost sales.</p>
             <div className="hero-buttons">
-              <a href="#quote" className="btn btn-primary">Get Instant Quote</a>
-              <a href="#contact" className="btn btn-outline">Book a Free Call</a>
+              <a href="https://www.eshetdigital.com/get-started" className="btn btn-primary">
+              Get Instant Quote
+              </a>
+              <a href="https://www.eshetdigital.com/book" className="btn btn-outline">
+              Book a Free Call
+              </a>
             </div>
             <div className="hero-trust">⭐⭐⭐⭐⭐ <span>Trusted by 50+ Businesses</span></div>
           </div>
