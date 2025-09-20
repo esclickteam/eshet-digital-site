@@ -175,40 +175,53 @@
   margin-bottom: 15px;
 }
 
-/* ===== Testimonials ===== */
+/* ===== Testimonials (Carousel) ===== */
 .testimonials {
   padding: 80px 20px;
-  max-width: 900px;
+  max-width: 700px;
   margin: 0 auto;
   text-align: center;
 }
 .testimonials h2 {
   margin-bottom: 30px;
 }
+.carousel {
+  position: relative;
+  min-height: 180px;
+}
 .testimonial {
+  background: #fff;
+  border-radius: 14px;
+  padding: 30px 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 15px;
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  margin-bottom: 20px;
-  transition: transform 0.3s ease;
-  text-align: left;
-}
-.testimonial:hover {
-  transform: translateY(-3px);
 }
 .testimonial img {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  flex-shrink: 0;
+  object-fit: cover;
 }
-.testimonial p {
-  margin: 0 0 8px 0;
-  font-size: 0.95rem;
+.carousel-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.carousel-controls .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.carousel-controls .dot.active {
+  background: #4a3aff;
 }
 
 /* ===== FAQ ===== */

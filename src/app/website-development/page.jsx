@@ -1,9 +1,71 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import "./WebsiteLanding.css";
 
 export default function WebsiteLanding() {
+  const testimonials = [
+    {
+      img: "/clients/anna.jpg",
+      name: "Anna R.",
+      text: "The results were amazing – our leads and sales have grown consistently.",
+    },
+    {
+      img: "/clients/james.jpg",
+      name: "James S.",
+      text: "Outstanding service and a fantastic team. Couldn’t be happier!",
+    },
+    {
+      img: "/clients/david.jpg",
+      name: "David K.",
+      text: "They redesigned my site and conversions increased by 150%.",
+    },
+    {
+      img: "/clients/sarah.jpg",
+      name: "Sarah L.",
+      text: "The design quality exceeded my expectations – truly professional.",
+    },
+    {
+      img: "/clients/michael.jpg",
+      name: "Michael T.",
+      text: "Fast delivery and excellent support. Highly recommended!",
+    },
+  ];
+
+  const faqs = [
+    {
+      q: "How long does it take?",
+      a: "Most websites are built in 2–4 weeks, depending on the project’s complexity.",
+    },
+    {
+      q: "What if I already have a site?",
+      a: "We offer redesign services to improve your sales performance and experience.",
+    },
+    {
+      q: "How much does it cost?",
+      a: "Pricing depends on your needs – from simple landing pages to full eCommerce solutions.",
+    },
+    {
+      q: "Do you provide ongoing support?",
+      a: "Yes, we offer maintenance packages to keep your site updated and secure.",
+    },
+  ];
+
+  const [index, setIndex] = useState(0);
+  const [activeFAQ, setActiveFAQ] = useState(null);
+
+  // מעבר אוטומטי כל 6 שניות
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % testimonials.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
+  const toggleFAQ = (i) => {
+    setActiveFAQ(activeFAQ === i ? null : i);
+  };
+
   return (
     <div className="landing-page">
       {/* ===== Hero Section ===== */}
@@ -15,44 +77,23 @@ export default function WebsiteLanding() {
           transition={{ duration: 0.8 }}
         >
           <div className="hero-text">
-            <motion.h1
-              initial={{ opacity: 0, x: -40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              🚀 Build Websites That Convert
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-            >
+            <h1>🚀 Build Websites That Convert</h1>
+            <p>
               Professional websites built to drive leads and sales for your
               business.
-            </motion.p>
-            <motion.div
-              className="hero-buttons"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-            >
+            </p>
+            <div className="hero-buttons">
               <a href="#contact" className="btn btn-primary">
                 Book a Free Call
               </a>
               <a href="#quote" className="btn btn-outline">
                 Get Instant Quote
               </a>
-            </motion.div>
-            <motion.div
-              className="hero-trust"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.9, duration: 0.8 }}
-            >
+            </div>
+            <div className="hero-trust">
               ⭐⭐⭐⭐⭐ <span>Trusted by 50+ Businesses</span>
-            </motion.div>
+            </div>
           </div>
-
           <motion.div
             className="hero-image"
             initial={{ opacity: 0, x: 40 }}
@@ -136,98 +177,70 @@ export default function WebsiteLanding() {
         </div>
       </section>
 
-      {/* ===== Testimonials ===== */}
+      {/* ===== Testimonials (Carousel) ===== */}
       <section className="testimonials">
         <h2>Testimonials</h2>
-        {[
-          {
-            img: "/clients/anna.jpg",
-            name: "Anna R.",
-            text: "The results were amazing – our leads and sales have grown consistently.",
-          },
-          {
-            img: "/clients/james.jpg",
-            name: "James S.",
-            text: "Outstanding service and a fantastic team. Couldn’t be happier!",
-          },
-          {
-            img: "/clients/david.jpg",
-            name: "David K.",
-            text: "They redesigned my site and conversions increased by 150%.",
-          },
-          {
-            img: "/clients/sarah.jpg",
-            name: "Sarah L.",
-            text: "The design quality exceeded my expectations – truly professional.",
-          },
-          {
-            img: "/clients/michael.jpg",
-            name: "Michael T.",
-            text: "Fast delivery and excellent support. Highly recommended!",
-          },
-        ].map((t, i) => (
-          <motion.div
-            key={i}
-            className="testimonial"
-            initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: i * 0.2 }}
-            viewport={{ once: true }}
-          >
-            <img src={t.img} alt={t.name} />
-            <div>
-              <p>“{t.text}”</p>
-              <h4>⭐ ⭐ ⭐ ⭐ ⭐ <span>{t.name}</span></h4>
-            </div>
-          </motion.div>
-        ))}
+        <div className="carousel">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={index}
+              className="testimonial"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.6 }}
+            >
+              <img
+                src={testimonials[index].img}
+                alt={testimonials[index].name}
+              />
+              <p>“{testimonials[index].text}”</p>
+              <h4>
+                ⭐ ⭐ ⭐ ⭐ ⭐ <span>{testimonials[index].name}</span>
+              </h4>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+        <div className="carousel-controls">
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              className={`dot ${i === index ? "active" : ""}`}
+              onClick={() => setIndex(i)}
+            ></button>
+          ))}
+        </div>
       </section>
 
-      {/* ===== FAQ ===== */}
+      {/* ===== FAQ (Accordion) ===== */}
       <section className="faq">
         <h2>FAQ</h2>
-        {[
-          {
-            q: "How long does it take?",
-            a: "Most websites are built in 2–4 weeks, depending on the project’s complexity.",
-          },
-          {
-            q: "What if I already have a site?",
-            a: "We offer redesign services to improve your sales performance and experience.",
-          },
-          {
-            q: "How much does it cost?",
-            a: "Pricing depends on your needs – from simple landing pages to full eCommerce solutions.",
-          },
-          {
-            q: "Can you add an online store?",
-            a: "Yes! We build eCommerce websites with secure payment integrations.",
-          },
-          {
-            q: "What if I’m not satisfied?",
-            a: "We provide unlimited revisions until you’re 100% happy with the result.",
-          },
-          {
-            q: "Will my site be mobile-friendly?",
-            a: "Absolutely – all websites are fully responsive and optimized for mobile.",
-          },
-          {
-            q: "Do you provide ongoing support?",
-            a: "Yes, we offer maintenance packages to keep your site updated and secure.",
-          },
-        ].map((item, i) => (
-          <motion.div
-            key={i}
-            className="faq-item"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.2, duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <h3>{item.q}</h3>
-            <p>{item.a}</p>
-          </motion.div>
-        ))}
+        <div className="faq-list">
+          {faqs.map((item, i) => (
+            <div
+              key={i}
+              className={`faq-item ${activeFAQ === i ? "active" : ""}`}
+              onClick={() => toggleFAQ(i)}
+            >
+              <div className="faq-question">
+                <h3>{item.q}</h3>
+              </div>
+              <AnimatePresence>
+                {activeFAQ === i && (
+                  <motion.div
+                    className="faq-answer"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <p>{item.a}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );
