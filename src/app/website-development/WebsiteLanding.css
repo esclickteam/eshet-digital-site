@@ -15,7 +15,40 @@
   overflow: hidden;
 }
 
+/* צורות צבעוניות מרחפות ברקע */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2;
+  z-index: 0;
+  animation: float 10s ease-in-out infinite alternate;
+}
+.hero::before {
+  width: 300px;
+  height: 300px;
+  background: #ff5a7d;
+  top: -100px;
+  left: -100px;
+}
+.hero::after {
+  width: 250px;
+  height: 250px;
+  background: #25d366;
+  bottom: -80px;
+  right: -80px;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-20px) translateX(15px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
 .hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
@@ -27,6 +60,7 @@
 .hero-text h1 {
   font-size: 2.8rem;
   margin-bottom: 20px;
+  font-weight: 700;
 }
 .hero-text p {
   font-size: 1.2rem;
@@ -41,6 +75,7 @@
 .hero-trust {
   margin-top: 10px;
   font-size: 0.9rem;
+  opacity: 0.9;
 }
 
 /* Buttons */
@@ -49,7 +84,7 @@
   border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 .btn-primary {
   background: #fff;
@@ -57,6 +92,7 @@
 }
 .btn-primary:hover {
   background: #f2f2f2;
+  transform: translateY(-2px);
 }
 .btn-outline {
   background: transparent;
@@ -65,12 +101,15 @@
 }
 .btn-outline:hover {
   background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 .btn-case {
   background: #4a3aff;
   color: #fff;
   display: inline-block;
   margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 30px;
 }
 .btn-case:hover {
   background: #372fd1;
@@ -92,6 +131,12 @@
   padding: 30px 20px;
   border-radius: 12px;
   font-weight: bold;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.stat-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
 }
 .stat-box h3 {
   font-size: 2rem;
@@ -118,10 +163,11 @@
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .portfolio-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
 .portfolio-card img {
   width: 100%;
@@ -138,6 +184,14 @@
 .testimonial {
   max-width: 500px;
   margin: 20px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+.testimonial:hover {
+  transform: scale(1.02);
 }
 .testimonial img {
   width: 60px;
@@ -155,6 +209,14 @@
   max-width: 600px;
   margin: 20px auto;
   text-align: left;
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
+.faq-item:hover {
+  transform: translateY(-3px);
 }
 .faq-item h3 {
   font-size: 1.1rem;
@@ -169,6 +231,18 @@
 @media (max-width: 992px) {
   .hero-content {
     grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-image {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .btn {
+    width: 100%;
     text-align: center;
   }
 }
