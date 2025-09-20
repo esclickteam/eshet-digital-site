@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import "./WebsiteLanding.css";
-import GetStartedForm from "../../components/GetStartedForm";
+import GetStartedForm from "../../../components/GetStartedForm";
 
 export default function WebsiteLanding() {
   return (
