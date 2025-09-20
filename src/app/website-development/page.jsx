@@ -59,14 +59,12 @@ export default function WebsiteLanding() {
           if (entry.isIntersecting) {
             stats.forEach((stat, idx) => {
               if (stat.target <= 5) {
-                // מספרים קטנים – להציג ישר
                 setCounts((prev) => {
                   const updated = [...prev];
                   updated[idx] = stat.target;
                   return updated;
                 });
               } else {
-                // מספרים גדולים – להפעיל counter
                 let start = 0;
                 const end = stat.target;
                 const duration = 1500;
@@ -108,13 +106,16 @@ export default function WebsiteLanding() {
           transition={{ duration: 0.8 }}
         >
           <div className="hero-text">
-            <h1>🚀 Build Websites That Convert</h1>
+            <h1>Build Websites That Convert</h1>
+            <p className="tagline">Your Growth Partner in the Digital World</p>
             <p>Professional websites built to drive leads and sales for your business.</p>
             <div className="hero-buttons">
               <a href="#contact" className="btn btn-primary">Book a Free Call</a>
               <a href="#quote" className="btn btn-outline">Get Instant Quote</a>
             </div>
-            <div className="hero-trust">⭐⭐⭐⭐⭐ <span>Trusted by 50+ Businesses</span></div>
+            <div className="hero-trust">
+              Trusted by 50+ Businesses
+            </div>
           </div>
           <motion.div
             className="hero-image"
@@ -153,6 +154,39 @@ export default function WebsiteLanding() {
             </motion.div>
           ))}
         </div>
+      </section>
+
+      {/* ===== Website Design (Detailed UX Section) ===== */}
+      <section className="web-design">
+        <h2>Website Design</h2>
+        <p>
+          We provide professional website design services tailored to your business needs.  
+          Our goal is to create a website that not only looks great but also helps you grow.
+        </p>
+        <div className="design-points">
+          <div className="point">
+            <h3>Enhance User Experience</h3>
+            <p>
+              Modern, responsive designs that make your website easy to navigate on any device,
+              ensuring your visitors enjoy a seamless browsing experience.
+            </p>
+          </div>
+          <div className="point">
+            <h3>Improve Search Rankings</h3>
+            <p>
+              SEO-friendly design that helps your website get discovered by more customers,
+              driving organic traffic and building long-term visibility.
+            </p>
+          </div>
+          <div className="point">
+            <h3>Drive Engagement</h3>
+            <p>
+              Eye-catching layouts and clear calls-to-action that encourage visitors
+              to interact, inquire, and convert into loyal customers.
+            </p>
+          </div>
+        </div>
+        <a href="#portfolio" className="btn btn-case">See Our Work</a>
       </section>
 
       {/* ===== Portfolio ===== */}
@@ -199,7 +233,7 @@ export default function WebsiteLanding() {
                 loading="lazy"
               />
               <p>“{testimonials[index].text}”</p>
-              <h4>⭐ ⭐ ⭐ ⭐ ⭐ <span>{testimonials[index].name}</span></h4>
+              <h4>{testimonials[index].name}</h4>
             </motion.div>
           </AnimatePresence>
         </div>
