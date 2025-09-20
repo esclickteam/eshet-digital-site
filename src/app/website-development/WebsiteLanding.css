@@ -175,56 +175,70 @@
   margin-bottom: 15px;
 }
 
-/* ===== Testimonials ===== */
-.testimonials {
-  padding: 60px 20px;
-  background: #fafafa;
-  text-align: center;
+/* ===== Testimonials + FAQ Combined ===== */
+.testimonials-faq {
+  padding: 80px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
 }
-.testimonial {
-  max-width: 500px;
-  margin: 20px auto;
+
+.testimonials h2,
+.faq h2 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Testimonials */
+.testimonials .testimonial {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
   background: #fff;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
   transition: transform 0.3s ease;
 }
-.testimonial:hover {
-  transform: scale(1.02);
-}
-.testimonial img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
-
-/* ===== FAQ ===== */
-.faq {
-  padding: 60px 20px;
-  text-align: center;
-}
-.faq-item {
-  max-width: 600px;
-  margin: 20px auto;
-  text-align: left;
-  background: #fff;
-  padding: 15px 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  transition: transform 0.3s ease;
-}
-.faq-item:hover {
+.testimonials .testimonial:hover {
   transform: translateY(-3px);
 }
-.faq-item h3 {
-  font-size: 1.1rem;
+.testimonials .testimonial img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.testimonials .testimonial p {
+  margin: 0 0 8px 0;
+  font-size: 0.95rem;
+}
+
+/* FAQ */
+.faq .faq-item {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+.faq .faq-item:hover {
+  transform: translateY(-2px);
+}
+.faq .faq-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
   color: #4a3aff;
 }
-.faq-item p {
-  font-size: 0.95rem;
-  margin-top: 5px;
+.faq .faq-item p {
+  font-size: 0.9rem;
+  margin-top: 6px;
+  color: #444;
 }
 
 /* ===== Responsive ===== */
@@ -235,6 +249,9 @@
   }
   .hero-image {
     margin-top: 30px;
+  }
+  .testimonials-faq {
+    grid-template-columns: 1fr;
   }
 }
 @media (max-width: 600px) {
