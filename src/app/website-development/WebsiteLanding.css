@@ -74,7 +74,7 @@
   opacity: 0.9;
 }
 
-/* Buttons */
+/* ===== Buttons ===== */
 .btn {
   padding: 16px 32px;
   border-radius: 40px;
@@ -82,10 +82,10 @@
   text-decoration: none;
   transition: all 0.3s ease;
   font-size: 1.05rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* ✅ הצללה */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 .btn-primary {
-  background: linear-gradient(135deg, #ff5a7d, #ff9966); /* ✅ צבעים מושכים */
+  background: linear-gradient(135deg, #ff5a7d, #ff9966);
   color: #fff;
   border: none;
 }
@@ -98,13 +98,13 @@
   background: linear-gradient(135deg, #4a3aff, #00c6ff);
   color: #fff;
   border: none;
-  box-shadow: 0 0 12px rgba(0, 198, 255, 0.4); /* ✅ Glow כחול עדין */
+  box-shadow: 0 0 12px rgba(0, 198, 255, 0.4);
   transition: all 0.3s ease, box-shadow 0.4s ease;
 }
 .btn-outline:hover {
   background: linear-gradient(135deg, #5c56ff, #00d0ff);
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 0 20px rgba(0, 198, 255, 0.7); /* ✅ Glow חזק יותר בהובר */
+  box-shadow: 0 0 20px rgba(0, 198, 255, 0.7);
 }
 .btn-case {
   background: #4a3aff;
@@ -129,7 +129,6 @@
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 16px;
-  color: #fff;
 }
 .ux-benefits .ux-subtitle {
   font-size: 1.1rem;
@@ -159,12 +158,10 @@
 .ux-card h3 {
   font-size: 1.3rem;
   margin-bottom: 12px;
-  color: #fff;
 }
 .ux-card p {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.9);
-  line-height: 1.5;
 }
 
 /* ===== Stats ===== */
@@ -209,7 +206,7 @@
 .orange .stat-icon, .orange h3 { color: #ff9966; }
 .blue .stat-icon, .blue h3 { color: #00c6ff; }
 
-/* ===== Portfolio ===== */
+/* ===== Portfolio (UX Optimized) ===== */
 .portfolio {
   padding: 80px 20px;
   text-align: center;
@@ -219,44 +216,64 @@
   font-size: 2rem;
   margin-bottom: 50px;
   font-weight: 700;
-  color: #333;
 }
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  margin-top: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
   justify-items: center;
 }
 .portfolio-card {
   background: #fff;
-  border-radius: 14px;
+  border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
-  max-width: 320px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 340px;
   width: 100%;
+  cursor: pointer;
 }
 .portfolio-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
 .portfolio-card img {
   width: 100%;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
+  height: 220px;
+  object-fit: contain;       /* ✅ תמונה שלמה */
+  background: #f9f9f9;       /* רקע ניטרלי */
+  border-bottom: 1px solid #eee;
+  transition: transform 0.4s ease;
 }
 .portfolio-card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 .portfolio-card h3 {
   font-size: 1.05rem;
   font-weight: 600;
-  margin-top: 15px;
-  color: #222;
+  margin: 15px;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+.lightbox.active {
+  display: flex;
 }
 
 /* ===== Testimonials ===== */
@@ -266,51 +283,33 @@
   margin: 0 auto;
   text-align: center;
 }
-.testimonials h2 {
-  margin-bottom: 30px;
-}
-.carousel {
-  position: relative;
-  min-height: 180px;
-}
+.testimonials h2 { margin-bottom: 30px; }
+.carousel { position: relative; min-height: 180px; }
 .testimonial {
   background: #fff;
   border-radius: 14px;
   padding: 30px 20px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 15px;
 }
 .testimonial img {
-  width: 70px;
-  height: 70px;
+  width: 70px; height: 70px;
   border-radius: 50%;
   object-fit: cover;
 }
 .carousel-controls {
   margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
+  display: flex; justify-content: center; gap: 8px;
 }
 .carousel-controls .dot {
-  width: 12px;
-  height: 12px;
+  width: 12px; height: 12px;
   border-radius: 50%;
   background: #ccc;
-  border: none;
-  cursor: pointer;
+  border: none; cursor: pointer;
   transition: background 0.3s;
 }
-.carousel-controls .dot.active {
-  background: #4a3aff;
-}
-.carousel-controls .dot:focus {
-  outline: 2px solid #4a3aff;
-  outline-offset: 2px;
-}
+.carousel-controls .dot.active { background: #4a3aff; }
 
 /* ===== FAQ ===== */
 .faq {
@@ -322,106 +321,57 @@
   margin: 80px auto;
   box-shadow: 0 6px 16px rgba(0,0,0,0.4);
 }
-.faq-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
+.faq-header { text-align: center; margin-bottom: 40px; }
 .faq-header h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #a259ff;
-  margin-bottom: 10px;
+  font-size: 2rem; font-weight: 700; color: #a259ff; margin-bottom: 10px;
 }
-.faq-header p {
-  font-size: 1rem;
-  color: #ccc;
-}
-.faq-list {
-  display: flex;
-  flex-direction: column;
-}
+.faq-header p { font-size: 1rem; color: #ccc; }
+.faq-list { display: flex; flex-direction: column; }
 .faq-item {
   padding: 18px 0;
   border-bottom: 1px solid rgba(255,255,255,0.15);
   cursor: pointer;
   transition: background 0.3s ease;
 }
-.faq-item:last-child {
-  border-bottom: none;
-}
+.faq-item:last-child { border-bottom: none; }
 .faq-item.active {
   background: rgba(255, 255, 255, 0.02);
   border-radius: 6px;
 }
 .faq-question {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: #fff;
+  display: flex; justify-content: space-between; align-items: center;
+  font-weight: 600; font-size: 1.05rem; color: #fff;
 }
-.faq-question:focus {
-  outline: 2px solid #a259ff;
-  outline-offset: 2px;
-}
-.faq-icon {
-  font-size: 1.2rem;
-  color: #a259ff;
-  transition: transform 0.3s ease;
-}
-.faq-item.active .faq-icon {
-  transform: rotate(180deg);
-}
+.faq-icon { font-size: 1.2rem; color: #a259ff; transition: transform 0.3s ease; }
+.faq-item.active .faq-icon { transform: rotate(180deg); }
 .faq-answer {
-  margin-top: 12px;
-  font-size: 0.95rem;
-  color: #ccc;
-  line-height: 1.6;
-  overflow: hidden;
-  transition: all 0.4s ease;
+  margin-top: 12px; font-size: 0.95rem; color: #ccc; line-height: 1.6;
+  overflow: hidden; transition: all 0.4s ease;
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 992px) {
-  .hero-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .hero-image {
-    margin-top: 30px;
-  }
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .hero-content { grid-template-columns: 1fr; text-align: center; }
+  .hero-image { margin-top: 30px; }
+  .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 600px) {
-  .hero-text h1 {
-    font-size: 1.8rem;
-  }
-  .hero-text p {
-    font-size: 1rem;
-  }
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
+  .hero-text h1 { font-size: 1.8rem; }
+  .hero-text p { font-size: 1rem; }
+  .btn { width: 100%; text-align: center; }
+  .portfolio-grid { grid-template-columns: 1fr; }
 }
 
 /* ===== Hero Image Fix ===== */
 .hero-image {
-  max-width: 500px;   /* ✅ מגביל את הקופסה של התמונה */
+  max-width: 500px;
   margin: 0 auto;
 }
-
 .hero-image img {
   max-width: 100%;
   height: auto;
-  max-height: 420px;  /* ✅ מונע מהתמונה להיות גבוהה מדי */
+  max-height: 420px;
   display: block;
   margin: 0 auto;
-  border-radius: 12px; /* אופציונלי – למראה אלגנטי */
+  border-radius: 12px;
 }
