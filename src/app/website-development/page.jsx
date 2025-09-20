@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { FaBriefcase, FaFolderOpen, FaHandshake, FaUsers } from "react-icons/fa";
 import "./WebsiteLanding.css";
-import ProcessSection from "../../components/ProcessSection";
+import DevelopmentProcessSection from "../../components/DevelopmentProcessSection";
+
 
 
 
@@ -213,7 +214,8 @@ export default function WebsiteLanding() {
       </section>
 
        {/* ===== Our Process ===== */}
-      <ProcessSection />
+      <DevelopmentProcessSection />
+
 
       {/* ===== Portfolio ===== */}
       <section className="portfolio">
