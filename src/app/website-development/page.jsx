@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { FaBriefcase, FaFolderOpen, FaHandshake, FaUsers } from "react-icons/fa";
 import "./WebsiteLanding.css";
-import DevelopmentProcessSection from "../../components/DevelopmentProcessSection";
+import DevelopmentProcessSection from "../../../components/DevelopmentProcessSection";
+
 
 
 
