@@ -95,14 +95,14 @@
   box-shadow: 0 6px 20px rgba(255, 90, 125, 0.35);
 }
 .btn-outline {
-  background: transparent;
-  border: 2px solid #fff;
+  background: linear-gradient(135deg, #4a3aff, #00c6ff);
   color: #fff;
+  border: none;
   box-shadow: 0 0 12px rgba(0, 198, 255, 0.4); /* ✅ Glow כחול עדין */
   transition: all 0.3s ease, box-shadow 0.4s ease;
 }
 .btn-outline:hover {
-  background: rgba(0, 198, 255, 0.1);
+  background: linear-gradient(135deg, #5c56ff, #00d0ff);
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 0 20px rgba(0, 198, 255, 0.7); /* ✅ Glow חזק יותר בהובר */
 }
