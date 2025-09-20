@@ -1,14 +1,9 @@
 "use client";
 import React from "react";
 import "./WebsiteLanding.css";
+import GetStartedForm from "./GetStartedForm"; // 👈 ייבוא הטופס החדש
 
 export default function WebsiteLanding() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // כאן אפשר להוסיף API אמיתי ליצירת ליד (Formspree / שרת שלך)
-    alert("✅ Thank you! We’ll contact you shortly.");
-  };
-
   return (
     <div className="landing-page">
       {/* Hero Section */}
@@ -63,24 +58,15 @@ export default function WebsiteLanding() {
         <h2>Our Work</h2>
         <div className="portfolio-grid">
           <figure>
-            <img
-              src="/portfolio/site1.jpg"
-              alt="Clinic website project"
-            />
+            <img src="/portfolio/site1.jpg" alt="Clinic website project" />
             <figcaption>Clinic Website – React + SEO</figcaption>
           </figure>
           <figure>
-            <img
-              src="/portfolio/site2.jpg"
-              alt="Ecommerce website project"
-            />
+            <img src="/portfolio/site2.jpg" alt="Ecommerce website project" />
             <figcaption>Ecommerce Store – WooCommerce</figcaption>
           </figure>
           <figure>
-            <img
-              src="/portfolio/site3.jpg"
-              alt="Custom website design project"
-            />
+            <img src="/portfolio/site3.jpg" alt="Custom website design project" />
             <figcaption>Custom Website – Branding Focus</figcaption>
           </figure>
         </div>
@@ -94,52 +80,13 @@ export default function WebsiteLanding() {
           within two months. Highly recommend!” – John D.
         </blockquote>
         <blockquote>
-          “Fast, creative, and reliable. Our ecommerce sales skyrocketed.” –
-          Sarah M.
+          “Fast, creative, and reliable. Our ecommerce sales skyrocketed.” – Sarah M.
         </blockquote>
       </section>
 
-      {/* CTA Form */}
+      {/* ✅ CTA Form – הטופס החדש */}
       <section id="contact" className="cta-section">
-        <h2>Let’s Build Your Website</h2>
-        <form className="lead-form" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Name"
-            name="name"
-            required
-            aria-label="Name"
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            name="email"
-            required
-            aria-label="Email"
-          />
-          <input
-            type="tel"
-            placeholder="Phone"
-            name="phone"
-            required
-            aria-label="Phone"
-          />
-
-          <button type="submit" className="btn-primary">
-            Book a Discovery Call
-          </button>
-        </form>
-
-        {/* Secondary action – WhatsApp */}
-        <a
-          href="https://wa.me/19179476813"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-secondary"
-          aria-label="Chat with us on WhatsApp"
-        >
-          💬 Chat with us on WhatsApp
-        </a>
+        <GetStartedForm />
       </section>
 
       {/* FAQ */}
@@ -163,7 +110,7 @@ export default function WebsiteLanding() {
       <section id="final-cta" className="final-cta">
         <h2>Ready to Get Started?</h2>
         <a
-          href="/book"
+          href="#contact"
           className="btn-primary"
           aria-label="Book a discovery call now"
         >
