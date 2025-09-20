@@ -27,6 +27,7 @@
   margin-right: auto;
 }
 
+/* כפתורי CTA כלליים (Hero / Final CTA) */
 .cta-btn {
   display: inline-block;
   background: linear-gradient(135deg, #ff5a5f, #ff9966);
@@ -143,8 +144,7 @@
   margin: 30px auto;
 }
 
-.lead-form input,
-.lead-form button {
+.lead-form input {
   padding: 14px 16px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -158,8 +158,8 @@
   box-shadow: 0 0 6px rgba(74, 58, 255, 0.4);
 }
 
-/* ✅ כפתור ברור ונראה */
-.lead-form button {
+/* ✅ כפתור של הטופס – form-btn */
+.form-btn {
   background: linear-gradient(135deg, #4a3aff, #6a5aff);
   color: #fff;
   font-weight: 700;
@@ -171,9 +171,11 @@
   margin-top: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
 }
 
-.lead-form button:hover {
+.form-btn:hover {
   background: linear-gradient(135deg, #3729c9, #4a3aff);
   transform: translateY(-2px);
 }

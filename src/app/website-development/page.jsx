@@ -82,7 +82,9 @@ export default function WebsiteLanding() {
           <input type="text" placeholder="Name" name="name" required aria-label="Name" />
           <input type="email" placeholder="Email" name="email" required aria-label="Email" />
           <input type="tel" placeholder="Phone" name="phone" required aria-label="Phone" />
-          <button type="submit" className="cta-btn">
+          
+          {/* ✅ שונה ל־form-btn */}
+          <button type="submit" className="form-btn">
             Book a Discovery Call
           </button>
         </form>
