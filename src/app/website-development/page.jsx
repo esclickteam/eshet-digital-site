@@ -132,7 +132,7 @@ export default function WebsiteLanding() {
         </div>
       </section>
 
-      {/* ===== Portfolio (Lead Optimized) ===== */}
+      {/* ===== Portfolio ===== */}
       <section className="portfolio">
         <h2>Portfolio</h2>
         <div className="portfolio-grid">
@@ -148,14 +148,15 @@ export default function WebsiteLanding() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.2, duration: 0.6 }}
-              whileHover={{ scale: 1.05 }}
             >
+              <img src={item.src} alt={item.title} className="portfolio-image" />
               <div className="portfolio-overlay">
-                <img src={item.src} alt={item.title} />
                 <div className="overlay-content">
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
-                  <a href="#contact" className="btn btn-case">Get Similar Website</a>
+                  <a href="https://www.eshetdigital.com/projects" className="btn btn-case">
+                    View Project
+                  </a>
                 </div>
               </div>
             </motion.div>
