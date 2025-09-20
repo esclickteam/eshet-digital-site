@@ -5,7 +5,7 @@ import "./WebsiteLanding.css";
 export default function WebsiteLanding() {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // כאן אפשר להוסיף API ליצירת ליד (למשל fetch לשרת שלך)
+    // כאן אפשר להוסיף API אמיתי ליצירת ליד (Formspree / שרת שלך)
     alert("✅ Thank you! We’ll contact you shortly.");
   };
 
@@ -13,15 +13,21 @@ export default function WebsiteLanding() {
     <div className="landing-page">
       {/* Hero Section */}
       <section id="hero" className="hero">
-        <div className="hero-content">
-          <h1>Build a Website That Brings Clients 🚀</h1>
-          <p>
-            Professional website development for US businesses.
-            Mobile-friendly, SEO-ready, and designed to grow your sales.
-          </p>
-          <a href="/book" className="cta-btn" aria-label="Book a free discovery call">
-            Book a Free Discovery Call
-          </a>
+        <div className="hero-overlay">
+          <div className="hero-content">
+            <h1>Websites That Grow Your Business 🚀</h1>
+            <p>
+              Custom websites for US businesses. Mobile-first, SEO-ready, and
+              designed to convert visitors into clients.
+            </p>
+            <a
+              href="#contact"
+              className="btn-primary"
+              aria-label="Book a free discovery call"
+            >
+              Book a Free Discovery Call
+            </a>
+          </div>
         </div>
       </section>
 
@@ -30,22 +36,22 @@ export default function WebsiteLanding() {
         <h2>Why Choose Us?</h2>
         <div className="features">
           <div className="feature">
-            <img src="/icons/Design.svg" alt="Custom website design icon" />
+            <img src="/icons/Design.svg" alt="Custom website design" />
             <h3>Custom Design</h3>
             <p>Modern, branded, and built to impress clients.</p>
           </div>
           <div className="feature">
-            <img src="/icons/Mobile.svg" alt="Mobile and SEO optimization icon" />
+            <img src="/icons/Mobile.svg" alt="Mobile and SEO optimization" />
             <h3>Mobile & SEO Ready</h3>
             <p>Optimized for smartphones and search engines.</p>
           </div>
           <div className="feature">
-            <img src="/icons/Speed.svg" alt="Website speed optimization icon" />
+            <img src="/icons/Speed.svg" alt="Website speed optimization" />
             <h3>Fast & Secure</h3>
             <p>Quick turnaround with top-notch security.</p>
           </div>
           <div className="feature">
-            <img src="/icons/Support.svg" alt="Customer support icon" />
+            <img src="/icons/Support.svg" alt="Customer support" />
             <h3>Dedicated Support</h3>
             <p>Personalized guidance from start to finish.</p>
           </div>
@@ -56,9 +62,27 @@ export default function WebsiteLanding() {
       <section id="portfolio" className="portfolio">
         <h2>Our Work</h2>
         <div className="portfolio-grid">
-          <img src="/portfolio/site1.jpg" alt="Example of a business website we developed" />
-          <img src="/portfolio/site2.jpg" alt="Example of an ecommerce website we created" />
-          <img src="/portfolio/site3.jpg" alt="Example of a custom website design project" />
+          <figure>
+            <img
+              src="/portfolio/site1.jpg"
+              alt="Clinic website project"
+            />
+            <figcaption>Clinic Website – React + SEO</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="/portfolio/site2.jpg"
+              alt="Ecommerce website project"
+            />
+            <figcaption>Ecommerce Store – WooCommerce</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="/portfolio/site3.jpg"
+              alt="Custom website design project"
+            />
+            <figcaption>Custom Website – Branding Focus</figcaption>
+          </figure>
         </div>
       </section>
 
@@ -70,8 +94,8 @@ export default function WebsiteLanding() {
           within two months. Highly recommend!” – John D.
         </blockquote>
         <blockquote>
-          “Fast, creative, and reliable. Our ecommerce sales skyrocketed.”
-          – Sarah M.
+          “Fast, creative, and reliable. Our ecommerce sales skyrocketed.” –
+          Sarah M.
         </blockquote>
       </section>
 
@@ -79,22 +103,39 @@ export default function WebsiteLanding() {
       <section id="contact" className="cta-section">
         <h2>Let’s Build Your Website</h2>
         <form className="lead-form" onSubmit={handleSubmit}>
-          <input type="text" placeholder="Name" name="name" required aria-label="Name" />
-          <input type="email" placeholder="Email" name="email" required aria-label="Email" />
-          <input type="tel" placeholder="Phone" name="phone" required aria-label="Phone" />
-          
-          {/* ✅ שונה ל־form-btn */}
-          <button type="submit" className="form-btn">
+          <input
+            type="text"
+            placeholder="Name"
+            name="name"
+            required
+            aria-label="Name"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            name="email"
+            required
+            aria-label="Email"
+          />
+          <input
+            type="tel"
+            placeholder="Phone"
+            name="phone"
+            required
+            aria-label="Phone"
+          />
+
+          <button type="submit" className="btn-primary">
             Book a Discovery Call
           </button>
         </form>
 
-        {/* ✅ כפתור ירוק לוואטסאפ */}
+        {/* Secondary action – WhatsApp */}
         <a
           href="https://wa.me/19179476813"
           target="_blank"
           rel="noopener noreferrer"
-          className="whatsapp-btn"
+          className="btn-secondary"
           aria-label="Chat with us on WhatsApp"
         >
           💬 Chat with us on WhatsApp
@@ -121,7 +162,11 @@ export default function WebsiteLanding() {
       {/* Final CTA */}
       <section id="final-cta" className="final-cta">
         <h2>Ready to Get Started?</h2>
-        <a href="/book" className="cta-btn" aria-label="Book a discovery call now">
+        <a
+          href="/book"
+          className="btn-primary"
+          aria-label="Book a discovery call now"
+        >
           Book a Free Discovery Call
         </a>
       </section>
