@@ -1,45 +1,38 @@
 "use client";
 import { motion } from "framer-motion";
-import {
-  FaSearch,
-  FaPaintBrush,
-  FaCode,
-  FaRocket,
-  FaCheckCircle,
-  FaTools,
-} from "react-icons/fa";
 import "./DevelopmentWorkflow.css";
 
-const steps = [
-  { icon: <FaSearch />, title: "Discovery", desc: "Requirement analysis & market research", color: "cyan" },
-  { icon: <FaPaintBrush />, title: "Design", desc: "UI/UX mockups and prototypes", color: "purple" },
-  { icon: <FaCode />, title: "Development", desc: "Agile coding with best practices", color: "pink" },
-  { icon: <FaRocket />, title: "Launch", desc: "Soft launch and optimization", color: "orange" },
-  { icon: <FaCheckCircle />, title: "Delivery", desc: "Final approval & project handover", color: "green" },
-  { icon: <FaTools />, title: "Support", desc: "Post-launch support & maintenance", color: "blue" },
-];
-
 export default function DevelopmentWorkflow() {
+  const steps = [
+    { number: "01", title: "Discovery", text: "Define goals & market research", color: "cyan" },
+    { number: "02", title: "Contract", text: "Approve scope & agreement", color: "orange" },
+    { number: "03", title: "Design", text: "UI/UX mockups & prototypes", color: "purple" },
+    { number: "04", title: "Development", text: "Agile coding best practices", color: "pink" },
+    { number: "05", title: "Soft Launch", text: "Testing & optimization", color: "yellow" },
+    { number: "06", title: "Post-Launch", text: "Support & improvements", color: "green" },
+  ];
+
   return (
-    <section className="dev-workflow-section">
+    <section className="workflow-section">
       <div className="container">
-        <h2 className="section-title">Our Development Workflow</h2>
-        <p className="section-subtitle">
-          A clear, structured process from discovery to long-term support.
+        <h2 className="workflow-title">Our Development Workflow</h2>
+        <p className="workflow-subtitle">
+          A clear, structured process that guides your project from start to finish.
         </p>
-        <div className="workflow-grid">
+        <div className="workflow-steps">
           {steps.map((step, i) => (
             <motion.div
               key={i}
               className={`workflow-step ${step.color}`}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.2, duration: 0.6 }}
+              transition={{ duration: 0.6, delay: i * 0.3 }}
             >
-              <div className="step-icon">{step.icon}</div>
+              <div className="step-number">{step.number}</div>
               <h3>{step.title}</h3>
-              <p>{step.desc}</p>
+              <p>{step.text}</p>
+              {i < steps.length - 1 && <div className="arrow" />}
             </motion.div>
           ))}
         </div>

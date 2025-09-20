@@ -1,60 +1,96 @@
-.dev-workflow-section {
-  padding: 80px 20px;
-  background: #0f172a;
+.workflow-section {
+  background: #0e1220;
   color: #fff;
+  padding: 80px 20px;
   text-align: center;
 }
 
-.section-title {
-  font-size: 2.2rem;
-  font-weight: 700;
+.workflow-title {
+  font-size: 2.5rem;
   margin-bottom: 10px;
 }
 
-.section-subtitle {
+.workflow-subtitle {
   font-size: 1.1rem;
-  opacity: 0.85;
+  color: #bbb;
   margin-bottom: 50px;
 }
 
-.workflow-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
+.workflow-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
 }
 
 .workflow-step {
-  border-radius: 14px;
-  padding: 30px 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid transparent;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #151a2c;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 25px;
+  width: 180px;
+  min-height: 160px;
+  position: relative;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  animation: pulseGlow 3s infinite alternate;
 }
+
 .workflow-step:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px) scale(1.05);
+  border-color: currentColor;
 }
 
-.step-icon {
-  font-size: 2rem;
-  margin-bottom: 15px;
-}
-
-/* צבעים */
-.cyan { border-color: #00e0ff; color: #00e0ff; }
-.purple { border-color: #9b59ff; color: #9b59ff; }
-.pink { border-color: #ff66cc; color: #ff66cc; }
-.orange { border-color: #ffa500; color: #ffa500; }
-.green { border-color: #2ecc71; color: #2ecc71; }
-.blue { border-color: #3498db; color: #3498db; }
-
-.workflow-step h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
+.step-number {
+  font-size: 1.3rem;
+  font-weight: bold;
   margin-bottom: 8px;
 }
 
-.workflow-step p {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.8);
+/* חצים */
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: -32px;
+  width: 30px;
+  height: 2px;
+  background: currentColor;
+}
+.arrow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -5px;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 10px solid currentColor;
+}
+
+/* אפקט Glow */
+@keyframes pulseGlow {
+  from {
+    box-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+  }
+  to {
+    box-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+  }
+}
+
+/* צבעים */
+.workflow-step.cyan { color: #00eaff; }
+.workflow-step.orange { color: #ff7b2c; }
+.workflow-step.purple { color: #a259ff; }
+.workflow-step.pink { color: #ff4fa3; }
+.workflow-step.yellow { color: #ffc107; }
+.workflow-step.green { color: #4caf50; }
+
+/* רספונסיביות */
+@media (max-width: 992px) {
+  .workflow-steps {
+    flex-direction: column;
+    align-items: center;
+  }
+  .arrow {
+    display: none;
+  }
 }
