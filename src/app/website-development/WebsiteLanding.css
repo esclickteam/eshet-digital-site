@@ -232,14 +232,18 @@ textarea {
 .faq {
   padding: 80px 20px;
   background: #fafafa;
+  text-align: center;       /* הכותרת באמצע */
 }
 .faq details {
-  margin: 10px 0;
-  padding: 10px;
+  margin: 12px auto;        /* מרכז את הקופסה */
+  padding: 15px 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background: #fff;
   cursor: pointer;
+  max-width: 700px;         /* מגביל רוחב כדי לא להימתח על כל המסך */
+  text-align: left;         /* טקסט השאלה/תשובה נשאר שמאלי */
+  transition: box-shadow 0.2s ease;
 }
 .faq summary {
   font-weight: 600;
