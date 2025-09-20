@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FiPlus, FiMinus } from "react-icons/fi"; // ← פלוס/מינוס לאקורדיון
 import "./WebsiteLanding.css";
 
 export default function WebsiteLanding() {
@@ -54,7 +55,7 @@ export default function WebsiteLanding() {
   const [index, setIndex] = useState(0);
   const [activeFAQ, setActiveFAQ] = useState(null);
 
-  // מעבר אוטומטי כל 6 שניות
+  // מעבר אוטומטי בין עדויות
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % testimonials.length);
@@ -214,7 +215,10 @@ export default function WebsiteLanding() {
 
       {/* ===== FAQ (Accordion) ===== */}
       <section className="faq">
-        <h2>FAQ</h2>
+        <div className="faq-header">
+          <h2>Frequently Asked Questions</h2>
+          <p>Here are some of the most common questions our clients ask.</p>
+        </div>
         <div className="faq-list">
           {faqs.map((item, i) => (
             <div
@@ -223,7 +227,10 @@ export default function WebsiteLanding() {
               onClick={() => toggleFAQ(i)}
             >
               <div className="faq-question">
-                <h3>{item.q}</h3>
+                <span>{item.q}</span>
+                <span className="faq-icon">
+                  {activeFAQ === i ? <FiMinus /> : <FiPlus />}
+                </span>
               </div>
               <AnimatePresence>
                 {activeFAQ === i && (

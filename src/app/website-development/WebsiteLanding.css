@@ -224,36 +224,83 @@
   background: #4a3aff;
 }
 
-/* ===== FAQ ===== */
+/* ===== FAQ (Accordion Style) ===== */
 .faq {
+  background: #1e1e2f;
+  color: #fff;
   padding: 80px 20px;
+  border-radius: 12px;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 80px auto;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
 }
-.faq h2 {
-  margin-bottom: 30px;
+
+.faq-header {
   text-align: center;
+  margin-bottom: 40px;
 }
+
+.faq-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #a259ff;
+  margin-bottom: 10px;
+}
+
+.faq-header p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* רשימת שאלות */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* פריט אקורדיון */
 .faq-item {
-  background: #fff;
-  padding: 15px 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  margin-bottom: 15px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-item.active {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+}
+
+/* שאלה */
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+.faq-icon {
+  font-size: 1.2rem;
+  color: #a259ff;
   transition: transform 0.3s ease;
 }
-.faq-item:hover {
-  transform: translateY(-2px);
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
 }
-.faq-item h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #4a3aff;
-}
-.faq-item p {
-  font-size: 0.9rem;
-  margin-top: 6px;
-  color: #444;
+
+/* תשובה */
+.faq-answer {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.6;
 }
 
 /* ===== Responsive ===== */
