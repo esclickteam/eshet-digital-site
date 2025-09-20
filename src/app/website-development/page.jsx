@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiPlus, FiMinus } from "react-icons/fi";
-import { FaBriefcase, FaFolderOpen, FaHandshake, FaUsers } from "react-icons/fa"; 
+import { FaBriefcase, FaFolderOpen, FaHandshake, FaUsers } from "react-icons/fa";
 import "./WebsiteLanding.css";
 
 export default function WebsiteLanding() {
@@ -26,6 +26,17 @@ export default function WebsiteLanding() {
     { icon: <FaFolderOpen />, label: "Client Satisfaction", target: 95, suffix: "%", color: "pink" },
     { icon: <FaHandshake />, label: "Weeks Delivery", target: 4, suffix: " (2–4)", color: "orange" },
     { icon: <FaUsers />, label: "Dedicated Team", target: 1, suffix: "", color: "blue" },
+  ];
+
+  const portfolio = [
+    { src: "/portfolio/1.jpg", title: "Glow with the Flow Skin Studio" },
+    { src: "/portfolio/2.jpg", title: "Bamboo Landscaping" },
+    { src: "/portfolio/3.jpg", title: "Manzo General Contractors" },
+    { src: "/portfolio/4.jpg", title: "Replete Aesthetics" },
+    { src: "/portfolio/5.jpg", title: "EG Pro Electric" },
+    { src: "/portfolio/6.jpg", title: "Always Clean" },
+    { src: "/portfolio/7.jpg", title: "Wild Waste Control" },
+    { src: "/portfolio/8.jpg", title: "HavenStone Realty" },
   ];
 
   const [counts, setCounts] = useState(stats.map(() => 0));
@@ -136,11 +147,7 @@ export default function WebsiteLanding() {
       <section className="portfolio">
         <h2>Portfolio</h2>
         <div className="portfolio-grid">
-          {[
-            { src: "/portfolio/3.jpg", title: "WordPress", text: "+200% Leads" },
-            { src: "/portfolio/1.jpg", title: "eCommerce", text: "Up to 50% less cost" },
-            { src: "/portfolio/5.jpg", title: "Custom", text: "Brand Focused" },
-          ].map((item, i) => (
+          {portfolio.map((item, i) => (
             <motion.div
               key={i}
               className="portfolio-card"
@@ -150,15 +157,7 @@ export default function WebsiteLanding() {
               transition={{ delay: i * 0.2, duration: 0.6 }}
             >
               <img src={item.src} alt={item.title} className="portfolio-image" />
-              <div className="portfolio-overlay">
-                <div className="overlay-content">
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                  <a href="https://www.eshetdigital.com/projects" className="btn btn-case">
-                    View Project
-                  </a>
-                </div>
-              </div>
+              <h3>{item.title}</h3>
             </motion.div>
           ))}
         </div>
