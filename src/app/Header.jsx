@@ -64,16 +64,8 @@ export default function Header() {
           <li><a href="/tech">Tech</a></li>
         </ul>
 
-        {/* ===== Desktop CTA (Contact + Book Call) ===== */}
+        {/* ===== Desktop CTA (רק Book Call) ===== */}
         <div className="header-cta desktop-only">
-          <a
-            href="https://wa.me/19179476813"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="whatsapp-btn"
-          >
-            Contact
-          </a>
           <a href="/book" className="cta-btn">
             Book a Discovery Call
           </a>
@@ -123,28 +115,13 @@ export default function Header() {
           <li><a href="/projects">Projects</a></li>
           <li><a href="/tech">Tech</a></li>
 
-          {/* ✅ Book a Discovery Call CTA (מעל Contact במובייל) */}
+          {/* ✅ Book a Discovery Call CTA במובייל */}
           <li className="mobile-cta">
             <a href="/book" className="call-card">
               <div className="icon-circle call-icon">
                 <img src="/icons/CalendarColor.svg" alt="Calendar" />
               </div>
               <span>Book a Discovery Call</span>
-            </a>
-          </li>
-
-          {/* ✅ Contact CTA (אחרי Book במובייל) */}
-          <li className="mobile-cta">
-            <a
-              href="https://wa.me/19179476813"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contact-card"
-            >
-              <div className="icon-circle">
-                <img src="/icons/WhatsApp.svg" alt="WhatsApp" />
-              </div>
-              <span>Contact Us</span>
             </a>
           </li>
         </ul>
