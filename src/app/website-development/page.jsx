@@ -86,17 +86,17 @@ export default function WebsiteLanding() {
             Book a Discovery Call
           </button>
         </form>
-        <p>
-          Prefer WhatsApp?{" "}
-          <a
-            href="https://wa.me/19179476813"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Chat with us on WhatsApp"
-          >
-            Chat with us
-          </a>
-        </p>
+
+        {/* ✅ כפתור ירוק לוואטסאפ */}
+        <a
+          href="https://wa.me/19179476813"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="whatsapp-btn"
+          aria-label="Chat with us on WhatsApp"
+        >
+          💬 Chat with us on WhatsApp
+        </a>
       </section>
 
       {/* FAQ */}

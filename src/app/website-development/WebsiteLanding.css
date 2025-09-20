@@ -38,6 +38,8 @@
   font-size: 1rem;
   box-shadow: 0 6px 16px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .cta-btn:hover {
@@ -149,23 +151,50 @@
   font-size: 1rem;
 }
 
+/* מצב focus לשדות */
 .lead-form input:focus {
   outline: none;
   border-color: #4a3aff;
-  box-shadow: 0 0 6px rgba(74,58,255,0.4);
+  box-shadow: 0 0 6px rgba(74, 58, 255, 0.4);
 }
 
+/* ✅ כפתור ברור ונראה */
 .lead-form button {
-  background: #4a3aff;
+  background: linear-gradient(135deg, #4a3aff, #6a5aff);
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1rem;
   cursor: pointer;
   border: none;
+  border-radius: 40px;
+  padding: 14px;
+  margin-top: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
 }
 
 .lead-form button:hover {
-  background: #3a2fd1;
+  background: linear-gradient(135deg, #3729c9, #4a3aff);
+  transform: translateY(-2px);
+}
+
+/* כפתור ירוק לוואטסאפ מתחת לטופס */
+.whatsapp-btn {
+  display: inline-block;
+  margin-top: 16px;
+  background: linear-gradient(135deg, #25d366, #1ebe5b);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background: linear-gradient(135deg, #1ebe5b, #128c7e);
   transform: translateY(-2px);
 }
 
