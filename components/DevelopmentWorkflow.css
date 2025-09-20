@@ -1,79 +1,108 @@
 /* DevelopmentWorkflow.css */
-.dev-workflow {
+
+.workflow-section {
+  background: #0e1220;
+  color: #fff;
   padding: 80px 20px;
   text-align: center;
-  background: #0b0f1a;
-  color: #fff;
 }
 
-.dev-workflow h2 {
-  font-size: 2.2rem;
+.workflow-title {
+  font-size: 2.5rem;
   margin-bottom: 10px;
-  font-weight: 700;
 }
 
-.dev-workflow p {
-  font-size: 1rem;
+.workflow-subtitle {
+  font-size: 1.1rem;
+  color: #bbb;
   margin-bottom: 50px;
-  color: #aaa;
 }
 
 .workflow-steps {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 30px;
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
 }
 
-/* כרטיס שלב */
-.step-card {
-  background: #111726;
+.workflow-step {
+  background: #151a2c;
   border: 2px dashed rgba(255, 255, 255, 0.2);
-  padding: 25px;
   border-radius: 12px;
-  width: 200px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 25px;
+  width: 180px;
+  min-height: 160px;
+  position: relative;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  animation: pulseGlow 3s infinite alternate;
 }
 
-.step-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+.workflow-step:hover {
+  transform: translateY(-8px) scale(1.05);
+  border-color: currentColor;
 }
 
 .step-number {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
-.step-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 5px;
+/* חצים */
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: -32px;
+  width: 30px;
+  height: 2px;
+  background: currentColor;
+}
+.arrow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -5px;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 10px solid currentColor;
 }
 
-.step-desc {
-  font-size: 0.9rem;
-  color: #bbb;
-}
-
-/* צבעים לפי שלבים */
-.step-discovery { border-color: cyan; box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); }
-.step-contract { border-color: orange; box-shadow: 0 0 20px rgba(255, 165, 0, 0.3); }
-.step-design { border-color: violet; box-shadow: 0 0 20px rgba(238, 130, 238, 0.3); }
-.step-development { border-color: #ff4d6d; box-shadow: 0 0 20px rgba(255, 77, 109, 0.3); }
-.step-softlaunch { border-color: yellow; box-shadow: 0 0 20px rgba(255, 255, 0, 0.3); }
-.step-postlaunch { border-color: lime; box-shadow: 0 0 20px rgba(0, 255, 0, 0.3); }
-
-/* רספונסיביות */
-@media (max-width: 1200px) {
-  .workflow-steps {
-    grid-template-columns: repeat(3, 1fr);
+/* אפקט Glow */
+@keyframes pulseGlow {
+  from {
+    box-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+  }
+  to {
+    box-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
   }
 }
 
-@media (max-width: 768px) {
+/* צבעים */
+.workflow-step.cyan { color: #00eaff; }
+.workflow-step.orange { color: #ff7b2c; }
+.workflow-step.purple { color: #a259ff; }
+.workflow-step.pink { color: #ff4fa3; }
+.workflow-step.yellow { color: #ffc107; }
+.workflow-step.green { color: #4caf50; }
+
+/* רספונסיביות */
+/* טאבלט ומטה – 2 בשורה */
+@media (max-width: 992px) {
   .workflow-steps {
-    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+  .workflow-step {
+    flex: 0 1 calc(50% - 40px);
+  }
+  .arrow {
+    display: none;
+  }
+}
+
+/* מובייל קטן – טור אחד */
+@media (max-width: 576px) {
+  .workflow-step {
+    flex: 0 1 100%;
   }
 }
