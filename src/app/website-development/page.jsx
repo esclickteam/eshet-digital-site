@@ -59,14 +59,12 @@ export default function WebsiteLanding() {
           if (entry.isIntersecting) {
             stats.forEach((stat, idx) => {
               if (stat.target <= 5) {
-                // מספרים קטנים – להציג ישר
                 setCounts((prev) => {
                   const updated = [...prev];
                   updated[idx] = stat.target;
                   return updated;
                 });
               } else {
-                // מספרים גדולים – להפעיל counter
                 let start = 0;
                 const end = stat.target;
                 const duration = 1500;
@@ -108,11 +106,11 @@ export default function WebsiteLanding() {
           transition={{ duration: 0.8 }}
         >
           <div className="hero-text">
-            <h1>🚀 Build Websites That Convert</h1>
-            <p>Professional websites built to drive leads and sales for your business.</p>
+            <h1>Websites That Grow Your Business</h1>
+            <p>Custom, conversion-focused websites designed to attract clients, increase bookings, and boost sales.</p>
             <div className="hero-buttons">
-              <a href="#contact" className="btn btn-primary">Book a Free Call</a>
-              <a href="#quote" className="btn btn-outline">Get Instant Quote</a>
+              <a href="#quote" className="btn btn-primary">Get Instant Quote</a>
+              <a href="#contact" className="btn btn-outline">Book a Free Call</a>
             </div>
             <div className="hero-trust">⭐⭐⭐⭐⭐ <span>Trusted by 50+ Businesses</span></div>
           </div>
@@ -131,6 +129,57 @@ export default function WebsiteLanding() {
             />
           </motion.div>
         </motion.div>
+      </section>
+
+      {/* ===== UX Benefits Section ===== */}
+      <section className="ux-benefits">
+        <h2>Better User Experience = Better Results</h2>
+        <p className="ux-subtitle">
+          We design every website with your users in mind – because when visitors enjoy the journey, 
+          they become loyal customers.
+        </p>
+        <div className="ux-grid">
+          <motion.div
+            className="ux-card"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h3>📱 Mobile First</h3>
+            <p>Seamless browsing experience on phones, tablets, and desktops.</p>
+          </motion.div>
+          <motion.div
+            className="ux-card"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3>⚡ Fast Loading</h3>
+            <p>Optimized performance to keep users engaged and reduce bounce rates.</p>
+          </motion.div>
+          <motion.div
+            className="ux-card"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <h3>🎯 Conversion Focused</h3>
+            <p>Clear calls-to-action that guide visitors to book, buy, or contact you.</p>
+          </motion.div>
+          <motion.div
+            className="ux-card"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2 }}
+          >
+            <h3>🛡️ Accessible & Secure</h3>
+            <p>Websites built for all users, with top-level security and accessibility standards.</p>
+          </motion.div>
+        </div>
       </section>
 
       {/* ===== Why Choose Us (Stats with Counter) ===== */}
