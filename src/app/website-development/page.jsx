@@ -24,19 +24,19 @@ export default function WebsiteLanding() {
   const stats = [
     { icon: <FaBriefcase />, label: "Projects Delivered", target: 100, suffix: "+", color: "purple" },
     { icon: <FaFolderOpen />, label: "Client Satisfaction", target: 95, suffix: "%", color: "pink" },
-    { icon: <FaHandshake />, label: "Weeks Delivery", target: 4, suffix: " (2–4)", color: "orange" },
+    { icon: <FaHandshake />, label: "Delivery Time", target: 4, suffix: " weeks", note: "(2–4 weeks depending on project)", color: "orange" },
     { icon: <FaUsers />, label: "Dedicated Team", target: 1, suffix: "", color: "blue" },
   ];
 
   const portfolio = [
     { src: "/portfolio/1.jpg", title: "Personal Training Website" },
     { src: "/portfolio/2.jpg", title: "Fashion E-commerce Website" },
-    { src: "/portfolio/3.jpg", title: "Construction Business Website " },
+    { src: "/portfolio/3.jpg", title: "Construction Business Website" },
     { src: "/portfolio/4.jpg", title: "Real Estate Business Website" },
     { src: "/portfolio/5.jpg", title: "Bakery E-commerce Website" },
-    { src: "/portfolio/6.jpg", title: "Bridal Studio Website " },
+    { src: "/portfolio/6.jpg", title: "Bridal Studio Website" },
     { src: "/portfolio/7.jpg", title: "Flower Shop E-commerce Website" },
-    { src: "/portfolio/8.jpg", title: "Hair Studio Website  " },
+    { src: "/portfolio/8.jpg", title: "Hair Studio Website" },
   ];
 
   const [counts, setCounts] = useState(stats.map(() => 0));
@@ -58,20 +58,30 @@ export default function WebsiteLanding() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             stats.forEach((stat, idx) => {
-              let start = 0;
-              const end = stat.target;
-              const duration = 1500;
-              const stepTime = Math.max(Math.floor(duration / end), 20);
-
-              const timer = setInterval(() => {
-                start += 1;
+              if (stat.target <= 5) {
+                // מספרים קטנים – להציג ישר
                 setCounts((prev) => {
                   const updated = [...prev];
-                  updated[idx] = start;
+                  updated[idx] = stat.target;
                   return updated;
                 });
-                if (start >= end) clearInterval(timer);
-              }, stepTime);
+              } else {
+                // מספרים גדולים – להפעיל counter
+                let start = 0;
+                const end = stat.target;
+                const duration = 1500;
+                const stepTime = Math.max(Math.floor(duration / end), 20);
+
+                const timer = setInterval(() => {
+                  start += 1;
+                  setCounts((prev) => {
+                    const updated = [...prev];
+                    updated[idx] = start;
+                    return updated;
+                  });
+                  if (start >= end) clearInterval(timer);
+                }, stepTime);
+              }
             });
             observer.disconnect();
           }
@@ -114,7 +124,8 @@ export default function WebsiteLanding() {
           >
             <motion.img
               src="/images/hero-mockup.png"
-              alt="Website mockup"
+              alt="Website mockup preview"
+              loading="eager"
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
             />
@@ -138,6 +149,7 @@ export default function WebsiteLanding() {
               <div className="stat-icon">{stat.icon}</div>
               <h3>{counts[i]}{stat.suffix}</h3>
               <p>{stat.label}</p>
+              {stat.note && <small>{stat.note}</small>}
             </motion.div>
           ))}
         </div>
@@ -145,7 +157,7 @@ export default function WebsiteLanding() {
 
       {/* ===== Portfolio ===== */}
       <section className="portfolio">
-        <h2>Portfolio</h2>
+        <h2>Our Portfolio – Custom Web Development Projects</h2>
         <div className="portfolio-grid">
           {portfolio.map((item, i) => (
             <motion.div
@@ -156,7 +168,12 @@ export default function WebsiteLanding() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.2, duration: 0.6 }}
             >
-              <img src={item.src} alt={item.title} className="portfolio-image" />
+              <img
+                src={item.src}
+                alt={item.title}
+                loading="lazy"
+                className="portfolio-image"
+              />
               <h3>{item.title}</h3>
             </motion.div>
           ))}
@@ -165,7 +182,7 @@ export default function WebsiteLanding() {
 
       {/* ===== Testimonials ===== */}
       <section className="testimonials">
-        <h2>Testimonials</h2>
+        <h2>What Our Clients Say</h2>
         <div className="carousel">
           <AnimatePresence mode="wait">
             <motion.div
@@ -176,7 +193,11 @@ export default function WebsiteLanding() {
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.6 }}
             >
-              <img src={testimonials[index].img} alt={testimonials[index].name} />
+              <img
+                src={testimonials[index].img}
+                alt={`Photo of ${testimonials[index].name}`}
+                loading="lazy"
+              />
               <p>“{testimonials[index].text}”</p>
               <h4>⭐ ⭐ ⭐ ⭐ ⭐ <span>{testimonials[index].name}</span></h4>
             </motion.div>
@@ -187,6 +208,7 @@ export default function WebsiteLanding() {
             <button
               key={i}
               className={`dot ${i === index ? "active" : ""}`}
+              aria-label={`Go to testimonial ${i + 1}`}
               onClick={() => setIndex(i)}
             ></button>
           ))}
@@ -204,17 +226,22 @@ export default function WebsiteLanding() {
             <div
               key={i}
               className={`faq-item ${activeFAQ === i ? "active" : ""}`}
-              onClick={() => toggleFAQ(i)}
             >
-              <div className="faq-question">
+              <button
+                className="faq-question"
+                aria-expanded={activeFAQ === i}
+                aria-controls={`faq-answer-${i}`}
+                onClick={() => toggleFAQ(i)}
+              >
                 <span>{item.q}</span>
                 <span className="faq-icon">
                   {activeFAQ === i ? <FiMinus /> : <FiPlus />}
                 </span>
-              </div>
+              </button>
               <AnimatePresence>
                 {activeFAQ === i && (
                   <motion.div
+                    id={`faq-answer-${i}`}
                     className="faq-answer"
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}

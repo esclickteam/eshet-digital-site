@@ -56,6 +56,7 @@
   font-size: 2.8rem;
   margin-bottom: 20px;
   font-weight: 700;
+  line-height: 1.2;
 }
 .hero-text p {
   font-size: 1.2rem;
@@ -187,9 +188,13 @@
 }
 .portfolio-card img {
   width: 100%;
-  height: auto;          /* ✅ שמירה על פרופורציות */
-  object-fit: contain;   /* ✅ לא חותך */
+  aspect-ratio: 4/3;    /* ✅ שמירה על יחס אחיד */
+  object-fit: cover;    /* ✅ מילוי המסגרת */
   border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+.portfolio-card:hover img {
+  transform: scale(1.05);
 }
 .portfolio-card h3 {
   font-size: 1.05rem;
@@ -246,6 +251,10 @@
 .carousel-controls .dot.active {
   background: #4a3aff;
 }
+.carousel-controls .dot:focus {
+  outline: 2px solid #4a3aff;
+  outline-offset: 2px;
+}
 
 /* ===== FAQ ===== */
 .faq {
@@ -296,6 +305,10 @@
   font-size: 1.05rem;
   color: #fff;
 }
+.faq-question:focus {
+  outline: 2px solid #a259ff;
+  outline-offset: 2px;
+}
 .faq-icon {
   font-size: 1.2rem;
   color: #a259ff;
@@ -309,6 +322,8 @@
   font-size: 0.95rem;
   color: #ccc;
   line-height: 1.6;
+  overflow: hidden;
+  transition: all 0.4s ease;
 }
 
 /* ===== Responsive ===== */
@@ -326,7 +341,10 @@
 }
 @media (max-width: 600px) {
   .hero-text h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
   }
   .btn {
     width: 100%;
