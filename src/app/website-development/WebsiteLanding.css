@@ -171,17 +171,22 @@
 }
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(4, 1fr); /* בדיוק 4 בעמודה */
+  gap: 30px;
+  margin-top: 30px;
   justify-items: center;
 }
 .portfolio-card {
   background: #fff;
   border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  max-width: 320px; /* שומר על יחס */
 }
 .portfolio-card:hover {
   transform: translateY(-6px);
@@ -191,7 +196,6 @@
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 12px;
 }
 .portfolio-card h3 {
   font-size: 1.05rem;
