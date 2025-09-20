@@ -9,30 +9,53 @@ export default function WebsiteLanding() {
     <div className="landing-page">
       {/* Hero Section */}
       <section id="hero" className="hero">
-        <div className="hero-overlay">
+        <div className="hero-container">
+          {/* טקסט בצד שמאל */}
           <motion.div
-            className="hero-content"
-            initial={{ opacity: 0, y: -40 }}
-            animate={{ opacity: 1, y: 0 }}
+            className="hero-text"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1>Websites That Grow Your Business 🚀</h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-            >
-              Custom websites for US businesses. Mobile-first, SEO-ready,
-              and designed to convert visitors into clients.
-            </motion.p>
-            <motion.a
-              href="#contact"
-              className="btn-primary"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Book a Free Discovery Call
-            </motion.a>
+            <h1>
+              Website <span className="highlight">Design</span>
+            </h1>
+            <p>
+              Discover professional website design services tailored to your
+              business needs. Enhance user experience, improve search rankings,
+              and drive engagement with visually appealing and responsive websites.
+            </p>
+            <div className="hero-cta">
+              <motion.a
+                href="#contact"
+                className="btn-primary"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Get Started
+              </motion.a>
+              <motion.a
+                href="#portfolio"
+                className="btn-secondary"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                View Portfolio
+              </motion.a>
+            </div>
+          </motion.div>
+
+          {/* תמונה / איור בצד ימין */}
+          <motion.div
+            className="hero-image"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <img
+              src="/images/hero-illustration.svg"
+              alt="Illustration of website design"
+            />
           </motion.div>
         </div>
       </section>
