@@ -1,0 +1,93 @@
+.process {
+  padding: 80px 20px;
+  background: #111;
+  color: #fff;
+  text-align: center;
+}
+
+.process h2 {
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  font-weight: 700;
+  color: #00c6ff;
+}
+
+.process-steps {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.step {
+  background: #1e1e2f;
+  border-radius: 12px;
+  padding: 24px;
+  flex: 1;
+  min-width: 180px;
+  max-width: 200px;
+  position: relative;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.step:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.45);
+}
+
+.step-number {
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+/* צבעים שונים לכל שלב */
+.step1 .step-number { background: #00c6ff; }
+.step2 .step-number { background: #ff5a5f; }
+.step3 .step-number { background: #7f5eff; }
+.step4 .step-number { background: #ff4fa3; }
+.step5 .step-number { background: #f7b731; }
+.step6 .step-number { background: #4cd137; }
+
+.step h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #fff;
+}
+.step p {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+/* קו מקשר */
+.connector {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  width: 30px;
+  height: 3px;
+  background: rgba(255,255,255,0.2);
+}
+.step:last-child .connector { display: none; }
+
+/* במובייל – הקו הופך לאנכי */
+@media (max-width: 768px) {
+  .process-steps {
+    flex-direction: column;
+    align-items: center;
+  }
+  .connector {
+    top: auto;
+    left: 50%;
+    bottom: -30px;
+    width: 3px;
+    height: 30px;
+  }
+}

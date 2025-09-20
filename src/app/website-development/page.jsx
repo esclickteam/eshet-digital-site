@@ -4,6 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { FaBriefcase, FaFolderOpen, FaHandshake, FaUsers } from "react-icons/fa";
 import "./WebsiteLanding.css";
+import ProcessSection from "../../components/ProcessSection";
+
+
+
 
 export default function WebsiteLanding() {
   const testimonials = [
@@ -207,6 +211,9 @@ export default function WebsiteLanding() {
           ))}
         </div>
       </section>
+
+       {/* ===== Our Process ===== */}
+      <ProcessSection />
 
       {/* ===== Portfolio ===== */}
       <section className="portfolio">
