@@ -5,6 +5,7 @@ import { FiPlus, FiMinus } from "react-icons/fi";
 import { FaBriefcase, FaFolderOpen, FaHandshake, FaUsers } from "react-icons/fa";
 import "./WebsiteLanding.css";
 import DevelopmentWorkflow from "../../../components/DevelopmentWorkflow";
+import GetStartedForm from "../../../components/GetStartedForm";
 
 
 
@@ -318,6 +319,9 @@ export default function WebsiteLanding() {
           ))}
         </div>
       </section>
+
+      {/* ===== Our Process ===== */}
+      <GetStartedForm />
     </div>
   );
 }
