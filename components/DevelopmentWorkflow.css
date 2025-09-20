@@ -1,5 +1,3 @@
-/* DevelopmentWorkflow.css */
-
 .workflow-section {
   background: #0e1220;
   color: #fff;
@@ -26,16 +24,17 @@
   position: relative;
 }
 
+/* ברירת מחדל */
 .workflow-step {
   background: #151a2c;
   border: 2px dashed rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   padding: 25px;
-  width: 180px;
   min-height: 160px;
   position: relative;
   transition: transform 0.3s ease, border-color 0.3s ease;
   animation: pulseGlow 3s infinite alternate;
+  text-align: center;
 }
 
 .workflow-step:hover {
@@ -86,23 +85,31 @@
 .workflow-step.yellow { color: #ffc107; }
 .workflow-step.green { color: #4caf50; }
 
-/* רספונסיביות */
-/* טאבלט ומטה – 2 בשורה */
-@media (max-width: 992px) {
-  .workflow-steps {
-    justify-content: center;
-  }
+/* ✅ רספונסיביות */
+@media (min-width: 1200px) {
   .workflow-step {
-    flex: 0 1 calc(50% - 40px);
-  }
-  .arrow {
-    display: none;
+    flex: 1 1 calc(16.66% - 40px);
+    max-width: calc(16.66% - 40px);
   }
 }
 
-/* מובייל קטן – טור אחד */
-@media (max-width: 576px) {
+@media (max-width: 1199px) and (min-width: 769px) {
   .workflow-step {
-    flex: 0 1 100%;
+    flex: 1 1 calc(33.33% - 40px);
+    max-width: calc(33.33% - 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  .workflow-steps {
+    flex-direction: column;
+    align-items: center;
+  }
+  .workflow-step {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .arrow {
+    display: none;
   }
 }
