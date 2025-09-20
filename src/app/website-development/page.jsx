@@ -137,9 +137,9 @@ export default function WebsiteLanding() {
         <h2>Portfolio</h2>
         <div className="portfolio-grid">
           {[
-            { src: "/portfolio/wordpress.jpg", title: "WordPress", text: "+200% Leads" },
-            { src: "/portfolio/ecommerce.jpg", title: "eCommerce", text: "Up to 50% less cost" },
-            { src: "/portfolio/custom.jpg", title: "Custom", text: "Brand Focused" },
+            { src: "/portfolio/3.jpg", title: "WordPress", text: "+200% Leads" },
+            { src: "/portfolio/1.jpg", title: "eCommerce", text: "Up to 50% less cost" },
+            { src: "/portfolio/5.jpg", title: "Custom", text: "Brand Focused" },
           ].map((item, i) => (
             <motion.div
               key={i}
