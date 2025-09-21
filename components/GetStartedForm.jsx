@@ -8,11 +8,13 @@ import {
   FaCogs,
   FaQuestionCircle,
 } from "react-icons/fa";
+import { useRouter } from "next/navigation";  // ✅ נוסיף
 import "./GetStartedForm.css";
 
 export default function GetStartedForm() {
-  const [status, setStatus] = useState(""); // "" | "success" | "error"
+  const [status, setStatus] = useState(""); 
   const [loading, setLoading] = useState(false);
+  const router = useRouter(); // ✅ נוסיף ראוטר
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,8 +32,9 @@ export default function GetStartedForm() {
       });
 
       if (res.ok) {
-        setStatus("success");
         form.reset();
+        // ✅ במקום הודעת success → מעבר ל־Thank You Page
+        router.push("/thank-you");
       } else {
         setStatus("error");
       }
@@ -92,9 +95,6 @@ export default function GetStartedForm() {
           </button>
         </form>
 
-        {status === "success" && (
-          <p className="success-msg">✔ Your message has been sent successfully!</p>
-        )}
         {status === "error" && (
           <p className="error-msg">✖ Oops! Something went wrong, please try again.</p>
         )}
