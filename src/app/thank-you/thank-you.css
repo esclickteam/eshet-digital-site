@@ -24,7 +24,7 @@
   width: 70px;
   height: 70px;
   margin: 0 auto 20px;
-  color: #22c55e; /* ירוק הצלחה */
+  color: #22c55e; /* Success green */
 }
 
 .thankyou-card h1 {
@@ -37,26 +37,30 @@
 .thankyou-card p {
   font-size: 1.1rem;
   color: #555;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   line-height: 1.5;
 }
 
 .thankyou-actions {
   display: flex;
-  gap: 15px;
   justify-content: center;
-  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
-/* === Primary Button (Blue) === */
+/* === Primary Button (Full width on mobile) === */
 .thankyou-btn.primary {
   background: #2563eb;
   color: #fff;
-  padding: 14px 32px;
-  border-radius: 10px;
+  padding: 16px 40px;
+  border-radius: 12px;
   font-weight: 600;
+  font-size: 1.1rem;
   text-decoration: none;
+  text-align: center;
+  min-width: 220px;
   transition: all 0.3s ease;
+  animation: fadeInBtn 1s ease 0.3s forwards;
+  opacity: 0;
 }
 
 .thankyou-btn.primary:hover {
@@ -65,27 +69,29 @@
   box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
 }
 
-/* === Secondary Button (Gray) === */
-.thankyou-btn.secondary {
-  background: #f3f4f6;
-  color: #333;
-  padding: 14px 32px;
-  border-radius: 10px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
+/* 📱 Mobile: full width */
+@media (max-width: 640px) {
+  .thankyou-btn.primary {
+    width: 100%;
+  }
 }
 
-.thankyou-btn.secondary:hover {
-  background: #e5e7eb;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
+/* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInBtn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
     opacity: 1;

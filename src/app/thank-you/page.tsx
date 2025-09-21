@@ -20,20 +20,15 @@ export default function ThankYouPage() {
         </svg>
 
         <h1>Thank You!</h1>
-        <p>
-          We’ve received your details and will be in touch shortly.
-        </p>
+        <p>We’ve received your details and will be in touch shortly.</p>
         <p className="thankyou-subtext">
           Looking forward to exploring new ideas together!
         </p>
 
-        {/* CTA Buttons */}
+        {/* ✅ Only one CTA */}
         <div className="thankyou-actions">
           <a href="/projects" className="thankyou-btn primary">
             View Projects
-          </a>
-          <a href="tel:+19179476813" className="thankyou-btn secondary">
-            Talk to Us Now
           </a>
         </div>
       </div>
