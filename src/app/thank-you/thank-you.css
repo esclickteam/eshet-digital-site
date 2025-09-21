@@ -1,0 +1,86 @@
+.thankyou-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.thankyou-card {
+  background: #fff;
+  color: #333;
+  max-width: 600px;
+  width: 100%;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.thankyou-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  color: #22c55e; /* ירוק הצלחה */
+}
+
+.thankyou-card h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.thankyou-card p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.thankyou-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.thankyou-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+.thankyou-contact {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.thankyou-contact a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.thankyou-contact a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

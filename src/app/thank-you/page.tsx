@@ -1,31 +1,38 @@
+import "./thank-you.css"; // ✅ מייבא את ה־CSS
+
 export default function ThankYouPage() {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center text-center bg-gray-50 p-6">
-      <div className="max-w-lg bg-white shadow-xl rounded-2xl p-8">
-        <h1 className="text-3xl font-bold text-green-600 mb-4">
-          ✅ Thank You!
-        </h1>
-        <p className="text-lg text-gray-700 mb-6">
-          Your request has been received.  
-          Our team will get back to you within 24 hours.
+    <div className="thankyou-page">
+      <div className="thankyou-card">
+        {/* Success Icon */}
+        <svg
+          className="thankyou-icon"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+
+        <h1>Thank You!</h1>
+        <p>
+          Your request has been received. Our team will get back to you within
+          24 hours.
         </p>
 
-        <a
-          href="/portfolio"
-          className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-        >
+        <a href="/portfolio" className="thankyou-btn">
           View Portfolio
         </a>
 
-        <div className="mt-6 text-sm text-gray-500">
+        <div className="thankyou-contact">
           Prefer to talk right now?{" "}
-          <a href="tel:+19179476813" className="text-blue-600 font-semibold">
-            +1 (917) 947-6813
-          </a>{" "}
-          |{" "}
-          <a href="tel:+972533907570" className="text-blue-600 font-semibold">
-            +972 53-390-7570
-          </a>
+          <a href="tel:+19179476813">+1 (917) 947-6813</a> |{" "}
+          <a href="tel:+972533907570">+972 53-390-7570</a>
         </div>
       </div>
     </div>
