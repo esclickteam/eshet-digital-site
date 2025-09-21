@@ -47,7 +47,11 @@ export default function GetStartedForm() {
   return (
     <section className="get-started">
       <div className="form-container">
-        <h2>Get Started</h2>
+        {/* כותרת + תת כותרת */}
+        <h2>Start Your Project</h2>
+        <p className="form-subtitle">
+          Our team will get back to you within 24 hours
+        </p>
 
         <form onSubmit={handleSubmit} className="contact-form">
           {/* Full Name */}
@@ -97,7 +101,7 @@ export default function GetStartedForm() {
           </div>
 
           {/* Submit Button */}
-          <button type="submit" className="submit-btn" disabled={loading}>
+          <button type="submit" className={`submit-btn ${loading ? "loading" : ""}`} disabled={loading}>
             {loading ? (
               <>
                 <span className="spinner"></span> Sending...
