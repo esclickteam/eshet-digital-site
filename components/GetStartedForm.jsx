@@ -8,13 +8,13 @@ import {
   FaCogs,
   FaQuestionCircle,
 } from "react-icons/fa";
-import { useRouter } from "next/navigation";  // ✅ נוסיף
+import { useRouter } from "next/navigation";
 import "./GetStartedForm.css";
 
 export default function GetStartedForm() {
-  const [status, setStatus] = useState(""); 
+  const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
-  const router = useRouter(); // ✅ נוסיף ראוטר
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,8 +33,7 @@ export default function GetStartedForm() {
 
       if (res.ok) {
         form.reset();
-        // ✅ במקום הודעת success → מעבר ל־Thank You Page
-        router.push("/thank-you");
+        router.push("/thank-you"); // ✅ מעבר לדף תודה
       } else {
         setStatus("error");
       }
@@ -51,36 +50,43 @@ export default function GetStartedForm() {
         <h2>Get Started</h2>
 
         <form onSubmit={handleSubmit} className="contact-form">
+          {/* Full Name */}
           <div className="form-group">
             <input type="text" name="fullName" placeholder="Full Name*" required />
             <FaUser className="icon" />
           </div>
 
+          {/* Email */}
           <div className="form-group">
             <input type="email" name="email" placeholder="Email Address*" required />
             <FaEnvelope className="icon" />
           </div>
 
+          {/* Phone */}
           <div className="form-group">
             <input type="tel" name="phone" placeholder="Phone Number*" required />
             <FaPhone className="icon" />
           </div>
 
+          {/* Company */}
           <div className="form-group">
             <input type="text" name="company" placeholder="Company" />
             <FaBuilding className="icon" />
           </div>
 
+          {/* Services Dropdown */}
           <div className="form-group">
-            <input
-              type="text"
-              name="services"
-              placeholder="Services you are interested in*"
-              required
-            />
+            <select name="services" required>
+              <option value="">Select a Service*</option>
+              <option value="Web Development">Web Development</option>
+              <option value="Branding">Branding</option>
+              <option value="Digital Marketing">Digital Marketing</option>
+              <option value="UI/UX Design">UI/UX Design</option>
+            </select>
             <FaCogs className="icon" />
           </div>
 
+          {/* Message */}
           <div className="form-group">
             <textarea
               name="message"
@@ -90,13 +96,24 @@ export default function GetStartedForm() {
             <FaQuestionCircle className="icon" />
           </div>
 
+          {/* Submit Button */}
           <button type="submit" className="submit-btn" disabled={loading}>
-            {loading ? "Sending..." : "Submit"} <span className="arrow">➜</span>
+            {loading ? (
+              <>
+                <span className="spinner"></span> Sending...
+              </>
+            ) : (
+              <>
+                Submit <span className="arrow">➜</span>
+              </>
+            )}
           </button>
         </form>
 
         {status === "error" && (
-          <p className="error-msg">✖ Oops! Something went wrong, please try again.</p>
+          <p className="error-msg">
+            ✖ Oops! Something went wrong, please try again.
+          </p>
         )}
       </div>
     </section>

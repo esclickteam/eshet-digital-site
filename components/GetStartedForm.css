@@ -1,3 +1,4 @@
+/* ===== Section ===== */
 .get-started {
   display: flex;
   justify-content: center;
@@ -5,6 +6,7 @@
   background: linear-gradient(135deg, #eef2ff 0%, #e0f2fe 100%);
 }
 
+/* ===== Form Container ===== */
 .form-container {
   background: #fff;
   padding: 40px 30px;
@@ -22,13 +24,15 @@
   color: #1e293b;
 }
 
+/* ===== Form Groups ===== */
 .form-group {
   position: relative;
   margin-bottom: 20px;
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
   width: 100%;
   padding: 12px 40px 12px 12px;
   border: 1px solid #e2e8f0;
@@ -36,10 +40,12 @@
   outline: none;
   font-size: 1rem;
   transition: border-color 0.3s, box-shadow 0.3s;
+  background: #fff;
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group select:focus {
   border-color: #6366f1;
   box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
 }
@@ -63,8 +69,8 @@ textarea {
   width: 100%;
   padding: 14px 20px;
   margin-top: 15px;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6) !important; /* חייב */
-  color: #fff !important; /* שיראה טקסט */
+  background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+  color: #fff !important;
   font-size: 1.1rem;
   font-weight: 700;
   border: none;
@@ -84,7 +90,7 @@ textarea {
 
 /* מצב טעינה/מנוטרל */
 .submit-btn:disabled {
-  background: #cbd5e1; /* אפור */
+  background: #cbd5e1;
   cursor: not-allowed;
   box-shadow: none;
   transform: none;
@@ -118,7 +124,7 @@ textarea {
   }
 }
 
-/* אופציונלי: ספינר קטן בתוך הכפתור במצב שליחה */
+/* ===== ספינר בכפתור במצב טעינה ===== */
 .submit-btn.loading::after {
   content: "";
   display: inline-block;
