@@ -1,4 +1,4 @@
-import "./thank-you.css"; // ✅ מייבא את ה־CSS
+import "./thank-you.css"; // ✅ Import the CSS
 
 export default function ThankYouPage() {
   return (
@@ -21,18 +21,20 @@ export default function ThankYouPage() {
 
         <h1>Thank You!</h1>
         <p>
-          Your request has been received. Our team will get back to you within
-          24 hours.
+          We’ve received your details and will be in touch shortly.
+        </p>
+        <p className="thankyou-subtext">
+          Looking forward to exploring new ideas together!
         </p>
 
-        <a href="/portfolio" className="thankyou-btn">
-          View Portfolio
-        </a>
-
-        <div className="thankyou-contact">
-          Prefer to talk right now?{" "}
-          <a href="tel:+19179476813">+1 (917) 947-6813</a> |{" "}
-          <a href="tel:+972533907570">+972 53-390-7570</a>
+        {/* CTA Buttons */}
+        <div className="thankyou-actions">
+          <a href="/projects" className="thankyou-btn primary">
+            View Projects
+          </a>
+          <a href="tel:+19179476813" className="thankyou-btn secondary">
+            Talk to Us Now
+          </a>
         </div>
       </div>
     </div>

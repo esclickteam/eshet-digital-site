@@ -41,37 +41,45 @@
   line-height: 1.5;
 }
 
-.thankyou-btn {
-  display: inline-block;
-  padding: 14px 32px;
+.thankyou-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* === Primary Button (Blue) === */
+.thankyou-btn.primary {
   background: #2563eb;
   color: #fff;
+  padding: 14px 32px;
   border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
-.thankyou-btn:hover {
+.thankyou-btn.primary:hover {
   background: #1d4ed8;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
 }
 
-.thankyou-contact {
-  margin-top: 20px;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.thankyou-contact a {
-  color: #2563eb;
+/* === Secondary Button (Gray) === */
+.thankyou-btn.secondary {
+  background: #f3f4f6;
+  color: #333;
+  padding: 14px 32px;
+  border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.thankyou-contact a:hover {
-  text-decoration: underline;
+.thankyou-btn.secondary:hover {
+  background: #e5e7eb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes fadeInUp {
