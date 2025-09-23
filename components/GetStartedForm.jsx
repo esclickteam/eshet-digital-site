@@ -33,9 +33,9 @@ export default function GetStartedForm() {
         { name: "lastname", value: form.lastname.value },
         { name: "email", value: form.email.value },
         { name: "phone", value: phone }, // 📌 שמירת הטלפון מה-state
-        { name: "company", value: form.company.value },
-        { name: "services", value: form.services.value },
-        { name: "message", value: form.message.value },
+        { name: "name", value: form.company.value }, // Company
+        { name: "eshet_digital", value: form.services.value }, // Services
+        { name: "b", value: form.message.value }, // Message
       ],
       context: {
         pageUri: window.location.href,
