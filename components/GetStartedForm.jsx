@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   FaUser,
   FaEnvelope,
@@ -8,12 +9,14 @@ import {
   FaCogs,
   FaQuestionCircle,
 } from "react-icons/fa";
-import { useRouter } from "next/navigation";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import "./GetStartedForm.css";
 
 export default function GetStartedForm() {
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
+  const [phone, setPhone] = useState(""); // 📌 ערך טלפון
   const router = useRouter();
 
   const handleSubmit = async (e) => {
@@ -29,7 +32,7 @@ export default function GetStartedForm() {
         { name: "firstname", value: form.firstname.value },
         { name: "lastname", value: form.lastname.value },
         { name: "email", value: form.email.value },
-        { name: "phone", value: form.phone.value },
+        { name: "phone", value: phone }, // 📌 שמירת הטלפון מה-state
         { name: "company", value: form.company.value },
         { name: "services", value: form.services.value },
         { name: "message", value: form.message.value },
@@ -42,7 +45,7 @@ export default function GetStartedForm() {
 
     try {
       const res = await fetch(
-        "https://api.hsforms.com/submissions/v3/integration/submit/146946532/096acd9d-2441-4d91-a2a0-0de36128239a", // ✅ PortalId + FormId שלך
+        "https://api.hsforms.com/submissions/v3/integration/submit/146946532/096acd9d-2441-4d91-a2a0-0de36128239a",
         {
           method: "POST",
           headers: {
@@ -54,7 +57,8 @@ export default function GetStartedForm() {
 
       if (res.ok) {
         form.reset();
-        router.push("/thank-you"); // ✅ מעבר לדף תודה
+        setPhone(""); // 📌 איפוס שדה טלפון
+        router.push("/thank-you"); 
       } else {
         setStatus("error");
       }
@@ -108,13 +112,17 @@ export default function GetStartedForm() {
             <FaEnvelope className="icon" />
           </div>
 
-          {/* Phone */}
-          <div className="form-group">
-            <input
-              type="tel"
-              name="phone"
+          {/* Phone (עם בחירת מדינה) */}
+          <div className="form-group phone-input">
+            <PhoneInput
+              country={"il"} // ברירת מחדל ישראל
+              value={phone}
+              onChange={(val) => setPhone(val)}
+              inputProps={{
+                name: "phone",
+                required: true,
+              }}
               placeholder="Phone Number*"
-              required
             />
             <FaPhone className="icon" />
           </div>

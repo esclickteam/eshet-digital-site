@@ -71,6 +71,28 @@ textarea {
   resize: vertical;
 }
 
+/* ===== Phone Input (react-phone-input-2) ===== */
+.phone-input .react-tel-input .form-control {
+  width: 100% !important;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  font-size: 1rem;
+  padding: 12px 12px 12px 48px; /* מקום לדגל */
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.phone-input .react-tel-input .form-control:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+}
+
+.phone-input .react-tel-input .flag-dropdown {
+  border: none;
+  border-radius: 10px 0 0 10px;
+  background: #f9fafb;
+}
+
 /* ===== First & Last name side by side ===== */
 .name-row {
   display: flex;
