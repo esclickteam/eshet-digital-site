@@ -26,16 +26,16 @@ export default function GetStartedForm() {
 
     const form = e.target;
 
-    // הכנת הנתונים ל-HubSpot API
+    // הכנת הנתונים ל-HubSpot API עם השמות הנכונים
     const data = {
       fields: [
         { name: "firstname", value: form.firstname.value },
         { name: "lastname", value: form.lastname.value },
         { name: "email", value: form.email.value },
         { name: "phone", value: phone }, // 📌 שמירת הטלפון מה-state
-        { name: "name", value: form.company.value }, // Company
-        { name: "eshet_digital", value: form.services.value }, // Services
-        { name: "b", value: form.message.value }, // Message
+        { name: "name", value: form.name.value }, // ✅ Company name
+        { name: "eshet_digital", value: form.eshet_digital.value }, // ✅ Services dropdown
+        { name: "b", value: form.b.value }, // ✅ Message
       ],
       context: {
         pageUri: window.location.href,
@@ -58,11 +58,14 @@ export default function GetStartedForm() {
       if (res.ok) {
         form.reset();
         setPhone(""); // 📌 איפוס שדה טלפון
-        router.push("/thank-you"); 
+        router.push("/thank-you");
       } else {
+        const errMsg = await res.json();
+        console.error("HubSpot Error:", errMsg);
         setStatus("error");
       }
     } catch (err) {
+      console.error("Request failed:", err);
       setStatus("error");
     } finally {
       setLoading(false);
@@ -129,13 +132,13 @@ export default function GetStartedForm() {
 
           {/* Company */}
           <div className="form-group">
-            <input type="text" name="company" placeholder="Company" />
+            <input type="text" name="name" placeholder="Company" />
             <FaBuilding className="icon" />
           </div>
 
           {/* Services Dropdown */}
           <div className="form-group">
-            <select name="services" required>
+            <select name="eshet_digital" required>
               <option value="">Select a Service*</option>
               <option value="Web Development">Web Development</option>
               <option value="Branding">Branding</option>
@@ -148,7 +151,7 @@ export default function GetStartedForm() {
           {/* Message */}
           <div className="form-group">
             <textarea
-              name="message"
+              name="b"
               placeholder="How can we help you?"
               rows="4"
             ></textarea>
