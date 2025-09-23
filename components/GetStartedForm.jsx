@@ -22,14 +22,35 @@ export default function GetStartedForm() {
     setLoading(true);
 
     const form = e.target;
-    const data = new FormData(form);
+
+    // הכנת הנתונים ל-HubSpot API
+    const data = {
+      fields: [
+        { name: "firstname", value: form.firstname.value },
+        { name: "lastname", value: form.lastname.value },
+        { name: "email", value: form.email.value },
+        { name: "phone", value: form.phone.value },
+        { name: "company", value: form.company.value },
+        { name: "services", value: form.services.value },
+        { name: "message", value: form.message.value },
+      ],
+      context: {
+        pageUri: window.location.href,
+        pageName: document.title,
+      },
+    };
 
     try {
-      const res = await fetch("https://formspree.io/f/mzzawewp", {
-        method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
-      });
+      const res = await fetch(
+        "https://api.hsforms.com/submissions/v3/integration/submit/146946532/096acd9d-2441-4d91-a2a0-0de36128239a", // ✅ PortalId + FormId שלך
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (res.ok) {
         form.reset();
@@ -54,21 +75,47 @@ export default function GetStartedForm() {
         </p>
 
         <form onSubmit={handleSubmit} className="contact-form">
-          {/* Full Name */}
+          {/* First Name */}
           <div className="form-group">
-            <input type="text" name="fullName" placeholder="Full Name*" required />
+            <input
+              type="text"
+              name="firstname"
+              placeholder="First Name*"
+              required
+            />
+            <FaUser className="icon" />
+          </div>
+
+          {/* Last Name */}
+          <div className="form-group">
+            <input
+              type="text"
+              name="lastname"
+              placeholder="Last Name*"
+              required
+            />
             <FaUser className="icon" />
           </div>
 
           {/* Email */}
           <div className="form-group">
-            <input type="email" name="email" placeholder="Email Address*" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address*"
+              required
+            />
             <FaEnvelope className="icon" />
           </div>
 
           {/* Phone */}
           <div className="form-group">
-            <input type="tel" name="phone" placeholder="Phone Number*" required />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number*"
+              required
+            />
             <FaPhone className="icon" />
           </div>
 
@@ -101,7 +148,11 @@ export default function GetStartedForm() {
           </div>
 
           {/* Submit Button */}
-          <button type="submit" className={`submit-btn ${loading ? "loading" : ""}`} disabled={loading}>
+          <button
+            type="submit"
+            className={`submit-btn ${loading ? "loading" : ""}`}
+            disabled={loading}
+          >
             {loading ? (
               <>
                 <span className="spinner"></span> Sending...

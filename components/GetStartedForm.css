@@ -71,6 +71,25 @@ textarea {
   resize: vertical;
 }
 
+/* ===== First & Last name side by side ===== */
+.name-row {
+  display: flex;
+  gap: 16px;
+}
+
+.name-row .form-group {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+/* במובייל ירד אחד מתחת לשני */
+@media (max-width: 600px) {
+  .name-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
 /* ===== Button ===== */
 .submit-btn {
   width: 100%;
