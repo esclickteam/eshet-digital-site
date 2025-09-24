@@ -64,7 +64,7 @@
 .hero-logos-full {
   margin-top: 40px;
   padding: 30px 0;
-  background: var(--brand-color); /* ממשיך את הכחול */
+  background: var(--brand-color);
 }
 .tech-logos {
   padding: 0;
@@ -266,11 +266,6 @@
   transform: translateY(-6px);
   box-shadow: 0 10px 24px rgba(0,0,0,0.12);
 }
-.portfolio-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
 .portfolio-card h3 {
   font-size: 1rem;
   margin: 15px;
@@ -283,6 +278,31 @@
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
   color: var(--brand-color-light);
+}
+
+/* ✅ Mockup Styling */
+.mockup {
+  position: relative;
+  width: 100%;
+  padding-top: 75%; /* יחס מסך */
+}
+.mockup-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+.mockup-screen {
+  position: absolute;
+  top: 7%;   /* תתאים לפי המסגרת שלך */
+  left: 9%;
+  width: 82%;
+  height: 70%;
+  object-fit: cover;
+  border-radius: 4px;
+  z-index: 1;
 }
 
 /* ===== Testimonials ===== */

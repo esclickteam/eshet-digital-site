@@ -149,7 +149,7 @@ export default function WebsiteLanding() {
           </motion.div>
         </motion.div>
 
-        {/* ✅ הלוגואים אחרי כל ה-Hero על הרקע הכחול */}
+        {/* ✅ לוגואים אחרי ה-Hero */}
         <div className="hero-logos-full">
           <TechLogos />
         </div>
@@ -186,7 +186,7 @@ export default function WebsiteLanding() {
         </div>
       </section>
 
-      {/* ===== Why Choose Us (Stats with Counter) ===== */}
+      {/* ===== Why Choose Us ===== */}
       <section className="why-choose">
         <h2>Why Choose Us</h2>
         <div className="stats-grid">
@@ -208,10 +208,10 @@ export default function WebsiteLanding() {
         </div>
       </section>
 
-      {/* ===== Our Process ===== */}
+      {/* ===== Process ===== */}
       <DevelopmentWorkflow />
 
-      {/* ===== Portfolio – קרוסלה רציפה ===== */}
+      {/* ===== Portfolio ===== */}
       <section className="portfolio">
         <h2>Our Portfolio – Custom Web Development Projects</h2>
         <Swiper
@@ -243,12 +243,10 @@ export default function WebsiteLanding() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <img
-                  src={item.src}
-                  alt={item.title}
-                  loading="lazy"
-                  className="portfolio-image"
-                />
+                <div className="mockup">
+                   <img src="/mockups/imac-frame.jpg" alt="iMac frame" className="mockup-frame" />
+                  <img src={item.src} alt={item.title} className="mockup-screen" />
+                </div>
                 <h3>{item.title}</h3>
               </motion.div>
             </SwiperSlide>
