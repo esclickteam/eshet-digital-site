@@ -139,28 +139,7 @@
   gap: 12px;
 }
 
-/* WhatsApp Button */
-.whatsapp-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: linear-gradient(135deg, #25d366, #128c7e);
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 50px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  transition: transform 0.3s, background 0.3s;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  white-space: nowrap;
-}
-.whatsapp-btn:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(135deg, #20c057, #0f7b63);
-}
-
-/* Book a Discovery Call Button (Desktop) */
+/* Desktop CTA */
 .cta-btn {
   display: inline-flex;
   align-items: center;
@@ -246,7 +225,7 @@
   .mobile-only.open { transform: translateY(0); }
 
   .header-cta {
-    display: none !important; /* ✅ מוסתר במובייל */
+    display: none !important;
   }
 
   .hamburger { display: flex; }
@@ -255,106 +234,55 @@
   .dropbtn { font-size: 1.1rem; padding: 12px 0; }
 }
 
-/* ====== Dropdown במובייל ====== */
+/* ====== CTA במובייל ====== */
 @media (max-width: 768px) {
-  .dropdown-content { display: none !important; }
-  .dropdown-mobile .dropdown-content-mobile {
-    max-height: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-left: 10px;
-    transition: max-height 0.35s ease;
-  }
-  .dropdown-mobile.open .dropdown-content-mobile { max-height: 500px; }
-  .dropdown-content-mobile a {
-    font-size: 0.95rem;
-    padding: 8px 0;
-    color: #333;
-    text-decoration: none;
-  }
-  .dropdown-content-mobile a:hover { color: var(--primary); }
-
-  /* ====== CTA במובייל ====== */
   .mobile-cta { 
     width: 100%; 
     margin-top: 10px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    align-items: center;
   }
 
   /* Contact Us */
   .contact-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    border-radius: 16px;
-    text-decoration: none;
+    width: 100%;
+    max-width: 280px;
+    padding: 14px 28px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: #fff;
     font-weight: 700;
     font-size: 1.05rem;
-    background: #f1fff8;
-    color: #128c7e;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, background 0.3s ease;
-    white-space: nowrap;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(18, 140, 126, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   .contact-card:hover {
     transform: translateY(-3px);
-    background: #e3f9ef;
-  }
-  .contact-card .icon-circle {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #25d366, #128c7e);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 22px rgba(18, 140, 126, 0.5);
   }
 
   /* Schedule a Meeting */
   .meeting-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    border-radius: 16px;
-    text-decoration: none;
+    width: 100%;
+    max-width: 280px;
+    padding: 14px 28px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff4f81, #a64fff);
+    color: #fff;
     font-weight: 700;
     font-size: 1.05rem;
-    background: #fdf3ff;
-    color: #9c27b0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, background 0.3s ease;
-    white-space: nowrap;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(166, 79, 255, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   .meeting-card:hover {
     transform: translateY(-3px);
-    background: #f8e1fb;
-  }
-  .meeting-card .icon-circle {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #ff4f81, #a64fff);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-  }
-
-  .icon-circle img {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
+    box-shadow: 0 8px 22px rgba(166, 79, 255, 0.5);
   }
 }
 
@@ -373,10 +301,4 @@ html, body {
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
-}
-
-@media screen and (max-width: 768px) {
-  .header-cta {
-    display: none !important;
-  }
 }
