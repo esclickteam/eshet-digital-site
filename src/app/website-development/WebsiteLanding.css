@@ -273,12 +273,15 @@
   color: var(--brand-color);
 }
 .portfolio-card {
-  background: linear-gradient(135deg, #ffffff, #fafafa);
+  background: rgba(255, 255, 255, 0.12); /* ✅ שקיפות עדינה */
+  backdrop-filter: blur(10px);           /* אפקט זכוכית */
   border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   height: 100%;
+  color: #fff; /* טקסט לבן על רקע שקוף */
 }
 .portfolio-card:hover {
   transform: translateY(-6px);
