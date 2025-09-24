@@ -73,6 +73,18 @@
   font-size: 0.9rem;
   opacity: 0.9;
 }
+.hero-image {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 420px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+}
 
 /* ===== Buttons ===== */
 .btn {
@@ -99,23 +111,11 @@
   color: #fff;
   border: none;
   box-shadow: 0 0 12px rgba(0, 198, 255, 0.4);
-  transition: all 0.3s ease, box-shadow 0.4s ease;
 }
 .btn-outline:hover {
   background: linear-gradient(135deg, #5c56ff, #00d0ff);
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 0 20px rgba(0, 198, 255, 0.7);
-}
-.btn-case {
-  background: #4a3aff;
-  color: #fff;
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  border-radius: 30px;
-}
-.btn-case:hover {
-  background: #372fd1;
 }
 
 /* ===== UX Benefits ===== */
@@ -148,11 +148,11 @@
 .ux-card {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
-  padding: 40px 20px;       /* ✅ יותר גובה פנימי */
-  min-height: 280px;        /* ✅ קובע גובה מינימלי */
+  padding: 40px 20px;
+  min-height: 280px;
   display: flex;
-  flex-direction: column;   /* תוכן מסודר מלמעלה למטה */
-  justify-content: center;  /* ממרכז את התוכן לאורך */
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
   backdrop-filter: blur(8px);
@@ -162,6 +162,16 @@
 .ux-card:hover {
   transform: translateY(-8px);
   background: rgba(255, 255, 255, 0.2);
+}
+.ux-icon {
+  font-size: 60px;
+  margin-bottom: 15px;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.ux-card:hover .ux-icon {
+  transform: scale(1.1);
+  color: #ffeb3b;
 }
 .ux-card h3 {
   font-size: 1.3rem;
@@ -175,7 +185,7 @@
 /* ===== Stats ===== */
 .why-choose {
   padding: 80px 20px;
-  background: #fafafa; /* רקע עדין UX */
+  background: #fafafa;
   text-align: center;
 }
 .stats-grid {
@@ -187,7 +197,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-/* ===== Stats ===== */
 .stat-box {
   background: #fff;
   border-radius: 16px;
@@ -195,40 +204,29 @@
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .stat-box:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.12);
 }
-
 .stat-icon {
   font-size: 2.4rem;
   margin-bottom: 15px;
 }
-
-.stat-box:hover .stat-icon {
-  transform: scale(1.15);     /* ✅ אפקט hover */
-}
-
 .stat-box h3 {
   font-size: 2rem;
   font-weight: 700;
   margin: 10px 0;
 }
-
 .stat-box p {
   font-size: 1rem;
   color: #555;
 }
-
-/* צבעים דינמיים לפי קטגוריה */
 .purple .stat-icon, .purple h3 { color: #6c63ff; }
 .pink .stat-icon, .pink h3 { color: #ff5a7d; }
 .orange .stat-icon, .orange h3 { color: #ff9966; }
 .blue .stat-icon, .blue h3 { color: #00c6ff; }
 
-
-/* ===== Portfolio (UX Optimized) ===== */
+/* ===== Portfolio ===== */
 .portfolio {
   padding: 80px 20px;
   text-align: center;
@@ -241,10 +239,9 @@
 }
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* ✅ 4 בעמודה */
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin-top: 40px;
-  justify-items: center;
   max-width: 1300px;
   margin-left: auto;
   margin-right: auto;
@@ -256,8 +253,6 @@
   overflow: hidden;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 340px;
-  width: 100%;
   cursor: pointer;
 }
 .portfolio-card:hover {
@@ -267,8 +262,8 @@
 .portfolio-card img {
   width: 100%;
   height: 220px;
-  object-fit: contain;       /* ✅ תמונה שלמה */
-  background: #f9f9f9;       /* רקע ניטרלי */
+  object-fit: contain;
+  background: #f9f9f9;
   border-bottom: 1px solid #eee;
   transition: transform 0.4s ease;
 }
@@ -279,26 +274,6 @@
   font-size: 1.05rem;
   font-weight: 600;
   margin: 15px;
-}
-
-/* Lightbox */
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
-}
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-}
-.lightbox.active {
-  display: flex;
 }
 
 /* ===== Testimonials ===== */
@@ -315,8 +290,10 @@
   border-radius: 14px;
   padding: 30px 20px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-  display: flex; flex-direction: column;
-  align-items: center; gap: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 .testimonial img {
   width: 70px; height: 70px;
@@ -348,7 +325,10 @@
 }
 .faq-header { text-align: center; margin-bottom: 40px; }
 .faq-header h2 {
-  font-size: 2rem; font-weight: 700; color: #a259ff; margin-bottom: 10px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #a259ff;
+  margin-bottom: 10px;
 }
 .faq-header p { font-size: 1rem; color: #ccc; }
 .faq-list { display: flex; flex-direction: column; }
@@ -356,22 +336,29 @@
   padding: 18px 0;
   border-bottom: 1px solid rgba(255,255,255,0.15);
   cursor: pointer;
-  transition: background 0.3s ease;
 }
-.faq-item:last-child { border-bottom: none; }
 .faq-item.active {
   background: rgba(255, 255, 255, 0.02);
   border-radius: 6px;
 }
 .faq-question {
-  display: flex; justify-content: space-between; align-items: center;
-  font-weight: 600; font-size: 1.05rem; color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.05rem;
 }
-.faq-icon { font-size: 1.2rem; color: #a259ff; transition: transform 0.3s ease; }
+.faq-icon {
+  font-size: 1.2rem;
+  color: #a259ff;
+  transition: transform 0.3s ease;
+}
 .faq-item.active .faq-icon { transform: rotate(180deg); }
 .faq-answer {
-  margin-top: 12px; font-size: 0.95rem; color: #ccc; line-height: 1.6;
-  overflow: hidden; transition: all 0.4s ease;
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.6;
 }
 
 /* ===== Responsive ===== */
@@ -385,34 +372,4 @@
   .hero-text p { font-size: 1rem; }
   .btn { width: 100%; text-align: center; }
   .portfolio-grid { grid-template-columns: 1fr; }
-}
-
-/* ===== Hero Image Fix ===== */
-.hero-image {
-  max-width: 500px;
-  margin: 0 auto;
-}
-.hero-image img {
-  max-width: 100%;
-  height: auto;
-  max-height: 420px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 12px;
-}
-
-/* ===== UX Icons ===== */
-.ux-icon {
-  font-size: 60px;         /* גודל גדול וברור */
-  margin-bottom: 15px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  color: #fff;             /* צבע לבן כברירת מחדל */
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.ux-card:hover .ux-icon {
-  transform: scale(1.1);   /* אפקט hover קטן */
-  color: #ffeb3b;          /* אפשר גם לשים gradient עם mask-image */
 }
