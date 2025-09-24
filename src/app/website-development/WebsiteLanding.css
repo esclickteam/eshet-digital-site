@@ -299,15 +299,14 @@
 
 .mockup-screen {
   position: absolute;
-  top: 7.5%;        /* מותאם למסך הפנימי */
-  left: 5.5%;       /* קצת פחות מ־6% כדי לשבת בול */
-  width: 89%;       /* הגדלה כך שתמלא */
-  height: 74%;      /* טיפה יותר גבוה כדי לא להשאיר רווחים */
-  object-fit: cover;       /* ממלא את כל השטח בלי רווחים */
-  object-position: center; /* ממורכז תמיד */
-  z-index: 1;
+  top: 39.4%;
+  left: 16.8%;
+  width: 73.6%;
+  height: 41.1%;
+  object-fit: cover;
+  object-position: center;
   border-radius: 2px;
-  overflow: hidden;
+  z-index: 1;
 }
 
 /* 🐞 Debug Mode (מחק אחרי שתראה שזה יושב טוב) */
