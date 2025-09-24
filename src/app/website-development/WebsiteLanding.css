@@ -295,12 +295,11 @@
 }
 .mockup-screen {
   position: absolute;
-  top: 6.5%;   /* התמונה נכנסת בדיוק למסגרת */
-  left: 5.8%;
-  width: 88.5%;
-  height: 77%;
+  top: 6.2%;    /* לפי ה-Y */
+  left: 5.8%;   /* לפי ה-X */
+  width: 74.5%; /* לפי ה-1863 מתוך 2500 */
+  height: 42.7%;/* לפי ה-1069 מתוך 2500 */
   object-fit: cover;
-  border-radius: 2px;
   z-index: 1;
 }
 
