@@ -117,22 +117,20 @@
   background: linear-gradient(90deg, #a855f7, #6366f1);
   color: #fff;
   font-weight: 700;
-  padding: 20px 50px;
-  border-radius: 50px;
+  padding: 16px 40px;   /* קצת פחות גבוה כדי שלא ירגיש כבד מדי */
+  border-radius: 40px;  /* יותר עדין */
   transition: all 0.3s ease;
-  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.35);
   display: inline-block;
-  font-size: 1.35rem;
+  font-size: 1.1rem;
   text-decoration: none;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
 }
 
-.cta-button:hover,
-.cta-button:focus {
-  transform: translateY(-3px) scale(1.08);
-  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.55);
-  background: linear-gradient(90deg, #8b5cf6, #3b82f6);
-  outline: none;
+.cta-button:hover {
+  background: linear-gradient(90deg, #7c3aed, #4f46e5);
+  box-shadow: 0 8px 22px rgba(99, 102, 241, 0.5);
+  transform: translateY(-3px);
 }
 
 .cta-button:active {
