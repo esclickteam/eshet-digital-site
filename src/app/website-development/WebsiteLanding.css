@@ -16,7 +16,7 @@
 
 /* ===== Hero ===== */
 .hero {
-  background: var(--brand-color);
+  background: linear-gradient(135deg, var(--brand-color), var(--brand-color-light));
   color: var(--text-light);
   padding: 100px 20px 40px;
   text-align: center;
@@ -145,7 +145,7 @@
 .ux-benefits {
   padding: 80px 20px;
   text-align: center;
-  background: var(--bg-light);
+  background: #f8f9fc;
 }
 .ux-benefits h2 {
   font-size: 2.2rem;
@@ -195,7 +195,7 @@
 /* ===== Stats ===== */
 .why-choose {
   padding: 80px 20px;
-  background: #fff;
+  background: linear-gradient(180deg, #ffffff 0%, #f3f4f8 100%);
   text-align: center;
 }
 .why-choose h2 {
@@ -241,7 +241,7 @@
 .portfolio {
   padding: 80px 20px;
   text-align: center;
-  background: var(--bg-light);
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
 }
 .portfolio h2 {
   font-size: 2rem;
@@ -280,15 +280,14 @@
   color: var(--brand-color-light);
 }
 
-/* ✅ Mockup Styling */
+/* ✅ Mockup + Overlay */
 .mockup {
   position: relative;
   width: 100%;
-  aspect-ratio: 16/13; /* היחס של המסגרת */
-  overflow: hidden;    /* ❌ חותך כל מה שגולש */
-  border-radius: 8px;  /* אופציונלי: עיגול קל למסגרת */
+  aspect-ratio: 16/13;
+  overflow: hidden;
+  border-radius: 12px;
 }
-
 .mockup-frame {
   position: relative;
   width: 100%;
@@ -296,7 +295,6 @@
   pointer-events: none;
   display: block;
 }
-
 .mockup-screen {
   position: absolute;
   top: 39.4%;
@@ -308,25 +306,49 @@
   border-radius: 2px;
   z-index: 1;
 }
-
-
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+}
+.mockup:hover .overlay {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .overlay {
+    opacity: 1;
+    font-size: 1rem;
+    padding: 6px;
+  }
+}
 
 /* ===== Testimonials ===== */
 .testimonials {
   padding: 80px 20px;
-  max-width: 700px;
-  margin: 0 auto;
+  background: linear-gradient(180deg, var(--brand-color) 0%, var(--brand-color-light) 100%);
+  color: #fff;
+  max-width: 100%;
   text-align: center;
 }
 .testimonials h2 {
   margin-bottom: 30px;
-  color: var(--brand-color);
+  color: #fff;
 }
 .testimonial {
-  background: #fff;
+  background: rgba(255,255,255,0.1);
   border-radius: 14px;
   padding: 30px 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 .testimonial img {
   width: 70px;
@@ -349,12 +371,12 @@
   border: none;
 }
 .carousel-controls .dot.active {
-  background: var(--brand-color);
+  background: #fff;
 }
 
 /* ===== FAQ ===== */
 .faq {
-  background: #ffffff;
+  background: #f9f9fb;
   color: #222;
   padding: 80px 20px;
   max-width: 900px;
@@ -437,3 +459,17 @@
   .btn { width: 100%; text-align: center; }
 }
 
+/* ===== Footer ===== */
+.footer {
+  background: #111827;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+.footer a {
+  color: #7f5eff;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
