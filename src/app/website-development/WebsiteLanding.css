@@ -285,24 +285,29 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16/13; /* היחס של המסגרת */
-  overflow: hidden;
+  overflow: hidden;    /* ❌ חותך כל מה שגולש */
+  border-radius: 8px;  /* אופציונלי: עיגול קל למסגרת */
 }
+
 .mockup-frame {
   position: relative;
   width: 100%;
   z-index: 2;
   pointer-events: none;
+  display: block;
 }
+
 .mockup-screen {
   position: absolute;
   top: 8.2%;
   left: 6%;
   width: 88%;
   height: 72%;
-  object-fit: cover;      /* ✅ ממלא את השטח בלי להשאיר רווחים */
-  object-position: center;
+  object-fit: cover;       /* ✅ ימלא את השטח בלי רווחים */
+  object-position: center; /* ✅ ממורכז תמיד */
   z-index: 1;
   border-radius: 2px;
+  overflow: hidden;        /* הגנה נוספת */
 }
 
 /* ===== Testimonials ===== */
