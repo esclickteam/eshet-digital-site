@@ -1,7 +1,7 @@
 .tech-logos {
   width: 100%;
   overflow: hidden;
-  background: #0f172a; /* רקע כהה אלגנטי */
+  background: transparent; /* ✅ ממשיך את הרקע הכחול של ה-Hero */
   padding: 40px 0;
 }
 
@@ -18,20 +18,20 @@
   align-items: center;
   justify-content: center;
   min-width: 120px;
-  opacity: 0.8;
+  opacity: 0.85;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .logo-card img {
   height: 40px;
   object-fit: contain;
-  filter: brightness(0) invert(1); /* שיהיו לבנים */
+  filter: brightness(0) invert(1); /* ✅ שיהיו לבנים */
   margin-bottom: 8px;
 }
 
 .logo-card span {
   font-size: 0.85rem;
-  color: #e5e7eb;
+  color: #ffffff; /* ✅ טקסט לבן */
   font-weight: 500;
 }
 
