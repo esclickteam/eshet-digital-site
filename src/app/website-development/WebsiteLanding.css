@@ -259,10 +259,12 @@
 .portfolio {
   padding: 80px 20px;
   text-align: center;
-  background: #f7f9fc;
+  background: rgba(255, 255, 255, 0.12); /* רקע שקוף עדין */
+  backdrop-filter: blur(8px);            /* אפקט זכוכית */
   border-radius: 20px;
   max-width: 1400px;
   margin: 60px auto;
+  color: #fff;
 }
 .portfolio h2 {
   font-size: 2rem;
