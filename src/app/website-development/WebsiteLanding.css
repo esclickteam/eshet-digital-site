@@ -284,26 +284,25 @@
 .mockup {
   position: relative;
   width: 100%;
-  padding-top: 75%; /* יחס מסך */
-  overflow: hidden; /* חותך כל מה שיוצא החוצה */
+  aspect-ratio: 16/13; /* היחס של המסגרת שלך */
+  overflow: hidden;
 }
 .mockup-frame {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   z-index: 2;
-  pointer-events: none; /* שלא יפריע בלחיצות */
+  pointer-events: none;
 }
+
 .mockup-screen {
   position: absolute;
-  top: 8%;   /* כיוון למעלה */
-  left: 9%;  /* כיוון לצד */
-  width: 82%; 
-  height: 70%;
+  top: 7.5%;     /* גובה התחלת המסך */
+  left: 6.5%;    /* מרחק מהצדדים */
+  width: 87%;    /* רוחב פנימי */
+  height: 74%;   /* גובה פנימי */
   object-fit: cover;
-  border-radius: 4px;
   z-index: 1;
+  border-radius: 2px;
 }
 
 /* ===== Testimonials ===== */
