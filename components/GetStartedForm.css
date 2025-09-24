@@ -3,7 +3,9 @@
   display: flex;
   justify-content: center;
   padding: 80px 20px;
-  background: linear-gradient(135deg, #eef2ff 0%, #e0f2fe 100%);
+
+  /* רקע תואם לשאר האתר */
+  background: linear-gradient(135deg, #1d2671 0%, #5b86e5 50%, #36d1dc 100%);
 }
 
 /* ===== Form Container ===== */
@@ -13,7 +15,7 @@
   border-radius: 16px;
   max-width: 420px;
   width: 100%;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
   text-align: center;
 }
 
