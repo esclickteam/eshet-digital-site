@@ -175,41 +175,35 @@
 /* ===== Stats ===== */
 .why-choose {
   padding: 80px 20px;
+  background: #fafafa; /* רקע עדין UX */
   text-align: center;
-  background: #fafafa;
 }
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
   margin-top: 40px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 /* ===== Stats ===== */
 .stat-box {
   background: #fff;
   border-radius: 16px;
   padding: 40px 20px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 260px;   /* ✅ גובה אחיד כמו UX */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .stat-box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-  background: #fdfdfd;
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
 }
 
 .stat-icon {
-  font-size: 3.5rem;          /* ✅ גדול כמו UX */
-  margin-bottom: 20px;
-  color: currentColor;        /* ✅ מקבל צבע דינמי */
-  transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 2.4rem;
+  margin-bottom: 15px;
 }
 
 .stat-box:hover .stat-icon {
@@ -218,8 +212,8 @@
 
 .stat-box h3 {
   font-size: 2rem;
-  margin: 10px 0;
   font-weight: 700;
+  margin: 10px 0;
 }
 
 .stat-box p {
