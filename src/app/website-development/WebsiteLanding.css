@@ -299,15 +299,23 @@
 
 .mockup-screen {
   position: absolute;
-  top: 8.2%;
-  left: 6%;
-  width: 88%;
-  height: 72%;
-  object-fit: cover;       /* ✅ ימלא את השטח בלי רווחים */
-  object-position: center; /* ✅ ממורכז תמיד */
+  top: 7.5%;        /* מותאם למסך הפנימי */
+  left: 5.5%;       /* קצת פחות מ־6% כדי לשבת בול */
+  width: 89%;       /* הגדלה כך שתמלא */
+  height: 74%;      /* טיפה יותר גבוה כדי לא להשאיר רווחים */
+  object-fit: cover;       /* ממלא את כל השטח בלי רווחים */
+  object-position: center; /* ממורכז תמיד */
   z-index: 1;
   border-radius: 2px;
-  overflow: hidden;        /* הגנה נוספת */
+  overflow: hidden;
+}
+
+/* 🐞 Debug Mode (מחק אחרי שתראה שזה יושב טוב) */
+.mockup-screen.debug {
+  border: 2px solid red;   /* גבול אדום */
+}
+.mockup-frame.debug {
+  border: 2px dashed blue; /* גבול כחול */
 }
 
 /* ===== Testimonials ===== */
