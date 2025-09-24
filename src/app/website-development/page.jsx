@@ -244,10 +244,14 @@ export default function WebsiteLanding() {
                 transition={{ duration: 0.6 }}
               >
                 <div className="mockup">
-                  <img src={item.src} alt={item.title} className="mockup-screen" />
+                  {/* המסגרת */}
                   <img src="/mockups/imac-frame.png" alt="iMac frame" className="mockup-frame" />
-                  <div className="overlay">
-                    <h3>{item.title}</h3>
+                  {/* המסך + overlay */}
+                  <div className="mockup-inner">
+                    <img src={item.src} alt={item.title} className="mockup-screen" />
+                    <div className="overlay">
+                      <h3>{item.title}</h3>
+                    </div>
                   </div>
                 </div>
               </motion.div>

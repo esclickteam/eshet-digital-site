@@ -276,31 +276,33 @@
   color: var(--brand-color-light);
 }
 
-/* ✅ Mockup + Overlay Styling */
+/* ✅ Mockup + Overlay */
 .mockup {
   position: relative;
   width: 100%;
   aspect-ratio: 16/13;
-  overflow: hidden;
-  border-radius: 12px;
 }
 .mockup-frame {
-  position: relative;
   width: 100%;
+  position: relative;
   z-index: 2;
   pointer-events: none;
-  display: block;
 }
-.mockup-screen {
+.mockup-inner {
   position: absolute;
   top: 39.4%;
   left: 16.8%;
   width: 73.6%;
   height: 41.1%;
-  object-fit: cover;
-  object-position: center;
+  overflow: hidden;
   border-radius: 2px;
   z-index: 1;
+}
+.mockup-screen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 .overlay {
   position: absolute;
@@ -317,7 +319,7 @@
   text-align: center;
   padding: 10px;
 }
-.mockup:hover .overlay {
+.mockup-inner:hover .overlay {
   opacity: 1;
 }
 @media (max-width: 768px) {
