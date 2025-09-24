@@ -296,13 +296,13 @@
 
 .mockup-screen {
   position: absolute;
-  top: 7.5%;     /* גובה התחלת המסך */
-  left: 6.5%;    /* מרחק מהצדדים */
-  width: 87%;    /* רוחב פנימי */
-  height: 74%;   /* גובה פנימי */
+  top: 6.5%;    /* למעלה יותר צמוד למסגרת */
+  left: 5.8%;   /* מרכז לצדדים */
+  width: 88.5%; /* הרחבה לרוחב */
+  height: 77%;  /* יותר גובה – יתמלא עד המסגרת התחתונה */
   object-fit: cover;
-  z-index: 1;
   border-radius: 2px;
+  z-index: 1;
 }
 
 /* ===== Testimonials ===== */
