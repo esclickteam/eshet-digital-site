@@ -1,6 +1,6 @@
 :root {
   --brand-color: #4a3aff;        /* צבע מותג ראשי */
-  --brand-color-light: #7f5eff;  /* צבע hover */
+  --brand-color-light: #00c6ff;  /* צבע נוסף לגרדיאנט */
   --text-dark: #333333;
   --text-light: #ffffff;
   --bg-light: #fafafa;
@@ -16,9 +16,9 @@
 
 /* ===== Hero ===== */
 .hero {
-  background: var(--brand-color);
+  background: linear-gradient(135deg, var(--brand-color), var(--brand-color-light));
   color: var(--text-light);
-  padding: 100px 20px 40px;
+  padding: 100px 20px 60px;
   text-align: center;
   position: relative;
 }
@@ -31,7 +31,7 @@
   gap: 40px;
 }
 .hero-text h1 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   margin-bottom: 20px;
   font-weight: 700;
   line-height: 1.2;
@@ -46,37 +46,29 @@
   flex-wrap: wrap;
   margin-bottom: 20px;
 }
-.hero-trust {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  opacity: 0.9;
-}
 .hero-image {
   max-width: 500px;
   margin: 0 auto;
 }
 .hero-image img {
   max-width: 100%;
-  border-radius: 12px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* ===== Tech Logos מתחת להירו ===== */
+/* ===== Tech Logos ===== */
 .hero-logos-full {
   margin-top: 40px;
   padding: 30px 0;
-  background: var(--brand-color); /* ממשיך את הכחול */
-}
-.tech-logos {
-  padding: 0; /* מנקה padding פנימי */
-  overflow: hidden;
+  background: var(--brand-color);
 }
 .logos-track {
   display: flex;
-  width: calc(250px * 12);
+  width: calc(200px * 12);
   animation: scroll 25s linear infinite;
 }
 .logo-card {
-  width: 200px;
+  width: 180px;
   flex-shrink: 0;
   text-align: center;
   padding: 10px;
@@ -91,14 +83,13 @@
   max-height: 50px;
   margin: 0 auto 10px;
   display: block;
-  filter: brightness(0) invert(1); /* הופך ללבן על כחול */
+  filter: brightness(0) invert(1);
 }
 .logo-card span {
   font-size: 0.9rem;
   color: #fff;
   display: block;
 }
-
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -143,115 +134,128 @@
 
 /* ===== UX Benefits ===== */
 .ux-benefits {
-  padding: 80px 20px;
+  padding: 100px 20px;
   text-align: center;
   background: var(--bg-light);
 }
 .ux-benefits h2 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 700;
-  margin-bottom: 16px;
-  color: var(--brand-color);
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, var(--brand-color), var(--brand-color-light));
+  background-clip: text;                /* ✅ הוספתי סטנדרטי */
+  -webkit-background-clip: text;        /* ✅ תמיכה ב-WebKit */
+  color: transparent;                   /* ✅ fallback */
+  -webkit-text-fill-color: transparent; /* ✅ WebKit */
 }
 .ux-benefits .ux-subtitle {
   font-size: 1.1rem;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   color: #555;
 }
 .ux-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
 }
 .ux-card {
   background: #fff;
-  border-radius: 16px;
-  padding: 40px 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
+  border-radius: 20px;
+  padding: 50px 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .ux-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
 .ux-icon {
-  font-size: 60px;
-  margin-bottom: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(74, 58, 255, 0.1);
   color: var(--brand-color);
+  font-size: 2rem;
+  margin-bottom: 20px;
+  transition: 0.3s ease;
 }
-.ux-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-}
-.ux-card p {
-  font-size: 1rem;
-  color: #555;
+.ux-icon:hover {
+  transform: scale(1.1) rotate(5deg);
 }
 
-/* ===== Stats ===== */
+/* ===== Why Choose Us ===== */
 .why-choose {
-  padding: 80px 20px;
+  padding: 100px 20px;
   background: #fff;
   text-align: center;
 }
 .why-choose h2 {
-  font-size: 2rem;
-  color: var(--brand-color);
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, var(--brand-color), var(--brand-color-light));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
-  margin-top: 40px;
+  margin-top: 50px;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 .stat-box {
   background: var(--bg-light);
-  border-radius: 16px;
-  padding: 40px 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
+  border-radius: 20px;
+  padding: 50px 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .stat-box:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
 .stat-icon {
-  font-size: 2.4rem;
-  margin-bottom: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(74, 58, 255, 0.1);
   color: var(--brand-color);
-}
-.stat-box h3 {
   font-size: 2rem;
-  font-weight: 700;
-  margin: 10px 0;
-  color: var(--brand-color);
-}
-.stat-box p {
-  font-size: 1rem;
-  color: #555;
+  margin-bottom: 20px;
 }
 
 /* ===== Portfolio ===== */
 .portfolio {
-  padding: 80px 20px;
+  padding: 100px 20px;
   text-align: center;
   background: var(--bg-light);
 }
 .portfolio h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 50px;
   font-weight: 700;
-  color: var(--brand-color);
+  background: linear-gradient(90deg, var(--brand-color), var(--brand-color-light));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
@@ -278,19 +282,23 @@
 
 /* ===== Testimonials ===== */
 .testimonials {
-  padding: 80px 20px;
+  padding: 100px 20px;
   max-width: 700px;
   margin: 0 auto;
   text-align: center;
 }
 .testimonials h2 {
   margin-bottom: 30px;
-  color: var(--brand-color);
+  background: linear-gradient(90deg, var(--brand-color), var(--brand-color-light));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 .testimonial {
   background: #fff;
-  border-radius: 14px;
-  padding: 30px 20px;
+  border-radius: 16px;
+  padding: 40px 25px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 .testimonial img {
@@ -317,14 +325,13 @@
   background: var(--brand-color);
 }
 
-/* ===== FAQ (Light Style) ===== */
+/* ===== FAQ ===== */
 .faq {
-  background: #ffffff;
-  color: #222;
-  padding: 80px 20px;
+  background: #fff;
+  padding: 100px 20px;
   max-width: 900px;
-  margin: 80px auto;
-  border-radius: 8px;
+  margin: 100px auto;
+  border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 .faq-header {
@@ -332,14 +339,10 @@
   margin-bottom: 30px;
 }
 .faq-header h2 {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 10px;
-  color: #111;
-}
-.faq-header p {
-  font-size: 1rem;
-  color: #555;
+  color: var(--brand-color);
 }
 .faq-list {
   border-top: 1px solid #eee;
@@ -363,15 +366,6 @@
   color: #111;
 }
 .faq-question:hover {
-  color: var(--brand-color);
-}
-.faq-icon {
-  font-size: 1.2rem;
-  color: #333;
-  transition: transform 0.3s ease;
-}
-.faq-item.active .faq-icon {
-  transform: rotate(45deg);
   color: var(--brand-color);
 }
 .faq-answer {
@@ -400,7 +394,7 @@
   }
 }
 @media (max-width: 600px) {
-  .hero-text h1 { font-size: 1.8rem; }
+  .hero-text h1 { font-size: 2rem; }
   .hero-text p { font-size: 1rem; }
   .btn { width: 100%; text-align: center; }
   .portfolio-grid { grid-template-columns: 1fr; }
