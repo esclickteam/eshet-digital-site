@@ -1,7 +1,12 @@
 :root {
-  --brand-color: #4a3aff;        /* צבע מותג ראשי */
-  --brand-color-light: #7f5eff;  /* צבע hover */
-  --text-dark: #333333;
+  --brand-color: #4a3aff;        /* סגול כחול כהה */
+  --brand-color-light: #7f5eff;  /* סגול בהיר */
+  --yellow-accent: #ffcc00;
+  --pink-accent: #ff5ac8;
+  --orange-accent: #ff7a18;
+  --blue-accent: #1d8cf8;
+  --green-accent: #4caf50;
+  --text-dark: #111;
   --text-light: #ffffff;
   --bg-light: #fafafa;
 }
@@ -16,11 +21,12 @@
 
 /* ===== Hero ===== */
 .hero {
-  background: linear-gradient(135deg, var(--brand-color), var(--brand-color-light));
+  background: linear-gradient(135deg, #1d2671 0%, #4a3aff 50%, #7f5eff 100%);
   color: var(--text-light);
-  padding: 100px 20px 40px;
+  padding: 100px 20px 60px;
   text-align: center;
   position: relative;
+  overflow: hidden;
 }
 .hero-content {
   max-width: 1200px;
@@ -31,7 +37,7 @@
   gap: 40px;
 }
 .hero-text h1 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   margin-bottom: 20px;
   font-weight: 700;
   line-height: 1.2;
@@ -39,6 +45,7 @@
 .hero-text p {
   font-size: 1.2rem;
   margin-bottom: 30px;
+  color: #f0f0f0;
 }
 .hero-buttons {
   display: flex;
@@ -60,7 +67,7 @@
   border-radius: 12px;
 }
 
-/* ===== Tech Logos מתחת להירו ===== */
+/* ===== Tech Logos ===== */
 .hero-logos-full {
   margin-top: 40px;
   padding: 30px 0;
@@ -98,7 +105,6 @@
   color: #fff;
   display: block;
 }
-
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -108,50 +114,52 @@
 .btn {
   padding: 16px 32px;
   border-radius: 40px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   transition: all 0.3s ease;
   font-size: 1.05rem;
   display: inline-block;
 }
 .btn-primary {
-  background: #fff;
-  color: var(--brand-color);
+  background: var(--yellow-accent);
+  color: #000;
   border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 .btn-primary:hover {
-  background: #f2f2f2;
+  background: #ffd633;
 }
 .btn-outline {
-  background: linear-gradient(90deg, #ff5a7d, #ff7a18);
+  background: #b84bff;
   color: #fff;
   border: none;
   padding: 16px 32px;
   border-radius: 40px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.05rem;
   text-decoration: none;
   display: inline-block;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 .btn-outline:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  background: #a03dff;
 }
 
 /* ===== UX Benefits ===== */
 .ux-benefits {
   padding: 80px 20px;
   text-align: center;
-  background: #f8f9fc;
+  background: linear-gradient(180deg, #5b86e5 0%, #36d1dc 100%);
+  color: #fff;
+  border-radius: 20px;
+  max-width: 1200px;
+  margin: 60px auto;
 }
 .ux-benefits h2 {
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 16px;
-  color: var(--brand-color);
 }
 .ux-benefits .ux-subtitle {
   font-size: 1.1rem;
@@ -159,7 +167,7 @@
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  color: #555;
+  color: #f0f0f0;
 }
 .ux-grid {
   display: grid;
@@ -169,10 +177,9 @@
   margin: 0 auto;
 }
 .ux-card {
-  background: #fff;
+  background: rgba(255,255,255,0.1);
   border-radius: 16px;
   padding: 40px 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: transform 0.3s ease;
 }
 .ux-card:hover {
@@ -181,7 +188,7 @@
 .ux-icon {
   font-size: 60px;
   margin-bottom: 15px;
-  color: var(--brand-color);
+  color: var(--yellow-accent);
 }
 .ux-card h3 {
   font-size: 1.3rem;
@@ -189,13 +196,13 @@
 }
 .ux-card p {
   font-size: 1rem;
-  color: #555;
+  color: #eee;
 }
 
 /* ===== Stats ===== */
 .why-choose {
   padding: 80px 20px;
-  background: linear-gradient(180deg, #ffffff 0%, #f3f4f8 100%);
+  background: #f3f4f8;
   text-align: center;
 }
 .why-choose h2 {
@@ -212,10 +219,10 @@
   margin-right: auto;
 }
 .stat-box {
-  background: var(--bg-light);
   border-radius: 16px;
   padding: 40px 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  color: #fff;
+  font-weight: 600;
   transition: transform 0.3s ease;
 }
 .stat-box:hover {
@@ -224,20 +231,22 @@
 .stat-icon {
   font-size: 2.4rem;
   margin-bottom: 15px;
-  color: var(--brand-color);
 }
 .stat-box h3 {
   font-size: 2rem;
   font-weight: 700;
   margin: 10px 0;
-  color: var(--brand-color);
 }
 .stat-box p {
   font-size: 1rem;
-  color: #555;
 }
+.stat-box.purple { background: var(--brand-color); }
+.stat-box.pink { background: var(--pink-accent); }
+.stat-box.orange { background: var(--orange-accent); }
+.stat-box.blue { background: var(--blue-accent); }
+.stat-box.green { background: var(--green-accent); }
 
-/* ===== Portfolio (Swiper) ===== */
+/* ===== Portfolio ===== */
 .portfolio {
   padding: 80px 20px;
   text-align: center;
@@ -266,21 +275,6 @@
   transform: translateY(-6px);
   box-shadow: 0 10px 24px rgba(0,0,0,0.12);
 }
-.portfolio-card h3 {
-  font-size: 1rem;
-  margin: 15px;
-}
-.swiper-button-next,
-.swiper-button-prev {
-  color: var(--brand-color);
-  transition: color 0.3s ease;
-}
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  color: var(--brand-color-light);
-}
-
-/* ✅ Mockup + Overlay */
 .mockup {
   position: relative;
   width: 100%;
@@ -324,18 +318,11 @@
 .mockup:hover .overlay {
   opacity: 1;
 }
-@media (max-width: 768px) {
-  .overlay {
-    opacity: 1;
-    font-size: 1rem;
-    padding: 6px;
-  }
-}
 
 /* ===== Testimonials ===== */
 .testimonials {
   padding: 80px 20px;
-  background: linear-gradient(180deg, var(--brand-color) 0%, var(--brand-color-light) 100%);
+  background: linear-gradient(180deg, #4a3aff 0%, #7f5eff 100%);
   color: #fff;
   max-width: 100%;
   text-align: center;
@@ -374,22 +361,64 @@
   background: #fff;
 }
 
+/* ===== Workflow ===== */
+.workflow {
+  background: #0f172a;
+  padding: 80px 20px;
+  text-align: center;
+  color: #fff;
+}
+.workflow h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.workflow p {
+  margin-bottom: 50px;
+  color: #ccc;
+}
+.workflow-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.step {
+  background: #111827;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+.step:hover {
+  transform: translateY(-8px);
+}
+.step:nth-child(1) { box-shadow: 0 0 20px #00e5ff; border: 2px solid #00e5ff; }
+.step:nth-child(2) { box-shadow: 0 0 20px #ff9800; border: 2px solid #ff9800; }
+.step:nth-child(3) { box-shadow: 0 0 20px #9c27b0; border: 2px solid #9c27b0; }
+.step:nth-child(4) { box-shadow: 0 0 20px #ff4081; border: 2px solid #ff4081; }
+.step:nth-child(5) { box-shadow: 0 0 20px #ffeb3b; border: 2px solid #ffeb3b; }
+.step:nth-child(6) { box-shadow: 0 0 20px #4caf50; border: 2px solid #4caf50; }
+
 /* ===== FAQ ===== */
 .faq {
-  background: #f9f9fb;
+  background: #f9fafb;
   color: #222;
   padding: 80px 20px;
   max-width: 900px;
   margin: 80px auto;
-  border-radius: 8px;
+  border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 .faq-header {
-  text-align: left;
-  margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 .faq-header h2 {
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 10px;
   color: #111;
@@ -398,11 +427,8 @@
   font-size: 1rem;
   color: #555;
 }
-.faq-list {
-  border-top: 1px solid #eee;
-}
 .faq-item {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #e5e7eb;
 }
 .faq-question {
   width: 100%;
@@ -411,7 +437,7 @@
   justify-content: space-between;
   align-items: center;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   background: none;
   border: none;
   text-align: left;
@@ -467,7 +493,7 @@
   text-align: center;
 }
 .footer a {
-  color: #7f5eff;
+  color: var(--brand-color-light);
   text-decoration: none;
 }
 .footer a:hover {
