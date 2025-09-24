@@ -146,25 +146,25 @@ export default function WebsiteLanding() {
           they become loyal customers.
         </p>
         <div className="ux-grid">
-          <motion.div className="ux-card">
-            <Smartphone size={60} className="ux-icon" />
-            <h3>Mobile First</h3>
-            <p>Seamless browsing experience on phones, tablets, and desktops.</p>
+          <motion.div whileHover={{ y: -8, scale: 1.03 }} className="ux-card">
+            <Smartphone size={64} className="ux-icon" />
+            <h3>Designed for Any Device</h3>
+            <p>Reach every customer with seamless browsing on phones, tablets, and desktops.</p>
           </motion.div>
-          <motion.div className="ux-card">
-            <Zap size={60} className="ux-icon" />
-            <h3>Fast Loading</h3>
-            <p>Optimized performance to keep users engaged and reduce bounce rates.</p>
+          <motion.div whileHover={{ y: -8, scale: 1.03 }} className="ux-card">
+            <Zap size={64} className="ux-icon" />
+            <h3>Lightning-Fast Performance</h3>
+            <p>Optimized speed to keep users engaged and reduce bounce rates.</p>
           </motion.div>
-          <motion.div className="ux-card">
-            <Target size={60} className="ux-icon" />
-            <h3>Conversion Focused</h3>
-            <p>Clear calls-to-action that guide visitors to book, buy, or contact you.</p>
+          <motion.div whileHover={{ y: -8, scale: 1.03 }} className="ux-card">
+            <Target size={64} className="ux-icon" />
+            <h3>Built to Convert</h3>
+            <p>Clear calls-to-action that turn visitors into paying clients.</p>
           </motion.div>
-          <motion.div className="ux-card">
-            <Shield size={60} className="ux-icon" />
-            <h3>Accessible & Secure</h3>
-            <p>Websites built for all users, with top-level security and accessibility standards.</p>
+          <motion.div whileHover={{ y: -8, scale: 1.03 }} className="ux-card">
+            <Shield size={64} className="ux-icon" />
+            <h3>Safe & Inclusive by Design</h3>
+            <p>Websites built with security, trust, and accessibility standards for all users.</p>
           </motion.div>
         </div>
       </section>
