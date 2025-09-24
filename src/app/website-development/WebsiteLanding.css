@@ -60,6 +60,7 @@
 }
 
 /* ===== Buttons ===== */
+/* בסיס כל הכפתורים */
 .btn {
   padding: 16px 32px;
   border-radius: 40px;
@@ -69,26 +70,27 @@
   font-size: 1.05rem;
   display: inline-block;
 }
+
+/* כפתור ראשי – לבן עם טקסט סגול */
 .btn-primary {
-  background: var(--brand-color);
-  color: var(--text-light);
+  background: #fff;
+  color: var(--brand-color);
   border: none;
 }
 .btn-primary:hover {
-  background: var(--brand-color-light);
+  background: #f2f2f2;
 }
 
-/* כפתור לבן עם טקסט סגול */
+/* כפתור משני – סגול עם טקסט לבן */
 .btn-outline {
-  background: var(--text-light);
-  border: 2px solid var(--text-light);
-  color: var(--brand-color);
+  background: var(--brand-color);
+  color: #fff;
+  border: none;
 }
 .btn-outline:hover {
-  background: var(--brand-color-light);
-  border-color: var(--brand-color-light);
-  color: var(--text-light);
+  background: #3a2ed9; /* כהה יותר */
 }
+
 
 /* ===== UX Benefits ===== */
 .ux-benefits {
