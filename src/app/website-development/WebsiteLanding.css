@@ -150,8 +150,7 @@
 .ux-benefits {
   padding: 80px 20px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.12); /* רקע שקוף עדין */
-  backdrop-filter: blur(8px);            /* אפקט זכוכית */
+  background: linear-gradient(180deg, #5b86e5 0%, #36d1dc 100%);
   border-radius: 20px;
   max-width: 1200px;
   margin: 60px auto;
@@ -178,14 +177,16 @@
   margin: 0 auto;
 }
 .ux-card {
-  background: #fff;
+  background: linear-gradient(135deg, #ffffff, #f9f9ff);
   border-radius: 16px;
   padding: 40px 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   color: #111;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .ux-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 .ux-icon {
   font-size: 60px;
@@ -205,17 +206,15 @@
 .why-choose {
   padding: 80px 20px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.12); /* רקע שקוף עדין */
-  backdrop-filter: blur(8px);            /* אפקט זכוכית */
+  background: #fff;
   border-radius: 20px;
   max-width: 1200px;
   margin: 60px auto;
 }
 .why-choose h2 {
   font-size: 2rem;
-  color: var(--text-light); /* לבן כדי לבלוט על הרקע */
+  color: var(--brand-color);
 }
-
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -226,11 +225,12 @@
   border-radius: 16px;
   padding: 40px 20px;
   font-weight: 600;
-  transition: transform 0.3s ease;
-  color: #fff; /* צבע טקסט לבן */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
 }
 .stat-box:hover {
   transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 .stat-icon {
   font-size: 2.4rem;
@@ -244,39 +244,36 @@
 .stat-box p {
   font-size: 1rem;
 }
-.stat-box.purple { background: var(--brand-color); }
-.stat-box.pink { background: var(--pink-accent); }
-.stat-box.orange { background: var(--orange-accent); }
-.stat-box.blue { background: var(--blue-accent); }
-.stat-box.green { background: var(--green-accent); }
+/* גרדיאנטים ייחודיים */
+.stat-box.purple { background: linear-gradient(135deg, #4a3aff, #7f5eff); }
+.stat-box.pink { background: linear-gradient(135deg, #ff5ac8, #ff85d8); }
+.stat-box.orange { background: linear-gradient(135deg, #ff7a18, #ff9800); }
+.stat-box.blue { background: linear-gradient(135deg, #1d8cf8, #4facfe); }
+.stat-box.green { background: linear-gradient(135deg, #4caf50, #81c784); }
 
 /* ===== Portfolio ===== */
 .portfolio {
   padding: 80px 20px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.12); /* רקע שקוף עדין */
-  backdrop-filter: blur(8px);            /* אפקט זכוכית */
+  background: #f7f9fc;
   border-radius: 20px;
   max-width: 1400px;
   margin: 60px auto;
 }
-
 .portfolio h2 {
   font-size: 2rem;
   margin-bottom: 50px;
   font-weight: 700;
-  color: var(--text-light); /* לבן כדי לבלוט על הרקע */
+  color: var(--brand-color);
 }
-
 .portfolio-card {
-  background: #fff; /* כרטיס לבן פנימי */
+  background: linear-gradient(135deg, #ffffff, #fafafa);
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   height: 100%;
 }
-
 .portfolio-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 24px rgba(0,0,0,0.12);
@@ -332,6 +329,8 @@
   color: #fff;
   max-width: 100%;
   text-align: center;
+  border-radius: 20px;
+  margin: 60px auto;
 }
 .testimonials h2 {
   margin-bottom: 30px;
@@ -371,22 +370,21 @@
 .workflow {
   padding: 80px 20px;
   text-align: center;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.12); /* שקוף עדין */
-  backdrop-filter: blur(8px);            /* אפקט זכוכית */
+  background: #fff;
   border-radius: 20px;
   max-width: 1200px;
   margin: 60px auto;
+  color: #111;
 }
 .workflow h2 {
   font-size: 2.2rem;
   margin-bottom: 10px;
   font-weight: 700;
-  color: #fff;
+  color: var(--brand-color);
 }
 .workflow p {
   margin-bottom: 50px;
-  color: #e0e0e0;
+  color: #555;
 }
 .workflow-steps {
   display: grid;
@@ -397,27 +395,28 @@
   margin: 0 auto;
 }
 .step {
-  background: #fff;              /* לבן במקום שחור */
-  color: #111;                   /* טקסט כהה */
+  background: linear-gradient(135deg, #ffffff, #f7f7ff);
+  color: #111;
   border-radius: 12px;
   padding: 30px 20px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
 }
 .step:hover {
   transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
-.step:nth-child(1) { box-shadow: 0 0 20px #00e5ff; border: 2px solid #00e5ff; }
-.step:nth-child(2) { box-shadow: 0 0 20px #ff9800; border: 2px solid #ff9800; }
-.step:nth-child(3) { box-shadow: 0 0 20px #9c27b0; border: 2px solid #9c27b0; }
-.step:nth-child(4) { box-shadow: 0 0 20px #ff4081; border: 2px solid #ff4081; }
-.step:nth-child(5) { box-shadow: 0 0 20px #ffeb3b; border: 2px solid #ffeb3b; }
-.step:nth-child(6) { box-shadow: 0 0 20px #4caf50; border: 2px solid #4caf50; }
+.step:nth-child(1) { border: 2px solid #00e5ff; box-shadow: 0 0 20px rgba(0,229,255,0.4); }
+.step:nth-child(2) { border: 2px solid #ff9800; box-shadow: 0 0 20px rgba(255,152,0,0.4); }
+.step:nth-child(3) { border: 2px solid #9c27b0; box-shadow: 0 0 20px rgba(156,39,176,0.4); }
+.step:nth-child(4) { border: 2px solid #ff4081; box-shadow: 0 0 20px rgba(255,64,129,0.4); }
+.step:nth-child(5) { border: 2px solid #ffeb3b; box-shadow: 0 0 20px rgba(255,235,59,0.4); }
+.step:nth-child(6) { border: 2px solid #4caf50; box-shadow: 0 0 20px rgba(76,175,80,0.4); }
 
 /* ===== FAQ ===== */
 .faq {
-  background: #f9fafb;
+  background: #fff;
   color: #222;
   padding: 80px 20px;
   max-width: 900px;
