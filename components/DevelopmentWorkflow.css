@@ -1,12 +1,12 @@
 .workflow-section {
   background: rgba(255, 255, 255, 0.12); /* רקע שקוף עדין */
-  backdrop-filter: blur(8px);            /* אפקט זכוכית */
-  color: #111;                           /* טקסט כהה */
+  backdrop-filter: blur(8px);
   padding: 80px 20px;
   text-align: center;
   border-radius: 20px;
   max-width: 1200px;
   margin: 60px auto;
+  color: #fff;
 }
 
 .workflow-title {
@@ -17,7 +17,7 @@
 
 .workflow-subtitle {
   font-size: 1.1rem;
-  color: #e0e0e0;
+  color: #ddd;
   margin-bottom: 50px;
 }
 
@@ -29,67 +29,36 @@
   position: relative;
 }
 
-/* ברירת מחדל */
 .workflow-step {
-  background: #fff;                      /* לבן במקום שחור */
-  border: 2px solid transparent;
+  background: #fff;               /* ✅ קופסה לבנה מלאה */
+  color: #111;                    /* טקסט שחור */
   border-radius: 12px;
   padding: 25px;
   min-height: 160px;
   position: relative;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-  animation: pulseGlow 3s infinite alternate;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1); /* צל עדין */
   text-align: center;
-  color: #111;                           /* טקסט שחור */
 }
 
 .workflow-step:hover {
   transform: translateY(-8px) scale(1.05);
-  border-color: currentColor;
 }
 
+/* ✅ מספרי שלב */
 .step-number {
   font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 8px;
 }
 
-/* חצים */
-.arrow {
-  position: absolute;
-  top: 50%;
-  right: -32px;
-  width: 30px;
-  height: 2px;
-  background: currentColor;
-}
-.arrow::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: -5px;
-  border-top: 7px solid transparent;
-  border-bottom: 7px solid transparent;
-  border-left: 10px solid currentColor;
-}
-
-/* אפקט Glow */
-@keyframes pulseGlow {
-  from {
-    box-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
-  }
-  to {
-    box-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
-  }
-}
-
-/* צבעים */
-.workflow-step.cyan { color: #00eaff; border-color: #00eaff; }
-.workflow-step.orange { color: #ff7b2c; border-color: #ff7b2c; }
-.workflow-step.purple { color: #a259ff; border-color: #a259ff; }
-.workflow-step.pink { color: #ff4fa3; border-color: #ff4fa3; }
-.workflow-step.yellow { color: #ffc107; border-color: #ffc107; }
-.workflow-step.green { color: #4caf50; border-color: #4caf50; }
+/* ✅ צבעי Glow */
+.workflow-step.cyan { box-shadow: 0 0 15px #00eaff; border: 2px solid #00eaff; }
+.workflow-step.orange { box-shadow: 0 0 15px #ff7b2c; border: 2px solid #ff7b2c; }
+.workflow-step.purple { box-shadow: 0 0 15px #a259ff; border: 2px solid #a259ff; }
+.workflow-step.pink { box-shadow: 0 0 15px #ff4fa3; border: 2px solid #ff4fa3; }
+.workflow-step.yellow { box-shadow: 0 0 15px #ffc107; border: 2px solid #ffc107; }
+.workflow-step.green { box-shadow: 0 0 15px #4caf50; border: 2px solid #4caf50; }
 
 /* ✅ רספונסיביות */
 @media (min-width: 1200px) {
@@ -114,8 +83,5 @@
   .workflow-step {
     flex: 1 1 100%;
     max-width: 100%;
-  }
-  .arrow {
-    display: none;
   }
 }
