@@ -83,12 +83,22 @@
 
 /* כפתור משני – סגול עם טקסט לבן */
 .btn-outline {
-  background: var(--brand-color);
-  color: #fff;
+  background: linear-gradient(90deg, #ff5a7d, #ff7a18); /* גרדיאנט ורוד-כתום */
+  color: #fff; /* טקסט לבן */
   border: none;
+  padding: 16px 32px;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* אפקט צל עדין */
 }
 .btn-outline:hover {
-  background: #3a2ed9; /* כהה יותר */
+  opacity: 0.9; /* כהות קלה בהובר */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
 
 
