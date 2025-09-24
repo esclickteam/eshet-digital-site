@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBriefcase, FaFolderOpen, FaHandshake, FaUsers } from "react-icons/fa";
-import { Smartphone, Zap, Target, Shield } from "lucide-react"; // ✅ אייקונים חדשים
+import { Smartphone, Zap, Target, Shield } from "lucide-react"; 
 import "./WebsiteLanding.css";
 import DevelopmentWorkflow from "../../../components/DevelopmentWorkflow";
 import GetStartedForm from "../../../components/GetStartedForm";
@@ -273,12 +273,23 @@ export default function WebsiteLanding() {
               >
                 <span>{item.q}</span>
                 <span className="faq-icon">
-                  {activeFAQ === i ? "▾" : "▸"}
+                  {activeFAQ === i ? "–" : "+"}
                 </span>
               </button>
-              <div id={`faq-answer-${i}`} className="faq-answer">
-                <p>{item.a}</p>
-              </div>
+              <AnimatePresence>
+                {activeFAQ === i && (
+                  <motion.div
+                    id={`faq-answer-${i}`}
+                    className="faq-answer"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <p>{item.a}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           ))}
         </div>
