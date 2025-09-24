@@ -302,7 +302,7 @@
 .mockup-screen {
   position: absolute;
   top: 23.5%; 
-  left: 17.4%;
+  left: 16.4%; 
   width: 73.2%;
   height: 55.8%;
   object-fit: contain;   /* תמיד כל האתר נכנס */
@@ -333,13 +333,15 @@
 /* ===== Testimonials ===== */
 .testimonials {
   padding: 80px 20px;
-  background: linear-gradient(180deg, #4a3aff 0%, #7f5eff 100%);
+  background: linear-gradient(135deg, #4a3aff 0%, #7f5eff 100%);
   color: #fff;
-  max-width: 100%;
+  max-width: 1200px;       /* שיהיה ברוחב נוח, לא כל המסך */
   text-align: center;
-  border-radius: 20px;
+  border-radius: 24px;
   margin: 60px auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* עומק אלגנטי */
 }
+
 .testimonials h2 {
   margin-bottom: 30px;
   color: #fff;
