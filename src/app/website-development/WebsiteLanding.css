@@ -140,13 +140,21 @@
 }
 .ux-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .ux-card {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
-  padding: 24px;
+  padding: 40px 20px;       /* ✅ יותר גובה פנימי */
+  min-height: 280px;        /* ✅ קובע גובה מינימלי */
+  display: flex;
+  flex-direction: column;   /* תוכן מסודר מלמעלה למטה */
+  justify-content: center;  /* ממרכז את התוכן לאורך */
+  align-items: center;
+  text-align: center;
   backdrop-filter: blur(8px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, background 0.3s ease;
