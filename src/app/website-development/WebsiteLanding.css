@@ -483,14 +483,24 @@
   color: var(--brand-color);
 }
 .faq-icon {
-  font-size: 1.2rem;
-  color: #333;
-  transition: transform 0.3s ease;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--brand-color-light);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;    /* מגדיל את הפלוס */
+  font-weight: bold;   /* הופך לעבה יותר */
+  transition: transform 0.3s ease, background 0.3s ease;
 }
+
 .faq-item.active .faq-icon {
-  transform: rotate(45deg);
-  color: var(--brand-color);
+  background: var(--yellow-accent);
+  transform: rotate(45deg); /* פלוס הופך למינוס */
 }
+
 .faq-answer {
   max-height: 0;
   overflow: hidden;
