@@ -241,7 +241,7 @@
     padding: 25px 20px;
     margin-top: 20px;
     border-radius: 16px;
-    background: #f9fafb; /* ✅ רקע עדין מאחורי שני הכפתורים */
+    background: #f9fafb;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -250,7 +250,7 @@
   }
 
   /* Contact Us */
-  .contact-card {
+  .mobile-cta .contact-card {
     width: 100% !important;
     max-width: 280px;
     padding: 14px 28px !important;
@@ -265,19 +265,19 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease !important;
     display: block !important;
   }
-  .contact-card:hover {
+  .mobile-cta .contact-card:hover {
     transform: translateY(-3px) !important;
     box-shadow: 0 8px 22px rgba(250, 204, 21, 0.5) !important;
   }
 
   /* Schedule a Meeting */
-  .meeting-card {
+  .mobile-cta .meeting-card {
     width: 100% !important;
     max-width: 280px;
     padding: 14px 28px !important;
     border-radius: 50px !important;
     background: linear-gradient(135deg, #a855f7, #6366f1) !important;
-    color: #111 !important;
+    color: #fff !important;
     font-weight: 700 !important;
     font-size: 1.05rem !important;
     text-align: center !important;
@@ -286,7 +286,7 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease !important;
     display: block !important;
   }
-  .meeting-card:hover {
+  .mobile-cta .meeting-card:hover {
     transform: translateY(-3px) !important;
     box-shadow: 0 8px 22px rgba(166, 79, 255, 0.5) !important;
   }
