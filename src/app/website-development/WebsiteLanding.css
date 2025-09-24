@@ -295,12 +295,12 @@
 }
 .mockup-screen {
   position: absolute;
-  top: 8.2%;        /* יישור לגבולות הפנימיים */
+  top: 8.2%;
   left: 6%;
   width: 88%;
   height: 72%;
-  object-fit: contain;   /* 📌 חשוב: שלא יחתוך את התמונה */
-  object-position: top center;
+  object-fit: cover;       /* ✅ ממלא את כל המסך */
+  object-position: top center; /* מגדיר מהיכן "לחתוך" */
   z-index: 1;
   border-radius: 2px;
 }
