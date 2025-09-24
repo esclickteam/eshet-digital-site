@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiPlus, FiMinus } from "react-icons/fi";
 import { FaBriefcase, FaFolderOpen, FaHandshake, FaUsers } from "react-icons/fa";
 import { Smartphone, Zap, Target, Shield } from "lucide-react"; // ✅ אייקונים חדשים
 import "./WebsiteLanding.css";
@@ -274,23 +273,12 @@ export default function WebsiteLanding() {
               >
                 <span>{item.q}</span>
                 <span className="faq-icon">
-                  {activeFAQ === i ? <FiMinus /> : <FiPlus />}
+                  {activeFAQ === i ? "▾" : "▸"}
                 </span>
               </button>
-              <AnimatePresence>
-                {activeFAQ === i && (
-                  <motion.div
-                    id={`faq-answer-${i}`}
-                    className="faq-answer"
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    <p>{item.a}</p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <div id={`faq-answer-${i}`} className="faq-answer">
+                <p>{item.a}</p>
+              </div>
             </div>
           ))}
         </div>
