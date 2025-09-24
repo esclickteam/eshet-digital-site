@@ -301,12 +301,13 @@
 }
 .mockup-screen {
   position: absolute;
-   top: 11.2%;        /* גבול עליון של המסך */
-  left: 13.4%;       /* גבול שמאלי */
-  width: 73.2%;      /* רוחב המסך המדויק */
+  top: 11.2%;
+  left: 13.4%;
+  width: 73.2%;
   height: 55.8%;
-  object-fit: contain;   /* שומר שהתמונה תיכנס למסך */
-  object-position: center;
+  object-fit: contain;   /* תמיד כל האתר נכנס */
+  object-position: top;  /* מתחיל מהחלק העליון */
+  background: #ffffff;   /* רקע לבן במקום שקוף – נראה נקי */
   border-radius: 0;
   z-index: 1;
 }
