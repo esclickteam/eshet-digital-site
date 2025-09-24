@@ -299,8 +299,8 @@
   left: 6%;
   width: 88%;
   height: 72%;
-  object-fit: cover;       /* ✅ ממלא את כל המסך */
-  object-position: top center; /* מגדיר מהיכן "לחתוך" */
+  object-fit: contain;     /* 📌 מבטיח שהתמונה תמיד תישאר בגבולות */
+  object-position: center; /* מרכז את התמונה */
   z-index: 1;
   border-radius: 2px;
 }
