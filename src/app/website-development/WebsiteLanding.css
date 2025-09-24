@@ -378,3 +378,19 @@
   margin: 0 auto;
   border-radius: 12px;
 }
+
+/* ===== UX Icons ===== */
+.ux-icon {
+  font-size: 60px;         /* גודל גדול וברור */
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;             /* צבע לבן כברירת מחדל */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.ux-card:hover .ux-icon {
+  transform: scale(1.1);   /* אפקט hover קטן */
+  color: #ffeb3b;          /* אפשר גם לשים gradient עם mask-image */
+}

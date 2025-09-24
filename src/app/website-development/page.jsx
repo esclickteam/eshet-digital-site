@@ -3,13 +3,10 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { FaBriefcase, FaFolderOpen, FaHandshake, FaUsers } from "react-icons/fa";
+import { Smartphone, Zap, Target, Shield } from "lucide-react"; // ✅ אייקונים חדשים
 import "./WebsiteLanding.css";
 import DevelopmentWorkflow from "../../../components/DevelopmentWorkflow";
 import GetStartedForm from "../../../components/GetStartedForm";
-
-
-
-
 
 export default function WebsiteLanding() {
   const testimonials = [
@@ -116,10 +113,10 @@ export default function WebsiteLanding() {
             <p>Custom, conversion-focused websites designed to attract clients, increase bookings, and boost sales.</p>
             <div className="hero-buttons">
               <a href="https://www.eshetdigital.com/get-started" className="btn btn-primary">
-              Get Instant Quote
+                Get Instant Quote
               </a>
               <a href="https://www.eshetdigital.com/book" className="btn btn-outline">
-              Book a Free Call
+                Book a Free Call
               </a>
             </div>
             <div className="hero-trust">⭐⭐⭐⭐⭐ <span>Trusted by 50+ Businesses</span></div>
@@ -149,44 +146,24 @@ export default function WebsiteLanding() {
           they become loyal customers.
         </p>
         <div className="ux-grid">
-          <motion.div
-            className="ux-card"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h3>📱 Mobile First</h3>
+          <motion.div className="ux-card">
+            <Smartphone size={60} className="ux-icon" />
+            <h3>Mobile First</h3>
             <p>Seamless browsing experience on phones, tablets, and desktops.</p>
           </motion.div>
-          <motion.div
-            className="ux-card"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h3>⚡ Fast Loading</h3>
+          <motion.div className="ux-card">
+            <Zap size={60} className="ux-icon" />
+            <h3>Fast Loading</h3>
             <p>Optimized performance to keep users engaged and reduce bounce rates.</p>
           </motion.div>
-          <motion.div
-            className="ux-card"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          >
-            <h3>🎯 Conversion Focused</h3>
+          <motion.div className="ux-card">
+            <Target size={60} className="ux-icon" />
+            <h3>Conversion Focused</h3>
             <p>Clear calls-to-action that guide visitors to book, buy, or contact you.</p>
           </motion.div>
-          <motion.div
-            className="ux-card"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2 }}
-          >
-            <h3>🛡️ Accessible & Secure</h3>
+          <motion.div className="ux-card">
+            <Shield size={60} className="ux-icon" />
+            <h3>Accessible & Secure</h3>
             <p>Websites built for all users, with top-level security and accessibility standards.</p>
           </motion.div>
         </div>
@@ -214,9 +191,8 @@ export default function WebsiteLanding() {
         </div>
       </section>
 
-       {/* ===== Our Process ===== */}
+      {/* ===== Our Process ===== */}
       <DevelopmentWorkflow />
-
 
       {/* ===== Portfolio ===== */}
       <section className="portfolio">
@@ -320,7 +296,7 @@ export default function WebsiteLanding() {
         </div>
       </section>
 
-      {/* ===== Our Process ===== */}
+      {/* ===== Get Started Form ===== */}
       <GetStartedForm />
     </div>
   );
