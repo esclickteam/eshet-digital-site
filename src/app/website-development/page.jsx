@@ -244,7 +244,7 @@ export default function WebsiteLanding() {
                 transition={{ duration: 0.6 }}
               >
                 <div className="mockup">
-                   <img src="/mockups/imac-frame.jpg" alt="iMac frame" className="mockup-frame" />
+                  <img src="/mockups/imac-frame.png" alt="iMac frame" className="mockup-frame" />
                   <img src={item.src} alt={item.title} className="mockup-screen" />
                 </div>
                 <h3>{item.title}</h3>
