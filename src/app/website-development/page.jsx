@@ -58,8 +58,8 @@ export default function WebsiteLanding() {
   const [index, setIndex] = useState(0);
   const [activeFAQ, setActiveFAQ] = useState(null);
 
-  // ✅ Lightbox state
-  const [selectedImage, setSelectedImage] = useState(null);
+  // ✅ Lightbox state (שומר אינדקס)
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
   // Testimonials Auto Rotate
   useEffect(() => {
@@ -237,7 +237,7 @@ export default function WebsiteLanding() {
             1800: { slidesPerView: 5, spaceBetween: 30 },
           }}
         >
-          {portfolio.concat(portfolio).map((item, i) => (
+          {portfolio.map((item, i) => (
             <SwiperSlide key={i}>
               <motion.div
                 className="portfolio-card"
@@ -246,10 +246,7 @@ export default function WebsiteLanding() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <div
-                  className="mockup"
-                  onClick={() => setSelectedImage(item.src)} // ✅ פתיחת Lightbox
-                >
+                <div className="mockup" onClick={() => setSelectedIndex(i)}>
                   <img src={item.src} alt={item.title} className="mockup-screen" />
                   <img src="/mockups/imac-frame.png" alt="iMac frame" className="mockup-frame" />
                 </div>
@@ -260,12 +257,43 @@ export default function WebsiteLanding() {
         </Swiper>
       </section>
 
-      {/* ===== Lightbox ===== */}
-      {selectedImage && (
-        <div className="lightbox" onClick={() => setSelectedImage(null)}>
-          <img src={selectedImage} alt="Full preview" />
-        </div>
-      )}
+      {/* ===== Lightbox עם חיצים ואנימציה ===== */}
+      <AnimatePresence>
+        {selectedIndex !== null && (
+          <motion.div
+            className="lightbox"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <button className="lightbox-close" onClick={() => setSelectedIndex(null)}>✕</button>
+            <button
+              className="lightbox-prev"
+              onClick={() => setSelectedIndex((prev) => prev === 0 ? portfolio.length - 1 : prev - 1)}
+            >
+              ‹
+            </button>
+
+            <motion.img
+              key={portfolio[selectedIndex].src}
+              src={portfolio[selectedIndex].src}
+              alt={portfolio[selectedIndex].title}
+              className="lightbox-img"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.4 }}
+            />
+
+            <button
+              className="lightbox-next"
+              onClick={() => setSelectedIndex((prev) => prev === portfolio.length - 1 ? 0 : prev + 1)}
+            >
+              ›
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* ===== Testimonials ===== */}
       <section className="testimonials">
