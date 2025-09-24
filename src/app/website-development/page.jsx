@@ -257,19 +257,32 @@ export default function WebsiteLanding() {
         </Swiper>
       </section>
 
-      {/* ===== Lightbox עם חיצים ואנימציה ===== */}
+      {/* ===== Lightbox מקצועי ===== */}
       <AnimatePresence>
         {selectedIndex !== null && (
           <motion.div
             className="lightbox"
+            onClick={() => setSelectedIndex(null)} // סגירה בלחיצה על הרקע
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <button className="lightbox-close" onClick={() => setSelectedIndex(null)}>✕</button>
+            <button
+              className="lightbox-close"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedIndex(null);
+              }}
+            >
+              ✕
+            </button>
+
             <button
               className="lightbox-prev"
-              onClick={() => setSelectedIndex((prev) => prev === 0 ? portfolio.length - 1 : prev - 1)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedIndex((prev) => prev === 0 ? portfolio.length - 1 : prev - 1);
+              }}
             >
               ‹
             </button>
@@ -279,6 +292,7 @@ export default function WebsiteLanding() {
               src={portfolio[selectedIndex].src}
               alt={portfolio[selectedIndex].title}
               className="lightbox-img"
+              onClick={(e) => e.stopPropagation()} // שלא יסגר בלחיצה על התמונה
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
@@ -287,7 +301,10 @@ export default function WebsiteLanding() {
 
             <button
               className="lightbox-next"
-              onClick={() => setSelectedIndex((prev) => prev === portfolio.length - 1 ? 0 : prev + 1)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedIndex((prev) => prev === portfolio.length - 1 ? 0 : prev + 1);
+              }}
             >
               ›
             </button>
