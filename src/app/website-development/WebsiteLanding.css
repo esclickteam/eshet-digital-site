@@ -285,6 +285,7 @@
   position: relative;
   width: 100%;
   padding-top: 75%; /* יחס מסך */
+  overflow: hidden; /* חותך כל מה שיוצא החוצה */
 }
 .mockup-frame {
   position: absolute;
@@ -292,13 +293,13 @@
   left: 0;
   width: 100%;
   z-index: 2;
-  pointer-events: none;
+  pointer-events: none; /* שלא יפריע בלחיצות */
 }
 .mockup-screen {
   position: absolute;
-  top: 7%;   /* תתאם למסגרת */
-  left: 9%;
-  width: 82%;
+  top: 8%;   /* כיוון למעלה */
+  left: 9%;  /* כיוון לצד */
+  width: 82%; 
   height: 70%;
   object-fit: cover;
   border-radius: 4px;
