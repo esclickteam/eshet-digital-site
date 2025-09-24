@@ -341,7 +341,7 @@
   cursor: pointer;
   border-radius: 6px;
   transition: background 0.3s ease;
-  z-index: 10000;
+  z-index: 10000; /* 👈 כפתורי מעבר */
 }
 
 .lightbox button:hover {
@@ -353,12 +353,16 @@
 
 /* כפתור סגירה */
 .lightbox-close {
+  position: absolute;
   top: 20px;
   right: 20px;
   transform: none;
   font-size: 2rem;
   padding: 5px 12px;
   background: rgba(255,255,255,0.25);
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 10001; /* 👈 גבוה יותר מהכפתורי מעבר */
 }
 
 .lightbox-close:hover {
@@ -492,4 +496,25 @@
   .hero-text h1 { font-size: 1.8rem; }
   .hero-text p { font-size: 1rem; }
   .btn { width: 100%; text-align: center; }
+}
+
+@media (max-width: 768px) {
+  .lightbox-img {
+    max-width: 100%;
+    max-height: 70vh;
+  }
+
+  .lightbox button {
+    font-size: 2rem;
+    padding: 6px 10px;
+  }
+
+  .lightbox-prev { left: 8px; }
+  .lightbox-next { right: 8px; }
+
+  .lightbox-close {
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+  }
 }
