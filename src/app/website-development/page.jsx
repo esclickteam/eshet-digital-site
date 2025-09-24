@@ -243,9 +243,9 @@ export default function WebsiteLanding() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="mockup">
-                  <img src="/mockups/imac-frame.png" alt="iMac frame" className="mockup-frame" />
-                  <img src={item.src} alt={item.title} className="mockup-screen" />
+                <div className="mockup ready">
+                  <img src={item.src} alt={item.title} className="mockup-bg" />
+                  <img src="/mockups/imac-frame.png" alt="iMac frame" className="mockup-overlay" />
                 </div>
                 <h3>{item.title}</h3>
               </motion.div>
