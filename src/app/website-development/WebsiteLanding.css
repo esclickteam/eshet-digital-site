@@ -288,11 +288,10 @@
 .mockup {
   position: relative;
   width: 100%;
-  aspect-ratio: 2500 / 2500; /* יחס אמיתי של המוקאפ */
+  aspect-ratio: 16/13;
   overflow: hidden;
   border-radius: 12px;
 }
-
 .mockup-frame {
   position: relative;
   width: 100%;
@@ -300,20 +299,17 @@
   pointer-events: none;
   display: block;
 }
-
 .mockup-screen {
   position: absolute;
-  top: 61.9%;     /* מיקום אנכי (1547px מתוך 2500px) */
+   top: 61.9%;     /* מיקום אנכי (1547px מתוך 2500px) */
   left: 89.8%;    /* מיקום אופקי (2244px מתוך 2500px) */
   width: 74.2%;   /* רוחב פנימי של המסך (1855px מתוך 2500px) */
-  height: 42%;    /* גובה פנימי (1049px מתוך 2500px) */
-  object-fit: contain;   /* שומר על כל התמונה בלי חיתוך */
-  object-position: center;
-  border-radius: 4px;
+  height: 42%;
+  object-fit: contain;   /* במקום cover */
+  object-position: top center; /* אפשר גם center */
+  border-radius: 2px;
   z-index: 1;
-  background: #000; /* רקע שחור מאחורי התמונה */
 }
-
 .overlay {
   position: absolute;
   inset: 0;
