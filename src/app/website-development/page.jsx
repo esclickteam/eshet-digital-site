@@ -58,6 +58,9 @@ export default function WebsiteLanding() {
   const [index, setIndex] = useState(0);
   const [activeFAQ, setActiveFAQ] = useState(null);
 
+  // ✅ Lightbox state
+  const [selectedImage, setSelectedImage] = useState(null);
+
   // Testimonials Auto Rotate
   useEffect(() => {
     const interval = setInterval(() => {
@@ -243,8 +246,10 @@ export default function WebsiteLanding() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                {/* ✅ כאן התיקון */}
-                <div className="mockup">
+                <div
+                  className="mockup"
+                  onClick={() => setSelectedImage(item.src)} // ✅ פתיחת Lightbox
+                >
                   <img src={item.src} alt={item.title} className="mockup-screen" />
                   <img src="/mockups/imac-frame.png" alt="iMac frame" className="mockup-frame" />
                 </div>
@@ -254,6 +259,13 @@ export default function WebsiteLanding() {
           ))}
         </Swiper>
       </section>
+
+      {/* ===== Lightbox ===== */}
+      {selectedImage && (
+        <div className="lightbox" onClick={() => setSelectedImage(null)}>
+          <img src={selectedImage} alt="Full preview" />
+        </div>
+      )}
 
       {/* ===== Testimonials ===== */}
       <section className="testimonials">
