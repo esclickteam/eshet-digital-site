@@ -301,10 +301,10 @@
 }
 .mockup-screen {
   position: absolute;
-  top: 7.9%;          /* ממקם נכון מהחלק העליון */
-  left: 7.1%;         /* ממקם נכון מהצד */
-  width: 85.8%;       /* בול לרוחב המסך */
-  height: 69%;        /* בול לגובה המסך */
+   top: 11.2%;        /* גבול עליון של המסך */
+  left: 13.4%;       /* גבול שמאלי */
+  width: 73.2%;      /* רוחב המסך המדויק */
+  height: 55.8%;
   object-fit: contain;   /* שומר שהתמונה תיכנס למסך */
   object-position: center;
   border-radius: 0;
