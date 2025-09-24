@@ -59,8 +59,49 @@
   border-radius: 12px;
 }
 
+/* ===== Tech Logos Section ===== */
+.tech-logos {
+  background: #fff;
+  padding: 40px 0;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.logos-track {
+  display: flex;
+  width: calc(250px * 12);
+  animation: scroll 25s linear infinite;
+}
+.logo-card {
+  width: 200px;
+  flex-shrink: 0;
+  text-align: center;
+  padding: 10px;
+  opacity: 0.85;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.logo-card:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+.logo-card img {
+  max-height: 50px;
+  margin: 0 auto 10px;
+  display: block;
+}
+.logo-card span {
+  font-size: 0.9rem;
+  color: #555;
+  display: block;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* ===== Buttons ===== */
-/* בסיס כל הכפתורים */
 .btn {
   padding: 16px 32px;
   border-radius: 40px;
@@ -70,8 +111,6 @@
   font-size: 1.05rem;
   display: inline-block;
 }
-
-/* כפתור ראשי – לבן עם טקסט סגול */
 .btn-primary {
   background: #fff;
   color: var(--brand-color);
@@ -80,11 +119,9 @@
 .btn-primary:hover {
   background: #f2f2f2;
 }
-
-/* כפתור משני – סגול עם טקסט לבן */
 .btn-outline {
-  background: linear-gradient(90deg, #ff5a7d, #ff7a18); /* גרדיאנט ורוד-כתום */
-  color: #fff; /* טקסט לבן */
+  background: linear-gradient(90deg, #ff5a7d, #ff7a18);
+  color: #fff;
   border: none;
   padding: 16px 32px;
   border-radius: 40px;
@@ -93,14 +130,13 @@
   text-decoration: none;
   display: inline-block;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* אפקט צל עדין */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 .btn-outline:hover {
-  opacity: 0.9; /* כהות קלה בהובר */
+  opacity: 0.9;
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
-
 
 /* ===== UX Benefits ===== */
 .ux-benefits {
@@ -321,7 +357,7 @@
   text-align: left;
   cursor: pointer;
   transition: color 0.3s ease;
-  color: #111; /* 👈 טקסט כהה לשאלות */
+  color: #111;
 }
 .faq-question:hover {
   color: var(--brand-color);
@@ -332,7 +368,7 @@
   transition: transform 0.3s ease;
 }
 .faq-item.active .faq-icon {
-  transform: rotate(45deg); /* פלוס הופך למינוס */
+  transform: rotate(45deg);
   color: var(--brand-color);
 }
 .faq-answer {

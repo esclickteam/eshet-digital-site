@@ -6,6 +6,7 @@ import { Smartphone, Zap, Target, Shield } from "lucide-react";
 import "./WebsiteLanding.css";
 import DevelopmentWorkflow from "../../../components/DevelopmentWorkflow";
 import GetStartedForm from "../../../components/GetStartedForm";
+import TechLogos from "../../../components/TechLogos";
 
 export default function WebsiteLanding() {
   const testimonials = [
@@ -117,11 +118,9 @@ export default function WebsiteLanding() {
             <h1>Websites That Grow Your Business</h1>
             <p>Custom, conversion-focused websites designed to attract clients, increase bookings, and boost sales.</p>
             <div className="hero-buttons">
-              {/* Get Instant Quote = לבן */}
               <a href="https://www.eshetdigital.com/get-started" className="btn btn-primary">
                 Get Instant Quote
               </a>
-              {/* Book a Free Call = סגול */}
               <a href="https://www.eshetdigital.com/book" className="btn btn-outline">
                 Book a Free Call
               </a>
@@ -141,6 +140,10 @@ export default function WebsiteLanding() {
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
             />
+            {/* ✅ הלוגואים מתחת ללפטופ */}
+            <div className="hero-logos">
+              <TechLogos />
+            </div>
           </motion.div>
         </motion.div>
       </section>

@@ -1,0 +1,52 @@
+.tech-logos {
+  width: 100%;
+  overflow: hidden;
+  background: #0f172a; /* רקע כהה אלגנטי */
+  padding: 40px 0;
+}
+
+.logos-track {
+  display: flex;
+  gap: 60px;
+  animation: scroll 20s linear infinite;
+  width: max-content;
+}
+
+.logo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.logo-card img {
+  height: 40px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* שיהיו לבנים */
+  margin-bottom: 8px;
+}
+
+.logo-card span {
+  font-size: 0.85rem;
+  color: #e5e7eb;
+  font-weight: 500;
+}
+
+/* אפקט hover */
+.logo-card:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* אנימציית גלילה אינסופית */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
