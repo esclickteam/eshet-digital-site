@@ -354,15 +354,15 @@
 /* כפתור סגירה */
 .lightbox-close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 15px;
+  right: 60px;
   transform: none;
   font-size: 2rem;
   padding: 5px 12px;
   background: rgba(255,255,255,0.25);
   border-radius: 6px;
   cursor: pointer;
-  z-index: 10001; /* 👈 גבוה יותר מהכפתורי מעבר */
+  z-index: 11000; 
 }
 
 .lightbox-close:hover {
@@ -512,9 +512,12 @@
   .lightbox-prev { left: 8px; }
   .lightbox-next { right: 8px; }
 
+  /* ✅ כפתור סגירה במובייל */
   .lightbox-close {
     top: 10px;
-    right: 10px;
+    left: 10px;   /* במקום right */
+    right: auto;  /* מבטל את הצד ימין */
     font-size: 1.5rem;
+    z-index: 11000; /* מעל החיצים */
   }
 }
