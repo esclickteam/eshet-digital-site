@@ -69,9 +69,13 @@
 
 /* ===== Tech Logos ===== */
 .hero-logos-full {
-  margin-top: 40px;
-  padding: 30px 0;
-  background: transparent; /* ✅ שקוף - ממשיך את הרקע של האתר */
+  margin-top: 0;
+  padding: 50px 0;
+  background: linear-gradient(180deg, #1d2671 0%, #4a3aff 50%, #7f5eff 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 .tech-logos {
   display: flex;
@@ -81,41 +85,35 @@
 }
 .logos-track {
   display: flex;
-  width: calc(250px * 12);
+  gap: 40px;
   animation: scroll 25s linear infinite;
 }
 .logo-card {
-  width: 160px;              /* ✅ רוחב אחיד */
-  height: 120px;             /* ✅ גובה אחיד */
+  min-width: 160px;
+  max-width: 180px;
   flex-shrink: 0;
   text-align: center;
   padding: 20px;
   border-radius: 16px;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  opacity: 0.9;
-  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
-  display: flex;             /* ✅ מרכזת תוכן */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background: rgba(255, 255, 255, 0.05); /* חצי שקוף */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .logo-card:hover {
-  opacity: 1;
   transform: translateY(-6px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  opacity: 1;
 }
 .logo-card img {
-  max-width: 100px;          /* ✅ מגביל רוחב */
-  max-height: 50px;          /* ✅ מגביל גובה */
-  object-fit: contain;       /* ✅ לא מתעוות */
-  margin-bottom: 10px;
+  max-height: 50px;
+  margin: 0 auto 12px;
+  display: block;
+  filter: brightness(0) invert(1);
 }
+
 .logo-card span {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #fff;
-  font-weight: 500;
+  opacity: 0.9;
 }
 @keyframes scroll {
   0% { transform: translateX(0); }
