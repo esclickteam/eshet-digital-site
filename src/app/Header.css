@@ -236,17 +236,21 @@
 
 /* ====== CTA במובייל ====== */
 @media (max-width: 768px) {
-  .mobile-cta { 
-    width: 100%; 
-    margin-top: 10px;
+  .mobile-cta {
+    width: 100%;
+    padding: 25px 20px;
+    margin-top: 20px;
+    border-radius: 16px;
+    background: #f9fafb; /* ✅ רקע עדין מאחורי שני הכפתורים */
     display: flex;
     flex-direction: column;
-    gap: 16px;
     align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   }
 
   /* Contact Us */
-  .contact-card {
+    .contact-card {
     width: 100%;
     max-width: 280px;
     padding: 14px 28px;
@@ -266,7 +270,7 @@
   }
 
   /* Schedule a Meeting */
-  .meeting-card {
+    .meeting-card {
     width: 100%;
     max-width: 280px;
     padding: 14px 28px;
