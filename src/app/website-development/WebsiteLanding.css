@@ -299,10 +299,11 @@
   left: 6%;
   width: 88%;
   height: 72%;
-  object-fit: contain;     /* 📌 מבטיח שהתמונה תמיד תישאר בגבולות */
-  object-position: center; /* מרכז את התמונה */
+  object-fit: cover;     /* ימלא את כל השטח */
+  object-position: center;
   z-index: 1;
   border-radius: 2px;
+  overflow: hidden;      /* מבטיח שאין גלישה מחוץ למסגרת */
 }
 
 /* ===== Testimonials ===== */
