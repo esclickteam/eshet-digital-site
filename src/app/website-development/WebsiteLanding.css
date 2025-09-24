@@ -295,12 +295,13 @@
 }
 .mockup-screen {
   position: absolute;
-  top: 6.2%;    /* לפי ה-Y */
-  left: 5.8%;   /* לפי ה-X */
-  width: 74.5%; /* לפי ה-1863 מתוך 2500 */
-  height: 42.7%;/* לפי ה-1069 מתוך 2500 */
+  top: 8.2%;      /* יישר קצת יותר נמוך */
+  left: 6%;       /* רווח מהצדדים */
+  width: 88%;     /* גודל לרוחב */
+  height: 72%;    /* גובה – שלא יגלוש מתחת */
   object-fit: cover;
   z-index: 1;
+  border-radius: 2px;
 }
 
 /* ===== Testimonials ===== */
