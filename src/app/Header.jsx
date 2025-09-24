@@ -62,14 +62,13 @@ export default function Header() {
 
           <li><a href="/projects">Projects</a></li>
           <li><a href="/tech">Tech</a></li>
-          {/* ✅ Contact בתפריט */}
           <li><a href="/contact">Contact</a></li>
         </ul>
 
-        {/* ===== Desktop CTA (רק Book Call) ===== */}
+        {/* ===== Desktop CTA (Get Started) ===== */}
         <div className="header-cta desktop-only">
-          <a href="/book" className="cta-btn">
-            Book a Discovery Call
+          <a href="/get-started" className="cta-btn">
+            Get Started
           </a>
         </div>
 
@@ -116,16 +115,15 @@ export default function Header() {
 
           <li><a href="/projects">Projects</a></li>
           <li><a href="/tech">Tech</a></li>
-          {/* ✅ Contact בתפריט מובייל */}
           <li><a href="/contact">Contact</a></li>
 
-          {/* ✅ Book a Discovery Call CTA */}
+          {/* ✅ Mobile CTA (Get Started) */}
           <li className="mobile-cta">
-            <a href="/book" className="call-card">
+            <a href="/get-started" className="call-card">
               <div className="icon-circle call-icon">
                 <img src="/icons/CalendarColor.svg" alt="Calendar" />
               </div>
-              <span>Book a Discovery Call</span>
+              <span>Get Started</span>
             </a>
           </li>
         </ul>
