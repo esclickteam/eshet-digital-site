@@ -29,16 +29,22 @@
   position: relative;
 }
 
+/* ✅ כרטיס */
 .workflow-step {
-  background: #fff;               /* ✅ קופסה לבנה מלאה */
+  background: #fff;               /* קופסה לבנה מלאה */
   color: #111;                    /* טקסט שחור */
   border-radius: 12px;
   padding: 25px;
-  min-height: 160px;
+  min-height: 200px;              /* גובה אחיד */
   position: relative;
   transition: transform 0.3s ease;
   box-shadow: 0 0 15px rgba(0,0,0,0.1); /* צל עדין */
   text-align: center;
+
+  display: flex;                  /* מרכז טקסט באמצע */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .workflow-step:hover {
