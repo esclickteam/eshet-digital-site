@@ -65,7 +65,7 @@ export default function Header() {
           <li><a href="/contact">Contact</a></li>
         </ul>
 
-        {/* ===== Desktop CTA (Get Started) ===== */}
+        {/* ===== Desktop CTA (לא נוגע) ===== */}
         <div className="header-cta desktop-only">
           <a href="/get-started" className="cta-btn">
             Get Started
@@ -117,15 +117,17 @@ export default function Header() {
           <li><a href="/tech">Tech</a></li>
           <li><a href="/contact">Contact</a></li>
 
-          {/* ✅ Mobile CTA (Get Started) */}
+          {/* ✅ Mobile CTAs */}
           <li className="mobile-cta">
-            <a href="/get-started" className="call-card">
-              <div className="icon-circle call-icon">
-                <img src="/icons/CalendarColor.svg" alt="Calendar" />
-              </div>
-              <span>Get Started</span>
-            </a>
-          </li>
+  <a href="https://www.eshetdigital.com/get-started#contact-form" className="cta-btn primary">
+    Contact Us
+  </a>
+  <a href="https://www.eshetdigital.com/book" className="cta-btn secondary">
+    Schedule a Meeting
+  </a>
+</li>
+
+            
         </ul>
       </nav>
     </header>
