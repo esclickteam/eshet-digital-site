@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBriefcase, FaFolderOpen, FaHandshake, FaUsers } from "react-icons/fa";
-import { Smartphone, Zap, Target, Shield } from "lucide-react"; 
+import { Smartphone, Zap, Target, Shield } from "lucide-react";
 import "./WebsiteLanding.css";
 import DevelopmentWorkflow from "../../../components/DevelopmentWorkflow";
 import GetStartedForm from "../../../components/GetStartedForm";
@@ -17,48 +17,17 @@ export default function WebsiteLanding() {
   ];
 
   const faqs = [
-  { 
-    q: "How long does it take?", 
-    a: "Most websites are built in 2–4 weeks, depending on the project’s complexity." 
-  },
-  { 
-    q: "What if I already have a site?", 
-    a: "We offer redesign services to improve your sales performance and experience." 
-  },
-  { 
-    q: "How much does it cost?", 
-    a: "Pricing depends on your needs – from simple landing pages to full eCommerce solutions." 
-  },
-  { 
-    q: "Do you provide ongoing support?", 
-    a: "Yes, we offer maintenance packages to keep your site updated and secure." 
-  },
-  { 
-    q: "Will my website be mobile-friendly?", 
-    a: "Absolutely – every site we create is fully responsive across all devices." 
-  },
-  { 
-    q: "Do you offer SEO optimization?", 
-    a: "Yes, we include on-page SEO best practices so your site ranks better on Google." 
-  },
-  { 
-    q: "Can I update my website myself?", 
-    a: "Of course – we build sites with user-friendly editors so you can easily manage content." 
-  },
-  { 
-    q: "What industries do you work with?", 
-    a: "We work with small businesses, eCommerce brands, service providers, real estate, fitness, beauty, and many more." 
-  },
-  { 
-    q: "Do you integrate booking systems or online payments?", 
-    a: "Yes, we can integrate calendars, booking forms, and secure payment gateways." 
-  },
-  { 
-    q: "What makes you different from other agencies?", 
-    a: "We focus on conversion-driven design, fast delivery, and ongoing client support." 
-  },
-];
-
+    { q: "How long does it take?", a: "Most websites are built in 2–4 weeks, depending on the project’s complexity." },
+    { q: "What if I already have a site?", a: "We offer redesign services to improve your sales performance and experience." },
+    { q: "How much does it cost?", a: "Pricing depends on your needs – from simple landing pages to full eCommerce solutions." },
+    { q: "Do you provide ongoing support?", a: "Yes, we offer maintenance packages to keep your site updated and secure." },
+    { q: "Will my website be mobile-friendly?", a: "Absolutely – every site we create is fully responsive across all devices." },
+    { q: "Do you offer SEO optimization?", a: "Yes, we include on-page SEO best practices so your site ranks better on Google." },
+    { q: "Can I update my website myself?", a: "Of course – we build sites with user-friendly editors so you can easily manage content." },
+    { q: "What industries do you work with?", a: "We work with small businesses, eCommerce brands, service providers, real estate, fitness, beauty, and many more." },
+    { q: "Do you integrate booking systems or online payments?", a: "Yes, we can integrate calendars, booking forms, and secure payment gateways." },
+    { q: "What makes you different from other agencies?", a: "We focus on conversion-driven design, fast delivery, and ongoing client support." },
+  ];
 
   const stats = [
     { icon: <FaBriefcase />, label: "Projects Delivered", target: 100, suffix: "+", color: "purple" },
@@ -148,9 +117,11 @@ export default function WebsiteLanding() {
             <h1>Websites That Grow Your Business</h1>
             <p>Custom, conversion-focused websites designed to attract clients, increase bookings, and boost sales.</p>
             <div className="hero-buttons">
+              {/* Get Instant Quote = לבן */}
               <a href="https://www.eshetdigital.com/get-started" className="btn btn-primary">
                 Get Instant Quote
               </a>
+              {/* Book a Free Call = סגול */}
               <a href="https://www.eshetdigital.com/book" className="btn btn-outline">
                 Book a Free Call
               </a>
