@@ -67,6 +67,7 @@
   text-decoration: none;
   transition: all 0.3s ease;
   font-size: 1.05rem;
+  display: inline-block;
 }
 .btn-primary {
   background: var(--brand-color);
@@ -77,13 +78,16 @@
   background: var(--brand-color-light);
 }
 .btn-outline {
-  background: transparent;
-  border: 2px solid var(--brand-color);
-  color: var(--brand-color);
+  background: var(--text-light);      /* רקע לבן מלא */
+  border: 2px solid var(--text-light);
+  color: var(--brand-color);          /* טקסט בצבע מותג */
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 .btn-outline:hover {
-  background: var(--brand-color);
-  color: var(--text-light);
+  background: var(--brand-color-light); /* סגול בהיר במעבר */
+  border-color: var(--brand-color-light);
+  color: var(--text-light);             /* טקסט לבן */
 }
 
 /* ===== UX Benefits ===== */
