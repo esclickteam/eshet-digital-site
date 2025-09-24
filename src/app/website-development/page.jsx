@@ -58,10 +58,7 @@ export default function WebsiteLanding() {
   const [index, setIndex] = useState(0);
   const [activeFAQ, setActiveFAQ] = useState(null);
 
-  // ✅ Lightbox state (שומר אינדקס)
-  const [selectedIndex, setSelectedIndex] = useState(null);
-
-  // Testimonials Auto Rotate
+  // ✅ Testimonials Auto Rotate
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % testimonials.length);
@@ -69,7 +66,7 @@ export default function WebsiteLanding() {
     return () => clearInterval(interval);
   }, [testimonials.length]);
 
-  // Stats Counter Animation
+  // ✅ Stats Counter Animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -152,13 +149,13 @@ export default function WebsiteLanding() {
           </motion.div>
         </motion.div>
 
-        {/* ✅ לוגואים אחרי ה-Hero */}
+        {/* ✅ Logos after Hero */}
         <div className="hero-logos-full">
           <TechLogos />
         </div>
       </section>
 
-      {/* ===== UX Benefits Section ===== */}
+      {/* ===== UX Benefits ===== */}
       <section className="ux-benefits">
         <h2>Better User Experience = Better Results</h2>
         <p className="ux-subtitle">
@@ -246,71 +243,18 @@ export default function WebsiteLanding() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="mockup" onClick={() => setSelectedIndex(i)}>
+                <div className="mockup">
                   <img src={item.src} alt={item.title} className="mockup-screen" />
                   <img src="/mockups/imac-frame.png" alt="iMac frame" className="mockup-frame" />
+                  <div className="overlay">
+                    <h3>{item.title}</h3>
+                  </div>
                 </div>
-                <h3>{item.title}</h3>
               </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
       </section>
-
-      {/* ===== Lightbox מקצועי ===== */}
-      <AnimatePresence>
-        {selectedIndex !== null && (
-          <motion.div
-            className="lightbox"
-            onClick={() => setSelectedIndex(null)} // סגירה בלחיצה על הרקע
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <button
-              className="lightbox-close"
-              onClick={(e) => {
-                e.stopPropagation();
-                setSelectedIndex(null);
-              }}
-            >
-              ✕
-            </button>
-
-            <button
-              className="lightbox-prev"
-              onClick={(e) => {
-                e.stopPropagation();
-                setSelectedIndex((prev) => prev === 0 ? portfolio.length - 1 : prev - 1);
-              }}
-            >
-              ‹
-            </button>
-
-            <motion.img
-              key={portfolio[selectedIndex].src}
-              src={portfolio[selectedIndex].src}
-              alt={portfolio[selectedIndex].title}
-              className="lightbox-img"
-              onClick={(e) => e.stopPropagation()} // שלא יסגר בלחיצה על התמונה
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.4 }}
-            />
-
-            <button
-              className="lightbox-next"
-              onClick={(e) => {
-                e.stopPropagation();
-                setSelectedIndex((prev) => prev === portfolio.length - 1 ? 0 : prev + 1);
-              }}
-            >
-              ›
-            </button>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* ===== Testimonials ===== */}
       <section className="testimonials">
@@ -325,11 +269,7 @@ export default function WebsiteLanding() {
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.6 }}
             >
-              <img
-                src={testimonials[index].img}
-                alt={`Photo of ${testimonials[index].name}`}
-                loading="lazy"
-              />
+              <img src={testimonials[index].img} alt={`Photo of ${testimonials[index].name}`} loading="lazy" />
               <p>“{testimonials[index].text}”</p>
               <h4>⭐ ⭐ ⭐ ⭐ ⭐ <span>{testimonials[index].name}</span></h4>
             </motion.div>
@@ -355,10 +295,7 @@ export default function WebsiteLanding() {
         </div>
         <div className="faq-list">
           {faqs.map((item, i) => (
-            <div
-              key={i}
-              className={`faq-item ${activeFAQ === i ? "active" : ""}`}
-            >
+            <div key={i} className={`faq-item ${activeFAQ === i ? "active" : ""}`}>
               <button
                 className="faq-question"
                 aria-expanded={activeFAQ === i}
@@ -366,9 +303,7 @@ export default function WebsiteLanding() {
                 onClick={() => toggleFAQ(i)}
               >
                 <span>{item.q}</span>
-                <span className="faq-icon">
-                  {activeFAQ === i ? "–" : "+"}
-                </span>
+                <span className="faq-icon">{activeFAQ === i ? "–" : "+"}</span>
               </button>
               <AnimatePresence>
                 {activeFAQ === i && (
