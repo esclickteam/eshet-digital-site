@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { FaBriefcase, FaFolderOpen, FaHandshake, FaUsers } from "react-icons/fa";
-import { Smartphone, Zap, Target, Shield } from "lucide-react"; // ✅ אייקונים חדשים
+import { Smartphone, Zap, Target, Shield } from "lucide-react";
 import "./WebsiteLanding.css";
 import DevelopmentWorkflow from "../../../components/DevelopmentWorkflow";
 import GetStartedForm from "../../../components/GetStartedForm";
@@ -136,6 +136,28 @@ export default function WebsiteLanding() {
             />
           </motion.div>
         </motion.div>
+      </section>
+
+      {/* ===== Services Section ===== */}
+      <section className="services">
+        <h2 className="services-title">Our Services</h2>
+        <div className="services-grid-vertical">
+          <div className="service-card">
+            <div className="icon">💻</div>
+            <h3>Website Development & Design</h3>
+            <p>Business websites, online stores, and landing pages — fast, responsive, and SEO-optimized.</p>
+          </div>
+          <div className="service-card">
+            <div className="icon">📢</div>
+            <h3>Digital Campaign Management</h3>
+            <p>Paid advertising on Facebook, Instagram, Google, and more — with strategies that deliver results.</p>
+          </div>
+          <div className="service-card">
+            <div className="icon">🎨</div>
+            <h3>Graphic Design & Branding</h3>
+            <p>Professional logos, brand identity, and marketing assets that strengthen your business image.</p>
+          </div>
+        </div>
       </section>
 
       {/* ===== UX Benefits Section ===== */}
