@@ -119,15 +119,19 @@ export default function Header() {
 
           {/* ✅ Mobile CTAs */}
           <li className="mobile-cta">
-  <a href="https://www.eshetdigital.com/get-started#contact-form" className="cta-btn primary">
-    Contact Us
-  </a>
-  <a href="https://www.eshetdigital.com/book" className="cta-btn secondary">
-    Schedule a Meeting
-  </a>
-</li>
-
-            
+            <a
+              href="https://www.eshetdigital.com/get-started#contact-form"
+              className="contact-card"
+            >
+              Contact Us
+            </a>
+            <a
+              href="https://www.eshetdigital.com/book"
+              className="meeting-card"
+            >
+              Schedule a Meeting
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
