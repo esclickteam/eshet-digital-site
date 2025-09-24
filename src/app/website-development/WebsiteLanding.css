@@ -184,35 +184,55 @@
   gap: 30px;
   margin-top: 40px;
 }
+/* ===== Stats ===== */
 .stat-box {
   background: #fff;
-  border-radius: 14px;
-  padding: 30px 20px;
+  border-radius: 16px;
+  padding: 40px 20px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;   /* ✅ גובה אחיד כמו UX */
 }
+
 .stat-box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  background: #fdfdfd;
 }
+
 .stat-icon {
-  font-size: 2rem;
-  margin-bottom: 15px;
+  font-size: 3.5rem;          /* ✅ גדול כמו UX */
+  margin-bottom: 20px;
+  color: currentColor;        /* ✅ מקבל צבע דינמי */
+  transition: transform 0.3s ease, color 0.3s ease;
 }
+
+.stat-box:hover .stat-icon {
+  transform: scale(1.15);     /* ✅ אפקט hover */
+}
+
 .stat-box h3 {
   font-size: 2rem;
   margin: 10px 0;
   font-weight: 700;
 }
+
 .stat-box p {
   font-size: 1rem;
   color: #555;
 }
+
+/* צבעים דינמיים לפי קטגוריה */
 .purple .stat-icon, .purple h3 { color: #6c63ff; }
 .pink .stat-icon, .pink h3 { color: #ff5a7d; }
 .orange .stat-icon, .orange h3 { color: #ff9966; }
 .blue .stat-icon, .blue h3 { color: #00c6ff; }
+
 
 /* ===== Portfolio (UX Optimized) ===== */
 .portfolio {
