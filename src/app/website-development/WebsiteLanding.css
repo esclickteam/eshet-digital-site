@@ -77,17 +77,17 @@
 .btn-primary:hover {
   background: var(--brand-color-light);
 }
+
+/* כפתור לבן עם טקסט סגול */
 .btn-outline {
-  background: var(--text-light);      /* רקע לבן מלא */
+  background: var(--text-light);
   border: 2px solid var(--text-light);
-  color: var(--brand-color);          /* טקסט בצבע מותג */
-  font-weight: 600;
-  transition: all 0.3s ease;
+  color: var(--brand-color);
 }
 .btn-outline:hover {
-  background: var(--brand-color-light); /* סגול בהיר במעבר */
+  background: var(--brand-color-light);
   border-color: var(--brand-color-light);
-  color: var(--text-light);             /* טקסט לבן */
+  color: var(--text-light);
 }
 
 /* ===== UX Benefits ===== */
