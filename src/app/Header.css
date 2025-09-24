@@ -165,21 +165,25 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 18px;
+  padding: 12px 26px; /* קצת יותר אוורירי */
   border-radius: 50px;
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  background: linear-gradient(135deg, #a855f7, #6366f1); /* סגול-כחול יוקרתי */
   color: #fff;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
-  transition: transform 0.3s, background 0.3s;
+  letter-spacing: 0.3px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
   white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.35);
 }
+
 .cta-btn:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(135deg, #ff3355, #e63b25);
+  background: linear-gradient(135deg, #7c3aed, #4f46e5); /* צבע עמוק יותר בהובר */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(99, 102, 241, 0.5);
 }
+
 
 /* ====== חץ ל-dropbtn ====== */
 .dropbtn::after {
