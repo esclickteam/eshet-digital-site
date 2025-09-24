@@ -67,7 +67,7 @@
   background: var(--brand-color); /* ממשיך את הכחול */
 }
 .tech-logos {
-  padding: 0; /* מנקה padding פנימי */
+  padding: 0;
   overflow: hidden;
 }
 .logos-track {
@@ -91,7 +91,7 @@
   max-height: 50px;
   margin: 0 auto 10px;
   display: block;
-  filter: brightness(0) invert(1); /* הופך ללבן על כחול */
+  filter: brightness(0) invert(1);
 }
 .logo-card span {
   font-size: 0.9rem;
@@ -237,7 +237,7 @@
   color: #555;
 }
 
-/* ===== Portfolio ===== */
+/* ===== Portfolio (Swiper) ===== */
 .portfolio {
   padding: 80px 20px;
   text-align: center;
@@ -249,31 +249,40 @@
   font-weight: 700;
   color: var(--brand-color);
 }
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  max-width: 1200px;
+.swiper {
+  max-width: 1400px;
   margin: 0 auto;
+  padding-bottom: 50px;
 }
 .portfolio-card {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
+  height: 100%;
 }
 .portfolio-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
 }
 .portfolio-card img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
 }
 .portfolio-card h3 {
   font-size: 1rem;
   margin: 15px;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--brand-color);
+  transition: color 0.3s ease;
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: var(--brand-color-light);
 }
 
 /* ===== Testimonials ===== */
@@ -317,7 +326,7 @@
   background: var(--brand-color);
 }
 
-/* ===== FAQ (Light Style) ===== */
+/* ===== FAQ ===== */
 .faq {
   background: #ffffff;
   color: #222;
@@ -395,13 +404,9 @@
     grid-template-columns: 1fr;
     text-align: center;
   }
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 @media (max-width: 600px) {
   .hero-text h1 { font-size: 1.8rem; }
   .hero-text p { font-size: 1rem; }
   .btn { width: 100%; text-align: center; }
-  .portfolio-grid { grid-template-columns: 1fr; }
 }

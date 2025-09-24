@@ -8,6 +8,12 @@ import DevelopmentWorkflow from "../../../components/DevelopmentWorkflow";
 import GetStartedForm from "../../../components/GetStartedForm";
 import TechLogos from "../../../components/TechLogos";
 
+// ✅ Swiper
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+
 export default function WebsiteLanding() {
   const testimonials = [
     { img: "/clients/anna.jpg", name: "Anna R.", text: "The results were amazing – our leads and sales have grown consistently." },
@@ -205,29 +211,49 @@ export default function WebsiteLanding() {
       {/* ===== Our Process ===== */}
       <DevelopmentWorkflow />
 
-      {/* ===== Portfolio ===== */}
+      {/* ===== Portfolio – קרוסלה רציפה ===== */}
       <section className="portfolio">
         <h2>Our Portfolio – Custom Web Development Projects</h2>
-        <div className="portfolio-grid">
-          {portfolio.map((item, i) => (
-            <motion.div
-              key={i}
-              className="portfolio-card"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.2, duration: 0.6 }}
-            >
-              <img
-                src={item.src}
-                alt={item.title}
-                loading="lazy"
-                className="portfolio-image"
-              />
-              <h3>{item.title}</h3>
-            </motion.div>
+        <Swiper
+          modules={[Autoplay, Navigation]}
+          spaceBetween={30}
+          slidesPerView={4}
+          loop={true}
+          navigation
+          speed={5000}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+          }}
+          allowTouchMove={false}
+          breakpoints={{
+            320: { slidesPerView: 1, spaceBetween: 15 },
+            640: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 25 },
+            1400: { slidesPerView: 4, spaceBetween: 30 },
+            1800: { slidesPerView: 5, spaceBetween: 30 },
+          }}
+        >
+          {portfolio.concat(portfolio).map((item, i) => (
+            <SwiperSlide key={i}>
+              <motion.div
+                className="portfolio-card"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  loading="lazy"
+                  className="portfolio-image"
+                />
+                <h3>{item.title}</h3>
+              </motion.div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </section>
 
       {/* ===== Testimonials ===== */}
