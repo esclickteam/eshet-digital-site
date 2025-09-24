@@ -301,13 +301,13 @@
 }
 .mockup-screen {
   position: absolute;
-  top: 7.9%;        /* התאמה לגבול העליון */
-  left: 7.1%;       /* התאמה לגבול השמאלי */
-  width: 85.8%;     /* פריסה מלאה לרוחב */
-  height: 69%;      /* פריסה מלאה לגובה */
-  object-fit: cover;   /* ימלא את כל השטח */
+  top: 7.9%;          /* ממקם נכון מהחלק העליון */
+  left: 7.1%;         /* ממקם נכון מהצד */
+  width: 85.8%;       /* בול לרוחב המסך */
+  height: 69%;        /* בול לגובה המסך */
+  object-fit: contain;   /* שומר שהתמונה תיכנס למסך */
   object-position: center;
-  border-radius: 0;  /* אם לא רוצים עיגול בקצוות */
+  border-radius: 0;
   z-index: 1;
 }
 .overlay {
