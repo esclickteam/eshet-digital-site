@@ -305,6 +305,7 @@
   text-align: left;
   cursor: pointer;
   transition: color 0.3s ease;
+  color: #111; /* 👈 טקסט כהה לשאלות */
 }
 .faq-question:hover {
   color: var(--brand-color);
