@@ -18,8 +18,9 @@
 .hero {
   background: var(--brand-color);
   color: var(--text-light);
-  padding: 100px 20px;
+  padding: 100px 20px 40px;
   text-align: center;
+  position: relative;
 }
 .hero-content {
   max-width: 1200px;
@@ -59,14 +60,15 @@
   border-radius: 12px;
 }
 
-/* ===== Tech Logos Section ===== */
+/* ===== Tech Logos מתחת להירו ===== */
+.hero-logos-full {
+  margin-top: 40px;
+  padding: 30px 0;
+  background: var(--brand-color); /* ממשיך את הכחול */
+}
 .tech-logos {
-  background: #fff;
-  padding: 40px 0;
+  padding: 0; /* מנקה padding פנימי */
   overflow: hidden;
-  position: relative;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
 }
 .logos-track {
   display: flex;
@@ -78,7 +80,7 @@
   flex-shrink: 0;
   text-align: center;
   padding: 10px;
-  opacity: 0.85;
+  opacity: 0.9;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .logo-card:hover {
@@ -89,10 +91,11 @@
   max-height: 50px;
   margin: 0 auto 10px;
   display: block;
+  filter: brightness(0) invert(1); /* הופך ללבן על כחול */
 }
 .logo-card span {
   font-size: 0.9rem;
-  color: #555;
+  color: #fff;
   display: block;
 }
 

@@ -140,12 +140,13 @@ export default function WebsiteLanding() {
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
             />
-            {/* ✅ הלוגואים מתחת ללפטופ */}
-            <div className="hero-logos">
-              <TechLogos />
-            </div>
           </motion.div>
         </motion.div>
+
+        {/* ✅ הלוגואים אחרי כל ה-Hero על הרקע הכחול */}
+        <div className="hero-logos-full">
+          <TechLogos />
+        </div>
       </section>
 
       {/* ===== UX Benefits Section ===== */}
