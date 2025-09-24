@@ -15,7 +15,7 @@
 .landing-page {
   font-family: "Poppins", sans-serif;
   color: var(--text-dark);
-  background: #fff;
+  background: linear-gradient(180deg, #1d2671 0%, #5b86e5 50%, #36d1dc 100%);
   line-height: 1.6;
 }
 
@@ -150,11 +150,12 @@
 .ux-benefits {
   padding: 80px 20px;
   text-align: center;
-  background: linear-gradient(180deg, #5b86e5 0%, #36d1dc 100%);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.12); /* רקע שקוף עדין */
+  backdrop-filter: blur(8px);            /* אפקט זכוכית */
   border-radius: 20px;
   max-width: 1200px;
   margin: 60px auto;
+  color: #fff;
 }
 .ux-benefits h2 {
   font-size: 2.2rem;
@@ -177,10 +178,11 @@
   margin: 0 auto;
 }
 .ux-card {
-  background: rgba(255,255,255,0.1);
+  background: #fff;
   border-radius: 16px;
   padding: 40px 20px;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  color: #111;
 }
 .ux-card:hover {
   transform: translateY(-6px);
@@ -202,28 +204,30 @@
 /* ===== Stats ===== */
 .why-choose {
   padding: 80px 20px;
-  background: #f3f4f8;
   text-align: center;
+  background: rgba(255, 255, 255, 0.12); /* רקע שקוף עדין */
+  backdrop-filter: blur(8px);            /* אפקט זכוכית */
+  border-radius: 20px;
+  max-width: 1200px;
+  margin: 60px auto;
 }
 .why-choose h2 {
   font-size: 2rem;
-  color: var(--brand-color);
+  color: var(--text-light); /* לבן כדי לבלוט על הרקע */
 }
+
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
   margin-top: 40px;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
 }
 .stat-box {
   border-radius: 16px;
   padding: 40px 20px;
-  color: #fff;
   font-weight: 600;
   transition: transform 0.3s ease;
+  color: #fff; /* צבע טקסט לבן */
 }
 .stat-box:hover {
   transform: translateY(-6px);
@@ -250,27 +254,29 @@
 .portfolio {
   padding: 80px 20px;
   text-align: center;
-  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+  background: rgba(255, 255, 255, 0.12); /* רקע שקוף עדין */
+  backdrop-filter: blur(8px);            /* אפקט זכוכית */
+  border-radius: 20px;
+  max-width: 1400px;
+  margin: 60px auto;
 }
+
 .portfolio h2 {
   font-size: 2rem;
   margin-bottom: 50px;
   font-weight: 700;
-  color: var(--brand-color);
+  color: var(--text-light); /* לבן כדי לבלוט על הרקע */
 }
-.swiper {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding-bottom: 50px;
-}
+
 .portfolio-card {
-  background: #fff;
+  background: #fff; /* כרטיס לבן פנימי */
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   height: 100%;
 }
+
 .portfolio-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 24px rgba(0,0,0,0.12);
