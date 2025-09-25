@@ -379,22 +379,25 @@
   height: 42px;
   border-radius: 50%;
   border: none;
-  background: rgba(0, 0, 0, 0.6);  /* רקע שחור שקוף */
-  color: #fff;                     /* איקס בלבן */
-  font-size: 1.6rem;
-  font-weight: bold;
+  background: rgba(0, 0, 0, 0.6);  /* שחור שקוף */
   cursor: pointer;
-  z-index: 10001;
+  z-index: 99999;                  /* לוודא מעל כל תוכן */
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 .lightbox-close:hover {
-  background: #e63939;
+  background: rgba(0, 0, 0, 0.85);
   transform: scale(1.1);
 }
 
+.lightbox-close svg {
+  width: 24px;           /* גודל האייקון */
+  height: 24px;
+  stroke: #fff !important; /* הצבע של הקווים = לבן */
+  stroke-width: 2.5;     /* עובי הקווים */
+}
 
 /* ===== חיצי ניווט ===== */
 .lightbox-prev,
