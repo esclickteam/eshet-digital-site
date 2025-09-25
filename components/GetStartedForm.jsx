@@ -19,7 +19,6 @@ export default function GetStartedForm() {
   const [phone, setPhone] = useState("");
   const router = useRouter();
 
-  // ✅ טעינת reCAPTCHA
   useEffect(() => {
     const script = document.createElement("script");
     script.src =
@@ -56,7 +55,7 @@ export default function GetStartedForm() {
       return;
     }
 
-    // ✅ הפעלת reCAPTCHA
+    // ✅ reCAPTCHA
     const token = await window.grecaptcha.execute(
       "6LdIndQrAAAAAHKdTiHWz6ep8FShGPF08g7zIRZJ",
       { action: "submit" }
@@ -68,7 +67,7 @@ export default function GetStartedForm() {
       return;
     }
 
-    // ולידציות
+    // ✅ ולידציות
     if (!isValidEmail(form.email.value)) {
       setStatus("invalid_email");
       setLoading(false);
@@ -80,27 +79,26 @@ export default function GetStartedForm() {
       return;
     }
 
-    // ✅ נתונים ל-HubSpot
+    // ✅ נתונים ל-HubSpot (Internal names!)
     const data = {
       fields: [
         { name: "firstname", value: form.firstname.value },
         { name: "lastname", value: form.lastname.value },
         { name: "email", value: form.email.value },
         { name: "phone", value: phone },
-        { name: "name", value: form.name.value },
-        { name: "eshet_digital", value: form.eshet_digital.value },
-        { name: "b", value: form.b.value },
+        { name: "company", value: form.name.value },
+        { name: "service_type", value: form.eshet_digital.value },
+        { name: "message", value: form.b.value },
       ],
       context: {
         pageUri: window.location.href,
         pageName: document.title,
-        hutk: token, // 📌 שליחת הטוקן ל-HubSpot
       },
     };
 
     try {
       const res = await fetch(
-        "https://api.hsforms.com/submissions/v3/integration/submit/146946532/096acd9d-2441-4d91-a2a0-0de36128239a",
+        "https://api.hsforms.eu/submissions/v3/integration/submit/146946532/096acd9d-2441-4d91-a2a0-0de36128239a",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -161,12 +159,12 @@ export default function GetStartedForm() {
           </div>
 
           <div className="form-group">
-            <input type="text" name="name" placeholder="Company" />
+            <input type="text" name="company" placeholder="Company" />
             <FaBuilding className="icon" />
           </div>
 
           <div className="form-group">
-            <select name="eshet_digital" required>
+            <select name="service_type" required>
               <option value="">Select a Service*</option>
               <option value="Web Development">Web Development</option>
               <option value="Branding">Branding</option>
@@ -177,7 +175,7 @@ export default function GetStartedForm() {
           </div>
 
           <div className="form-group">
-            <textarea name="b" placeholder="How can we help you?" rows="4"></textarea>
+            <textarea name="message" placeholder="How can we help you?" rows="4"></textarea>
             <FaQuestionCircle className="icon" />
           </div>
 
