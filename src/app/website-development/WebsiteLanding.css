@@ -654,3 +654,11 @@
   color: #fff;
   font-weight: bold;
 }
+
+/* מסתיר כפתורים ריקים */
+.btn:empty,
+.btn-primary:empty,
+a.btn:empty {
+  display: none !important;
+  visibility: hidden !important;
+}
