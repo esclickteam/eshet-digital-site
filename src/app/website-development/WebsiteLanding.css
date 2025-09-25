@@ -379,15 +379,15 @@
   height: 42px;
   border-radius: 50%;
   border: none;
-  background: #ff4d4d;   /* אדום בולט */
-  color: #fff;           /* אייקס בלבן */
-  font-size: 1.5rem;
+  background: rgba(0, 0, 0, 0.6);  /* רקע שחור שקוף */
+  color: #fff;                     /* איקס בלבן */
+  font-size: 1.6rem;
+  font-weight: bold;
   cursor: pointer;
   z-index: 10001;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.25); /* הצללה עדינה */
   transition: background 0.3s ease, transform 0.2s ease;
 }
 .lightbox-close:hover {
