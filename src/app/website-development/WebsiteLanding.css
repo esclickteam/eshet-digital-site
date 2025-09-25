@@ -346,6 +346,7 @@
   z-index: 9999;
   backdrop-filter: blur(4px);
 }
+
 .lightbox-content {
   position: relative;
   max-width: 1200px;
@@ -356,37 +357,71 @@
   padding: 20px;
   text-align: center;
 }
+
 .lightbox-mockup {
   position: relative;
   width: 100%;
   max-width: 900px;
   margin: 0 auto 20px;
 }
+
 .lightbox-info h3 {
   margin-bottom: 10px;
   font-size: 1.5rem;
 }
-.lightbox-close,
+
+/* ===== כפתור סגירה ===== */
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: #ff4d4d;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+.lightbox-close:hover {
+  background: #e63939;
+}
+
+/* ===== חיצי ניווט ===== */
 .lightbox-prev,
 .lightbox-next {
   position: absolute;
-  background: none;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   border: none;
-  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1.5rem;
   cursor: pointer;
-  z-index: 10000;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
 }
-.lightbox-close { top: 20px; right: 20px; }
-.lightbox-prev {
-  top: 50%;
-  left: 20px;
-  transform: translateY(-50%);
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(0, 0, 0, 0.85);
 }
-.lightbox-next {
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-}
+
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
 
 /* ===== Testimonials ===== */
 .testimonials {
