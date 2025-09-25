@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import {
   FaUser,
@@ -19,20 +19,25 @@ export default function GetStartedForm() {
   const [phone, setPhone] = useState("");
   const router = useRouter();
 
-  // 📌 פונקציות ולידציה
+  // ✅ טעינת reCAPTCHA
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src =
+      "https://www.google.com/recaptcha/api.js?render=6LdIndQrAAAAAHKdTiHWz6ep8FShGPF08g7zIRZJ";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   const isValidEmail = (email) => {
     const blockedDomains = ["yandex.com", "mail.ru", "tempmail", "mailinator"];
     const domain = email.split("@")[1]?.toLowerCase();
     if (!domain) return false;
     if (blockedDomains.some((d) => domain.includes(d))) return false;
-
-    // Regex בסיסי למייל תקין
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
   };
 
   const isValidUSPhone = (phone) => {
-    // טלפון חייב להתחיל ב +1 ולכלול 10 ספרות לפחות
     const regex = /^\+1\d{10,}$/;
     return regex.test(phone);
   };
@@ -44,21 +49,31 @@ export default function GetStartedForm() {
 
     const form = e.target;
 
-    // Honeypot – אם התמלא → ספאם
+    // ✅ Honeypot
     if (form.website_url_2.value) {
       setStatus("error");
       setLoading(false);
       return;
     }
 
-    // ולידציה של מייל
+    // ✅ הפעלת reCAPTCHA
+    const token = await window.grecaptcha.execute(
+      "6LdIndQrAAAAAHKdTiHWz6ep8FShGPF08g7zIRZJ",
+      { action: "submit" }
+    );
+
+    if (!token) {
+      setStatus("error");
+      setLoading(false);
+      return;
+    }
+
+    // ולידציות
     if (!isValidEmail(form.email.value)) {
       setStatus("invalid_email");
       setLoading(false);
       return;
     }
-
-    // ולידציה של טלפון (רק ארה"ב)
     if (!isValidUSPhone(phone)) {
       setStatus("invalid_phone");
       setLoading(false);
@@ -79,6 +94,7 @@ export default function GetStartedForm() {
       context: {
         pageUri: window.location.href,
         pageName: document.title,
+        hutk: token, // 📌 שליחת הטוקן ל-HubSpot
       },
     };
 
@@ -87,9 +103,7 @@ export default function GetStartedForm() {
         "https://api.hsforms.com/submissions/v3/integration/submit/146946532/096acd9d-2441-4d91-a2a0-0de36128239a",
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
         }
       );
@@ -120,46 +134,37 @@ export default function GetStartedForm() {
         </p>
 
         <form onSubmit={handleSubmit} className="contact-form">
-          {/* First Name */}
           <div className="form-group">
             <input type="text" name="firstname" placeholder="First Name*" required />
             <FaUser className="icon" />
           </div>
 
-          {/* Last Name */}
           <div className="form-group">
             <input type="text" name="lastname" placeholder="Last Name*" required />
             <FaUser className="icon" />
           </div>
 
-          {/* Email */}
           <div className="form-group">
             <input type="email" name="email" placeholder="Email Address*" required />
             <FaEnvelope className="icon" />
           </div>
 
-          {/* Phone (US only) */}
           <div className="form-group phone-input">
             <PhoneInput
-              country={"us"} // 📌 ברירת מחדל ארה"ב
+              country={"us"}
               value={phone}
               onChange={(val) => setPhone("+" + val)}
-              inputProps={{
-                name: "phone",
-                required: true,
-              }}
+              inputProps={{ name: "phone", required: true }}
               placeholder="Phone Number*"
             />
             <FaPhone className="icon" />
           </div>
 
-          {/* Company */}
           <div className="form-group">
             <input type="text" name="name" placeholder="Company" />
             <FaBuilding className="icon" />
           </div>
 
-          {/* Services */}
           <div className="form-group">
             <select name="eshet_digital" required>
               <option value="">Select a Service*</option>
@@ -171,16 +176,14 @@ export default function GetStartedForm() {
             <FaCogs className="icon" />
           </div>
 
-          {/* Message */}
           <div className="form-group">
             <textarea name="b" placeholder="How can we help you?" rows="4"></textarea>
             <FaQuestionCircle className="icon" />
           </div>
 
-          {/* Honeypot (סמוי) */}
+          {/* Honeypot */}
           <input type="text" name="website_url_2" style={{ display: "none" }} />
 
-          {/* Submit Button */}
           <button
             type="submit"
             className={`submit-btn ${loading ? "loading" : ""}`}
