@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBriefcase, FaFolderOpen, FaHandshake, FaUsers } from "react-icons/fa";
-import { Smartphone, Zap, Target, Shield } from "lucide-react";
+import { Smartphone, Zap, Target, Shield, X, ChevronLeft, ChevronRight } from "lucide-react";
 import "./WebsiteLanding.css";
 import DevelopmentWorkflow from "../../../components/DevelopmentWorkflow";
 import GetStartedForm from "../../../components/GetStartedForm";
@@ -44,19 +44,33 @@ export default function WebsiteLanding() {
   ];
 
   const portfolio = [
-    { src: "/portfolio/1.jpg", title: "Personal Training Website" },
-    { src: "/portfolio/2.jpg", title: "Fashion E-commerce Website" },
-    { src: "/portfolio/3.jpg", title: "Construction Business Website" },
-    { src: "/portfolio/4.jpg", title: "Real Estate Business Website" },
-    { src: "/portfolio/5.jpg", title: "Bakery E-commerce Website" },
-    { src: "/portfolio/6.jpg", title: "Bridal Studio Website" },
-    { src: "/portfolio/7.jpg", title: "Flower Shop E-commerce Website" },
-    { src: "/portfolio/8.jpg", title: "Hair Studio Website" },
+    { src: "/portfolio/1.jpg", title: "Personal Training Website", link: "#" },
+    { src: "/portfolio/2.jpg", title: "Fashion E-commerce Website", link: "#" },
+    { src: "/portfolio/3.jpg", title: "Construction Business Website", link: "#" },
+    { src: "/portfolio/4.jpg", title: "Real Estate Business Website", link: "#" },
+    { src: "/portfolio/5.jpg", title: "Bakery E-commerce Website", link: "#" },
+    { src: "/portfolio/6.jpg", title: "Bridal Studio Website", link: "#" },
+    { src: "/portfolio/7.jpg", title: "Flower Shop E-commerce Website", link: "#" },
+    { src: "/portfolio/8.jpg", title: "Hair Studio Website", link: "#" },
   ];
 
   const [counts, setCounts] = useState(stats.map(() => 0));
   const [index, setIndex] = useState(0);
   const [activeFAQ, setActiveFAQ] = useState(null);
+
+  // ✅ Portfolio Lightbox
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const openLightbox = (i) => {
+    setActiveIndex(i);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => setLightboxOpen(false);
+
+  const prevSlide = () => setActiveIndex((prev) => (prev === 0 ? portfolio.length - 1 : prev - 1));
+  const nextSlide = () => setActiveIndex((prev) => (prev === portfolio.length - 1 ? 0 : prev + 1));
 
   // ✅ Testimonials Auto Rotate
   useEffect(() => {
@@ -242,23 +256,73 @@ export default function WebsiteLanding() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
+                onClick={() => openLightbox(i)}
               >
                 <div className="mockup">
-                  {/* המסגרת */}
                   <img src="/mockups/imac-frame.png" alt="iMac frame" className="mockup-frame" />
-                  {/* המסך + overlay */}
-                  <div className="mockup-inner">
-                    <img src={item.src} alt={item.title} className="mockup-screen" />
-                    <div className="overlay">
-                      <h3>{item.title}</h3>
-                    </div>
-                  </div>
+                  <img src={item.src} alt={item.title} className="mockup-screen" />
                 </div>
               </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
       </section>
+
+      {/* ===== Lightbox ===== */}
+      <AnimatePresence>
+        {lightboxOpen && (
+          <motion.div
+            className="lightbox-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="lightbox-content"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {/* Close Button */}
+              <button className="lightbox-close" onClick={closeLightbox}>
+                <X size={28} />
+              </button>
+
+              {/* Prev / Next */}
+              <button className="lightbox-prev" onClick={prevSlide}>
+                <ChevronLeft size={40} />
+              </button>
+              <button className="lightbox-next" onClick={nextSlide}>
+                <ChevronRight size={40} />
+              </button>
+
+              {/* Mockup */}
+              <div className="lightbox-mockup">
+                <img src="/mockups/imac-frame.png" alt="iMac frame" className="mockup-frame" />
+                <img
+                  src={portfolio[activeIndex].src}
+                  alt={portfolio[activeIndex].title}
+                  className="mockup-screen"
+                />
+              </div>
+
+              {/* Info */}
+              <div className="lightbox-info">
+                <h3>{portfolio[activeIndex].title}</h3>
+                <a
+                  href={portfolio[activeIndex].link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                >
+                  View Live Site
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* ===== Testimonials ===== */}
       <section className="testimonials">
