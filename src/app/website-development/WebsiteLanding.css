@@ -379,19 +379,20 @@
   height: 42px;
   border-radius: 50%;
   border: none;
-  background: #ff4d4d;
-  color: #fff;
+  background: #ff4d4d;   /* אדום */
+  color: #fff;           /* טקסט לבן */
   font-size: 1.4rem;
   font-weight: bold;
   cursor: pointer;
-  z-index: 10001;
+  z-index: 10001;        /* מעל כל האלמנטים */
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 .lightbox-close:hover {
   background: #e63939;
+  transform: scale(1.1);
 }
 
 /* ===== חיצי ניווט ===== */
