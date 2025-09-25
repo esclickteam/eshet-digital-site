@@ -81,20 +81,20 @@ export default function GetStartedForm() {
 
     // ✅ נתונים ל-HubSpot (Internal names!)
     const data = {
-      fields: [
-        { name: "firstname", value: form.firstname.value },
-        { name: "lastname", value: form.lastname.value },
-        { name: "email", value: form.email.value },
-        { name: "phone", value: phone },
-        { name: "company", value: form.name.value },
-        { name: "service_type", value: form.eshet_digital.value },
-        { name: "message", value: form.b.value },
-      ],
-      context: {
-        pageUri: window.location.href,
-        pageName: document.title,
-      },
-    };
+  fields: [
+    { name: "firstname", value: form.firstname.value },
+    { name: "lastname", value: form.lastname.value },
+    { name: "email", value: form.email.value },
+    { name: "phone", value: phone },
+    { name: "name", value: form.company.value },          // Company name
+    { name: "eshet_digital", value: form.service_type.value }, // Services dropdown
+    { name: "b", value: form.message.value },             // Message
+  ],
+  context: {
+    pageUri: window.location.href,
+    pageName: document.title,
+  },
+};
 
     try {
       const res = await fetch(
