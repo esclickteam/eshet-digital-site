@@ -286,8 +286,8 @@ export default function WebsiteLanding() {
             >
               {/* Close Button */}
               <button className="lightbox-close" onClick={closeLightbox}>
-                <X size={28} />
-              </button>
+  <X size={28} stroke="#fff" strokeWidth={3} />
+</button>
 
               {/* Prev / Next */}
               <button className="lightbox-prev" onClick={prevSlide}>

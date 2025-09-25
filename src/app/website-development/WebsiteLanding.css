@@ -379,13 +379,13 @@
   height: 42px;
   border-radius: 50%;
   border: none;
-  background: rgba(0, 0, 0, 0.6);  /* שחור שקוף */
+  background: rgba(0, 0, 0, 0.6);  /* שחור שקוף, יראה טוב גם על לבן */
   cursor: pointer;
-  z-index: 99999;                  /* לוודא מעל כל תוכן */
+  z-index: 10001;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 .lightbox-close:hover {
   background: rgba(0, 0, 0, 0.85);
