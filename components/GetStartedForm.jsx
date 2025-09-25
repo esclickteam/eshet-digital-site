@@ -150,12 +150,14 @@ export default function GetStartedForm() {
 
           <div className="form-group phone-input">
             <PhoneInput
-              country={"us"}
-              value={phone}
-              onChange={(val) => setPhone("+" + val)}
-              inputProps={{ name: "phone", required: true }}
-              placeholder="Phone Number*"
-            />
+  onlyCountries={["us"]}      // ✅ משאיר רק את ארה"ב
+  country={"us"}              // ✅ ברירת מחדל ארה"ב
+  disableDropdown={true}      // ✅ מבטל אפשרות לשנות מדינה
+  value={phone}
+  onChange={(val) => setPhone("+" + val)}
+  inputProps={{ name: "phone", required: true }}
+  placeholder="Phone Number*"
+/>
             <FaPhone className="icon" />
           </div>
 
