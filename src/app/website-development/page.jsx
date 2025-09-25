@@ -298,10 +298,10 @@ export default function WebsiteLanding() {
             >
               {/* Prev / Next */}
               <button className="lightbox-prev" onClick={prevSlide}>
-                <ChevronLeft size={40} />
+                <ChevronLeft size={60} />
               </button>
               <button className="lightbox-next" onClick={nextSlide}>
-                <ChevronRight size={40} />
+                <ChevronRight size={60} />
               </button>
 
               {/* Mockup */}
