@@ -98,13 +98,14 @@ export default function GetStartedForm() {
 
     try {
       const res = await fetch(
-        "https://api.hsforms.eu/submissions/v3/integration/submit/146946532/096acd9d-2441-4d91-a2a0-0de36128239a",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        }
-      );
+  "https://forms-eu1.hsforms.com/submissions/v3/integration/submit/146946532/096acd9d-2441-4d91-a2a0-0de36128239a",
+  {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  }
+);
+
 
       if (res.ok) {
         form.reset();
