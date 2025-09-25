@@ -380,7 +380,7 @@
   border-radius: 50%;
   border: none;
   background: #ff4d4d;   /* אדום בולט */
-  color: #fff;           /* טקסט לבן */
+  color: #ff4d4d;           /* טקסט לבן */
   cursor: pointer;
   z-index: 10001;
   display: flex;
@@ -393,11 +393,6 @@
   transform: scale(1.1);
 }
 
-.lightbox-close svg {
-  stroke: #fff;   /* מכריח את האייקון להיות לבן */
-  width: 24px;
-  height: 24px;
-}
 
 /* ===== חיצי ניווט ===== */
 .lightbox-prev,
