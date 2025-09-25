@@ -405,10 +405,12 @@
   transform: scale(1.1);
 }
 .lightbox-close svg {
-  width: 24px;
-  height: 24px;
-  stroke: #fff !important;
-  stroke-width: 2.5;
+  width: 26px;
+  height: 26px;
+  stroke: #fff !important;       /* ✅ קווים בלבן */
+  fill: none !important;         /* ✅ בלי מילוי */
+  stroke-width: 3px !important;  /* ✅ עבה יותר */
+  pointer-events: none;          /* ✅ לא תופס קליקים */
 }
 
 /* מובייל */
