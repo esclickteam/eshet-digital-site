@@ -323,7 +323,7 @@ export default function WebsiteLanding() {
                   rel="noopener noreferrer"
                   className="btn btn-primary"
                 >
-                  View Live Site
+                  
                 </a>
               </div>
             </motion.div>
