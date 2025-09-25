@@ -16,8 +16,26 @@ import "./GetStartedForm.css";
 export default function GetStartedForm() {
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
-  const [phone, setPhone] = useState(""); // 📌 ערך טלפון
+  const [phone, setPhone] = useState("");
   const router = useRouter();
+
+  // 📌 פונקציות ולידציה
+  const isValidEmail = (email) => {
+    const blockedDomains = ["yandex.com", "mail.ru", "tempmail", "mailinator"];
+    const domain = email.split("@")[1]?.toLowerCase();
+    if (!domain) return false;
+    if (blockedDomains.some((d) => domain.includes(d))) return false;
+
+    // Regex בסיסי למייל תקין
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  const isValidUSPhone = (phone) => {
+    // טלפון חייב להתחיל ב +1 ולכלול 10 ספרות לפחות
+    const regex = /^\+1\d{10,}$/;
+    return regex.test(phone);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,16 +44,37 @@ export default function GetStartedForm() {
 
     const form = e.target;
 
-    // הכנת הנתונים ל-HubSpot API עם השמות הנכונים
+    // Honeypot – אם התמלא → ספאם
+    if (form.website_url_2.value) {
+      setStatus("error");
+      setLoading(false);
+      return;
+    }
+
+    // ולידציה של מייל
+    if (!isValidEmail(form.email.value)) {
+      setStatus("invalid_email");
+      setLoading(false);
+      return;
+    }
+
+    // ולידציה של טלפון (רק ארה"ב)
+    if (!isValidUSPhone(phone)) {
+      setStatus("invalid_phone");
+      setLoading(false);
+      return;
+    }
+
+    // ✅ נתונים ל-HubSpot
     const data = {
       fields: [
         { name: "firstname", value: form.firstname.value },
         { name: "lastname", value: form.lastname.value },
         { name: "email", value: form.email.value },
-        { name: "phone", value: phone }, // 📌 שמירת הטלפון מה-state
-        { name: "name", value: form.name.value }, // ✅ Company name
-        { name: "eshet_digital", value: form.eshet_digital.value }, // ✅ Services dropdown
-        { name: "b", value: form.b.value }, // ✅ Message
+        { name: "phone", value: phone },
+        { name: "name", value: form.name.value },
+        { name: "eshet_digital", value: form.eshet_digital.value },
+        { name: "b", value: form.b.value },
       ],
       context: {
         pageUri: window.location.href,
@@ -57,7 +96,7 @@ export default function GetStartedForm() {
 
       if (res.ok) {
         form.reset();
-        setPhone(""); // 📌 איפוס שדה טלפון
+        setPhone("");
         router.push("/thank-you");
       } else {
         const errMsg = await res.json();
@@ -75,7 +114,6 @@ export default function GetStartedForm() {
   return (
     <section className="get-started">
       <div className="form-container">
-        {/* כותרת + תת כותרת */}
         <h2>Start Your Project</h2>
         <p className="form-subtitle">
           Our team will get back to you within 24 hours
@@ -84,43 +122,28 @@ export default function GetStartedForm() {
         <form onSubmit={handleSubmit} className="contact-form">
           {/* First Name */}
           <div className="form-group">
-            <input
-              type="text"
-              name="firstname"
-              placeholder="First Name*"
-              required
-            />
+            <input type="text" name="firstname" placeholder="First Name*" required />
             <FaUser className="icon" />
           </div>
 
           {/* Last Name */}
           <div className="form-group">
-            <input
-              type="text"
-              name="lastname"
-              placeholder="Last Name*"
-              required
-            />
+            <input type="text" name="lastname" placeholder="Last Name*" required />
             <FaUser className="icon" />
           </div>
 
           {/* Email */}
           <div className="form-group">
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address*"
-              required
-            />
+            <input type="email" name="email" placeholder="Email Address*" required />
             <FaEnvelope className="icon" />
           </div>
 
-          {/* Phone (עם בחירת מדינה) */}
+          {/* Phone (US only) */}
           <div className="form-group phone-input">
             <PhoneInput
-              country={"il"} // ברירת מחדל ישראל
+              country={"us"} // 📌 ברירת מחדל ארה"ב
               value={phone}
-              onChange={(val) => setPhone(val)}
+              onChange={(val) => setPhone("+" + val)}
               inputProps={{
                 name: "phone",
                 required: true,
@@ -136,7 +159,7 @@ export default function GetStartedForm() {
             <FaBuilding className="icon" />
           </div>
 
-          {/* Services Dropdown */}
+          {/* Services */}
           <div className="form-group">
             <select name="eshet_digital" required>
               <option value="">Select a Service*</option>
@@ -150,13 +173,12 @@ export default function GetStartedForm() {
 
           {/* Message */}
           <div className="form-group">
-            <textarea
-              name="b"
-              placeholder="How can we help you?"
-              rows="4"
-            ></textarea>
+            <textarea name="b" placeholder="How can we help you?" rows="4"></textarea>
             <FaQuestionCircle className="icon" />
           </div>
+
+          {/* Honeypot (סמוי) */}
+          <input type="text" name="website_url_2" style={{ display: "none" }} />
 
           {/* Submit Button */}
           <button
@@ -176,6 +198,12 @@ export default function GetStartedForm() {
           </button>
         </form>
 
+        {status === "invalid_email" && (
+          <p className="error-msg">✖ Please enter a valid business email.</p>
+        )}
+        {status === "invalid_phone" && (
+          <p className="error-msg">✖ Please enter a valid US phone number (+1).</p>
+        )}
         {status === "error" && (
           <p className="error-msg">
             ✖ Oops! Something went wrong, please try again.
