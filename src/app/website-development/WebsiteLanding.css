@@ -448,8 +448,8 @@
 .lightbox-next:hover {
   background: rgba(0, 0, 0, 0.85);
 }
-.lightbox-prev { left: 20px; }
-.lightbox-next { right: 20px; }
+.lightbox-prev { left: 30px; }   /* ✅ מיקום שמאל */
+.lightbox-next { right: 30px; }  
 
 /* ===== Testimonials ===== */
 .testimonials {
