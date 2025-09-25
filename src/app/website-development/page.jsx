@@ -277,6 +277,18 @@ export default function WebsiteLanding() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
+            {/* ✅ Close Button מחוץ ל־content */}
+            <motion.button
+              className="lightbox-close"
+              onClick={closeLightbox}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.2 }}
+            >
+              <X size={28} stroke="#fff" strokeWidth={3} />
+            </motion.button>
+
             <motion.div
               className="lightbox-content"
               initial={{ scale: 0.8, opacity: 0 }}
@@ -284,11 +296,6 @@ export default function WebsiteLanding() {
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              {/* Close Button */}
-              <button className="lightbox-close" onClick={closeLightbox}>
-  <X size={28} stroke="#fff" strokeWidth={3} />
-</button>
-
               {/* Prev / Next */}
               <button className="lightbox-prev" onClick={prevSlide}>
                 <ChevronLeft size={40} />
