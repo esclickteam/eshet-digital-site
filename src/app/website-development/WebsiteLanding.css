@@ -600,7 +600,7 @@
 }
 
 .faq-question:hover { 
-  color: var(--brand-color); /* ✅ נצבע בצבע מותג בהובר */
+  color: #111; /* ✅ נצבע בצבע מותג בהובר */
 }
 
 .faq-item.active .faq-question {
