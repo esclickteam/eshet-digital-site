@@ -79,11 +79,16 @@ textarea {
   padding-bottom: 6px;
 }
 
+/* הדגל + הקידומת */
 .react-international-phone-country-selector {
   background: transparent !important;
   border: none !important;
   color: #fff !important;
   margin-right: 10px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .react-international-phone-country-selector button {
@@ -93,8 +98,10 @@ textarea {
   display: flex;
   align-items: center;
   gap: 6px;
+  cursor: pointer;
 }
 
+/* שדה המספר */
 .react-international-phone-input {
   flex: 1;
   background: transparent !important;
@@ -103,6 +110,7 @@ textarea {
   font-size: 1rem;
   height: 44px;
   outline: none !important;
+  padding: 0;
 }
 
 /* ===== Submit Button ===== */
