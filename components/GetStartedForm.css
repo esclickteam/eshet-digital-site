@@ -74,15 +74,16 @@ textarea {
   width: 100%;
   margin-bottom: 20px;
   display: flex;
+  align-items: center;
 }
 
-/* קידומת + דגל */
+/* דגל + קידומת */
 .phone-input .react-tel-input .flag-dropdown {
   background: transparent !important;
   border: none !important;
   border-bottom: 1px solid rgba(255,255,255,0.6) !important;
   border-radius: 0 !important;
-  width: 120px;
+  width: 100px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
