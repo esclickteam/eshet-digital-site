@@ -18,7 +18,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* ===== Dark Mode ===== */
-    --background: #1e2a78;   /* גם במצב Dark נשאר אחיד */
+    --background: #1e2a78;
     --foreground: #ffffff;
 
     /* Adjusted brand colors for dark mode */
@@ -99,29 +99,45 @@ a:hover::after {
   width: 100%;
 }
 
-/* ===== Buttons ===== */
+/* ===== Buttons (Neon Blue-Purple) ===== */
 button,
 .btn-primary {
   display: inline-block;
-  background: linear-gradient(135deg, #25d366, #20c057); /* ✅ גרדיאנט ירוק */
-  color: #fff;
-  border: 2px solid #fff; /* ✅ מסגרת לבנה עדינה */
+  background: #fff;              /* ברירת מחדל לבן */
+  color: #2563eb;                /* טקסט כחול */
+  border: 2px solid #2563eb;     /* מסגרת כחולה */
   padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 30px);
-  border-radius: 50px;
+  border-radius: 8px;
   font-size: clamp(0.9rem, 1vw, 1rem);
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* ✅ צל מודגש יותר */
+  text-transform: uppercase;
+  box-shadow: 
+    0 0 6px rgba(59, 130, 246, 0.7),
+    0 0 12px rgba(147, 51, 234, 0.6),
+    0 0 20px rgba(147, 51, 234, 0.5); /* ניאון כחול-סגול */
 }
 
 button:hover,
 .btn-primary:hover {
-  background: linear-gradient(135deg, #20c057, #1aa34a); /* ✅ ירוק כהה יותר בהובר */
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(135deg, #3b82f6, #9333ea); /* כחול → סגול */
+  color: #fff !important;
+  border-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: 
+    0 0 10px rgba(59, 130, 246, 0.9),
+    0 0 20px rgba(147, 51, 234, 0.8),
+    0 0 30px rgba(147, 51, 234, 0.7);
 }
 
+button:active,
+.btn-primary:active {
+  background: linear-gradient(135deg, #2563eb, #7c3aed) !important;
+  transform: scale(0.96);
+  color: #fff !important;
+  box-shadow: inset 0 3px 8px rgba(0,0,0,0.4);
+}
 
 /* ===== Utilities ===== */
 .text-center {
