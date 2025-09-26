@@ -90,7 +90,7 @@ textarea {
 
 /* ===== הקופסה לדגל בלבד ===== */
 .phone-input .react-tel-input .selected-flag {
-  width: 36px !important;   /* קופסה קטנה */
+  width: 36px !important;
   height: 26px !important;
   padding: 0 !important;
   border-radius: 6px !important;
@@ -99,23 +99,24 @@ textarea {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  overflow: hidden !important;   /* ✅ מונע כפילות */
+  overflow: hidden !important;
   box-shadow: none !important;
-  transition: all 0.3s ease;
 }
 
 /* רק הדגל בפנים */
 .phone-input .react-tel-input .selected-flag .flag {
-  display: inline-block !important;
+  display: block !important;
   width: 24px !important;
   height: 16px !important;
   border-radius: 3px !important;
   box-shadow: 0 0 3px rgba(0,0,0,0.2);
 
-  background-size: auto !important;       /* ❌ לא cover */
-  background-position: center !important; /* ✅ נשארת מיקום מתוך ה-sprite */
+  /* ❌ אל תשתמש ב-cover */
+  background-size: auto !important;       
+  background-position: center !important; 
   background-repeat: no-repeat !important;
 }
+
 
 /* מסתיר את הקידומת מתוך הקופסה */
 .phone-input .react-tel-input .selected-flag .selected-dial-code {
