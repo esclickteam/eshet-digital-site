@@ -8,6 +8,7 @@ import ValuesSection from "./ValuesSection";
 import StatsSection from "../../components/StatsSection"; 
 import DevelopmentProcessSection from "../../components/DevelopmentProcessSection"; 
 import GetStartedForm from "../../components/GetStartedForm";
+import FAQ from "../../components/FAQ"; // ✅ הוספתי את ה-FAQ
 
 export default function Home() {
   return (
@@ -23,6 +24,10 @@ export default function Home() {
 
         <ValuesSection />
         <StatsSection />
+
+        {/* ✅ FAQ לפני הטופס */}
+        <FAQ />
+
         <GetStartedForm />
         {/* Footer יורד מכאן כי הוא כבר קיים ב-layout */}
       </main>
