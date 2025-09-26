@@ -80,13 +80,23 @@ textarea {
   border: 1px solid #ccc !important;
   border-radius: 6px 0 0 6px !important;
   background: #fff !important;
+  min-width: 80px !important; /* ✅ מוסיף מקום לדגל + קידומת */
 }
 
 .phone-input .react-tel-input .selected-flag {
   background: #fff !important;
-  padding: 0 10px !important;
+  padding: 0 8px !important;
   border-right: 1px solid #ccc !important;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.phone-input .react-tel-input .selected-dial-code {
+  margin-left: 6px;
+  font-size: 0.95rem;
+  color: #111 !important;
 }
 
 .phone-input .react-tel-input .form-control {
