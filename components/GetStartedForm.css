@@ -128,19 +128,21 @@ textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   position: relative;
   z-index: 1;
   transition: all 0.3s ease;
 
-  /* גבול עם גרדיאנט */
+  /* ✨ גבול עם גרדיאנט */
   background-image: linear-gradient(#0f172a, #0f172a), 
-                    linear-gradient(90deg, #6366f1, #8b5cf6, #06b6d4);
+                    linear-gradient(90deg, #8b5cf6, #06b6d4, #3b82f6);
   background-origin: border-box;
   background-clip: padding-box, border-box;
 }
 
 .submit-btn:hover:not(:disabled) {
-  background-image: linear-gradient(90deg, #6366f1, #8b5cf6, #06b6d4);
+  background-image: linear-gradient(90deg, #8b5cf6, #06b6d4, #3b82f6);
   color: #fff;
   box-shadow: 0 0 18px rgba(139,92,246,0.5);
 }
@@ -154,7 +156,7 @@ textarea {
 
 /* ===== אייקון חץ ===== */
 .submit-btn::after {
-  content: "›"; /* אפשר להחליף ל-➔ */
+  content: "›";
   font-size: 1.2rem;
   margin-left: 8px;
   transition: transform 0.3s ease;
