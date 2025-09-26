@@ -1,13 +1,13 @@
 /* ====== Hero Section ====== */
 .hero {
-  position: relative; /* חשוב בשביל הווידאו */
-  background: var(--bg-dark); /* fallback רקע כהה */
+  position: relative;
+  background: var(--bg-dark); /* fallback */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: var(--text-light);
-  min-height: calc(100vh - 70px); /* ✅ תמיד מתחת להדר */
+  min-height: calc(100vh - 70px);
   padding: 100px 20px 60px;
   animation: fadeInHero 1.2s ease-in-out;
   overflow: hidden;
@@ -20,43 +20,50 @@
   left: 50%;
   min-width: 100%;
   min-height: 100%;
-  width: auto;
-  height: auto;
   transform: translate(-50%, -50%);
   object-fit: cover;
   z-index: 0;
   opacity: 0.9;
 }
 
-/* ✅ Overlay כהה מעל הווידאו */
+/* ✅ Overlay */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45); /* שחור חצי שקוף */
+  background: rgba(0, 0, 0, 0.45);
   z-index: 1;
 }
 
-/* ביטול האפקטים הקודמים */
-.hero::before {
-  content: none;
-}
+/* ביטול before */
+.hero::before { content: none; }
 
 .hero-content {
   max-width: 720px;
   margin: 0 auto;
   position: relative;
-  z-index: 2; /* מעל overlay */
+  z-index: 2;
 }
 
+/* ✅ כותרת יוקרתית עם גרדיאנט חי */
 .hero h1 {
   font-size: 3.2rem;
   font-weight: 800;
   margin-bottom: 20px;
   line-height: 1.2;
   animation: fadeInUp 1.5s ease-in-out;
-  color: #fff;
-  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.75); /* חזק יותר */
+
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  /* אפקט הילה */
+  text-shadow: 0 0 20px rgba(106, 17, 203, 0.35),
+               0 0 35px rgba(37, 117, 252, 0.25);
+
+  animation: gradientShift 6s ease infinite, fadeInUp 1.5s ease-in-out;
 }
 
 .hero p {
@@ -65,7 +72,7 @@
   opacity: 0.95;
   animation: fadeInUp 2s ease-in-out;
   max-width: 600px;
-  color: #fff;
+  color: var(--text-light);
   text-shadow: 0 3px 12px rgba(0, 0, 0, 0.65);
 }
 
@@ -86,36 +93,48 @@
   border-radius: 12px;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
   min-width: 200px;
   text-align: center;
   position: relative;
-  z-index: 3; /* לוודא מעל overlay */
+  z-index: 3;
 }
 
 /* Contact Us (primary) */
 .hero-cta .btn-primary {
-  background: var(--brand-color);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: #fff;
+  box-shadow: 0 0 15px rgba(147, 51, 234, 0.6);
 }
 .hero-cta .btn-primary:hover {
-  background: var(--brand-color-light);
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
   transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.8);
 }
 
 /* Schedule a Meeting (secondary) */
 .hero-cta .btn-secondary {
-  background: #25d366; /* ירוק וואטסאפ */
+  background: #25d366;
   color: #fff;
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
 }
 .hero-cta .btn-secondary:hover {
   background: #20c057;
   transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 25px rgba(37, 211, 102, 0.8);
 }
 
-/* ✅ רספונסיביות */
+/* ✅ Fade חלק בין Hero ל־About */
+.hero-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--bg-dark) 100%);
+  z-index: 2;
+}
+
+/* ====== רספונסיביות ====== */
 @media (max-width: 768px) {
   .hero {
     min-height: auto;
@@ -138,7 +157,6 @@
   .hero-cta a {
     font-size: 1rem;
     padding: 12px 26px;
-    min-width: unset;
     width: 100%;
     max-width: 300px;
   }
@@ -151,12 +169,12 @@
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }

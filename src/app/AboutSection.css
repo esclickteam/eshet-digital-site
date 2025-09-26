@@ -1,7 +1,10 @@
 .about-section {
   background: transparent; /* ✅ שקוף – יושב על הרקע הכללי */
-  padding: 100px 20px;
+  padding: 120px 20px;
   text-align: center;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1.2s ease-in-out;
 }
 
 .about-container {
@@ -9,24 +12,61 @@
   margin: 0 auto;
 }
 
+/* ✅ כותרת אלגנטית עם גרדיאנט */
 .about-section h2 {
   font-size: 2.6rem;
   font-weight: 800;
-  color: var(--primary);
   margin-bottom: 15px;
   line-height: 1.3;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 6s ease infinite;
 }
 
+/* תת-כותרת */
 .about-section .subtitle {
   font-size: 1.3rem;
   font-weight: 600;
   color: var(--secondary);
   margin-bottom: 30px;
+  opacity: 0.9;
 }
 
+/* טקסט מבוא */
 .about-section .intro-text {
   font-size: 1.15rem;
-  line-height: 1.7;
-  color: var(--text-light); /* ✅ שונה מ-#333 כדי להתאים לרקע כהה */
+  line-height: 1.8;
+  color: var(--text-light);
   font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+
+/* ✅ רספונסיביות */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 80px 20px;
+  }
+
+  .about-section h2 {
+    font-size: 2rem;
+  }
+
+  .about-section .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .about-section .intro-text {
+    font-size: 1rem;
+  }
+}
+
+/* אנימציה לגרדיאנט */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
