@@ -1,6 +1,5 @@
 "use client";
 import GetStartedForm from "../../../components/GetStartedForm";
-import "./getStartedPage.css";
 
 export default function GetStartedPage() {
   return (
