@@ -68,37 +68,44 @@ textarea {
   resize: vertical;
 }
 
-/* ===== Phone Input (קו תחתון אחיד) ===== */
+/* ===== Phone Input (דגל + קידומת + מספר באותו קו) ===== */
 .phone-input .react-tel-input {
   width: 100%;
   margin-bottom: 20px;
-  position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.6) !important; /* קו אחיד */
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(255,255,255,0.6) !important; /* ✅ קו אחיד */
 }
 
+/* ביטול מסגרת סביב הדגל */
 .phone-input .react-tel-input .flag-dropdown {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
   margin: 0 !important;
-  padding: 0 8px !important;
+  padding: 0 !important;
 }
 
+/* דגל + קידומת צמודים */
 .phone-input .react-tel-input .selected-flag {
   display: flex !important;
   align-items: center !important;
-  gap: 6px;
+  gap: 6px; /* רווח קטן */
+  padding: 0 6px !important;
+  background: transparent !important;
+  border: none !important;
+  min-width: auto !important;
 }
 
 .phone-input .react-tel-input .selected-dial-code {
   font-size: 1rem;
-  font-weight: 500;
-  color: #fff !important;
+  font-weight: 600;        /* מודגש */
+  color: #fff !important;  /* אפשר לשנות לשחור אם צריך */
+  margin: 0 !important;
+  line-height: 1;
 }
 
-/* אינפוט עצמו בלי גבולות */
+/* האינפוט של המספר */
 .phone-input .react-tel-input .form-control {
   flex: 1;
   border: none !important;
@@ -108,7 +115,7 @@ textarea {
   font-size: 1rem !important;
   height: 44px;
   outline: none !important;
-  padding-left: 8px !important;
+  padding-left: 6px !important; /* רווח קטן אחרי הקידומת */
 }
 
 .phone-input .react-tel-input .form-control::placeholder {
