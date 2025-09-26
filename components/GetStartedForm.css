@@ -3,67 +3,69 @@
   display: flex;
   justify-content: center;
   padding: 80px 20px;
-  background: transparent; /* ❌ לא גרדיאנט, רק שקוף */
+  background: transparent; /* ✅ שקוף כדי להשתמש ברקע הכללי */
 }
 
 /* ===== Form Container ===== */
 .form-container {
-  background: rgba(255, 255, 255, 0.95); /* לבן עם שקיפות */
-  backdrop-filter: blur(10px);
+  background: transparent; /* ✅ בלי קופסה */
   padding: 40px 30px;
-  border-radius: 20px;
-  max-width: 450px;
+  max-width: 500px;
   width: 100%;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
   text-align: center;
+  color: #fff;
 }
 
 .form-container h2 {
   font-size: 2rem;
   font-weight: 800;
   margin-bottom: 10px;
-  color: #1e293b;
+  color: #fff;
 }
 
-/* ===== Subtitle under H2 ===== */
 .form-subtitle {
   font-size: 1rem;
-  color: #64748b;
+  color: rgba(255,255,255,0.7);
   margin-bottom: 25px;
 }
 
 /* ===== Form Groups ===== */
 .form-group {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
   width: 100%;
-  padding: 12px 40px 12px 12px;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  outline: none;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+  padding: 12px 0;
   font-size: 1rem;
-  transition: border-color 0.3s, box-shadow 0.3s;
-  background: #fff;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255,255,255,0.6);
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-  border-color: #6366f1;
-  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+  border-color: #8b5cf6;
 }
 
 .form-group .icon {
   position: absolute;
-  right: 12px;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
-  color: #94a3b8;
+  color: rgba(255,255,255,0.6);
   font-size: 1rem;
 }
 
@@ -75,23 +77,21 @@ textarea {
 /* ===== Phone Input (react-phone-input-2) ===== */
 .phone-input .react-tel-input .form-control {
   width: 100% !important;
-  border-radius: 10px;
-  border: 1px solid #e2e8f0;
+  border: none !important;
+  border-bottom: 1px solid rgba(255,255,255,0.4) !important;
+  background: transparent !important;
+  color: #fff;
+  padding: 12px 0 12px 48px;
   font-size: 1rem;
-  padding: 12px 12px 12px 48px; /* מקום לדגל */
-  outline: none;
-  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .phone-input .react-tel-input .form-control:focus {
-  border-color: #6366f1;
-  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+  border-color: #8b5cf6 !important;
 }
 
 .phone-input .react-tel-input .flag-dropdown {
   border: none;
-  border-radius: 10px 0 0 10px;
-  background: #f9fafb;
+  background: transparent;
 }
 
 /* ===== First & Last name side by side ===== */
@@ -105,7 +105,6 @@ textarea {
   margin-bottom: 20px;
 }
 
-/* במובייל ירד אחד מתחת לשני */
 @media (max-width: 600px) {
   .name-row {
     flex-direction: column;
@@ -113,36 +112,56 @@ textarea {
   }
 }
 
-/* ===== Button ===== */
+/* ===== Submit Button (Gradient Border) ===== */
 .submit-btn {
-  width: 100%;
-  padding: 14px 20px;
-  margin-top: 15px;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
-  color: #fff !important;
+  width: auto;
+  min-width: 160px;
+  padding: 14px 28px;
+  margin-top: 20px;
+  background: transparent;
+  color: #fff;
   font-size: 1.1rem;
   font-weight: 700;
-  border: none;
-  border-radius: 10px;
+  border: 2px solid transparent;
+  border-radius: 6px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+
+  /* גבול עם גרדיאנט */
+  background-image: linear-gradient(#0f172a, #0f172a), 
+                    linear-gradient(90deg, #6366f1, #8b5cf6, #06b6d4);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
 }
 
 .submit-btn:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(99,102,241,0.25);
+  background-image: linear-gradient(90deg, #6366f1, #8b5cf6, #06b6d4);
+  color: #fff;
+  box-shadow: 0 0 18px rgba(139,92,246,0.5);
 }
 
-/* מצב טעינה/מנוטרל */
 .submit-btn:disabled {
-  background: #cbd5e1;
+  border-color: #475569;
+  color: #94a3b8;
   cursor: not-allowed;
-  box-shadow: none;
-  transform: none;
+  background-image: none;
+}
+
+/* ===== אייקון חץ ===== */
+.submit-btn::after {
+  content: "›"; /* אפשר להחליף ל-➔ */
+  font-size: 1.2rem;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.submit-btn:hover::after {
+  transform: translateX(4px);
 }
 
 /* ===== הודעות ===== */
@@ -163,30 +182,6 @@ textarea {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===== ספינר בכפתור במצב טעינה ===== */
-.submit-btn.loading::after {
-  content: "";
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  margin-left: 8px;
-  border: 2px solid #fff;
-  border-top: 2px solid transparent;
-  border-radius: 50%;
-  animation: spin 0.7s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
