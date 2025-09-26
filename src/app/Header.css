@@ -5,11 +5,17 @@
   left: 0;
   width: 100%;
   height: 70px;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  background: transparent; /* ✅ שקוף בהתחלה */
+  color: var(--text-light);
   z-index: 1000;
-  backdrop-filter: blur(12px);
   transition: all 0.3s ease;
+}
+
+/* כשהגולל פעיל */
+.header.scrolled {
+  background: var(--bg-dark); /* כחול כהה אחיד */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
 }
 
 /* Header inner navigation */
@@ -59,7 +65,7 @@
 .nav-links li a,
 .dropbtn {
   text-decoration: none;
-  color: var(--foreground);
+  color: var(--text-light); /* לינקים לבנים */
   font-size: 1rem;
   font-weight: 600;
   transition: color 0.3s;
@@ -191,7 +197,7 @@
 .hamburger span {
   width: 100%;
   height: 3px;
-  background: #222;
+  background: var(--text-light); /* קווים לבנים */
   border-radius: 2px;
   transition: 0.3s;
 }
@@ -213,7 +219,7 @@
     left: 0;
     width: 100%;
     height: calc(100vh - 70px);
-    background: #fff;
+    background: var(--bg-dark); /* תפריט מובייל כחול כהה */
     padding: 30px 20px 40px;
     gap: 20px;
     overflow-y: auto;
@@ -232,64 +238,6 @@
   .nav-links li { width: 100%; }
   .nav-links li a,
   .dropbtn { font-size: 1.1rem; padding: 12px 0; }
-}
-
-/* ====== CTA במובייל ====== */
-@media (max-width: 768px) {
-  .mobile-cta {
-    width: 100%;
-    padding: 25px 20px;
-    margin-top: 20px;
-    border-radius: 16px;
-    background: #f9fafb;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  }
-
-  /* Contact Us */
-  .mobile-cta .contact-card {
-    width: 100% !important;
-    max-width: 280px;
-    padding: 14px 28px !important;
-    border-radius: 50px !important;
-    background: linear-gradient(135deg, #facc15, #fbbf24) !important;
-    color: #111 !important;
-    font-weight: 700 !important;
-    font-size: 1.05rem !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    box-shadow: 0 6px 18px rgba(250, 204, 21, 0.35) !important;
-    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-    display: block !important;
-  }
-  .mobile-cta .contact-card:hover {
-    transform: translateY(-3px) !important;
-    box-shadow: 0 8px 22px rgba(250, 204, 21, 0.5) !important;
-  }
-
-  /* Schedule a Meeting */
-  .mobile-cta .meeting-card {
-    width: 100% !important;
-    max-width: 280px;
-    padding: 14px 28px !important;
-    border-radius: 50px !important;
-    background: linear-gradient(135deg, #a855f7, #6366f1) !important;
-    color: #fff !important;
-    font-weight: 700 !important;
-    font-size: 1.05rem !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    box-shadow: 0 6px 18px rgba(99, 102, 241, 0.35) !important;
-    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-    display: block !important;
-  }
-  .mobile-cta .meeting-card:hover {
-    transform: translateY(-3px) !important;
-    box-shadow: 0 8px 22px rgba(166, 79, 255, 0.5) !important;
-  }
 }
 
 /* ====== ביטול highlight כחול ====== */

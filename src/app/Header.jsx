@@ -1,17 +1,32 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Header.css";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleDropdown = (name) => {
     setOpenDropdown(openDropdown === name ? null : name);
   };
 
+  // ✅ מאזין לגלילה – משנה מצב שקיפות ההדר
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="header">
+    <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <nav className="nav">
         {/* Logo */}
         <div className="logo">
@@ -65,7 +80,7 @@ export default function Header() {
           <li><a href="/contact">Contact</a></li>
         </ul>
 
-        {/* ===== Desktop CTA (לא נוגע) ===== */}
+        {/* ===== Desktop CTA ===== */}
         <div className="header-cta desktop-only">
           <a href="/get-started" className="cta-btn">
             Get Started
