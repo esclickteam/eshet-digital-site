@@ -79,12 +79,14 @@ textarea {
 
 /* ביטול מסגרת סביב הדגל */
 .phone-input .react-tel-input .flag-dropdown {
-  background: transparent !important;
-  border: none !important;
+  background: rgba(255,255,255,0.1) !important;  /* רקע עדין */
+  border: 1px solid rgba(255,255,255,0.3) !important; /* גבול דק */
   box-shadow: none !important;
   margin: 0 !important;
-  padding: 0 !important;
+  padding: 0 8px !important;
+  border-radius: 4px; /* פינות מעוגלות */
 }
+
 
 /* דגל + קידומת צמודים */
 .phone-input .react-tel-input .selected-flag {
