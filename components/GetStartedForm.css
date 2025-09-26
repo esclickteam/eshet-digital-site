@@ -69,30 +69,35 @@ textarea {
   resize: vertical;
 }
 
-/* ===== Phone Input (קו תחתון כמו שאר השדות) ===== */
+/* ===== Phone Input (הפרדה אמיתית בין קידומת לשדה) ===== */
 .phone-input .react-tel-input {
   width: 100%;
   margin-bottom: 20px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  gap: 12px; /* ✅ רווח ברור בין הקידומת לשדה */
 }
 
-/* דגל + קידומת */
+/* קידומת + דגל – בלוק עצמאי */
 .phone-input .react-tel-input .flag-dropdown {
   background: transparent !important;
   border: none !important;
   border-bottom: 1px solid rgba(255,255,255,0.6) !important;
   border-radius: 0 !important;
-  width: 100px;
+  width: 110px !important;
+  min-width: 90px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 0 8px !important;
+  position: relative !important;
 }
 
+/* סידור הדגל + קידומת */
 .phone-input .react-tel-input .selected-flag {
   display: flex !important;
   align-items: center !important;
+  justify-content: flex-start;
   gap: 6px !important;
   width: 100%;
   background: transparent !important;
@@ -111,7 +116,7 @@ textarea {
   line-height: 1;
 }
 
-/* שדה המספר */
+/* שדה המספר – בלוק עצמאי */
 .phone-input .react-tel-input .form-control {
   flex: 1;
   border: none !important;
@@ -129,9 +134,8 @@ textarea {
   opacity: 0.7 !important;
 }
 
-.phone-input .react-tel-input .form-control:focus,
-.phone-input .react-tel-input .flag-dropdown:focus-within {
-  border-color: #a855f7 !important; /* סגול */
+.phone-input .react-tel-input .form-control:focus {
+  border-color: #a855f7 !important;
   box-shadow: 0 2px 6px rgba(168,85,247,0.3);
 }
 
