@@ -70,12 +70,7 @@
 
 /* ✅ רקע שקוף מאחורי הכותרת בלבד */
 .hero h1::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: -1;
+  content: none;   /* ❌ מבטל את הרקע השחור */
 }
 
 .hero p {
