@@ -270,20 +270,21 @@
     text-transform: uppercase;
     padding: 14px 0;
     color: #fff;
-    justify-content: space-between; /* כדי שהחץ יהיה בצד ימין */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* טקסט בצד שמאל, חץ בצד ימין */
+    width: 100%;
   }
 
   /* חצים במובייל */
-  .dropbtn::after {
-    margin-left: auto;
-    width: 8px;
-    height: 8px;
-    border-right: 2px solid #fff;
-    border-bottom: 2px solid #fff;
-    transform: rotate(45deg);
+ .dropbtn::after {
+    content: "▼";          /* ✅ חץ יוניקוד */
+    font-size: 0.9rem;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
   }
   .dropbtn.open::after {
-    transform: rotate(-135deg);
+    transform: rotate(180deg);
   }
 
   /* Mobile CTAs */
