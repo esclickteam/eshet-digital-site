@@ -600,12 +600,13 @@
 }
 
 .faq-question:hover { 
-  color: #111; /* ✅ נצבע בצבע מותג בהובר */
+  color: #111; /* ✅ כהה יותר בהובר */
 }
 
 .faq-item.active .faq-question {
-  color: var(--yellow-accent); /* ✅ נצבע בצבע זהב כשהשאלה פתוחה */
+  color: var(--yellow-accent); /* ✅ זהב כשהשאלה פתוחה */
 }
+
 
 /* ===== Icon ===== */
 .faq-icon {
