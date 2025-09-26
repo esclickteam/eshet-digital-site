@@ -101,7 +101,7 @@ textarea {
   color: #111 !important;
 }
 
-.phone-input .react-tel-input .form-control {
+.phone-input .react-tel-input  .form-control {
   flex: 1 1 auto;         /* יתפוס את כל השטח שנשאר */
   min-width: 0;           /* ✅ מונע חיתוך */
   border: 1px solid #ccc !important;
