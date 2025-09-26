@@ -64,6 +64,7 @@ export default function Header() {
             </div>
           </li>
 
+          {/* ✅ קישורים רגילים */}
           <li><a href="/projects">Projects</a></li>
           <li><a href="/tech">Tech</a></li>
           <li><a href="/contact">Contact</a></li>
@@ -133,11 +134,12 @@ export default function Header() {
               )}
             </li>
 
+            {/* ✅ קישורים רגילים */}
             <li><a href="/projects">Projects</a></li>
             <li><a href="/tech">Tech</a></li>
             <li><a href="/contact">Contact</a></li>
 
-            {/* ✅ Mobile CTAs (שונים מהדסקטופ) */}
+            {/* ✅ Mobile CTAs */}
             <li className="mobile-cta">
               <a
                 href="https://www.eshetdigital.com/get-started#contact-form"
