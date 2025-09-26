@@ -596,7 +596,7 @@
   text-align: left;
   cursor: pointer;
   transition: color 0.3s ease;
-  color: #222 !important; /* ✅ טקסט קריא כברירת מחדל */
+  color: #222; /* ✅ טקסט קריא כברירת מחדל */
 }
 
 .faq-question:hover { 
