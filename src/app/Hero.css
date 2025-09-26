@@ -47,24 +47,27 @@
 
 /* ✅ כותרת יוקרתית עם גרדיאנט חי */
 .hero h1 {
-  font-size: 3.2rem;
-  font-weight: 800;
+  font-size: 3.4rem;
+  font-weight: 900;
   margin-bottom: 20px;
   line-height: 1.2;
   animation: fadeInUp 1.5s ease-in-out;
 
-  /* ✅ בסיס לבן עם נגיעה כחול-סגול יוקרתי */
-  background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 40%, #c4b5fd 100%);
-  -webkit-background-clip: text;
+  /* ✅ גרדיאנט יוקרתי */
+  background: linear-gradient(135deg, #ffffff 10%, #a855f7 40%, #3b82f6 100%);
+  -webkit-background-clip: text; /* לתמיכה בכרום/ספארי */
+  background-clip: text;          /* לתמיכה בפיירפוקס */
   -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: transparent;             /* ✅ fallback */
 
-  /* ✅ אפקט זוהר יוקרתי */
-  text-shadow: 
-    0 2px 8px rgba(0,0,0,0.6),       /* עומק */
-    0 0 20px rgba(147, 51, 234, 0.5), /* סגול עדין */
-    0 0 35px rgba(59, 130, 246, 0.4); /* כחול עדין */
+  /* ✅ הילה בולטת */
+  text-shadow:
+    0 3px 10px rgba(0,0,0,0.8),      
+    0 0 18px rgba(168,85,247,0.7),   
+    0 0 30px rgba(59,130,246,0.6);   
 }
+
+
 
 
 .hero p {
