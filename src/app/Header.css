@@ -131,14 +131,21 @@
   gap: 12px;
 }
 .dropdown-content a {
-  color: var(--text-light); /* ✅ טקסט בהיר */
+  color: #fff; /* לבן כברירת מחדל */
   text-decoration: none;
   font-size: 0.95rem;
-  transition: color 0.3s ease;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
   white-space: nowrap;
+  display: block;
 }
 .dropdown-content a:hover {
-  color: var(--gold); /* ✅ דגש יוקרתי */
+  color: #fff !important; /* שומר טקסט לבן */
+  background: linear-gradient(135deg, #7c3aed, #4f46e5); /* סגול יוקרתי */
+  box-shadow: 0 3px 10px rgba(0,0,0,0.35);
+  transform: translateX(4px); /* זז טיפה ימינה */
 }
 
 /* ====== CTA Area (Desktop only) ====== */
