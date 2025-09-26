@@ -157,6 +157,7 @@ export default function GetStartedForm() {
               preferredCountries={["us", "gb", "de", "fr", "it", "es", "nl", "il"]}
               enableSearch={true}
               countryCodeEditable={false} // ✅ לא מאפשר למחוק את הקידומת
+              separateDialCode={true} 
               value={phone}
               onChange={(val) => setPhone("+" + val)} // ✅ אין כפל קידומת
               inputProps={{
