@@ -9,14 +9,28 @@ export default function GetStartedForm() {
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
   const [phone, setPhone] = useState("");
+  const [defaultCountry, setDefaultCountry] = useState("us"); // ברירת מחדל US
   const router = useRouter();
 
+  // ✅ טעינת reCAPTCHA
   useEffect(() => {
     const script = document.createElement("script");
     script.src =
       "https://www.google.com/recaptcha/api.js?render=6LdIndQrAAAAAHKdTiHWz6ep8FShGPF08g7zIRZJ";
     script.async = true;
     document.body.appendChild(script);
+  }, []);
+
+  // ✅ זיהוי מדינה אוטומטי לפי IP
+  useEffect(() => {
+    fetch("https://ipapi.co/json/")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && data.country_code) {
+          setDefaultCountry(data.country_code.toLowerCase()); // לדוגמה "us"
+        }
+      })
+      .catch(() => setDefaultCountry("us")); // fallback ל-US
   }, []);
 
   const isValidEmail = (email) => {
@@ -28,7 +42,7 @@ export default function GetStartedForm() {
     return regex.test(email);
   };
 
-  // ✅ ולידציה בינלאומית לטלפון (לא רק ארה"ב)
+  // ✅ ולידציה בינלאומית לטלפון
   const isValidPhone = (phone) => {
     const regex = /^\+\d{7,15}$/; // מספר בינלאומי 7–15 ספרות
     return regex.test(phone);
@@ -139,9 +153,9 @@ export default function GetStartedForm() {
 
           <div className="form-group phone-input">
             <PhoneInput
-              country={"us"} // ✅ ברירת מחדל ארה"ב
+              country={defaultCountry} // ✅ מתעדכן לפי IP
               preferredCountries={["us", "gb", "de", "fr", "it", "es", "nl"]}
-              enableSearch={false} // ✅ הסתרת שדה חיפוש
+              enableSearch={false} // ✅ בלי חיפוש מיותר
               value={phone}
               onChange={(val) => setPhone("+" + val)}
               inputProps={{

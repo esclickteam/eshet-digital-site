@@ -72,38 +72,44 @@ textarea {
 /* ===== Phone Input (react-phone-input-2) ===== */
 .phone-input .react-tel-input {
   width: 100%;
+  display: flex;
+  margin-bottom: 20px;
 }
 
 .phone-input .react-tel-input .flag-dropdown {
-  border: none !important;
-  background: transparent !important;
-  padding-right: 8px;
+  border: 1px solid #ccc !important;
+  border-radius: 6px 0 0 6px !important;
+  background: #fff !important;
 }
 
 .phone-input .react-tel-input .selected-flag {
-  background: transparent !important;
-  padding-left: 0 !important;
+  background: #fff !important;
+  padding: 0 10px !important;
+  border-right: 1px solid #ccc !important;
+  height: 100%;
 }
 
 .phone-input .react-tel-input .form-control {
-  width: 100% !important;
-  border: none !important;
-  border-bottom: 1px solid rgba(255,255,255,0.6) !important;
-  background: transparent !important;
-  color: #fff !important;
-  padding: 12px 0 12px 48px; /* מקום לדגל */
-  font-size: 1rem;
-  transition: border-color 0.3s;
+  flex: 1;
+  border: 1px solid #ccc !important;
+  border-left: none !important;
+  border-radius: 0 6px 6px 0 !important;
+  background: #fff !important;
+  color: #111 !important;
+  font-size: 1rem !important;
+  padding: 12px 14px !important;
+  height: auto !important;
 }
 
 .phone-input .react-tel-input .form-control::placeholder {
-  color: #fff !important;
+  color: #555 !important;
   opacity: 1;
 }
 
 .phone-input .react-tel-input .form-control:focus {
-  border-bottom: 1px solid #a855f7 !important;
-  box-shadow: 0 2px 6px rgba(168,85,247,0.3);
+  border-color: #2575fc !important;
+  box-shadow: 0 0 6px rgba(37,117,252,0.4) !important;
+  outline: none !important;
 }
 
 /* ✅ רשימת מדינות – עיצוב נקי */
@@ -133,7 +139,7 @@ textarea {
   color: #666 !important;
 }
 
-/* ✅ הסתרת תיבת החיפוש המיותרת */
+/* ✅ הסתרת תיבת החיפוש */
 .phone-input .react-tel-input .search-box {
   display: none !important;
 }
