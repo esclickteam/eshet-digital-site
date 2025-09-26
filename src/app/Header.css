@@ -156,6 +156,13 @@
 }
 
 /* CTA Button (Shared style) */
+.cta-btn,
+.cta-btn:hover,
+.cta-btn:focus,
+.cta-btn:active {
+  color: #fff !important;             /* טקסט תמיד לבן */
+  text-shadow: 0 0 6px rgba(0,0,0,0.4); /* עומק – יותר קריא */
+}
 .cta-btn {
   display: inline-flex;
   align-items: center;
@@ -176,10 +183,16 @@
   color: #fff;
   box-shadow: 0 6px 18px rgba(99, 102, 241, 0.35);
 }
-.cta-primary:hover {
+.cta-primary:hover,
+.cta-primary:focus {
   background: linear-gradient(135deg, #7c3aed, #4f46e5);
   transform: translateY(-3px);
   box-shadow: 0 8px 22px rgba(99, 102, 241, 0.5);
+}
+.cta-primary:active {
+  background: linear-gradient(135deg, #6d28d9, #4338ca) !important;
+  transform: scale(0.96);
+  box-shadow: inset 0 3px 8px rgba(0,0,0,0.4);
 }
 
 .cta-secondary {
@@ -187,10 +200,16 @@
   color: #fff;
   box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
-.cta-secondary:hover {
+.cta-secondary:hover,
+.cta-secondary:focus {
   background: #20c057;
   transform: translateY(-3px);
   box-shadow: 0 8px 22px rgba(0,0,0,0.5);
+}
+.cta-secondary:active {
+  background: #1ea94c !important;
+  transform: scale(0.96);
+  box-shadow: inset 0 3px 8px rgba(0,0,0,0.4);
 }
 
 /* ====== חץ ל-dropbtn ====== */
