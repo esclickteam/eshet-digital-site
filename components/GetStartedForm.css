@@ -69,7 +69,7 @@ textarea {
   resize: vertical;
 }
 
-/* ===== Phone Input (react-phone-input-2) ===== */
+/* ===== Phone Input (קידומת מחוץ לשדה) ===== */
 .phone-input .react-tel-input {
   width: 100%;
   display: flex;
@@ -80,7 +80,7 @@ textarea {
   border: 1px solid #ccc !important;
   border-radius: 6px 0 0 6px !important;
   background: #fff !important;
-  min-width: 80px !important; /* ✅ מוסיף מקום לדגל + קידומת */
+  min-width: 95px !important; /* ✅ מספיק מקום לדגל + קידומת */
 }
 
 .phone-input .react-tel-input .selected-flag {
@@ -95,7 +95,8 @@ textarea {
 
 .phone-input .react-tel-input .selected-dial-code {
   margin-left: 6px;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  font-weight: 500;
   color: #111 !important;
 }
 

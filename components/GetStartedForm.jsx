@@ -157,7 +157,9 @@ export default function GetStartedForm() {
               preferredCountries={["us", "gb", "de", "fr", "it", "es", "nl"]}
               enableSearch={false} // ✅ בלי חיפוש מיותר
               value={phone}
-              onChange={(val) => setPhone("+" + val)}
+              onChange={(val, country) =>
+                setPhone("+" + country.dialCode + val) // ✅ שומר תמיד עם קידומת אמיתית
+              }
               inputProps={{
                 name: "phone",
                 required: true,
