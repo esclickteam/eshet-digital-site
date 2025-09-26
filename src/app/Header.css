@@ -184,6 +184,11 @@
     0 0 36px rgba(59, 130, 246, 0.5);
 }
 
+/* ====== Mobile CTA – מוסתרת בדסקטופ */
+.mobile-cta {
+  display: none; /* ✅ לא יוצג בדסקטופ */
+}
+
 /* ====== Hamburger ====== */
 .hamburger {
   display: none; /* ❌ לא יוצג בדסקטופ */
@@ -298,7 +303,7 @@
     transform: rotate(180deg);
   }
 
-  /* Mobile CTAs */
+  /* ✅ מוצג רק במובייל */
   .mobile-cta {
     display: flex;
     flex-direction: column;
