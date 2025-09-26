@@ -12,12 +12,14 @@
 
 /* ===== טופס שקוף מודרני ===== */
 .form-container {
-  background: transparent;  /* ✅ שקוף לגמרי */
-  border: none;
-  box-shadow: none;
+  background: #ffffff;       /* ✅ לבן מלא */
+  border-radius: 16px;       /* פינות מעוגלות */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* צל עדין */
   width: 100%;
   max-width: 500px;
+  padding: 40px;
   text-align: center;
+  color: #111; /* טקסט כהה על לבן */
 }
 
 /* ===== שדות ===== */
