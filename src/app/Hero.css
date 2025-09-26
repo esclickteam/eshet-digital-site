@@ -26,7 +26,7 @@
   opacity: 0.9;
 }
 
-/* ✅ Overlay */
+/* ✅ Overlay כללי */
 .hero::after {
   content: "";
   position: absolute;
@@ -45,8 +45,13 @@
   z-index: 2;
 }
 
-/* ✅ כותרת יוקרתית עם גרדיאנט חי */
+/* ✅ כותרת יוקרתית עם גרדיאנט חי ורקע אישי */
 .hero h1 {
+  position: relative;
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 12px;
+
   font-size: 3.4rem;
   font-weight: 900;
   margin-bottom: 20px;
@@ -55,20 +60,27 @@
 
   /* ✅ גרדיאנט יוקרתי */
   background: linear-gradient(135deg, #ffffff 10%, #a855f7 40%, #3b82f6 100%);
-  -webkit-background-clip: text; /* לתמיכה בכרום/ספארי */
-  background-clip: text;          /* לתמיכה בפיירפוקס */
+  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: transparent;             /* ✅ fallback */
+  color: transparent;
 
   /* ✅ הילה בולטת */
   text-shadow:
-    0 3px 10px rgba(0,0,0,0.8),      
-    0 0 18px rgba(168,85,247,0.7),   
-    0 0 30px rgba(59,130,246,0.6);   
+    2px 2px 8px rgba(0,0,0,0.85),
+    0 0 20px rgba(168,85,247,0.8),
+    0 0 35px rgba(59,130,246,0.7);
 }
 
-
-
+/* ✅ רקע שקוף מאחורי הכותרת בלבד */
+.hero h1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: -1;
+}
 
 .hero p {
   font-size: 1.25rem;
@@ -147,6 +159,11 @@
 
   .hero h1 {
     font-size: 2.2rem;
+    padding: 10px 18px; /* טיפה קומפקטי יותר */
+  }
+
+  .hero h1::before {
+    background: rgba(0,0,0,0.55); /* כהה יותר במובייל */
   }
 
   .hero p {
