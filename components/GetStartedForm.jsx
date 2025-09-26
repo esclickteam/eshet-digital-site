@@ -155,7 +155,7 @@ export default function GetStartedForm() {
             <PhoneInput
               country={defaultCountry} // ✅ מתעדכן לפי IP
               preferredCountries={["us", "gb", "de", "fr", "it", "es", "nl", "il"]}
-              enableSearch={true}
+              enableSearch={false} 
               countryCodeEditable={false} // ✅ לא מאפשר למחוק את הקידומת
               separateDialCode={true} 
               value={phone}
