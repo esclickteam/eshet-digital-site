@@ -87,7 +87,6 @@ textarea {
   display: flex !important;
   align-items: center !important;
   gap: 6px; /* רווח קטן בין הדגל לקידומת */
-  min-width: 90px; /* שיהיה מקום לדגל + קידומת */
 }
 
 /* דגל בפנים */
@@ -95,19 +94,19 @@ textarea {
   display: flex !important;
   align-items: center !important;
   gap: 6px;
-  padding: 0 !important;
-  margin: 0 !important;
   background: transparent !important;
   border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 /* הקידומת מחוץ לקופסה */
 .phone-input .react-tel-input .selected-dial-code {
+  position: static !important;  /* ❗ חשוב - לא absolute */
+  margin: 0 !important;
   font-size: 1rem;
   font-weight: 600;
   color: #fff !important;
-  margin: 0 !important; /* מבטל מרווח מיותר */
-  line-height: 1;
 }
 
 /* שדה המספר */
