@@ -17,7 +17,7 @@
   margin-bottom: 12px;
 
   /* ✅ גרדיאנט לטקסט */
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: linear-gradient(135deg,var(--gold),#ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
