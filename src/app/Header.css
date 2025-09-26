@@ -208,8 +208,9 @@
 }
 
 /* ====== Hamburger (Mobile) ====== */
+/* ====== Hamburger (Mobile) ====== */
 .hamburger {
-  display: flex;              /* ✅ שיהיה תמיד flex במובייל */
+  display: flex;
   width: 36px;
   height: 28px;
   position: relative;
@@ -221,8 +222,7 @@
   align-items: center;
 }
 
-
-/* קווים במצב סגור */
+/* שלושת הקווים */
 .hamburger span {
   position: absolute;
   left: 0;
@@ -232,32 +232,24 @@
   border-radius: 2px;
   transition: all 0.35s ease;
 }
+
 .hamburger span:nth-child(1) { top: 0; }
 .hamburger span:nth-child(2) { top: 12px; }
 .hamburger span:nth-child(3) { top: 24px; }
 
-/* במצב פתוח – רק איקס */
-.hamburger.active span {
-  display: none !important;
+/* מצב פתוח – הפיכה ל־X */
+.hamburger.active span:nth-child(1) {
+  top: 12px;
+  transform: rotate(45deg);
 }
-.hamburger.active::before,
-.hamburger.active::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 32px;   /* רוחב האיקס */
-  height: 4px;   /* עובי האיקס */
-  background: var(--text-light);
-  border-radius: 2px;
-  transform-origin: center;
+.hamburger.active span:nth-child(2) {
+  opacity: 0; /* נעלם */
 }
-.hamburger.active::before {
-  transform: translate(-50%, -50%) rotate(45deg);
+.hamburger.active span:nth-child(3) {
+  top: 12px;
+  transform: rotate(-45deg);
 }
-.hamburger.active::after {
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
+
 
 /* ====== Desktop vs Mobile ====== */
 .desktop-only { display: flex; }
