@@ -68,13 +68,13 @@ textarea {
   resize: vertical;
 }
 
-/* ===== Phone Input (קו תחתון אחיד עם הדגל והקידומת בפנים) ===== */
+/* ===== Phone Input ===== */
 .phone-input .react-tel-input {
   width: 100%;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(255,255,255,0.6); /* קו אחיד */
+  border-bottom: 1px solid rgba(255,255,255,0.6);
   position: relative;
   padding-bottom: 6px;
 }
@@ -88,43 +88,32 @@ textarea {
   padding: 0 !important;
 }
 
-/* ===== עטיפת דגל + קידומת בקופסה ===== */
+/* ===== הקופסה לדגל בלבד ===== */
 .phone-input .react-tel-input .selected-flag {
+  width: 36px !important;   /* קופסה קטנה */
+  height: 26px !important;
+  padding: 0 !important;
+  border-radius: 6px !important;
+  background: rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
   display: flex !important;
   align-items: center !important;
-  gap: 6px;
-  padding: 6px 10px !important;
-  background: rgba(255, 255, 255, 0.1) !important; /* רקע חצי שקוף */
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  border-radius: 8px !important;
-  min-width: 80px !important;
-  justify-content: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  justify-content: center !important;
+  box-shadow: none !important;
   transition: all 0.3s ease;
 }
 
-.phone-input .react-tel-input .selected-flag:hover {
-  background: rgba(255, 255, 255, 0.2) !important;
-  border-color: #a855f7 !important;
-  box-shadow: 0 3px 8px rgba(168,85,247,0.4);
-  cursor: pointer;
-}
-
-/* הדגל */
+/* רק הדגל בפנים */
 .phone-input .react-tel-input .selected-flag .flag {
-  border-radius: 3px;
-  width: 22px;
-  height: 16px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.25);
+  width: 24px !important;
+  height: 16px !important;
+  border-radius: 3px !important;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
 }
 
-/* הקידומת בתוך הקופסה */
-.phone-input .react-tel-input .selected-dial-code {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #fff !important;
-  margin: 0 !important;
-  line-height: 1;
+/* מסתיר את הקידומת מתוך הקופסה */
+.phone-input .react-tel-input .selected-flag .selected-dial-code {
+  display: none !important;
 }
 
 /* שדה הטלפון */
@@ -137,8 +126,8 @@ textarea {
   font-size: 1rem !important;
   height: 44px;
   outline: none !important;
-  padding-left: 95px !important; /* ✅ מרווח גדול יותר אחרי הדגל+קידומת */
-  letter-spacing: 0.5px;         /* מוסיף טיפה ריווח במספרים עצמם */
+  padding-left: 50px !important; /* רווח אחרי הדגל */
+  letter-spacing: 0.5px;
 }
 
 .phone-input .react-tel-input .form-control::placeholder {
