@@ -271,24 +271,24 @@
   .desktop-only { display: none; }
 
   .mobile-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    max-width: 320px;
-    height: 100vh;
-    background: linear-gradient(135deg, #1e2a78, #3b82f6, #9333ea);
-    padding: 100px 20px 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    overflow-y: auto;
-    transition: right 0.4s ease;
-    z-index: 999;
-  }
-  .mobile-menu.open {
-    right: 0;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #1e2a78, #3b82f6, #9333ea);
+  padding: 100px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+  z-index: 999;
+}
+.mobile-menu.open {
+  transform: translateY(0);
+}
 
   .header-cta { display: none !important; }
   .hamburger { display: flex; }
