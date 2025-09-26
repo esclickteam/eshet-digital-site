@@ -345,3 +345,15 @@ html, body {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
+
+/* ביטול נקודות ורווחים בתפריטי dropdown */
+.dropdown-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-content ul li {
+  margin: 0;
+  padding: 0;
+}
