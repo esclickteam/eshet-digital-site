@@ -197,16 +197,11 @@
 
 /* ====== Chevron חצים ====== */
 .dropbtn::after {
-  content: "";
+  content: "▼";              /* ✅ חץ יוניקוד */
+  font-size: 0.9rem;         /* גודל החץ */
+  margin-left: 6px;          /* ריווח קטן אחרי הטקסט */
   display: inline-block;
-  margin-left: 10px;
-  width: 10px;   /* ✅ רוחב גדול יותר */
-  height: 10px;  /* ✅ גובה גדול יותר */
-  border-right: 3px solid #fff; /* ✅ קו עבה יותר */
-  border-bottom: 3px solid #fff;
-  transform: rotate(45deg); /* חץ למטה */
   transition: transform 0.3s ease;
-  vertical-align: middle; /* מיישר לגובה הטקסט */
 }
 
 .dropbtn.open::after,
