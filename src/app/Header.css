@@ -149,10 +149,9 @@
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 12px;
 }
 
-/* CTA Button בסיס */
+/* CTA Button – Get Started */
 .cta-btn {
   display: inline-flex;
   align-items: center;
@@ -165,44 +164,27 @@
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
-}
 
-/* צבעים שונים */
-.cta-contact {
+  background: #fff;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+  box-shadow: 
+    0 0 8px rgba(37, 99, 235, 0.5),
+    0 0 16px rgba(37, 99, 235, 0.3),
+    0 0 24px rgba(37, 99, 235, 0.2);
+}
+.cta-btn:hover {
   background: linear-gradient(135deg, #3b82f6, #9333ea);
-  border: 2px solid #3b82f6;
   color: #fff !important;
-}
-.cta-contact:hover {
-  background: linear-gradient(135deg, #9333ea, #3b82f6);
-  transform: translateY(-3px);
-}
-
-.cta-meeting {
-  background: linear-gradient(135deg, #10b981, #06b6d4);
-  border: 2px solid #10b981;
-  color: #fff !important;
-}
-.cta-meeting:hover {
-  background: linear-gradient(135deg, #06b6d4, #10b981);
-  transform: translateY(-3px);
-}
-
-/* ====== Chevron חצים ====== */
-.dropbtn::after {
-  content: "▼";              /* ✅ חץ יוניקוד */
-  font-size: 0.9rem;
-  margin-left: 6px;
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-.dropbtn.open::after,
-.dropdown:hover .dropbtn::after {
-  transform: rotate(-135deg);
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 12px rgba(147, 51, 234, 0.6),
+    0 0 24px rgba(59, 130, 246, 0.6),
+    0 0 36px rgba(59, 130, 246, 0.5);
 }
 
 /* ====== Hamburger ====== */
-/* בדסקטופ מוסתר */
 .hamburger {
   display: none; /* ❌ לא יוצג בדסקטופ */
   width: 36px;
@@ -211,7 +193,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 1101; /* מעל ה־overlay */
+  z-index: 1101;
   justify-content: center;
   align-items: center;
 }
@@ -264,8 +246,7 @@
 /* ====== Mobile Menu ====== */
 @media screen and (max-width: 768px) {
   .desktop-only { display: none; }
-
-  .hamburger { display: flex; } /* ✅ יוצג רק במובייל */
+  .hamburger { display: flex; }
 
   .mobile-menu {
     position: fixed;
@@ -329,6 +310,15 @@
     font-size: 1.1rem;
     font-weight: 700;
     text-align: center;
+  }
+
+  .cta-contact {
+    background: linear-gradient(135deg, #3b82f6, #9333ea);
+    border: 2px solid #3b82f6;
+  }
+  .cta-meeting {
+    background: linear-gradient(135deg, #10b981, #06b6d4);
+    border: 2px solid #10b981;
   }
 }
 

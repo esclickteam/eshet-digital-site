@@ -28,27 +28,16 @@ export default function Header() {
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <nav className="nav">
-        {/* Logo */}
+        {/* ===== Logo ===== */}
         <div className="logo">
           <a href="/">
             <img src="/logo.png" alt="Eshet Digital" />
           </a>
         </div>
 
-        {/* Hamburger (mobile only) */}
-        <button
-          className={`hamburger ${menuOpen ? "active" : ""}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
         {/* ===== Desktop Menu ===== */}
         <ul className="nav-links desktop-only">
-          <li><a href="/">Home</a></li>
+          {/* About */}
           <li className="dropdown">
             <button className="dropbtn">About</button>
             <div className="dropdown-content">
@@ -57,6 +46,8 @@ export default function Header() {
               <a href="/story">Our Story</a>
             </div>
           </li>
+
+          {/* Services */}
           <li className="dropdown">
             <button className="dropbtn">Services</button>
             <div className="dropdown-content">
@@ -72,19 +63,31 @@ export default function Header() {
               </div>
             </div>
           </li>
+
           <li><a href="/projects">Projects</a></li>
           <li><a href="/tech">Tech</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
 
-        {/* ===== Desktop CTA ===== */}
+        {/* ===== Desktop CTA (Neon Get Started) ===== */}
         <div className="header-cta desktop-only">
-          <a href="/get-started" className="cta-btn cta-primary">
+          <a href="/get-started" className="cta-btn">
             Get Started
           </a>
         </div>
 
-        {/* ===== Overlay (לחיצה תסגור תפריט) ===== */}
+        {/* ===== Hamburger (Mobile only) ===== */}
+        <button
+          className={`hamburger mobile-only ${menuOpen ? "active" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        {/* ===== Overlay ===== */}
         <div
           className={`mobile-overlay ${menuOpen ? "open" : ""}`}
           onClick={() => setMenuOpen(false)}
@@ -93,8 +96,6 @@ export default function Header() {
         {/* ===== Mobile Fullscreen Menu ===== */}
         <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
           <ul>
-            <li><a href="/">Home</a></li>
-
             {/* About */}
             <li className={`dropdown-mobile ${openDropdown === "about" ? "open" : ""}`}>
               <button
@@ -134,8 +135,9 @@ export default function Header() {
 
             <li><a href="/projects">Projects</a></li>
             <li><a href="/tech">Tech</a></li>
+            <li><a href="/contact">Contact</a></li>
 
-            {/* ✅ Mobile CTAs עם צבעים שונים */}
+            {/* ✅ Mobile CTAs (שונים מהדסקטופ) */}
             <li className="mobile-cta">
               <a
                 href="https://www.eshetdigital.com/get-started#contact-form"
