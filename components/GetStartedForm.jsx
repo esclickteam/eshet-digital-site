@@ -1,8 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
+
+// ✅ ספרייה החדשה
+import "react-international-phone/style.css";
+import { PhoneInput } from "react-international-phone";
+
 import "./GetStartedForm.css";
 
 export default function GetStartedForm() {
@@ -153,18 +156,10 @@ export default function GetStartedForm() {
 
           <div className="form-group phone-input">
             <PhoneInput
-              country={defaultCountry} // ✅ מתעדכן לפי IP
-              preferredCountries={["us", "gb", "de", "fr", "it", "es", "nl", "il"]}
-              enableSearch={false} 
-              countryCodeEditable={false} // ✅ לא מאפשר למחוק את הקידומת
-              separateDialCode={true}
+              defaultCountry={defaultCountry} // ✅ זיהוי אוטומטי מה-IP
               value={phone}
-              onChange={(val) => setPhone("+" + val)} // ✅ אין כפל קידומת
-              inputProps={{
-                name: "phone",
-                required: true,
-                placeholder: "Phone Number*",
-              }}
+              onChange={setPhone} // ✅ הספרייה מחזירה כבר בפורמט +972...
+              inputClassName="phone-field"
             />
           </div>
 
