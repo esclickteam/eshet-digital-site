@@ -1,14 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import {
-  FaUser,
-  FaEnvelope,
-  FaPhone,
-  FaBuilding,
-  FaCogs,
-  FaQuestionCircle,
-} from "react-icons/fa";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import "./GetStartedForm.css";
@@ -79,33 +71,32 @@ export default function GetStartedForm() {
       return;
     }
 
-    // ✅ נתונים ל-HubSpot (Internal names!)
+    // ✅ נתונים ל-HubSpot
     const data = {
-  fields: [
-    { name: "firstname", value: form.firstname.value },
-    { name: "lastname", value: form.lastname.value },
-    { name: "email", value: form.email.value },
-    { name: "phone", value: phone },
-    { name: "name", value: form.company.value },          // Company name
-    { name: "eshet_digital", value: form.service_type.value }, // Services dropdown
-    { name: "b", value: form.message.value },             // Message
-  ],
-  context: {
-    pageUri: window.location.href,
-    pageName: document.title,
-  },
-};
+      fields: [
+        { name: "firstname", value: form.firstname.value },
+        { name: "lastname", value: form.lastname.value },
+        { name: "email", value: form.email.value },
+        { name: "phone", value: phone },
+        { name: "name", value: form.company.value },
+        { name: "eshet_digital", value: form.service_type.value },
+        { name: "b", value: form.message.value },
+      ],
+      context: {
+        pageUri: window.location.href,
+        pageName: document.title,
+      },
+    };
 
     try {
       const res = await fetch(
-  "https://forms-eu1.hsforms.com/submissions/v3/integration/submit/146946532/096acd9d-2441-4d91-a2a0-0de36128239a",
-  {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  }
-);
-
+        "https://forms-eu1.hsforms.com/submissions/v3/integration/submit/146946532/096acd9d-2441-4d91-a2a0-0de36128239a",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (res.ok) {
         form.reset();
@@ -135,35 +126,29 @@ export default function GetStartedForm() {
         <form onSubmit={handleSubmit} className="contact-form">
           <div className="form-group">
             <input type="text" name="firstname" placeholder="First Name*" required />
-            <FaUser className="icon" />
           </div>
 
           <div className="form-group">
             <input type="text" name="lastname" placeholder="Last Name*" required />
-            <FaUser className="icon" />
           </div>
 
           <div className="form-group">
             <input type="email" name="email" placeholder="Email Address*" required />
-            <FaEnvelope className="icon" />
           </div>
 
           <div className="form-group phone-input">
             <PhoneInput
-  onlyCountries={["us"]}      // ✅ משאיר רק את ארה"ב
-  country={"us"}              // ✅ ברירת מחדל ארה"ב
-  disableDropdown={true}      // ✅ מבטל אפשרות לשנות מדינה
-  value={phone}
-  onChange={(val) => setPhone("+" + val)}
-  inputProps={{ name: "phone", required: true }}
-  placeholder="Phone Number*"
-/>
-            <FaPhone className="icon" />
+              onlyCountries={["us"]}
+              country={"us"}
+              disableDropdown={true}
+              value={phone}
+              onChange={(val) => setPhone("+" + val)}
+              inputProps={{ name: "phone", required: true, placeholder: "Phone Number*" }}
+            />
           </div>
 
           <div className="form-group">
             <input type="text" name="company" placeholder="Company" />
-            <FaBuilding className="icon" />
           </div>
 
           <div className="form-group">
@@ -174,12 +159,10 @@ export default function GetStartedForm() {
               <option value="Digital Marketing">Digital Marketing</option>
               <option value="UI/UX Design">UI/UX Design</option>
             </select>
-            <FaCogs className="icon" />
           </div>
 
           <div className="form-group">
             <textarea name="message" placeholder="How can we help you?" rows="4"></textarea>
-            <FaQuestionCircle className="icon" />
           </div>
 
           {/* Honeypot */}
