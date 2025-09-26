@@ -141,7 +141,7 @@ export default function GetStartedForm() {
             <PhoneInput
               country={"us"} // ✅ ברירת מחדל ארה"ב
               preferredCountries={["us", "gb", "de", "fr", "it", "es", "nl"]}
-              enableSearch={true}
+              enableSearch={false} // ✅ הסתרת שדה חיפוש
               value={phone}
               onChange={(val) => setPhone("+" + val)}
               inputProps={{
