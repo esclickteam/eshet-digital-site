@@ -144,6 +144,19 @@
   transform: translateX(4px);
 }
 
+/* ====== Chevron חצים (Desktop + Mobile) ====== */
+.dropbtn::after {
+  content: "▼";              /* ✅ חץ יוניקוד */
+  font-size: 0.8rem;
+  margin-left: 6px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+.dropbtn.open::after,
+.dropdown:hover .dropbtn::after {
+  transform: rotate(-180deg); /* חץ כלפי מעלה */
+}
+
 /* ====== CTA Area (Desktop only) ====== */
 .header-cta {
   margin-left: auto;
@@ -293,19 +306,6 @@
     gap: 6px;
     width: 100%;
   }
-
-  .dropbtn::after {
-  content: "▼";              /* ✅ חץ יוניקוד */
-  font-size: 0.8rem;         /* גודל קצת קטן כדי להתאים */
-  margin-left: 6px;
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-  .dropbtn.open::after,
-.dropdown:hover .dropbtn::after {
-  transform: rotate(-180deg); /* חץ כלפי מעלה */
-}
-
 
   /* ✅ מוצג רק במובייל */
   .mobile-cta {
