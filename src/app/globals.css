@@ -1,7 +1,7 @@
 :root {
   /* ===== Light Mode ===== */
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #1e2a78;   /* כחול כהה אחיד במקום לבן */
+  --foreground: #ffffff;   /* טקסט בהיר על רקע כהה */
 
   /* Brand Colors */
   --primary: #6a11cb;
@@ -10,16 +10,16 @@
   --gold: #ffd700;
 
   /* Dark UX Variables */
-  --bg-dark: #0f172a;      /* רקע כהה יוקרתי */
+  --bg-dark: #1e2a78;      /* אותו כחול כהה לכל האתר */
   --text-light: #ffffff;   /* טקסט בהיר */
-  --text-muted: #9ca3af;   /* טקסט משני */
+  --text-muted: #cbd5e1;   /* טקסט משני בהיר */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     /* ===== Dark Mode ===== */
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1e2a78;   /* גם במצב Dark נשאר אחיד */
+    --foreground: #ffffff;
 
     /* Adjusted brand colors for dark mode */
     --primary: #8a2be2;
@@ -28,9 +28,9 @@
     --gold: #ffd700;
 
     /* Dark UX Variables */
-    --bg-dark: #0f172a;     
+    --bg-dark: #1e2a78;     
     --text-light: #ffffff;
-    --text-muted: #9ca3af;
+    --text-muted: #cbd5e1;
   }
 }
 
@@ -50,7 +50,7 @@ body {
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: var(--background) !important; /* כחול כהה אחיד */
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
   padding-top: 70px; /* מקום ל-Header קבוע */
@@ -66,10 +66,10 @@ body {
 /* ===== Gradient Utility (לכותרות מיוחדות) ===== */
 .gradient-text {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  background-clip: text;           /* ✅ גרסה סטנדרטית */
-  -webkit-background-clip: text;   /* ✅ תמיכה ב-Chrome/Safari */
+  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: transparent;              /* ✅ fallback */
+  color: transparent;
 }
 
 /* ===== Links ===== */
@@ -112,14 +112,14 @@ button,
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 button:hover,
 .btn-primary:hover {
   background: var(--secondary);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
 /* ===== Utilities ===== */
