@@ -5,6 +5,7 @@
   position: relative;
   z-index: 2;
   animation: fadeInUp 1.2s ease-in-out;
+  overflow: hidden; /* חשוב כדי שהגלים לא יגלשו */
 }
 
 .about-container {
@@ -23,6 +24,18 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradientShift 6s ease infinite;
+  position: relative;
+}
+
+/* פס דקורטיבי מתחת לכותרת */
+.about-section h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin: 12px auto 0;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 2px;
 }
 
 /* תת-כותרת */
@@ -34,7 +47,7 @@
   opacity: 0.9;
 }
 
-/* טקסט מבוא */
+/* טקסט מבוא עם רקע שקוף עדין */
 .about-section .intro-text {
   font-size: 1.15rem;
   line-height: 1.8;
@@ -43,6 +56,25 @@
   max-width: 800px;
   margin: 0 auto;
   opacity: 0.95;
+
+  background: rgba(0,0,0,0.25);
+  padding: 15px 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+}
+
+/* ✅ אפקט גלים בתחתית */
+.about-section::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'><path fill='%231e2a78' fill-opacity='1' d='M0,128L48,138.7C96,149,192,171,288,186.7C384,203,480,213,576,213.3C672,213,768,203,864,202.7C960,203,1056,213,1152,229.3C1248,245,1344,267,1392,277.3L1440,288L1440,0L0,0Z'></path></svg>") no-repeat center;
+  background-size: cover;
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* ✅ רספונסיביות */
@@ -61,6 +93,7 @@
 
   .about-section .intro-text {
     font-size: 1rem;
+    padding: 12px 16px;
   }
 }
 

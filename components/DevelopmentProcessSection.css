@@ -1,6 +1,6 @@
 .dev-process-section {
   padding: 80px 20px;
-  background: linear-gradient(135deg, #1a237e, #283593, #6a11cb, #ff6a00);
+  background: linear-gradient(135deg, #1e2a78, #2b3fa3, #6a11cb, #ff6a00);
   text-align: center;
   color: #fff;
   overflow: hidden;
@@ -14,11 +14,28 @@
   margin: 0 auto;
 }
 
+/* ===== Title ===== */
 .dev-process-section .section-title {
-  font-size: clamp(2rem, 5vw, 2.8rem); /* מתכוונן לפי גודל המסך */
+  font-size: clamp(2rem, 5vw, 2.8rem);
   font-weight: 800;
   margin-bottom: 20px;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+/* פס מתחת לכותרת */
+.dev-process-section .section-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  margin: 15px auto 0;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 3px;
 }
 
 .dev-process-section .section-subtitle {
@@ -28,6 +45,7 @@
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0.95;
 }
 
 .process-image-wrapper {
@@ -47,7 +65,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background: radial-gradient(circle at center,
-    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.25) 0%,
     rgba(255, 255, 255, 0) 70%);
   filter: blur(50px);
   animation: pulse 6s infinite ease-in-out;
@@ -83,7 +101,7 @@
   transform: scale(1) translateY(0);
 }
 
-/* אפקט hover רק לדסקטופ */
+/* אפקט hover רק בדסקטופ */
 @media (hover: hover) and (pointer: fine) {
   .process-image:hover {
     transform: scale(1.05) rotateX(6deg) rotateY(-6deg);
@@ -92,7 +110,7 @@
   }
 }
 
-/* רספונסיביות למסכים קטנים */
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
   .dev-process-section {
     padding: 60px 15px;
@@ -108,7 +126,7 @@
   }
 
   .process-image {
-    max-width: 90%; /* שהתמונה לא תגלוש במסכים קטנים */
+    max-width: 90%;
   }
 }
 
@@ -126,6 +144,6 @@
   }
 
   .process-image {
-    max-width: 100%; /* במסכים הכי קטנים */
+    max-width: 100%;
   }
 }

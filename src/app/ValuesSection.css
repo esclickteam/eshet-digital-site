@@ -2,31 +2,86 @@
   padding: 100px 20px;
   background: linear-gradient(135deg, #6a11cb, #2575fc); /* סגול → כחול */
   text-align: center;
-  color: #fff; /* טקסט לבן שיבלוט */
+  color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
 .values-container {
   max-width: 900px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
+/* ===== Title ===== */
 .values-section h2 {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   font-weight: 800;
   margin-bottom: 25px;
-  color: #fff; /* לשמור לבן */
+  background: linear-gradient(135deg, var(--gold), #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
 }
 
+/* פס מתחת לכותרת */
+.values-section h2::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  margin: 15px auto 0;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 3px;
+}
+
+/* ===== Paragraphs ===== */
 .values-section p {
   font-size: 1.1rem;
-  line-height: 1.7;
+  line-height: 1.8;
   margin-bottom: 18px;
-  color: #f0f0f0; /* אפור בהיר לקריאות */
+  color: #f0f0f0;
+  opacity: 0.95;
 }
 
+/* Highlighted text */
 .values-section .highlight {
   font-weight: 700;
-  font-size: 1.2rem;
-  margin-top: 20px;
+  font-size: 1.25rem;
+  margin-top: 25px;
+  display: block;
   color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+
+/* ===== Decorative overlay ===== */
+.values-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.15), transparent 60%),
+              radial-gradient(circle at bottom right, rgba(0,0,0,0.25), transparent 60%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .values-section {
+    padding: 70px 15px;
+  }
+
+  .values-section h2 {
+    font-size: 2rem;
+  }
+
+  .values-section p {
+    font-size: 1rem;
+  }
+
+  .values-section .highlight {
+    font-size: 1.1rem;
+  }
 }

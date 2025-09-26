@@ -1,14 +1,19 @@
 .services {
   padding: 100px 20px;
-  background: #fafafa;
+  background: transparent; /* ✅ שקוף – יושב על הרקע הכללי */
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 /* ===== Title ===== */
 .services-title {
   font-size: 2.6rem;
   font-weight: 800;
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 60px;
   position: relative;
 }
@@ -34,14 +39,11 @@
 
 /* ===== Card ===== */
 .service-card {
-  background: linear-gradient(
-    135deg,
-    rgba(98, 0, 234, 0.05),
-    rgba(3, 218, 198, 0.05)
-  );
+  background: rgba(255, 255, 255, 0.06); /* אפקט זכוכית */
+  backdrop-filter: blur(8px);
   padding: 50px 30px;
   border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
   transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease,
     color 0.35s ease;
   text-align: center;
@@ -53,7 +55,7 @@
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: #fff;
   transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* ===== Decorative Glow ===== */
@@ -62,7 +64,7 @@
   position: absolute;
   inset: 0;
   border-radius: 20px;
-  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent 70%);
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.25), transparent 70%);
   opacity: 0;
   transition: opacity 0.35s ease;
 }
@@ -100,7 +102,7 @@
 .service-card p {
   font-size: 1rem;
   line-height: 1.65;
-  color: #444;
+  color: var(--text-muted);
   transition: color 0.3s;
 }
 
