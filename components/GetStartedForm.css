@@ -145,12 +145,15 @@ textarea {
 
 .phone-input .react-tel-input .country-list .country:hover,
 .phone-input .react-tel-input .country-list .country.highlight {
-  background: #f3f4f6 !important;
+  background: #f3f4f6 !important; /* רקע אפור בהיר */
+  color: #1e293b !important;      /* טקסט כהה */
+  font-weight: 500;
   cursor: pointer;
 }
 
-.phone-input .react-tel-input .country-list .dial-code {
-  color: #cbd5e1 !important;
+.phone-input .react-tel-input .country-list .country .dial-code {
+  color: #1e293b !important;  /* שחור כהה */
+  font-weight: 500;
 }
 
 .phone-input .react-tel-input .search-box {
