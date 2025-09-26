@@ -1,5 +1,6 @@
 "use client";
 import "./Hero.css";
+import TechLogos from "../../components/TechLogos";
 
 export default function Hero() {
   return (
@@ -18,8 +19,13 @@ export default function Hero() {
           your business needs to stand out online.
         </p>
         <a href="/book" className="btn-primary">
-          Book a Discovery Call
+          BOOK A DISCOVERY CALL
         </a>
+
+        {/* ✅ קרוסלת לוגואים מתחת לכפתור */}
+        <div className="hero-logos">
+          <TechLogos />
+        </div>
       </div>
     </section>
   );

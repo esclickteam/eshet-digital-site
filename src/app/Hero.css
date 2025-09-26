@@ -35,9 +35,6 @@
   z-index: 1;
 }
 
-/* ביטול before */
-.hero::before { content: none; }
-
 .hero-content {
   max-width: 720px;
   margin: 0 auto;
@@ -45,41 +42,27 @@
   z-index: 2;
 }
 
-/* ✅ כותרת לבנה עם הילה ורקע אישי */
+/* ✅ כותרת לבנה עם הילה */
 .hero h1 {
-  position: relative;
-  display: inline-block;
-  padding: 12px 28px;
-  border-radius: 12px;
-
-  font-size: 3.4rem;
+  font-size: 3.6rem;
   font-weight: 900;
   margin-bottom: 20px;
   line-height: 1.2;
   animation: fadeInUp 1.5s ease-in-out;
-
-  /* ✅ טקסט לבן חלק */
-  color: #ffffff;
-
-  /* ✅ הילה להבלטה */
+  color: #fff;
   text-shadow:
     2px 2px 8px rgba(0,0,0,0.85),
     0 0 20px rgba(168,85,247,0.8),
     0 0 35px rgba(59,130,246,0.7);
 }
 
-/* ✅ רקע שקוף מאחורי הכותרת בלבד */
-.hero h1::before {
-  content: none;   /* ❌ מבטל את הרקע השחור */
-}
-
 .hero p {
   font-size: 1.25rem;
-  margin: 0 auto 40px;
+  margin: 0 auto 35px;
   opacity: 0.95;
   animation: fadeInUp 2s ease-in-out;
   max-width: 600px;
-  color: var(--text-light);
+  color: #fff;
   text-shadow: 0 3px 12px rgba(0, 0, 0, 0.65);
 }
 
@@ -100,7 +83,7 @@
   border-radius: 12px;
   text-decoration: none;
   transition: all 0.3s ease;
-  min-width: 200px;
+  min-width: 220px;
   text-align: center;
   position: relative;
   z-index: 3;
@@ -108,26 +91,31 @@
 
 /* Contact Us (primary) */
 .hero-cta .btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #fff;
-  box-shadow: 0 0 15px rgba(147, 51, 234, 0.6);
+  background: #fff;
+  color: #1e2a78;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 .hero-cta .btn-primary:hover {
-  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  background: var(--primary);
+  color: #fff;
   transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 0 25px rgba(59, 130, 246, 0.8);
+  box-shadow: 0 0 25px rgba(59,130,246,0.8);
 }
 
-/* Schedule a Meeting (secondary) */
-.hero-cta .btn-secondary {
-  background: #25d366;
-  color: #fff;
-  box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
+/* ✅ קרוסלת לוגואים מתחת לכפתור */
+.hero-logos {
+  margin-top: 50px;
+  animation: fadeInUp 2.6s ease-in-out;
 }
-.hero-cta .btn-secondary:hover {
-  background: #20c057;
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 0 25px rgba(37, 211, 102, 0.8);
+.hero-logos img {
+  max-height: 50px;
+  margin: 0 25px;
+  filter: brightness(0) invert(1); /* שיהיו לבנים */
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+.hero-logos img:hover {
+  opacity: 1;
 }
 
 /* ✅ Fade חלק בין Hero ל־About */
@@ -150,11 +138,6 @@
 
   .hero h1 {
     font-size: 2.2rem;
-    padding: 10px 18px; /* טיפה קומפקטי יותר */
-  }
-
-  .hero h1::before {
-    background: rgba(0,0,0,0.55); /* כהה יותר במובייל */
   }
 
   .hero p {
@@ -172,6 +155,11 @@
     width: 100%;
     max-width: 300px;
   }
+
+  .hero-logos img {
+    max-height: 36px;
+    margin: 0 15px;
+  }
 }
 
 /* ====== אנימציות ====== */
@@ -183,10 +171,4 @@
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
