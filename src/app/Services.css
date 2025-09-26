@@ -113,7 +113,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 15px;
-  color: var(--primary);
+  color: #fff; /* ✅ לבן תמיד */
   transition: color 0.3s;
 }
 
@@ -125,8 +125,9 @@
 .service-card p {
   font-size: 1rem;
   line-height: 1.65;
-  color: var(--text-muted);
+  color: var(--text-light); /* ✅ לבן בהיר */
   transition: color 0.3s;
+  opacity: 0.9;
 }
 
 .service-card:hover p {
@@ -139,7 +140,7 @@
   margin-top: 18px;
   font-weight: 600;
   font-size: 0.95rem;
-  color: var(--primary);
+  color: #ffd700; /* ✅ זהב כברירת מחדל */
   text-decoration: none;
   border-bottom: 2px solid transparent;
   transition: color 0.3s, border-color 0.3s;
