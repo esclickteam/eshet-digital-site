@@ -28,8 +28,9 @@ export default function GetStartedForm() {
     return regex.test(email);
   };
 
-  const isValidUSPhone = (phone) => {
-    const regex = /^\+1\d{10,}$/;
+  // ✅ ולידציה בינלאומית לטלפון (לא רק ארה"ב)
+  const isValidPhone = (phone) => {
+    const regex = /^\+\d{7,15}$/; // מספר בינלאומי 7–15 ספרות
     return regex.test(phone);
   };
 
@@ -65,7 +66,7 @@ export default function GetStartedForm() {
       setLoading(false);
       return;
     }
-    if (!isValidUSPhone(phone)) {
+    if (!isValidPhone(phone)) {
       setStatus("invalid_phone");
       setLoading(false);
       return;
@@ -138,12 +139,16 @@ export default function GetStartedForm() {
 
           <div className="form-group phone-input">
             <PhoneInput
-              onlyCountries={["us"]}
-              country={"us"}
-              disableDropdown={true}
+              country={"us"} // ✅ ברירת מחדל ארה"ב
+              preferredCountries={["us", "gb", "de", "fr", "it", "es", "nl"]}
+              enableSearch={true}
               value={phone}
               onChange={(val) => setPhone("+" + val)}
-              inputProps={{ name: "phone", required: true, placeholder: "Phone Number*" }}
+              inputProps={{
+                name: "phone",
+                required: true,
+                placeholder: "Phone Number*",
+              }}
             />
           </div>
 
@@ -162,7 +167,11 @@ export default function GetStartedForm() {
           </div>
 
           <div className="form-group">
-            <textarea name="message" placeholder="How can we help you?" rows="4"></textarea>
+            <textarea
+              name="message"
+              placeholder="How can we help you?"
+              rows="4"
+            ></textarea>
           </div>
 
           {/* Honeypot */}
@@ -189,7 +198,7 @@ export default function GetStartedForm() {
           <p className="error-msg">✖ Please enter a valid business email.</p>
         )}
         {status === "invalid_phone" && (
-          <p className="error-msg">✖ Please enter a valid US phone number (+1).</p>
+          <p className="error-msg">✖ Please enter a valid phone number.</p>
         )}
         {status === "error" && (
           <p className="error-msg">

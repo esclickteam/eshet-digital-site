@@ -61,16 +61,7 @@
 .form-group textarea:focus,
 .form-group select:focus {
   border-color: #a855f7; /* סגול חזק */
-}
-
-/* ===== Icons ===== */
-.form-group .icon {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #fff !important;
-  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(168,85,247,0.3);
 }
 
 textarea {
@@ -79,14 +70,30 @@ textarea {
 }
 
 /* ===== Phone Input (react-phone-input-2) ===== */
+.phone-input .react-tel-input {
+  width: 100%;
+}
+
+.phone-input .react-tel-input .flag-dropdown {
+  border: none !important;
+  background: transparent !important;
+  padding-right: 8px;
+}
+
+.phone-input .react-tel-input .selected-flag {
+  background: transparent !important;
+  padding-left: 0 !important;
+}
+
 .phone-input .react-tel-input .form-control {
   width: 100% !important;
   border: none !important;
   border-bottom: 1px solid rgba(255,255,255,0.6) !important;
   background: transparent !important;
   color: #fff !important;
-  padding: 12px 0 12px 48px;
+  padding: 12px 0 12px 48px; /* מקום לדגל */
   font-size: 1rem;
+  transition: border-color 0.3s;
 }
 
 .phone-input .react-tel-input .form-control::placeholder {
@@ -95,12 +102,25 @@ textarea {
 }
 
 .phone-input .react-tel-input .form-control:focus {
-  border-color: #a855f7 !important;
+  border-bottom: 1px solid #a855f7 !important;
+  box-shadow: 0 2px 6px rgba(168,85,247,0.3);
 }
 
-.phone-input .react-tel-input .flag-dropdown {
-  border: none !important;
-  background: transparent !important;
+.phone-input .react-tel-input .country-list {
+  background: #1e2a78 !important; /* כחול כהה */
+  color: #fff !important;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.2);
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.phone-input .react-tel-input .country-list .country {
+  padding: 8px 12px;
+}
+
+.phone-input .react-tel-input .country-list .country.highlight {
+  background: rgba(168,85,247,0.3) !important; /* היילייט סגול */
 }
 
 /* ===== First & Last name side by side ===== */
@@ -127,11 +147,11 @@ textarea {
   min-width: 160px;
   padding: 14px 28px;
   margin-top: 20px;
-  background: linear-gradient(90deg, #a855f7, #ec4899, #f59e0b) !important; /* ✅ רקע מלא */
+  background: linear-gradient(90deg, #a855f7, #ec4899, #f59e0b) !important;
   color: #fff !important;
   font-size: 1.1rem;
   font-weight: 700;
-  border: none !important; /* אין צורך במסגרת */
+  border: none !important;
   border-radius: 8px;
   cursor: pointer;
   display: inline-flex;
@@ -148,7 +168,7 @@ textarea {
 }
 
 .submit-btn:hover:not(:disabled) {
-  background: linear-gradient(90deg, #f59e0b, #ec4899, #a855f7) !important; /* ✅ גרדיאנט אחר בהובר */
+  background: linear-gradient(90deg, #f59e0b, #ec4899, #a855f7) !important;
   color: #fff !important;
   box-shadow: 0 0 22px rgba(236,72,153,0.75);
 }
