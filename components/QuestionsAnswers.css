@@ -1,59 +1,103 @@
+/* ===== FAQ Section ===== */
 .faq-section {
-  background: #f8fbff;
-  padding: 80px 20px;
+  padding: 100px 20px;
   text-align: center;
+  position: relative;
+  z-index: 2;
+
+  /* ✅ רקע רציף עם שאר האתר */
+  background: linear-gradient(135deg, #1e2a78, #2b3fa3, #6a11cb, #2575fc);
+  color: #fff;
 }
 
+/* ===== Title ===== */
 .faq-title {
-  font-size: 2rem;
+  font-size: 2.6rem;
   font-weight: 800;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+
+  /* ✅ גרדיאנט לטקסט */
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .faq-subtitle {
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 40px;
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+  color: #e0e0e0; /* ✅ טקסט בהיר */
 }
 
+/* ===== FAQ List ===== */
 .faq-list {
   max-width: 800px;
   margin: 0 auto;
   text-align: left;
 }
 
+/* ===== Item ===== */
 .faq-item {
-  border-bottom: 1px solid #ddd;
-  padding: 18px 0;
+  background: rgba(255, 255, 255, 0.08); /* אפקט זכוכית */
+  border-radius: 12px;
+  margin-bottom: 15px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
+.faq-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== Question ===== */
 .faq-question {
   width: 100%;
   background: none;
   border: none;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
   text-align: left;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #f8f8f8; /* טקסט לבן קריא */
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6); /* ✅ מוסיף הבלטה */
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
+.faq-question:hover {
+  color: #4ea5ff; /* ✅ כחול בהיר בהובר */
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+}
+
+.faq-item.active .faq-question {
+  color: #ffd700; /* ✅ זהב כשהשאלה פתוחה */
+  text-shadow: 0 2px 8px rgba(0,0,0,0.75);
+}
+
+/* ===== Icon ===== */
 .faq-icon {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
-  color: #6a11cb;
-  transition: transform 0.3s ease;
+  color: var(--secondary);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.faq-question:hover .faq-icon {
+  color: #4ea5ff; /* כחול בהיר בהובר */
 }
 
 .faq-item.active .faq-icon {
-  color: #2575fc;
+  transform: rotate(45deg);
+  color: #ffd700; /* זהב בהרחבה */
 }
 
+/* ===== Answer ===== */
 .faq-answer {
   margin-top: 12px;
   font-size: 1rem;
   line-height: 1.6;
-  color: #444;
+  color: #f0f0f0;
 }
