@@ -107,8 +107,8 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: #fff;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  background: var(--bg-dark); /* ✅ כהה יוקרתי */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   display: flex;
   gap: 40px;
@@ -118,6 +118,7 @@
   pointer-events: none;
   transform: translateY(10px);
   transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 999;
 }
 .dropdown:hover .dropdown-content {
   opacity: 1;
@@ -130,14 +131,14 @@
   gap: 12px;
 }
 .dropdown-content a {
-  color: #333;
+  color: var(--text-light); /* ✅ טקסט בהיר */
   text-decoration: none;
   font-size: 0.95rem;
   transition: color 0.3s ease;
   white-space: nowrap;
 }
 .dropdown-content a:hover {
-  color: var(--primary);
+  color: var(--gold); /* ✅ דגש יוקרתי */
 }
 
 /* ====== CTA Area (Desktop only) ====== */
@@ -222,7 +223,7 @@
     left: 0;
     width: 100%;
     height: calc(100vh - 70px);
-    background: var(--bg-dark); /* תפריט מובייל כחול כהה */
+    background: var(--bg-dark); /* ✅ תפריט מובייל כהה */
     padding: 30px 20px 40px;
     gap: 20px;
     overflow-y: auto;
