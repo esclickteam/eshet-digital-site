@@ -134,12 +134,13 @@ textarea {
   z-index: 1;
   transition: all 0.3s ease;
 
-  /* ✨ גבול עם גרדיאנט */
-  background-image: linear-gradient(#0f172a, #0f172a), 
+  /* ✨ גבול עם גרדיאנט – בלי צבע רקע מתנגש */
+  background-image: linear-gradient(transparent, transparent), 
                     linear-gradient(90deg, #8b5cf6, #06b6d4, #3b82f6);
   background-origin: border-box;
   background-clip: padding-box, border-box;
 }
+
 
 .submit-btn:hover:not(:disabled) {
   background-image: linear-gradient(90deg, #8b5cf6, #06b6d4, #3b82f6);
