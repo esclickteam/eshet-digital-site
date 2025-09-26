@@ -82,7 +82,7 @@ export default function Header() {
 
         {/* ===== Desktop CTA ===== */}
         <div className="header-cta desktop-only">
-          <a href="/get-started" className="cta-btn">
+          <a href="/get-started" className="cta-btn cta-primary">
             Get Started
           </a>
         </div>
@@ -135,13 +135,13 @@ export default function Header() {
           <li className="mobile-cta">
             <a
               href="https://www.eshetdigital.com/get-started#contact-form"
-              className="contact-card"
+              className="cta-btn cta-primary"
             >
               Contact Us
             </a>
             <a
               href="https://www.eshetdigital.com/book"
-              className="meeting-card"
+              className="cta-btn cta-secondary"
             >
               Schedule a Meeting
             </a>
