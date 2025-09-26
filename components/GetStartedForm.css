@@ -8,7 +8,7 @@
 
 /* ===== Form Container ===== */
 .form-container {
-  background: transparent; /* ✅ בלי קופסה */
+  background: transparent;
   padding: 40px 30px;
   max-width: 500px;
   width: 100%;
@@ -25,7 +25,7 @@
 
 .form-subtitle {
   font-size: 1rem;
-  color: rgba(255,255,255,0.7);
+  color: #fff;
   margin-bottom: 25px;
 }
 
@@ -41,7 +41,7 @@
   width: 100%;
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(255,255,255,0.4);
+  border-bottom: 1px solid rgba(255,255,255,0.6);
   padding: 12px 0;
   font-size: 1rem;
   color: #fff;
@@ -49,23 +49,27 @@
   transition: border-color 0.3s;
 }
 
+/* ===== Placeholders ===== */
 .form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: rgba(255,255,255,0.6);
+.form-group textarea::placeholder,
+.form-group select option {
+  color: #fff !important;
+  opacity: 1;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-  border-color: #8b5cf6;
+  border-color: #a855f7; /* סגול חזק */
 }
 
+/* ===== Icons ===== */
 .form-group .icon {
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  color: rgba(255,255,255,0.6);
+  color: #fff !important;
   font-size: 1rem;
 }
 
@@ -78,15 +82,20 @@ textarea {
 .phone-input .react-tel-input .form-control {
   width: 100% !important;
   border: none !important;
-  border-bottom: 1px solid rgba(255,255,255,0.4) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.6) !important;
   background: transparent !important;
   color: #fff !important;
   padding: 12px 0 12px 48px;
   font-size: 1rem;
 }
 
+.phone-input .react-tel-input .form-control::placeholder {
+  color: #fff !important;
+  opacity: 1;
+}
+
 .phone-input .react-tel-input .form-control:focus {
-  border-color: #8b5cf6 !important;
+  border-color: #a855f7 !important;
 }
 
 .phone-input .react-tel-input .flag-dropdown {
@@ -112,7 +121,7 @@ textarea {
   }
 }
 
-/* ===== Submit Button (Gradient Border) ===== */
+/* ===== Submit Button (Gradient Outline + Glow) ===== */
 .submit-btn {
   width: auto;
   min-width: 160px;
@@ -123,7 +132,7 @@ textarea {
   font-size: 1.1rem;
   font-weight: 700;
   border: 2px solid transparent !important;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -134,17 +143,18 @@ textarea {
   z-index: 1;
   transition: all 0.3s ease !important;
 
-  /* ✨ גבול עם גרדיאנט – תמיד מוצג */
-  background-image: linear-gradient(transparent, transparent),
-                    linear-gradient(90deg, #8b5cf6, #06b6d4, #3b82f6) !important;
-  background-origin: border-box !important;
-  background-clip: padding-box, border-box !important;
+  /* גבול גרדיאנט עם Glow */
+  background-image: linear-gradient(#0f172a, #0f172a),
+                    linear-gradient(90deg, #a855f7, #ec4899, #f59e0b);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 0 14px rgba(236,72,153,0.6);
 }
 
 .submit-btn:hover:not(:disabled) {
-  background-image: linear-gradient(90deg, #8b5cf6, #06b6d4, #3b82f6) !important;
+  background-image: linear-gradient(90deg, #a855f7, #ec4899, #f59e0b) !important;
   color: #fff !important;
-  box-shadow: 0 0 18px rgba(139,92,246,0.5) !important;
+  box-shadow: 0 0 22px rgba(236,72,153,0.75);
 }
 
 .submit-btn:disabled {
@@ -152,6 +162,7 @@ textarea {
   color: #94a3b8 !important;
   cursor: not-allowed;
   background-image: none !important;
+  box-shadow: none !important;
 }
 
 /* ===== אייקון חץ ===== */
