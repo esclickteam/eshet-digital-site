@@ -68,56 +68,55 @@ textarea {
   resize: vertical;
 }
 
-/* ===== Phone Input (דגל + קידומת + מספר באותו קו) ===== */
+/* ===== Phone Input (דגל בקופסה + קידומת בחוץ) ===== */
 .phone-input .react-tel-input {
   width: 100%;
   margin-bottom: 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.6) !important; /* קו אחיד */
+  position: relative;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.6);
 }
 
-/* ביטול מסגרת סביב הדגל */
+/* קופסה לדגל */
 .phone-input .react-tel-input .flag-dropdown {
-  background: rgba(255,255,255,0.1) !important;  /* רקע עדין */
-  border: 1px solid rgba(255,255,255,0.3) !important; /* גבול דק */
-  box-shadow: none !important;
-  margin: 0 !important;
-  padding: 0 8px !important;
-  border-radius: 4px; /* פינות מעוגלות */
+  background: rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  border-radius: 4px;
+  padding: 0 6px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
-/* דגל + קידומת צמודים */
+/* דגל בפנים */
 .phone-input .react-tel-input .selected-flag {
-  display: flex !important;
-  align-items: center !important;
-  gap: 6px; /* רווח קטן */
-  padding: 0 6px !important;
   background: transparent !important;
   border: none !important;
-  min-width: auto !important;
+  padding: 0 !important;
 }
 
+/* הקידומת מחוץ לקופסה */
 .phone-input .react-tel-input .selected-dial-code {
+  position: absolute;
+  left: 70px; /* מרחק אחרי הדגל */
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 1rem;
-  font-weight: 600;        /* מודגש */
-  color: #fff !important;  /* אפשר לשנות לשחור אם צריך */
-  margin: 0 !important;
-  line-height: 1;
+  font-weight: 600;
+  color: #fff !important;
 }
 
-/* האינפוט של המספר */
+/* שדה המספר */
 .phone-input .react-tel-input .form-control {
   flex: 1;
   border: none !important;
-  box-shadow: none !important;
   background: transparent !important;
   color: #fff !important;
   font-size: 1rem !important;
   height: 44px;
   outline: none !important;
-  padding-left: 6px !important; /* רווח קטן אחרי הקידומת */
+  padding-left: 100px !important; /* מפנה מקום לדגל + קידומת */
 }
 
 .phone-input .react-tel-input .form-control::placeholder {
