@@ -1,7 +1,6 @@
 :root {
   /* ===== Light Mode ===== */
   --background: linear-gradient(180deg, #1e2a78 0%, #2b3fa3 50%, #3b82f6 100%);
-   /* כחול כהה אחיד במקום לבן */
   --foreground: #ffffff;   /* טקסט בהיר על רקע כהה */
 
   /* Brand Colors */
@@ -11,9 +10,9 @@
   --gold: #ffd700;
 
   /* Dark UX Variables */
-  --bg-dark: #1e2a78;      /* אותו כחול כהה לכל האתר */
-  --text-light: #ffffff;   /* טקסט בהיר */
-  --text-muted: #cbd5e1;   /* טקסט משני בהיר */
+  --bg-dark: #1e2a78;      
+  --text-light: #ffffff;   
+  --text-muted: #cbd5e1;   
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,13 +21,11 @@
     --background: #1e2a78;
     --foreground: #ffffff;
 
-    /* Adjusted brand colors for dark mode */
     --primary: #8a2be2;
     --secondary: #4f9dff;
     --accent: #ff79c6;
     --gold: #ffd700;
 
-    /* Dark UX Variables */
     --bg-dark: #1e2a78;     
     --text-light: #ffffff;
     --text-muted: #cbd5e1;
@@ -51,7 +48,7 @@ body {
 
 body {
   color: var(--foreground);
-  background: var(--background) !important; /* כחול כהה אחיד */
+  background: var(--background) !important;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
   padding-top: 70px; /* מקום ל-Header קבוע */
@@ -64,7 +61,7 @@ body {
   padding: 0 20px;
 }
 
-/* ===== Gradient Utility (לכותרות מיוחדות) ===== */
+/* ===== Gradient Utility ===== */
 .gradient-text {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   background-clip: text;
@@ -80,7 +77,6 @@ a {
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
 a::after {
   content: "";
   position: absolute;
@@ -91,11 +87,9 @@ a::after {
   background: var(--primary);
   transition: width 0.3s ease;
 }
-
 a:hover {
   color: var(--primary);
 }
-
 a:hover::after {
   width: 100%;
 }
@@ -104,9 +98,9 @@ a:hover::after {
 button,
 .btn-primary {
   display: inline-block;
-  background: #fff;              /* ברירת מחדל לבן */
-  color: #2563eb;                /* טקסט כחול */
-  border: 2px solid #2563eb;     /* מסגרת כחולה */
+  background: #fff;
+  color: #2563eb;
+  border: 2px solid #2563eb;
   padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 30px);
   border-radius: 8px;
   font-size: clamp(0.9rem, 1vw, 1rem);
@@ -117,12 +111,12 @@ button,
   box-shadow: 
     0 0 6px rgba(59, 130, 246, 0.7),
     0 0 12px rgba(147, 51, 234, 0.6),
-    0 0 20px rgba(147, 51, 234, 0.5); /* ניאון כחול-סגול */
+    0 0 20px rgba(147, 51, 234, 0.5);
 }
 
 button:hover,
 .btn-primary:hover {
-  background: linear-gradient(135deg, #3b82f6, #9333ea); /* כחול → סגול */
+  background: linear-gradient(135deg, #3b82f6, #9333ea);
   color: #fff !important;
   border-color: transparent;
   transform: translateY(-3px);
@@ -144,11 +138,23 @@ button:active,
 .text-center {
   text-align: center;
 }
+.mt-80 { margin-top: 80px; }
+.mb-80 { margin-bottom: 80px; }
 
-.mt-80 {
-  margin-top: 80px;
+/* ===== reCAPTCHA Badge ===== */
+.grecaptcha-badge {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 9999 !important;
+  transform: scale(0.9);
+  transform-origin: bottom right;
 }
 
-.mb-80 {
-  margin-bottom: 80px;
+@media (max-width: 768px) {
+  .grecaptcha-badge {
+    bottom: 10px !important;
+    right: 10px !important;
+    transform: scale(0.8);
+  }
 }
