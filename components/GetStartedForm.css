@@ -106,12 +106,16 @@ textarea {
 
 /* רק הדגל בפנים */
 .phone-input .react-tel-input .selected-flag .flag {
+  display: block !important;        /* תמיד יוצג */
   width: 24px !important;
   height: 16px !important;
   border-radius: 3px !important;
-  box-shadow: 0 0 3px rgba(0,0,0,0.2);
-  background-image: none !important; /* ✅ מונע דגלים כפולים */
   object-fit: cover !important;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+
+  background-size: cover !important;  /* ✅ מחזיר את תמונת הדגל */
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 
 /* מסתיר את הקידומת מתוך הקופסה */
