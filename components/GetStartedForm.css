@@ -99,6 +99,7 @@ textarea {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  overflow: hidden !important;   /* ✅ מונע כפילות */
   box-shadow: none !important;
   transition: all 0.3s ease;
 }
@@ -109,10 +110,17 @@ textarea {
   height: 16px !important;
   border-radius: 3px !important;
   box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  background-image: none !important; /* ✅ מונע דגלים כפולים */
+  object-fit: cover !important;
 }
 
 /* מסתיר את הקידומת מתוך הקופסה */
 .phone-input .react-tel-input .selected-flag .selected-dial-code {
+  display: none !important;
+}
+
+/* מסתיר את החץ הקטן (▼) */
+.phone-input .react-tel-input .selected-flag .arrow {
   display: none !important;
 }
 
