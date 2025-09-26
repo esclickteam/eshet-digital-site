@@ -37,7 +37,8 @@
 
 .form-group input,
 .form-group textarea,
-.form-group select {
+.form-group select,
+.react-international-phone-input {
   width: 100%;
   background: transparent;
   border: none;
@@ -51,14 +52,16 @@
 
 .form-group input::placeholder,
 .form-group textarea::placeholder,
+.react-international-phone-input::placeholder,
 .form-group select option {
-  color: #fff !important;
+  color: rgba(255,255,255,0.8);
   opacity: 1;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
-.form-group select:focus {
+.form-group select:focus,
+.react-international-phone-input:focus {
   border-color: #a855f7;
   box-shadow: 0 2px 6px rgba(168,85,247,0.3);
 }
@@ -68,115 +71,38 @@ textarea {
   resize: vertical;
 }
 
-/* ===== Phone Input ===== */
-.phone-input .react-tel-input {
-  width: 100%;
-  margin-bottom: 20px;
+/* ===== Phone Input (react-international-phone) ===== */
+.react-international-phone-input-container {
   display: flex;
   align-items: center;
   border-bottom: 1px solid rgba(255,255,255,0.6);
-  position: relative;
   padding-bottom: 6px;
 }
 
-/* הסתרת גבולות מיותרים */
-.phone-input .react-tel-input .flag-dropdown {
+.react-international-phone-country-selector {
   background: transparent !important;
   border: none !important;
-  box-shadow: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* ===== הקופסה לדגל בלבד ===== */
-.phone-input .react-tel-input .selected-flag {
-  width: 36px !important;
-  height: 26px !important;
-  padding: 0 !important;
-  border-radius: 6px !important;
-  background: rgba(255,255,255,0.1) !important;
-  border: 1px solid rgba(255,255,255,0.3) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  box-shadow: none !important;
-  overflow: hidden !important;
-}
-
-/* רק הדגל בפנים */
-.phone-input .react-tel-input .selected-flag .flag {
-  width: 24px !important;
-  height: 16px !important;
-  border-radius: 3px !important;
-  box-shadow: 0 0 3px rgba(0,0,0,0.2);
-  /* ❌ לא לגעת ב-background-image/size/position */
-}
-
-
-/* מסתיר את הקידומת מתוך הקופסה */
-.phone-input .react-tel-input .selected-flag .selected-dial-code {
-  display: none !important;
-}
-
-/* מסתיר את החץ הקטן (▼) */
-.phone-input .react-tel-input .selected-flag .arrow {
-  display: none !important;
-}
-
-/* שדה הטלפון */
-.phone-input .react-tel-input .form-control {
-  flex: 1;
-  border: none !important;
-  box-shadow: none !important;
-  background: transparent !important;
   color: #fff !important;
-  font-size: 1rem !important;
-  height: 44px;
-  outline: none !important;
-  padding-left: 50px !important; /* רווח אחרי הדגל */
-  letter-spacing: 0.5px;
-}
-.phone-input .react-tel-input .form-control::placeholder {
-  color: #fff !important;
-  opacity: 0.7 !important;
+  margin-right: 10px;
 }
 
-/* Dropdown */
-.phone-input .react-tel-input .country-list {
-  background: #ffffff !important;
-  color: #1e293b !important;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb !important;
-  max-height: 260px;
-  overflow-y: auto;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-  font-size: 0.95rem;
-  padding: 6px 0;
-}
-
-.phone-input .react-tel-input .country-list .country {
-  padding: 10px 14px;
+.react-international-phone-country-selector button {
+  background: transparent;
+  border: none;
+  color: #fff;
   display: flex;
   align-items: center;
-  gap: 8px;
-  transition: background 0.2s ease, color 0.2s ease;
+  gap: 6px;
 }
 
-.phone-input .react-tel-input .country-list .country:hover,
-.phone-input .react-tel-input .country-list .country.highlight {
-  background: #f3f4f6 !important;
-  color: #1e293b !important;
-  font-weight: 600 !important;
-  cursor: pointer;
-}
-
-.phone-input .react-tel-input .country-list .dial-code {
-  color: #1e293b !important;
-  font-weight: 500;
-}
-
-.phone-input .react-tel-input .search-box {
-  display: none !important;
+.react-international-phone-input {
+  flex: 1;
+  background: transparent !important;
+  border: none !important;
+  color: #fff !important;
+  font-size: 1rem;
+  height: 44px;
+  outline: none !important;
 }
 
 /* ===== Submit Button ===== */
