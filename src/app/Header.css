@@ -209,7 +209,7 @@
 
 /* ====== Hamburger (Mobile) ====== */
 .hamburger {
-  display: none;
+  display: flex;              /* ✅ שיהיה תמיד flex במובייל */
   width: 36px;
   height: 28px;
   position: relative;
@@ -217,7 +217,10 @@
   border: none;
   cursor: pointer;
   z-index: 1100;
+  justify-content: center;
+  align-items: center;
 }
+
 
 /* קווים במצב סגור */
 .hamburger span {
@@ -235,7 +238,7 @@
 
 /* במצב פתוח – רק איקס */
 .hamburger.active span {
-  display: none;
+  display: none !important;
 }
 .hamburger.active::before,
 .hamburger.active::after {
