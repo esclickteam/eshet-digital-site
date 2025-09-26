@@ -68,7 +68,7 @@
 .nav-links li a,
 .dropbtn {
   text-decoration: none;
-  color: #fff; /* לינקים תמיד לבנים */
+  color: #fff; /* תמיד לבן */
   font-size: 1rem;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -78,6 +78,12 @@
   align-items: center;
   cursor: pointer;
   position: relative;
+
+  /* ✅ מסיר ריבוע ברירת מחדל של button */
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 /* Hover אפקט ברור */
