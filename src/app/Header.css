@@ -263,24 +263,23 @@
   .hamburger { display: flex; }
   .nav-links li { width: 100%; }
 
-  .nav-links li a,
+ .nav-links li a,
   .dropbtn {
     font-size: 1.2rem;
     font-weight: 700;
     text-transform: uppercase;
     padding: 14px 0;
     color: #fff;
-    display: flex;
+    display: inline-flex;   /* ✅ צמוד */
     align-items: center;
-    justify-content: space-between; /* טקסט בצד שמאל, חץ בצד ימין */
+    gap: 6px;               /* רווח קטן מאוד */
     width: 100%;
   }
 
   /* חצים במובייל */
  .dropbtn::after {
-    content: "▼";          /* ✅ חץ יוניקוד */
+    content: "▼";
     font-size: 0.9rem;
-    margin-left: 8px;
     transition: transform 0.3s ease;
   }
   .dropbtn.open::after {
