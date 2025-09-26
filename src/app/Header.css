@@ -79,7 +79,6 @@
   cursor: pointer;
   position: relative;
 
-  /* ✅ מסיר ריבוע ברירת מחדל של button */
   background: none !important;
   border: none !important;
   outline: none !important;
@@ -106,7 +105,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: var(--bg-dark); /* ✅ כהה יוקרתי */
+  background: var(--bg-dark);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   display: flex;
@@ -169,11 +168,10 @@
   cursor: pointer;
   transition: all 0.3s ease;
 
-  background: #fff;              /* ✅ ברירת מחדל לבן */
-  color: #2563eb;                /* ✅ טקסט כחול */
-  border: 2px solid #2563eb;     /* ✅ מסגרת כחולה */
+  background: #fff;
+  color: #2563eb;
+  border: 2px solid #2563eb;
 
-  /* ✅ אפקט ניאון כחול במצב רגיל */
   box-shadow: 
     0 0 8px rgba(37, 99, 235, 0.5),
     0 0 16px rgba(37, 99, 235, 0.3),
@@ -183,12 +181,11 @@
 /* Hover / Focus */
 .cta-btn:hover,
 .cta-btn:focus {
-  background: linear-gradient(135deg, #3b82f6, #9333ea); /* כחול → סגול */
+  background: linear-gradient(135deg, #3b82f6, #9333ea);
   color: #fff !important;
   border-color: transparent;
   transform: translateY(-2px);
 
-  /* ✅ ניאון חזק יותר */
   box-shadow: 
     0 0 12px rgba(147, 51, 234, 0.6),
     0 0 24px rgba(59, 130, 246, 0.6),
@@ -232,7 +229,7 @@
 .hamburger span {
   width: 100%;
   height: 3px;
-  background: var(--text-light); /* קווים לבנים */
+  background: var(--text-light);
   border-radius: 2px;
   transition: 0.3s;
 }
@@ -244,6 +241,7 @@
 .desktop-only { display: flex; }
 .mobile-only { display: none; }
 
+/* ====== Mobile Menu עם רקע גרדיאנט ====== */
 @media screen and (max-width: 768px) {
   .desktop-only { display: none; }
   .mobile-only {
@@ -254,7 +252,7 @@
     left: 0;
     width: 100%;
     height: calc(100vh - 70px);
-    background: var(--bg-dark);
+    background: linear-gradient(135deg, #1e2a78, #3b82f6, #9333ea); /* ✅ גרדיאנט יוקרתי */
     padding: 30px 20px 40px;
     gap: 20px;
     overflow-y: auto;
@@ -268,26 +266,47 @@
   .header-cta { display: none !important; }
   .hamburger { display: flex; }
   .nav-links li { width: 100%; }
+
   .nav-links li a,
-  .dropbtn { font-size: 1.1rem; padding: 12px 0; }
+  .dropbtn {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 14px 0;
+    color: #fff;
+  }
 
   /* Mobile CTAs */
   .mobile-cta {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
+    gap: 18px;
+    margin-top: 30px;
   }
   .mobile-cta .cta-btn {
     width: 100%;
     text-align: center;
     padding: 14px 26px;
     border-radius: 50px;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 700;
     text-decoration: none;
-    margin-top: 10px;
     transition: all 0.3s ease;
+
+    background: linear-gradient(135deg, #3b82f6, #9333ea) !important;
+    color: #fff !important;
+    border: 2px solid #3b82f6 !important;
+    box-shadow: 
+      0 0 8px rgba(59, 130, 246, 0.6),
+      0 0 16px rgba(147, 51, 234, 0.5);
+  }
+  .mobile-cta .cta-btn:hover {
+    background: linear-gradient(135deg, #9333ea, #3b82f6) !important;
+    transform: translateY(-3px);
+    box-shadow: 
+      0 0 12px rgba(147, 51, 234, 0.8),
+      0 0 24px rgba(59, 130, 246, 0.7),
+      0 0 36px rgba(59, 130, 246, 0.5);
   }
 }
 
@@ -306,32 +325,4 @@ html, body {
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
-}
-
-/* ====== Mobile CTA Fix ====== */
-.mobile-cta .cta-btn {
-  background: linear-gradient(135deg, #3b82f6, #9333ea) !important;  /* ✅ שקוף – מתאים לרקע */
-  color: #fff !important;               /* טקסט לבן */
-  border: 2px solid #3b82f6 !important; /* מסגרת כחולה זוהרת */
-  border-radius: 50px;
-  font-size: 1.05rem;
-  font-weight: 700;
-  text-decoration: none;
-  text-align: center;
-  padding: 14px 26px;
-  margin-top: 10px;
-  transition: all 0.3s ease;
-  box-shadow: 
-    0 0 6px rgba(59, 130, 246, 0.6),
-    0 0 12px rgba(59, 130, 246, 0.4);
-}
-.mobile-cta .cta-btn:hover {
-  background: linear-gradient(135deg, #3b82f6, #9333ea) !important; /* גרדיאנט כחול → סגול */
-  color: #fff !important;
-  border-color: transparent !important;
-  transform: translateY(-2px);
-  box-shadow: 
-    0 0 12px rgba(147, 51, 234, 0.7),
-    0 0 24px rgba(59, 130, 246, 0.6),
-    0 0 36px rgba(59, 130, 246, 0.5);
 }
