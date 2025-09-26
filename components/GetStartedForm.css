@@ -127,11 +127,11 @@ textarea {
   min-width: 160px;
   padding: 14px 28px;
   margin-top: 20px;
-  background: transparent !important;
+  background: linear-gradient(90deg, #a855f7, #ec4899, #f59e0b) !important; /* ✅ רקע מלא */
   color: #fff !important;
   font-size: 1.1rem;
   font-weight: 700;
-  border: 2px solid transparent !important;
+  border: none !important; /* אין צורך במסגרת */
   border-radius: 8px;
   cursor: pointer;
   display: inline-flex;
@@ -143,25 +143,20 @@ textarea {
   z-index: 1;
   transition: all 0.3s ease !important;
 
-  /* גבול גרדיאנט עם Glow */
-  background-image: linear-gradient(#0f172a, #0f172a),
-                    linear-gradient(90deg, #a855f7, #ec4899, #f59e0b);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+  /* Glow */
   box-shadow: 0 0 14px rgba(236,72,153,0.6);
 }
 
 .submit-btn:hover:not(:disabled) {
-  background-image: linear-gradient(90deg, #a855f7, #ec4899, #f59e0b) !important;
+  background: linear-gradient(90deg, #f59e0b, #ec4899, #a855f7) !important; /* ✅ גרדיאנט אחר בהובר */
   color: #fff !important;
   box-shadow: 0 0 22px rgba(236,72,153,0.75);
 }
 
 .submit-btn:disabled {
-  border-color: #475569 !important;
+  background: #475569 !important;
   color: #94a3b8 !important;
   cursor: not-allowed;
-  background-image: none !important;
   box-shadow: none !important;
 }
 
