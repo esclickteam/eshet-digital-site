@@ -589,7 +589,7 @@
   height: 32px;
   border-radius: 50%;
   background: var(--brand-color-light);
-  color: #fff;
+  color: var(--brand-color);
   display: flex;
   align-items: center;
   justify-content: center;
