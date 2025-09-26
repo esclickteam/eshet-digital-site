@@ -262,11 +262,16 @@
 .mobile-only { display: none; }
 
 /* ====== Mobile Menu ====== */
+.mobile-menu {
+  display: none !important; /* ✅ מוסתר לגמרי בדסקטופ */
+}
+
 @media screen and (max-width: 768px) {
   .desktop-only { display: none; }
   .hamburger { display: flex; }
 
   .mobile-menu {
+    display: flex !important; /* ✅ מוצג רק במובייל */
     position: fixed;
     top: 0;
     left: 0;
@@ -274,7 +279,6 @@
     height: 100vh;
     background: linear-gradient(135deg, #1e2a78, #3b82f6, #9333ea);
     padding: 100px 20px 40px;
-    display: flex;
     flex-direction: column;
     gap: 20px;
     overflow-y: auto;
@@ -352,7 +356,6 @@ html, body {
   margin: 0;
   padding: 0;
 }
-
 .dropdown-content ul li {
   margin: 0;
   padding: 0;
