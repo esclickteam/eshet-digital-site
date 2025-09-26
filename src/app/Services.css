@@ -49,6 +49,25 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+
+  /* ✅ אפקט כניסה */
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.service-card:nth-child(1) { animation-delay: 0.2s; }
+.service-card:nth-child(2) { animation-delay: 0.4s; }
+.service-card:nth-child(3) { animation-delay: 0.6s; }
+.service-card:nth-child(4) { animation-delay: 0.8s; }
+.service-card:nth-child(5) { animation-delay: 1s; }
+.service-card:nth-child(6) { animation-delay: 1.2s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .service-card:hover {
@@ -76,13 +95,17 @@
 .service-card .icon {
   font-size: 3rem;
   margin-bottom: 20px;
-  color: var(--primary);
-  transition: transform 0.3s, color 0.3s;
+  color: #fff; /* ✅ לבן כברירת מחדל */
+  text-shadow: 0 0 10px rgba(106, 17, 203, 0.6),
+               0 0 18px rgba(37, 117, 252, 0.5);
+  transition: transform 0.3s, color 0.3s, text-shadow 0.3s;
 }
 
 .service-card:hover .icon {
   transform: scale(1.25) rotate(-5deg);
-  color: #fff;
+  color: #ffd700; /* ✅ זהב בהובר */
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.9),
+               0 0 25px rgba(255, 215, 0, 0.7);
 }
 
 /* ===== Title inside card ===== */

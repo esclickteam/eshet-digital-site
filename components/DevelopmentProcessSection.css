@@ -17,13 +17,20 @@
 /* ===== Title ===== */
 .dev-process-section .section-title {
   font-size: clamp(2rem, 5vw, 2.8rem);
-  font-weight: 800;
+  font-weight: 900;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+
+  /* ✅ גרדיאנט זוהר */
+  background: linear-gradient(90deg, var(--primary), var(--secondary), #00e5ff);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+
+  /* ✅ Glow */
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+
+  animation: shineText 6s linear infinite;
   position: relative;
 }
 
@@ -34,8 +41,22 @@
   width: 100px;
   height: 4px;
   margin: 15px auto 0;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  background: linear-gradient(90deg, var(--primary), var(--secondary), #00e5ff);
   border-radius: 3px;
+  animation: underlineGlow 4s ease-in-out infinite;
+}
+
+/* אפקט גרדיאנט זורם */
+@keyframes shineText {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+/* קו מתחת לכותרת זוהר */
+@keyframes underlineGlow {
+  0%, 100% { box-shadow: 0 0 6px rgba(0,229,255,0.6); }
+  50% { box-shadow: 0 0 16px rgba(0,229,255,0.9); }
 }
 
 .dev-process-section .section-subtitle {
