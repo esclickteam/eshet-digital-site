@@ -76,8 +76,7 @@ textarea {
 }
 
 .phone-input .react-tel-input .form-control {
-  width: 100%;
-  padding-left: 95px !important; /* מפנה מקום לדגל + קידומת */
+  padding-left: 10px !important; /* ✅ אין צורך ברווח גדול */
   background: transparent !important;
   border: none !important;
   border-bottom: 1px solid rgba(255,255,255,0.6) !important;
