@@ -106,68 +106,36 @@ textarea {
   box-shadow: 0 2px 6px rgba(168,85,247,0.3);
 }
 
-/* ===== Dropdown אלגנטי ===== */
+/* ✅ רשימת מדינות – עיצוב נקי */
 .phone-input .react-tel-input .country-list {
-  background: #ffffff !important; /* רקע לבן ונקי */
-  color: #111 !important;         /* טקסט כהה */
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  background: #fff !important;
+  color: #111 !important;
+  border-radius: 6px;
+  border: 1px solid #ddd !important;
   max-height: 250px;
   overflow-y: auto;
-  padding: 6px 0;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   font-size: 0.95rem;
-  z-index: 2000;
+  padding: 6px 0;
 }
 
 .phone-input .react-tel-input .country-list .country {
-  padding: 10px 16px;
-  transition: background 0.2s ease, color 0.2s ease;
+  padding: 8px 12px;
 }
 
-.phone-input .react-tel-input .country-list .country:hover {
-  background: #f3f4f6; /* אפור עדין בהובר */
+.phone-input .react-tel-input .country-list .country:hover,
+.phone-input .react-tel-input .country-list .country.highlight {
+  background: #f3f4f6 !important; /* אפור עדין בהובר */
   cursor: pointer;
 }
 
-.phone-input .react-tel-input .country-list .country.highlight {
-  background: #e0e7ff !important; /* כחול בהיר */
-  color: #1e3a8a !important;
-  font-weight: 600;
+.phone-input .react-tel-input .country-list .dial-code {
+  color: #666 !important;
 }
 
-/* ===== Search Box ===== */
+/* ✅ הסתרת תיבת החיפוש המיותרת */
 .phone-input .react-tel-input .search-box {
-  margin: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
-  padding: 8px 12px;
-  font-size: 0.9rem;
-  width: calc(100% - 24px);
-  outline: none;
-}
-
-.phone-input .react-tel-input .search-box:focus {
-  border-color: #2575fc;
-  box-shadow: 0 0 6px rgba(37,117,252,0.3);
-}
-
-/* ===== First & Last name side by side ===== */
-.name-row {
-  display: flex;
-  gap: 16px;
-}
-
-.name-row .form-group {
-  flex: 1;
-  margin-bottom: 20px;
-}
-
-@media (max-width: 600px) {
-  .name-row {
-    flex-direction: column;
-    gap: 0;
-  }
+  display: none !important;
 }
 
 /* ===== Submit Button (Gradient Outline + Glow) ===== */
