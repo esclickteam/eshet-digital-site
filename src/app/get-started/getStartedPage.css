@@ -1,3 +1,4 @@
+/* ===== Page Wrapper ===== */
 .get-started-page {
   background: #f9fafb; /* רקע כללי אחיד */
   min-height: 100vh;
@@ -5,7 +6,7 @@
   flex-direction: column;
 }
 
-/* Hero */
+/* ===== Hero Section ===== */
 .hero {
   background: none; /* בלי גרדיאנט נוסף */
   color: #1e293b;
@@ -27,7 +28,7 @@
   line-height: 1.6;
 }
 
-/* Form Wrapper */
+/* ===== Form Wrapper ===== */
 .form-wrapper {
   margin: 0 auto 80px;
   max-width: 700px;
@@ -35,7 +36,7 @@
   padding: 0 20px;
 }
 
-/* Card */
+/* ===== Form Card ===== */
 .form-container {
   background: #ffffff;
   border-radius: 16px;
@@ -43,34 +44,44 @@
   box-shadow: 0 8px 28px rgba(0,0,0,0.08);
 }
 
-/* Inputs */
+/* ===== Form Groups ===== */
+.form-group {
+  margin-bottom: 20px;
+}
+
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
   border: 1px solid #cbd5e1;
   border-radius: 10px;
   padding: 12px;
   font-size: 1rem;
   color: #1e293b;
+  width: 100%;
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group select:focus {
   border-color: #6366f1;
   box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
   outline: none;
 }
 
-/* Button */
+/* ===== Submit Button ===== */
 .submit-btn {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6); /* צבע מותג יחיד */
+  background: linear-gradient(135deg, #6366f1, #8b5cf6); /* ✅ גרדיאנט מותג */
   color: #fff;
   border: none;
   padding: 14px 34px;
   border-radius: 35px;
+  font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .submit-btn:hover {
