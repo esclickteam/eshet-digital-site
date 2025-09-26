@@ -99,22 +99,17 @@ textarea {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  overflow: hidden !important;
   box-shadow: none !important;
+  overflow: hidden !important;
 }
 
 /* רק הדגל בפנים */
 .phone-input .react-tel-input .selected-flag .flag {
-  display: block !important;
   width: 24px !important;
   height: 16px !important;
   border-radius: 3px !important;
   box-shadow: 0 0 3px rgba(0,0,0,0.2);
-
-  /* ❌ אל תשתמש ב-cover */
-  background-size: auto !important;       
-  background-position: center !important; 
-  background-repeat: no-repeat !important;
+  /* ❌ לא לגעת ב-background-image/size/position */
 }
 
 
@@ -141,7 +136,6 @@ textarea {
   padding-left: 50px !important; /* רווח אחרי הדגל */
   letter-spacing: 0.5px;
 }
-
 .phone-input .react-tel-input .form-control::placeholder {
   color: #fff !important;
   opacity: 0.7 !important;
