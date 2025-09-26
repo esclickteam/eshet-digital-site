@@ -71,16 +71,17 @@ textarea {
 
 /* ===== Phone Input (קידומת מחוץ לשדה) ===== */
 .phone-input .react-tel-input {
+  display: flex !important;
+  align-items: center;
   width: 100%;
-  display: flex;
   margin-bottom: 20px;
 }
 
 .phone-input .react-tel-input .flag-dropdown {
+  flex: 0 0 95px; /* גודל קבוע */
   border: 1px solid #ccc !important;
   border-radius: 6px 0 0 6px !important;
   background: #fff !important;
-  min-width: 95px !important; /* ✅ מספיק מקום לדגל + קידומת */
 }
 
 .phone-input .react-tel-input .selected-flag {
@@ -101,7 +102,8 @@ textarea {
 }
 
 .phone-input .react-tel-input .form-control {
-  flex: 1;
+  flex: 1 1 auto;         /* יתפוס את כל השטח שנשאר */
+  min-width: 0;           /* ✅ מונע חיתוך */
   border: 1px solid #ccc !important;
   border-left: none !important;
   border-radius: 0 6px 6px 0 !important;
