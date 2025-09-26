@@ -103,24 +103,25 @@ a:hover::after {
 button,
 .btn-primary {
   display: inline-block;
-  background: #25d366;
+  background: linear-gradient(135deg, #25d366, #20c057); /* ✅ גרדיאנט ירוק */
   color: #fff;
-  border: none;
+  border: 2px solid #fff; /* ✅ מסגרת לבנה עדינה */
   padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 30px);
   border-radius: 50px;
   font-size: clamp(0.9rem, 1vw, 1rem);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* ✅ צל מודגש יותר */
 }
 
 button:hover,
 .btn-primary:hover {
-  background: var(--secondary);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #20c057, #1aa34a); /* ✅ ירוק כהה יותר בהובר */
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
+
 
 /* ===== Utilities ===== */
 .text-center {
