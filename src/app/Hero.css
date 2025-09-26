@@ -1,6 +1,7 @@
 /* ====== Hero Section ====== */
 .hero {
-  background: var(--bg-dark); /* רקע כהה אחיד */
+  position: relative; /* חשוב בשביל הווידאו */
+  background: var(--bg-dark); /* fallback רקע כהה */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,20 +10,34 @@
   min-height: calc(100vh - 70px); /* ✅ תמיד מתחת להדר */
   padding: 100px 20px 60px;
   animation: fadeInHero 1.2s ease-in-out;
-  position: relative;
   overflow: hidden;
+}
+
+/* ✅ וידאו ברקע */
+.hero video.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.9; /* אפשר לשחק עם השקיפות */
 }
 
 /* ביטול האפקטים הקודמים */
 .hero::before {
-  content: none; /* ❌ מנטרל את הגרדיאנט המעגלי */
+  content: none;
 }
 
 .hero-content {
   max-width: 720px;
   margin: 0 auto;
   position: relative;
-  z-index: 1;
+  z-index: 1; /* מעל הווידאו */
 }
 
 .hero h1 {

@@ -4,6 +4,13 @@ import "./Hero.css";
 export default function Hero() {
   return (
     <section className="hero">
+      {/* ✅ וידאו רקע */}
+      <video className="hero-video" autoPlay muted loop playsInline>
+        <source src="/videos/hero-bg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* ✅ תוכן מעל הווידאו */}
       <div className="hero-content">
         <h1>Your Brand Built Smarter</h1>
         <p>
