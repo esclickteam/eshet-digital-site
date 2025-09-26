@@ -83,28 +83,31 @@ textarea {
   background: rgba(255,255,255,0.1) !important;
   border: 1px solid rgba(255,255,255,0.3) !important;
   border-radius: 4px;
-  padding: 0 6px !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 0 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px; /* רווח קטן בין הדגל לקידומת */
+  min-width: 90px; /* שיהיה מקום לדגל + קידומת */
 }
 
 /* דגל בפנים */
 .phone-input .react-tel-input .selected-flag {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px;
+  padding: 0 !important;
+  margin: 0 !important;
   background: transparent !important;
   border: none !important;
-  padding: 0 !important;
 }
 
 /* הקידומת מחוץ לקופסה */
 .phone-input .react-tel-input .selected-dial-code {
-  position: absolute;
-  left: 70px; /* מרחק אחרי הדגל */
-  top: 50%;
-  transform: translateY(-50%);
   font-size: 1rem;
   font-weight: 600;
   color: #fff !important;
+  margin: 0 !important; /* מבטל מרווח מיותר */
+  line-height: 1;
 }
 
 /* שדה המספר */
