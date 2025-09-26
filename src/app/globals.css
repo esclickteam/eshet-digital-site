@@ -103,7 +103,7 @@ a:hover::after {
 button,
 .btn-primary {
   display: inline-block;
-  background: var(--primary);
+  background: #25d366;
   color: #fff;
   border: none;
   padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 30px);
