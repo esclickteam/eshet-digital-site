@@ -135,17 +135,17 @@ export default function Header() {
             <li><a href="/projects">Projects</a></li>
             <li><a href="/tech">Tech</a></li>
 
-            {/* ✅ Mobile CTAs */}
+            {/* ✅ Mobile CTAs עם צבעים שונים */}
             <li className="mobile-cta">
               <a
                 href="https://www.eshetdigital.com/get-started#contact-form"
-                className="cta-btn cta-primary"
+                className="cta-btn cta-contact"
               >
                 Contact Us
               </a>
               <a
                 href="https://www.eshetdigital.com/book"
-                className="cta-btn cta-secondary"
+                className="cta-btn cta-meeting"
               >
                 Schedule a Meeting
               </a>
