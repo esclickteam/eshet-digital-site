@@ -31,14 +31,16 @@
   border: 1px solid #ccc;       /* גבול אפור עדין */
   border-radius: 6px;
   background: #fff;             /* רקע לבן */
-  color: #111;                  /* טקסט כהה */
+  color: #111 !important;       /* טקסט שחור */
   font-size: 1rem;
   transition: all 0.3s ease;
 }
 
+/* ===== Placeholder ===== */
 .form-container input::placeholder,
-.form-container textarea::placeholder {
-  color: #888; /* placeholder אפור עדין */
+.form-container textarea::placeholder,
+.form-container select option {
+  color: #555 !important; /* placeholder אפור כהה */
 }
 
 /* ===== אפקט UX - פוקוס ===== */
