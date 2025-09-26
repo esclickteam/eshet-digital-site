@@ -310,7 +310,7 @@ html, body {
 
 /* ====== Mobile CTA Fix ====== */
 .mobile-cta .cta-btn {
-  background: transparent !important;   /* ✅ שקוף – מתאים לרקע */
+  background: linear-gradient(135deg, #3b82f6, #9333ea) !important;  /* ✅ שקוף – מתאים לרקע */
   color: #fff !important;               /* טקסט לבן */
   border: 2px solid #3b82f6 !important; /* מסגרת כחולה זוהרת */
   border-radius: 50px;
