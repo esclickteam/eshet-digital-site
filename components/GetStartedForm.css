@@ -80,7 +80,7 @@ textarea {
   border: none !important;
   border-bottom: 1px solid rgba(255,255,255,0.4) !important;
   background: transparent !important;
-  color: #fff;
+  color: #fff !important;
   padding: 12px 0 12px 48px;
   font-size: 1rem;
 }
@@ -90,8 +90,8 @@ textarea {
 }
 
 .phone-input .react-tel-input .flag-dropdown {
-  border: none;
-  background: transparent;
+  border: none !important;
+  background: transparent !important;
 }
 
 /* ===== First & Last name side by side ===== */
@@ -118,11 +118,11 @@ textarea {
   min-width: 160px;
   padding: 14px 28px;
   margin-top: 20px;
-  background: transparent;
-  color: #fff;
+  background: transparent !important;
+  color: #fff !important;
   font-size: 1.1rem;
   font-weight: 700;
-  border: 2px solid transparent;
+  border: 2px solid transparent !important;
   border-radius: 6px;
   cursor: pointer;
   display: inline-flex;
@@ -132,27 +132,26 @@ textarea {
   letter-spacing: 0.5px;
   position: relative;
   z-index: 1;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease !important;
 
-  /* ✨ גבול עם גרדיאנט – בלי צבע רקע מתנגש */
-  background-image: linear-gradient(transparent, transparent), 
-                    linear-gradient(90deg, #8b5cf6, #06b6d4, #3b82f6);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+  /* ✨ גבול עם גרדיאנט – תמיד מוצג */
+  background-image: linear-gradient(transparent, transparent),
+                    linear-gradient(90deg, #8b5cf6, #06b6d4, #3b82f6) !important;
+  background-origin: border-box !important;
+  background-clip: padding-box, border-box !important;
 }
 
-
 .submit-btn:hover:not(:disabled) {
-  background-image: linear-gradient(90deg, #8b5cf6, #06b6d4, #3b82f6);
-  color: #fff;
-  box-shadow: 0 0 18px rgba(139,92,246,0.5);
+  background-image: linear-gradient(90deg, #8b5cf6, #06b6d4, #3b82f6) !important;
+  color: #fff !important;
+  box-shadow: 0 0 18px rgba(139,92,246,0.5) !important;
 }
 
 .submit-btn:disabled {
-  border-color: #475569;
-  color: #94a3b8;
+  border-color: #475569 !important;
+  color: #94a3b8 !important;
   cursor: not-allowed;
-  background-image: none;
+  background-image: none !important;
 }
 
 /* ===== אייקון חץ ===== */
