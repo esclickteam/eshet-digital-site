@@ -154,12 +154,11 @@ export default function GetStartedForm() {
           <div className="form-group phone-input">
             <PhoneInput
               country={defaultCountry} // ✅ מתעדכן לפי IP
-              preferredCountries={["us", "gb", "de", "fr", "it", "es", "nl"]}
-              enableSearch={false} // ✅ בלי חיפוש מיותר
+              preferredCountries={["us", "gb", "de", "fr", "it", "es", "nl", "il"]}
+              enableSearch={true}
+              countryCodeEditable={false} // ✅ לא מאפשר למחוק את הקידומת
               value={phone}
-              onChange={(val, country) =>
-                setPhone("+" + country.dialCode + val) // ✅ שומר תמיד עם קידומת אמיתית
-              }
+              onChange={(val) => setPhone("+" + val)} // ✅ אין כפל קידומת
               inputProps={{
                 name: "phone",
                 required: true,
