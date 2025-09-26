@@ -13,12 +13,26 @@
 .form-container {
   background: #ffffff;       /* כרטיס לבן */
   border-radius: 16px;       /* פינות מעוגלות */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* צל עדין */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   width: 100%;
   max-width: 500px;
   padding: 40px;
   text-align: left;
   color: #111; /* טקסט כהה בתוך הטופס */
+}
+
+/* ===== כותרות ===== */
+.form-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111 !important; /* שחור */
+}
+
+.form-container .form-subtitle {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  color: #444 !important; /* אפור כהה */
 }
 
 /* ===== שדות ===== */
@@ -70,4 +84,33 @@
   background: linear-gradient(90deg, #2575fc, #6a11cb);
   transform: translateY(-3px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+/* ===== Phone Input (react-phone-input-2) ===== */
+.form-container .react-tel-input .form-control {
+  width: 100% !important;
+  padding: 12px 14px !important;
+  border: 1px solid #ccc !important;
+  border-radius: 6px !important;
+  background: #fff !important;
+  color: #111 !important;     /* טקסט שחור */
+  font-size: 1rem !important;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.form-container .react-tel-input .form-control::placeholder {
+  color: #555 !important;
+}
+
+.form-container .react-tel-input .form-control:focus {
+  border-color: #2575fc !important;
+  box-shadow: 0 0 6px rgba(37, 117, 252, 0.4) !important;
+  outline: none !important;
+}
+
+.form-container .react-tel-input .flag-dropdown {
+  border: 1px solid #ccc !important;
+  border-radius: 6px 0 0 6px !important;
+  background: #fff !important;
 }
