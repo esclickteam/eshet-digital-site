@@ -101,6 +101,7 @@ a:hover::after {
 }
 
 /* ===== Buttons (Neon Blue-Purple) ===== */
+button,
 .btn-primary {
   display: inline-block;
   background: #fff;              /* ברירת מחדל לבן */
@@ -113,7 +114,7 @@ a:hover::after {
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
-  box-shadow:
+  box-shadow: 
     0 0 6px rgba(59, 130, 246, 0.7),
     0 0 12px rgba(147, 51, 234, 0.6),
     0 0 20px rgba(147, 51, 234, 0.5); /* ניאון כחול-סגול */
