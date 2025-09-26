@@ -1,5 +1,5 @@
 .about-section {
-  background: #f3f0fa;
+  background: transparent; /* ✅ שקוף – יושב על הרקע הכללי */
   padding: 100px 20px;
   text-align: center;
 }
@@ -27,6 +27,6 @@
 .about-section .intro-text {
   font-size: 1.15rem;
   line-height: 1.7;
-  color: #333;
+  color: var(--text-light); /* ✅ שונה מ-#333 כדי להתאים לרקע כהה */
   font-weight: 400;
 }

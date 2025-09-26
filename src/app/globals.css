@@ -1,6 +1,7 @@
 :root {
   /* ===== Light Mode ===== */
-  --background: #1e2a78;   /* כחול כהה אחיד במקום לבן */
+  --background: linear-gradient(180deg, #1e2a78 0%, #2b3fa3 50%, #3b82f6 100%);
+   /* כחול כהה אחיד במקום לבן */
   --foreground: #ffffff;   /* טקסט בהיר על רקע כהה */
 
   /* Brand Colors */
