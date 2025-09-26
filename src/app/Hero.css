@@ -45,7 +45,7 @@
   z-index: 2;
 }
 
-/* ✅ כותרת יוקרתית עם גרדיאנט חי ורקע אישי */
+/* ✅ כותרת לבנה עם הילה ורקע אישי */
 .hero h1 {
   position: relative;
   display: inline-block;
@@ -58,14 +58,10 @@
   line-height: 1.2;
   animation: fadeInUp 1.5s ease-in-out;
 
-  /* ✅ גרדיאנט יוקרתי */
-  background: linear-gradient(135deg, #ffffff 10%, #a855f7 40%, #3b82f6 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  /* ✅ טקסט לבן חלק */
+  color: #ffffff;
 
-  /* ✅ הילה בולטת */
+  /* ✅ הילה להבלטה */
   text-shadow:
     2px 2px 8px rgba(0,0,0,0.85),
     0 0 20px rgba(168,85,247,0.8),
