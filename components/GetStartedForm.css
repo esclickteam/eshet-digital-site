@@ -68,23 +68,57 @@ textarea {
   resize: vertical;
 }
 
-/* ===== Phone Input (דגל + קידומת + מספר באותו שדה) ===== */
+/* ===== Phone Input (קו תחתון אחיד עם הדגל והקידומת בפנים) ===== */
 .phone-input .react-tel-input {
   width: 100%;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.6); /* קו אחיד */
   position: relative;
+  padding-bottom: 6px;
 }
 
-.phone-input .react-tel-input .form-control {
-  padding-left: 60px !important; /* מקום לדגל + קידומת */
+/* הסתרת גבולות מיותרים */
+.phone-input .react-tel-input .flag-dropdown {
   background: transparent !important;
   border: none !important;
-  border-bottom: 1px solid rgba(255,255,255,0.6) !important;
-  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* דגל + קידומת צמודים */
+.phone-input .react-tel-input .selected-flag {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px;
+  padding: 0 6px !important;
+  background: transparent !important;
+  border: none !important;
+  min-width: auto !important;
+}
+
+.phone-input .react-tel-input .selected-dial-code {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff !important;
+  margin: 0 !important;
+  line-height: 1;
+}
+
+/* שדה הטלפון */
+.phone-input .react-tel-input .form-control {
+  flex: 1;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
   color: #fff !important;
   font-size: 1rem !important;
   height: 44px;
   outline: none !important;
+  padding-left: 60px !important; /* דוחף טיפה כדי שיהיה רווח אחרי הדגל+קידומת */
 }
 
 .phone-input .react-tel-input .form-control::placeholder {
@@ -92,33 +126,12 @@ textarea {
   opacity: 0.7 !important;
 }
 
-/* דגל + קידומת */
-.phone-input .react-tel-input .selected-flag {
-  position: absolute !important;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  display: flex !important;
-  align-items: center !important;
-  gap: 6px;
-  padding: 0 8px;
-  background: transparent !important;
-  border: none !important;
-  color: #fff !important;
-}
-
-.phone-input .react-tel-input .selected-dial-code {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #fff !important;
-}
-
 /* Dropdown */
 .phone-input .react-tel-input .country-list {
-  background: #ffffff !important;   /* רקע לבן */
-  color: #1e293b !important;        /* טקסט כהה */
+  background: #ffffff !important;
+  color: #1e293b !important;
   border-radius: 8px;
-  border: 1px solid #e5e7eb !important; /* אפור בהיר */
+  border: 1px solid #e5e7eb !important;
   max-height: 260px;
   overflow-y: auto;
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
@@ -134,22 +147,19 @@ textarea {
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-/* Hover + Highlight */
 .phone-input .react-tel-input .country-list .country:hover,
 .phone-input .react-tel-input .country-list .country.highlight {
-  background: #f3f4f6 !important; /* רקע אפור בהיר */
-  color: #1e293b !important;      /* טקסט כהה */
+  background: #f3f4f6 !important;
+  color: #1e293b !important;
   font-weight: 600 !important;
   cursor: pointer;
 }
 
-/* קידומת ברשימה */
 .phone-input .react-tel-input .country-list .dial-code {
   color: #1e293b !important;
   font-weight: 500;
 }
 
-/* הסתרת חיפוש */
 .phone-input .react-tel-input .search-box {
   display: none !important;
 }
