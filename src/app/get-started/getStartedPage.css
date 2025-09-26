@@ -7,19 +7,18 @@
   justify-content: center;
   align-items: center;
   padding: 40px 20px;
-  color: #ffffff;
 }
 
-/* ===== טופס שקוף מודרני ===== */
+/* ===== כרטיס טופס ===== */
 .form-container {
-  background: #ffffff;       /* ✅ לבן מלא */
+  background: #ffffff;       /* כרטיס לבן */
   border-radius: 16px;       /* פינות מעוגלות */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* צל עדין */
   width: 100%;
   max-width: 500px;
   padding: 40px;
-  text-align: center;
-  color: #111; /* טקסט כהה על לבן */
+  text-align: left;
+  color: #111; /* טקסט כהה בתוך הטופס */
 }
 
 /* ===== שדות ===== */
@@ -27,28 +26,28 @@
 .form-container select,
 .form-container textarea {
   width: 100%;
-  padding: 12px 0;
-  margin-bottom: 24px;
-  border: none;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-  background: transparent;
-  color: #fff;
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;       /* גבול אפור עדין */
+  border-radius: 6px;
+  background: #fff;             /* רקע לבן */
+  color: #111;                  /* טקסט כהה */
   font-size: 1rem;
   transition: all 0.3s ease;
 }
 
 .form-container input::placeholder,
 .form-container textarea::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: #888; /* placeholder אפור עדין */
 }
 
-/* אפקט UX - פוקוס */
+/* ===== אפקט UX - פוקוס ===== */
 .form-container input:focus,
 .form-container textarea:focus,
 .form-container select:focus {
-  border-bottom: 2px solid #00e0ff;
+  border-color: #2575fc; /* כחול בהיר */
   outline: none;
-  box-shadow: 0 2px 8px rgba(0,224,255,0.5);
+  box-shadow: 0 0 6px rgba(37, 117, 252, 0.4);
 }
 
 /* ===== כפתור ===== */
