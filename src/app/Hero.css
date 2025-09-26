@@ -1,11 +1,11 @@
 /* ====== Hero Section ====== */
 .hero {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: var(--bg-dark); /* רקע כהה אחיד */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #fff;
+  color: var(--text-light);
   min-height: calc(100vh - 70px); /* ✅ תמיד מתחת להדר */
   padding: 100px 20px 60px;
   animation: fadeInHero 1.2s ease-in-out;
@@ -13,17 +13,9 @@
   overflow: hidden;
 }
 
-/* אפקט גרדיאנט עדין ברקע */
+/* ביטול האפקטים הקודמים */
 .hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 30% 20%,
-    rgba(255, 255, 255, 0.08),
-    transparent 60%
-  );
-  z-index: 0;
+  content: none; /* ❌ מנטרל את הגרדיאנט המעגלי */
 }
 
 .hero-content {
@@ -39,15 +31,17 @@
   margin-bottom: 20px;
   line-height: 1.2;
   animation: fadeInUp 1.5s ease-in-out;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* טיפה עומק */
 }
 
 .hero p {
   font-size: 1.25rem;
   margin: 0 auto 40px;
-  opacity: 0.95;
+  opacity: 0.9;
   animation: fadeInUp 2s ease-in-out;
   max-width: 600px;
+  color: var(--text-muted);
 }
 
 /* ====== CTA Buttons ====== */
@@ -64,34 +58,34 @@
   padding: 14px 38px;
   font-size: 1.1rem;
   font-weight: 700;
-  border-radius: 50px;
+  border-radius: 12px;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
   min-width: 200px;
   text-align: center;
 }
 
 /* Contact Us (primary) */
 .hero-cta .btn-primary {
-  background: linear-gradient(135deg, #6366f1, #a855f7);
+  background: var(--brand-color);
   color: #fff;
 }
 .hero-cta .btn-primary:hover {
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  background: var(--brand-color-light);
   transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 /* Schedule a Meeting (secondary) */
 .hero-cta .btn-secondary {
-  background: linear-gradient(135deg, #25d366, #128c7e);
+  background: #25d366; /* ירוק וואטסאפ */
   color: #fff;
 }
 .hero-cta .btn-secondary:hover {
-  background: linear-gradient(135deg, #20c057, #0f7b63);
+  background: #20c057;
   transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 /* ✅ רספונסיביות */
