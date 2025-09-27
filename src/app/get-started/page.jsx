@@ -1,10 +1,9 @@
 "use client";
-
 import GetStartedForm from "../../../components/GetStartedForm";
 
-export default function ContactUsPage() {
+export default function GetStartedPage() {
   return (
-    <main className="contact-page">
+    <main className="get-started-page">
       {/* Form Section */}
       <section className="form-wrapper">
         <GetStartedForm />

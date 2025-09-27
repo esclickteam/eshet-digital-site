@@ -1,13 +1,13 @@
 "use client";
 
-import ContactUsForm from "../../../components/ContactUsForm";
+import GetStartedForm from "../../../components/GetStartedForm";
 
 export default function ContactUsPage() {
   return (
     <main className="contact-page">
       {/* Form Section */}
       <section className="form-wrapper">
-        <ContactUsForm />
+        <GetStartedForm />
       </section>
     </main>
   );
