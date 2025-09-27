@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-// ✅ ספרייה החדשה
+// ✅ ספריית טלפון
 import "react-international-phone/style.css";
 import { PhoneInput } from "react-international-phone";
 
@@ -13,7 +13,10 @@ export default function GetStartedForm() {
   const [loading, setLoading] = useState(false);
   const [phone, setPhone] = useState("");
   const [defaultCountry, setDefaultCountry] = useState("us");
-  const [emailError, setEmailError] = useState(""); // ✅ הודעת שגיאה לאימייל
+
+  const [emailFeedback, setEmailFeedback] = useState(""); // ✅ פידבק לאימייל
+  const [phoneFeedback, setPhoneFeedback] = useState(""); // ✅ פידבק לטלפון
+
   const router = useRouter();
 
   // ✅ טעינת reCAPTCHA
@@ -38,14 +41,14 @@ export default function GetStartedForm() {
   }, []);
 
   // ✅ ולידציה בינלאומית לטלפון
-  const isValidPhone = (phone) => {
-    const regex = /^\+\d{7,15}$/;
-    return regex.test(phone);
-  };
+  const isValidPhone = (phone) => /^\+\d{7,15}$/.test(phone);
 
-  // ✅ פונקציה לבדיקת אימייל מול Abstract API
+  // ✅ בדיקת אימייל מול API
   const verifyEmail = async (email) => {
-    if (!email) return;
+    if (!email) {
+      setEmailFeedback("✖ Please enter your email address.");
+      return;
+    }
     try {
       const res = await fetch("/api/verifyEmail", {
         method: "POST",
@@ -55,13 +58,29 @@ export default function GetStartedForm() {
       const data = await res.json();
 
       if (!data.valid) {
-        setEmailError("✖ Please enter a valid email address.");
+        switch (data.reason) {
+          case "Disposable email":
+            setEmailFeedback("✖ We don’t accept temporary email addresses.");
+            break;
+          case "Undeliverable":
+            setEmailFeedback("✖ This email address does not exist.");
+            break;
+          case "Invalid format":
+            setEmailFeedback("✖ Please enter a valid email address.");
+            break;
+          default:
+            setEmailFeedback("✖ Invalid email.");
+        }
       } else {
-        setEmailError(""); // אימייל תקין
+        if (data.reason === "Risky") {
+          setEmailFeedback("⚠ This email may be risky – please double-check.");
+        } else {
+          setEmailFeedback("✔ Email looks good!");
+        }
       }
     } catch (err) {
       console.error("Email check failed:", err);
-      setEmailError("✖ Unable to validate email right now.");
+      setEmailFeedback("⚠ Could not validate email right now.");
     }
   };
 
@@ -91,8 +110,8 @@ export default function GetStartedForm() {
       return;
     }
 
-    // ❌ אם כבר קיימת שגיאת אימייל → לעצור
-    if (emailError) {
+    // ❌ אם יש שגיאת אימייל → לעצור
+    if (emailFeedback.startsWith("✖")) {
       setStatus("invalid_email");
       setLoading(false);
       return;
@@ -100,9 +119,12 @@ export default function GetStartedForm() {
 
     // ✅ בדיקת טלפון
     if (!isValidPhone(phone)) {
+      setPhoneFeedback("✖ Please enter a valid phone number.");
       setStatus("invalid_phone");
       setLoading(false);
       return;
+    } else {
+      setPhoneFeedback("✔ Phone number looks good!");
     }
 
     // ✅ נתונים ל-HubSpot
@@ -135,6 +157,8 @@ export default function GetStartedForm() {
       if (res.ok) {
         form.reset();
         setPhone("");
+        setEmailFeedback("");
+        setPhoneFeedback("");
         router.push("/thank-you");
       } else {
         const errMsg = await res.json();
@@ -170,9 +194,21 @@ export default function GetStartedForm() {
               name="email"
               placeholder="Email Address*"
               required
-              onBlur={(e) => verifyEmail(e.target.value)} // ✅ בדיקה בזמן אמת
+              onBlur={(e) => verifyEmail(e.target.value)}
             />
-            {emailError && <p className="error-msg">{emailError}</p>}
+            {emailFeedback && (
+              <p
+                className={`feedback ${
+                  emailFeedback.startsWith("✔")
+                    ? "success"
+                    : emailFeedback.startsWith("⚠")
+                    ? "warning"
+                    : "error"
+                }`}
+              >
+                {emailFeedback}
+              </p>
+            )}
           </div>
 
           <div className="form-group phone-input">
@@ -182,6 +218,19 @@ export default function GetStartedForm() {
               onChange={setPhone}
               inputClassName="phone-field"
             />
+            {phoneFeedback && (
+              <p
+                className={`feedback ${
+                  phoneFeedback.startsWith("✔")
+                    ? "success"
+                    : phoneFeedback.startsWith("⚠")
+                    ? "warning"
+                    : "error"
+                }`}
+              >
+                {phoneFeedback}
+              </p>
+            )}
           </div>
 
           <div className="form-group">
@@ -222,11 +271,8 @@ export default function GetStartedForm() {
           </button>
         </form>
 
-        {status === "invalid_phone" && (
-          <p className="error-msg">✖ Please enter a valid phone number.</p>
-        )}
         {status === "error" && (
-          <p className="error-msg">✖ Oops! Something went wrong, please try again.</p>
+          <p className="feedback error">✖ Oops! Something went wrong, please try again.</p>
         )}
       </div>
     </section>

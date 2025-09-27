@@ -79,7 +79,6 @@ textarea {
   padding-bottom: 6px;
 }
 
-/* הדגל + הקידומת */
 .react-international-phone-country-selector {
   background: transparent !important;
   border: none !important;
@@ -157,7 +156,28 @@ textarea {
   transform: translateX(4px);
 }
 
-/* ===== הודעות ===== */
+/* ===== Feedback Messages ===== */
+.feedback {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  animation: fadeIn 0.4s ease;
+  text-align: left;
+}
+
+.feedback.error {
+  color: #ef4444; /* אדום */
+}
+
+.feedback.success {
+  color: #22c55e; /* ירוק */
+}
+
+.feedback.warning {
+  color: #f59e0b; /* כתום */
+}
+
+/* ===== Success & Error General Messages ===== */
 .success-msg {
   margin-top: 18px;
   color: #22c55e;
