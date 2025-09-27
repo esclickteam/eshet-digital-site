@@ -12,7 +12,8 @@ export default function GetStartedForm() {
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
   const [phone, setPhone] = useState("");
-  const [defaultCountry, setDefaultCountry] = useState("us"); // ברירת מחדל US
+  const [defaultCountry, setDefaultCountry] = useState("us");
+  const [emailError, setEmailError] = useState(""); // ✅ הודעת שגיאה לאימייל
   const router = useRouter();
 
   // ✅ טעינת reCAPTCHA
@@ -30,25 +31,38 @@ export default function GetStartedForm() {
       .then((res) => res.json())
       .then((data) => {
         if (data && data.country_code) {
-          setDefaultCountry(data.country_code.toLowerCase()); // לדוגמה "us"
+          setDefaultCountry(data.country_code.toLowerCase());
         }
       })
-      .catch(() => setDefaultCountry("us")); // fallback ל-US
+      .catch(() => setDefaultCountry("us"));
   }, []);
-
-  const isValidEmail = (email) => {
-    const blockedDomains = ["yandex.com", "mail.ru", "tempmail", "mailinator"];
-    const domain = email.split("@")[1]?.toLowerCase();
-    if (!domain) return false;
-    if (blockedDomains.some((d) => domain.includes(d))) return false;
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-  };
 
   // ✅ ולידציה בינלאומית לטלפון
   const isValidPhone = (phone) => {
-    const regex = /^\+\d{7,15}$/; // מספר בינלאומי 7–15 ספרות
+    const regex = /^\+\d{7,15}$/;
     return regex.test(phone);
+  };
+
+  // ✅ פונקציה לבדיקת אימייל מול Abstract API
+  const verifyEmail = async (email) => {
+    if (!email) return;
+    try {
+      const res = await fetch("/api/verifyEmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+
+      if (!data.valid) {
+        setEmailError("✖ Please enter a valid email address.");
+      } else {
+        setEmailError(""); // אימייל תקין
+      }
+    } catch (err) {
+      console.error("Email check failed:", err);
+      setEmailError("✖ Unable to validate email right now.");
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -77,12 +91,14 @@ export default function GetStartedForm() {
       return;
     }
 
-    // ✅ ולידציות
-    if (!isValidEmail(form.email.value)) {
+    // ❌ אם כבר קיימת שגיאת אימייל → לעצור
+    if (emailError) {
       setStatus("invalid_email");
       setLoading(false);
       return;
     }
+
+    // ✅ בדיקת טלפון
     if (!isValidPhone(phone)) {
       setStatus("invalid_phone");
       setLoading(false);
@@ -137,9 +153,7 @@ export default function GetStartedForm() {
     <section className="get-started">
       <div className="form-container">
         <h2>Start Your Project</h2>
-        <p className="form-subtitle">
-          Our team will get back to you within 24 hours
-        </p>
+        <p className="form-subtitle">Our team will get back to you within 24 hours</p>
 
         <form onSubmit={handleSubmit} className="contact-form">
           <div className="form-group">
@@ -151,14 +165,21 @@ export default function GetStartedForm() {
           </div>
 
           <div className="form-group">
-            <input type="email" name="email" placeholder="Email Address*" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address*"
+              required
+              onBlur={(e) => verifyEmail(e.target.value)} // ✅ בדיקה בזמן אמת
+            />
+            {emailError && <p className="error-msg">{emailError}</p>}
           </div>
 
           <div className="form-group phone-input">
             <PhoneInput
-              defaultCountry={defaultCountry} // ✅ זיהוי אוטומטי מה-IP
+              defaultCountry={defaultCountry}
               value={phone}
-              onChange={setPhone} // ✅ הספרייה מחזירה כבר בפורמט +972...
+              onChange={setPhone}
               inputClassName="phone-field"
             />
           </div>
@@ -178,11 +199,7 @@ export default function GetStartedForm() {
           </div>
 
           <div className="form-group">
-            <textarea
-              name="message"
-              placeholder="How can we help you?"
-              rows="4"
-            ></textarea>
+            <textarea name="message" placeholder="How can we help you?" rows="4"></textarea>
           </div>
 
           {/* Honeypot */}
@@ -205,16 +222,11 @@ export default function GetStartedForm() {
           </button>
         </form>
 
-        {status === "invalid_email" && (
-          <p className="error-msg">✖ Please enter a valid business email.</p>
-        )}
         {status === "invalid_phone" && (
           <p className="error-msg">✖ Please enter a valid phone number.</p>
         )}
         {status === "error" && (
-          <p className="error-msg">
-            ✖ Oops! Something went wrong, please try again.
-          </p>
+          <p className="error-msg">✖ Oops! Something went wrong, please try again.</p>
         )}
       </div>
     </section>
