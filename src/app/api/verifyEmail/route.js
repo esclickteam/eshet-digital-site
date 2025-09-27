@@ -7,7 +7,7 @@ export async function POST(req) {
 
     if (!email) {
       return NextResponse.json(
-        { valid: false, reason: "No email provided" },
+        { valid: false, reason: "No email provided", score: 0 },
         { status: 400 }
       );
     }
@@ -22,20 +22,37 @@ export async function POST(req) {
 
     const data = response.data;
 
-    // ✅ לוגיקה: רק אם המייל יכול לקבל הודעות והוא לא חד-פעמי
+    // ✅ לוגיקה ל-Lead Scoring
+    let valid = false;
+    let score = 0;
+    let reason = "";
+
     if (data.deliverability === "DELIVERABLE" && !data.is_disposable.value) {
-      return NextResponse.json({ valid: true, data });
+      valid = true;
+
+      if (!data.is_free.value) {
+        // דומיין עסקי → הכי איכותי
+        score = 100;
+      } else {
+        // Gmail / Yahoo / Hotmail וכו׳ → בינוני
+        score = 70;
+      }
     } else {
-      return NextResponse.json({
-        valid: false,
-        reason: data.deliverability || "Undeliverable",
-        data,
-      });
+      valid = false;
+      score = 0;
+      reason = data.deliverability || "Undeliverable";
     }
+
+    return NextResponse.json({
+      valid,
+      score,
+      reason,
+      data, // נחזיר גם את כל המידע המקורי מה-API
+    });
   } catch (error) {
     console.error("Email validation error:", error.message);
     return NextResponse.json(
-      { valid: false, reason: "API error" },
+      { valid: false, reason: "API error", score: 0 },
       { status: 500 }
     );
   }
