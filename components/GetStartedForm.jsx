@@ -40,51 +40,53 @@ export default function GetStartedForm() {
   // ✅ ולידציית טלפון
   const isValidPhone = (phone) => /^\+\d{7,15}$/.test(phone);
 
-  // ✅ בדיקת אימייל מול API
+  // ✅ ממפה תשובת ה־API לפידבק ידידותי
+  const applyEmailFeedback = (data) => {
+    if (!data.valid) {
+      switch (data.reason) {
+        case "DISPOSABLE":
+          setEmailFeedback("✖ We don’t accept temporary email addresses.");
+          break;
+        case "UNDELIVERABLE":
+          setEmailFeedback("✖ This email address does not exist.");
+          break;
+        case "INVALID_FORMAT":
+          setEmailFeedback("✖ Please enter a valid email address.");
+          break;
+        default:
+          setEmailFeedback("✖ Invalid email.");
+      }
+    } else {
+      switch (data.reason) {
+        case "RISKY":
+          setEmailFeedback("⚠ This email may be risky – please double-check.");
+          break;
+        case "DELIVERABLE":
+          setEmailFeedback("✔ Email looks good!");
+          break;
+        case "API_UNAVAILABLE":
+          setEmailFeedback("⚠ Validation service unavailable, email looks OK.");
+          break;
+        default:
+          setEmailFeedback("✔ Email looks fine.");
+      }
+    }
+  };
+
+  // ✅ בדיקת אימייל מול שרת ה־API העצמאי (onBlur)
   const verifyEmail = async (email) => {
     if (!email) {
       setEmailFeedback("✖ Please enter your email address.");
       return;
     }
-
     try {
-      const res = await fetch("/api/verifyEmail", {
+      const res = await fetch("https://api.eshetdigital.com/verifyEmail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
-
       const data = await res.json();
-
-      if (!data.valid) {
-        switch (data.reason) {
-          case "DISPOSABLE":
-            setEmailFeedback("✖ We don’t accept temporary email addresses.");
-            break;
-          case "UNDELIVERABLE":
-            setEmailFeedback("✖ This email address does not exist.");
-            break;
-          case "INVALID_FORMAT":
-            setEmailFeedback("✖ Please enter a valid email address.");
-            break;
-          default:
-            setEmailFeedback("✖ Invalid email.");
-        }
-      } else {
-        switch (data.reason) {
-          case "RISKY":
-            setEmailFeedback("⚠ This email may be risky – please double-check.");
-            break;
-          case "DELIVERABLE":
-            setEmailFeedback("✔ Email looks good!");
-            break;
-          case "API_UNAVAILABLE":
-            setEmailFeedback("⚠ Validation service unavailable, email looks OK.");
-            break;
-          default:
-            setEmailFeedback("✔ Email looks fine.");
-        }
-      }
+      applyEmailFeedback(data);
     } catch (err) {
       console.error("Email check failed:", err);
       setEmailFeedback("⚠ Could not validate email right now.");
@@ -106,20 +108,39 @@ export default function GetStartedForm() {
       return;
     }
 
-    // reCAPTCHA
-    const token = await window.grecaptcha.execute(
-      "6LdIndQrAAAAAHKdTiHWz6ep8FShGPF08g7zIRZJ",
-      { action: "submit" }
-    );
-
+    // reCAPTCHA (הגנה אם הסקריפט עוד לא נטען)
+    let token = "";
+    try {
+      if (window.grecaptcha?.execute) {
+        token = await window.grecaptcha.execute(
+          "6LdIndQrAAAAAHKdTiHWz6ep8FShGPF08g7zIRZJ",
+          { action: "submit" }
+        );
+      }
+    } catch {}
     if (!token) {
       setStatus("error");
       setLoading(false);
       return;
     }
 
-    // ❌ אם אימייל שגוי – לעצור
-    if (emailFeedback.startsWith("✖")) {
+    // ✅ בדיקת אימייל בזמן שליחה (גם אם המשתמש לא יצא מהשדה)
+    try {
+      const verifyRes = await fetch("https://api.eshetdigital.com/verifyEmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: form.email.value }),
+      });
+      const verifyData = await verifyRes.json();
+      applyEmailFeedback(verifyData);
+      if (!verifyData.valid) {
+        setStatus("invalid_email");
+        setLoading(false);
+        return;
+      }
+    } catch (err) {
+      console.error("Email verify on submit failed:", err);
+      setEmailFeedback("⚠ Could not validate email right now.");
       setStatus("invalid_email");
       setLoading(false);
       return;
