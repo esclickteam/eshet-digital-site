@@ -1,11 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-
-// ✅ ספריית טלפון
 import "react-international-phone/style.css";
 import { PhoneInput } from "react-international-phone";
-
 import "./GetStartedForm.css";
 
 export default function GetStartedForm() {
@@ -14,8 +11,8 @@ export default function GetStartedForm() {
   const [phone, setPhone] = useState("");
   const [defaultCountry, setDefaultCountry] = useState("us");
 
-  const [emailFeedback, setEmailFeedback] = useState(""); // ✅ פידבק לאימייל
-  const [phoneFeedback, setPhoneFeedback] = useState(""); // ✅ פידבק לטלפון
+  const [emailFeedback, setEmailFeedback] = useState("");
+  const [phoneFeedback, setPhoneFeedback] = useState("");
 
   const router = useRouter();
 
@@ -28,19 +25,19 @@ export default function GetStartedForm() {
     document.body.appendChild(script);
   }, []);
 
-  // ✅ זיהוי מדינה אוטומטי לפי IP
+  // ✅ זיהוי מדינה לפי IP
   useEffect(() => {
     fetch("https://ipapi.co/json/")
       .then((res) => res.json())
       .then((data) => {
-        if (data && data.country_code) {
+        if (data?.country_code) {
           setDefaultCountry(data.country_code.toLowerCase());
         }
       })
       .catch(() => setDefaultCountry("us"));
   }, []);
 
-  // ✅ ולידציה בינלאומית לטלפון
+  // ✅ ולידציית טלפון
   const isValidPhone = (phone) => /^\+\d{7,15}$/.test(phone);
 
   // ✅ בדיקת אימייל מול API
@@ -49,33 +46,43 @@ export default function GetStartedForm() {
       setEmailFeedback("✖ Please enter your email address.");
       return;
     }
+
     try {
       const res = await fetch("/api/verifyEmail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
+
       const data = await res.json();
 
       if (!data.valid) {
         switch (data.reason) {
-          case "Disposable email":
+          case "DISPOSABLE":
             setEmailFeedback("✖ We don’t accept temporary email addresses.");
             break;
-          case "Undeliverable":
+          case "UNDELIVERABLE":
             setEmailFeedback("✖ This email address does not exist.");
             break;
-          case "Invalid format":
+          case "INVALID_FORMAT":
             setEmailFeedback("✖ Please enter a valid email address.");
             break;
           default:
             setEmailFeedback("✖ Invalid email.");
         }
       } else {
-        if (data.reason === "Risky") {
-          setEmailFeedback("⚠ This email may be risky – please double-check.");
-        } else {
-          setEmailFeedback("✔ Email looks good!");
+        switch (data.reason) {
+          case "RISKY":
+            setEmailFeedback("⚠ This email may be risky – please double-check.");
+            break;
+          case "DELIVERABLE":
+            setEmailFeedback("✔ Email looks good!");
+            break;
+          case "API_UNAVAILABLE":
+            setEmailFeedback("⚠ Validation service unavailable, email looks OK.");
+            break;
+          default:
+            setEmailFeedback("✔ Email looks fine.");
         }
       }
     } catch (err) {
@@ -84,6 +91,7 @@ export default function GetStartedForm() {
     }
   };
 
+  // ✅ שליחה
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("");
@@ -91,14 +99,14 @@ export default function GetStartedForm() {
 
     const form = e.target;
 
-    // ✅ Honeypot
+    // Honeypot
     if (form.website_url_2.value) {
       setStatus("error");
       setLoading(false);
       return;
     }
 
-    // ✅ reCAPTCHA
+    // reCAPTCHA
     const token = await window.grecaptcha.execute(
       "6LdIndQrAAAAAHKdTiHWz6ep8FShGPF08g7zIRZJ",
       { action: "submit" }
@@ -110,14 +118,14 @@ export default function GetStartedForm() {
       return;
     }
 
-    // ❌ אם יש שגיאת אימייל → לעצור
+    // ❌ אם אימייל שגוי – לעצור
     if (emailFeedback.startsWith("✖")) {
       setStatus("invalid_email");
       setLoading(false);
       return;
     }
 
-    // ✅ בדיקת טלפון
+    // ✅ טלפון
     if (!isValidPhone(phone)) {
       setPhoneFeedback("✖ Please enter a valid phone number.");
       setStatus("invalid_phone");
