@@ -22,33 +22,20 @@ export async function POST(req) {
 
     const data = response.data;
 
-    // ✅ לוגיקה ל-Lead Scoring
-    let valid = false;
-    let score = 0;
-    let reason = "";
-
-    if (data.deliverability === "DELIVERABLE" && !data.is_disposable.value) {
-      valid = true;
-
-      if (!data.is_free.value) {
-        // דומיין עסקי → הכי איכותי
-        score = 100;
-      } else {
-        // Gmail / Yahoo / Hotmail וכו׳ → בינוני
-        score = 70;
-      }
+    // ✅ תנאי מתוקן
+    if (data.deliverability === "DELIVERABLE" && data.is_disposable.value === false) {
+      return NextResponse.json({
+        valid: true,
+        reason: "DELIVERABLE",
+        score: data.is_free.value ? 70 : 100, // Gmail = 70, דומיין עסקי = 100
+      });
     } else {
-      valid = false;
-      score = 0;
-      reason = data.deliverability || "Undeliverable";
+      return NextResponse.json({
+        valid: false,
+        reason: data.deliverability || "Undeliverable",
+        score: 0,
+      });
     }
-
-    return NextResponse.json({
-      valid,
-      score,
-      reason,
-      data, // נחזיר גם את כל המידע המקורי מה-API
-    });
   } catch (error) {
     console.error("Email validation error:", error.message);
     return NextResponse.json(
