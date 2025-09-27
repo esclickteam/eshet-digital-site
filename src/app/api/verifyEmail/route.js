@@ -15,9 +15,9 @@ export async function POST(req) {
     }
 
     // 2. קריאה ל-Abstract API
-    const apiKey = process.env.ABSTRACT_API_KEY;
     let data;
     try {
+      const apiKey = process.env.ABSTRACT_API_KEY;
       const response = await axios.get(
         "https://emailreputation.abstractapi.com/v1/",
         {
@@ -26,8 +26,7 @@ export async function POST(req) {
         }
       );
       data = response.data;
-      console.log("📩 Abstract API:", data);
-    } catch (err) {
+    } catch {
       console.warn("⚠️ Abstract API unavailable, fallback to regex only.");
       return NextResponse.json({
         valid: true,
@@ -36,8 +35,8 @@ export async function POST(req) {
       });
     }
 
-    // 3. ניתוח התשובה
-    if (data.is_disposable.value) {
+    // 3. Disposable
+    if (data.is_disposable?.value) {
       return NextResponse.json({
         valid: false,
         reason: "Disposable email",
@@ -45,12 +44,13 @@ export async function POST(req) {
       });
     }
 
+    // 4. Deliverability
     switch (data.deliverability) {
       case "DELIVERABLE":
         return NextResponse.json({
           valid: true,
           reason: "Email is deliverable",
-          score: data.is_free.value ? 85 : 100, // Gmail=85, עסקי=100
+          score: data.is_free?.value ? 85 : 100, // Gmail=85, עסקי=100
         });
 
       case "UNDELIVERABLE":
