@@ -73,7 +73,7 @@ export default function GetStartedForm() {
     }
   };
 
-  // ✅ בדיקת אימייל מול שרת ה־API העצמאי (onBlur)
+  // ✅ בדיקת אימייל
   const verifyEmail = async (email) => {
     if (!email) {
       setEmailFeedback("✖ Please enter your email address.");
@@ -108,7 +108,7 @@ export default function GetStartedForm() {
       return;
     }
 
-    // reCAPTCHA (הגנה אם הסקריפט עוד לא נטען)
+    // reCAPTCHA
     let token = "";
     try {
       if (window.grecaptcha?.execute) {
@@ -124,7 +124,7 @@ export default function GetStartedForm() {
       return;
     }
 
-    // ✅ בדיקת אימייל בזמן שליחה (גם אם המשתמש לא יצא מהשדה)
+    // ✅ אימייל בזמן שליחה
     try {
       const verifyRes = await fetch("https://api.eshetdigital.com/verifyEmail", {
         method: "POST",
@@ -159,12 +159,12 @@ export default function GetStartedForm() {
     // ✅ נתונים ל-HubSpot
     const data = {
       fields: [
-        { name: "name", value: form.firstname.value },
+        { name: "firstname", value: form.name.value }, // 👈 עכשיו שדה אחד בלבד
         { name: "email", value: form.email.value },
         { name: "phone", value: phone },
-        { name: "name", value: form.company.value },
+        { name: "company", value: form.company.value },
         { name: "eshet_digital", value: form.service_type.value },
-        { name: "b", value: form.message.value },
+        { name: "message", value: form.message.value },
       ],
       context: {
         pageUri: window.location.href,
@@ -209,11 +209,7 @@ export default function GetStartedForm() {
 
         <form onSubmit={handleSubmit} className="contact-form">
           <div className="form-group">
-            <input type="text" name="firstname" placeholder="First Name*" required />
-          </div>
-
-          <div className="form-group">
-            <input type="text" name="lastname" placeholder="Last Name*" required />
+            <input type="text" name="name" placeholder="Name*" required />
           </div>
 
           <div className="form-group">
