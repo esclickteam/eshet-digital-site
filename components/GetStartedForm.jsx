@@ -159,8 +159,7 @@ export default function GetStartedForm() {
     // ✅ נתונים ל-HubSpot
     const data = {
       fields: [
-        { name: "firstname", value: form.firstname.value },
-        { name: "lastname", value: form.lastname.value },
+        { name: "name", value: form.firstname.value },
         { name: "email", value: form.email.value },
         { name: "phone", value: phone },
         { name: "name", value: form.company.value },
