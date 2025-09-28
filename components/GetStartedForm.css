@@ -3,12 +3,17 @@
   display: flex;
   justify-content: center;
   padding: 80px 20px;
-  background: transparent;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #6a11cb 100%); /* גרדיאנט מודרני */
+  min-height: 100vh;
+  align-items: center;
 }
 
 /* ===== Form Container ===== */
 .form-container {
-  background: transparent;
+  background: rgba(255,255,255,0.08); /* כרטיס שקוף למחצה */
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
   padding: 40px 30px;
   max-width: 500px;
   width: 100%;
@@ -17,15 +22,16 @@
 }
 
 .form-container h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 800;
   margin-bottom: 10px;
   color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .form-subtitle {
-  font-size: 1rem;
-  color: #fff;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.9);
   margin-bottom: 25px;
 }
 
@@ -47,7 +53,7 @@
   font-size: 1rem;
   color: #fff;
   outline: none;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .form-group input::placeholder,
@@ -63,7 +69,7 @@
 .form-group select:focus,
 .react-international-phone-input:focus {
   border-color: #a855f7;
-  box-shadow: 0 2px 6px rgba(168,85,247,0.3);
+  box-shadow: 0 3px 8px rgba(168,85,247,0.4);
 }
 
 textarea {
@@ -114,15 +120,15 @@ textarea {
 
 /* ===== Submit Button ===== */
 .submit-btn {
-  min-width: 160px;
+  min-width: 180px;
   padding: 14px 28px;
   margin-top: 20px;
-  background: linear-gradient(90deg, #a855f7, #ec4899, #f59e0b) !important;
+  background: linear-gradient(90deg, #ff6a00, #ee0979, #6a11cb) !important;
   color: #fff !important;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   border: none !important;
-  border-radius: 8px;
+  border-radius: 50px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -130,12 +136,13 @@ textarea {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: all 0.3s ease !important;
-  box-shadow: 0 0 14px rgba(236,72,153,0.6);
+  box-shadow: 0 6px 18px rgba(238,9,121,0.5);
 }
 
 .submit-btn:hover:not(:disabled) {
-  background: linear-gradient(90deg, #f59e0b, #ec4899, #a855f7) !important;
-  box-shadow: 0 0 22px rgba(236,72,153,0.75);
+  background: linear-gradient(90deg, #6a11cb, #ee0979, #ff6a00) !important;
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(238,9,121,0.7);
 }
 
 .submit-btn:disabled {
